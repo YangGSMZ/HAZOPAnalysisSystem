@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace HOZAPWorkStation
 {
-    public partial class InitialInterface : Form
+    public partial class NewProjectInterface : Form
     {
-        public InitialInterface()
+        public NewProjectInterface()
         {
             InitializeComponent();
         }
-
-       
     }
 }

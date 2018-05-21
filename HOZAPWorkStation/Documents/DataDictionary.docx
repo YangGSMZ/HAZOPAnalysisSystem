@@ -1,2 +1,32 @@
 1.起始界面：
 	窗体属性（name）命名：InitialInterface；
+	控件集合：
+		Button类（name）：
+		{
+			新建newBtn，打开openBtn，准备preBtn，节点nodeBtn，
+			分析analysisBtn，打印printBtn；
+		}
+
+		MenuStrip类（name）：菜单initMenuStrip；
+
+2.新建项目界面：
+	窗体属性（name）命名：NewProjectInterface；
+	控件集合：[Label标签编码过程中为使用，不做声明]
+		Button类（name）：
+		{
+			报告封面选择btnCover，复审日期btnDate，保存btnSave，关闭btnClose；
+		}
+
+		Textbox类（name）：
+		{
+			项目编号txtProNumber，项目名称txtProName，项目所属单位txtProCompany，
+			文件保存目录txtProDic，报告封面照片txtCoverPic，项目负责人txtManager，
+			复审日期txtReDate，创建日期txtCreateDate，创建人txtCreatePer，打印状态txtPrintState，
+			打印日期txtPrintDate，导出日期txtImportDate，项目概述rtxtDigest；
+		}
+
+		RadioButton类（name）：
+		{
+			是radioYes，否radioNo；
+		}
+	    			   
