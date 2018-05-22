@@ -80,5 +80,10 @@ namespace HOZAPWorkStation
             float newy = (this.Height) / Y;
             setControls(newx, newy, this);
         }
+
+        private void baseUserControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
