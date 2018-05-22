@@ -16,5 +16,6 @@ namespace HOZAPWorkStation.UserControls
         {
             InitializeComponent();
         }
+
     }
 }

@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewProjectInterface));
-            this.lblProNumber = new System.Windows.Forms.Label();
             this.txtProNumber = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.lblProNumber = new System.Windows.Forms.Label();
             this.txtProName = new System.Windows.Forms.TextBox();
             this.txtProCompany = new System.Windows.Forms.TextBox();
             this.txtProDic = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblCoverpic = new System.Windows.Forms.Label();
             this.txtCoverPic = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnCover = new System.Windows.Forms.Button();
             this.lblManager = new System.Windows.Forms.Label();
             this.txtManager = new System.Windows.Forms.TextBox();
@@ -63,12 +63,23 @@
             this.txtImportDate = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.rtxtDigest = new System.Windows.Forms.RichTextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // txtProNumber
+            // 
+            this.txtProNumber.Location = new System.Drawing.Point(114, 10);
+            this.txtProNumber.Name = "txtProNumber";
+            this.txtProNumber.Size = new System.Drawing.Size(358, 21);
+            this.txtProNumber.TabIndex = 1;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // lblProNumber
             // 
@@ -80,13 +91,6 @@
             this.lblProNumber.Size = new System.Drawing.Size(70, 12);
             this.lblProNumber.TabIndex = 0;
             this.lblProNumber.Text = "项目编号：";
-            // 
-            // txtProNumber
-            // 
-            this.txtProNumber.Location = new System.Drawing.Point(114, 10);
-            this.txtProNumber.Name = "txtProNumber";
-            this.txtProNumber.Size = new System.Drawing.Size(358, 21);
-            this.txtProNumber.TabIndex = 1;
             // 
             // txtProName
             // 
@@ -170,10 +174,6 @@
             this.txtCoverPic.Name = "txtCoverPic";
             this.txtCoverPic.Size = new System.Drawing.Size(333, 21);
             this.txtCoverPic.TabIndex = 10;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // btnCover
             // 
@@ -391,6 +391,24 @@
             this.rtxtDigest.TabIndex = 32;
             this.rtxtDigest.Text = "";
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(398, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 30);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Text = "关闭";
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(317, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 30);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "保存";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -410,24 +428,6 @@
             this.label10.Size = new System.Drawing.Size(107, 12);
             this.label10.TabIndex = 34;
             this.label10.Text = "注：带*为必填项目";
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(398, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 30);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "关闭";
-            this.btnClose.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(317, 3);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 30);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "保存";
-            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // NewProjectInterface
             // 
@@ -483,8 +483,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblProNumber;
         private System.Windows.Forms.TextBox txtProNumber;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label lblProNumber;
         private System.Windows.Forms.TextBox txtProName;
         private System.Windows.Forms.TextBox txtProCompany;
         private System.Windows.Forms.TextBox txtProDic;
@@ -494,7 +495,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCoverpic;
         private System.Windows.Forms.TextBox txtCoverPic;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnCover;
         private System.Windows.Forms.Label lblManager;
         private System.Windows.Forms.TextBox txtManager;
@@ -517,9 +517,9 @@
         private System.Windows.Forms.TextBox txtImportDate;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RichTextBox rtxtDigest;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
     }
 }

@@ -30,14 +30,14 @@
         {
             this.BaseTabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.BaseToolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.BaseToolStrip2 = new System.Windows.Forms.ToolStrip();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.BaseToolStrip3 = new System.Windows.Forms.ToolStrip();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.BaseToolStrip4 = new System.Windows.Forms.ToolStrip();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.BaseToolStrip5 = new System.Windows.Forms.ToolStrip();
             this.BaseTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -73,6 +73,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             // 
+            // BaseToolStrip1
+            // 
+            this.BaseToolStrip1.Location = new System.Drawing.Point(3, 3);
+            this.BaseToolStrip1.Name = "BaseToolStrip1";
+            this.BaseToolStrip1.Size = new System.Drawing.Size(427, 25);
+            this.BaseToolStrip1.TabIndex = 0;
+            this.BaseToolStrip1.Text = "toolStrip1";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.BaseToolStrip2);
@@ -83,14 +91,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // BaseToolStrip1
-            // 
-            this.BaseToolStrip1.Location = new System.Drawing.Point(3, 3);
-            this.BaseToolStrip1.Name = "BaseToolStrip1";
-            this.BaseToolStrip1.Size = new System.Drawing.Size(427, 25);
-            this.BaseToolStrip1.TabIndex = 0;
-            this.BaseToolStrip1.Text = "toolStrip1";
             // 
             // BaseToolStrip2
             // 
@@ -106,10 +106,18 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(433, 74);
+            this.tabPage3.Size = new System.Drawing.Size(433, 239);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // BaseToolStrip3
+            // 
+            this.BaseToolStrip3.Location = new System.Drawing.Point(3, 3);
+            this.BaseToolStrip3.Name = "BaseToolStrip3";
+            this.BaseToolStrip3.Size = new System.Drawing.Size(427, 25);
+            this.BaseToolStrip3.TabIndex = 0;
+            this.BaseToolStrip3.Text = "toolStrip1";
             // 
             // tabPage4
             // 
@@ -117,10 +125,18 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(433, 74);
+            this.tabPage4.Size = new System.Drawing.Size(433, 239);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // BaseToolStrip4
+            // 
+            this.BaseToolStrip4.Location = new System.Drawing.Point(3, 3);
+            this.BaseToolStrip4.Name = "BaseToolStrip4";
+            this.BaseToolStrip4.Size = new System.Drawing.Size(427, 25);
+            this.BaseToolStrip4.TabIndex = 0;
+            this.BaseToolStrip4.Text = "toolStrip1";
             // 
             // tabPage5
             // 
@@ -132,22 +148,6 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // BaseToolStrip3
-            // 
-            this.BaseToolStrip3.Location = new System.Drawing.Point(3, 3);
-            this.BaseToolStrip3.Name = "BaseToolStrip3";
-            this.BaseToolStrip3.Size = new System.Drawing.Size(427, 25);
-            this.BaseToolStrip3.TabIndex = 0;
-            this.BaseToolStrip3.Text = "toolStrip1";
-            // 
-            // BaseToolStrip4
-            // 
-            this.BaseToolStrip4.Location = new System.Drawing.Point(3, 3);
-            this.BaseToolStrip4.Name = "BaseToolStrip4";
-            this.BaseToolStrip4.Size = new System.Drawing.Size(427, 25);
-            this.BaseToolStrip4.TabIndex = 0;
-            this.BaseToolStrip4.Text = "toolStrip1";
             // 
             // BaseToolStrip5
             // 

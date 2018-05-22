@@ -67,52 +67,53 @@
             // 
             // openBtn
             // 
-            this.openBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.openBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.openBtn.Location = new System.Drawing.Point(640, 268);
             this.openBtn.Name = "openBtn";
             this.openBtn.Size = new System.Drawing.Size(75, 75);
             this.openBtn.TabIndex = 4;
             this.openBtn.Text = "打开";
-            this.openBtn.UseVisualStyleBackColor = true;
+            this.openBtn.UseVisualStyleBackColor = false;
             // 
             // preBtn
             // 
-            this.preBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.preBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.preBtn.Location = new System.Drawing.Point(640, 363);
             this.preBtn.Name = "preBtn";
             this.preBtn.Size = new System.Drawing.Size(75, 75);
             this.preBtn.TabIndex = 5;
             this.preBtn.Text = "准备";
-            this.preBtn.UseVisualStyleBackColor = true;
+            this.preBtn.UseVisualStyleBackColor = false;
             // 
             // nodeBtn
             // 
-            this.nodeBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.nodeBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.nodeBtn.Location = new System.Drawing.Point(500, 268);
             this.nodeBtn.Name = "nodeBtn";
             this.nodeBtn.Size = new System.Drawing.Size(75, 75);
             this.nodeBtn.TabIndex = 6;
             this.nodeBtn.Text = "节点";
-            this.nodeBtn.UseVisualStyleBackColor = true;
+            this.nodeBtn.UseVisualStyleBackColor = false;
             // 
             // analysisBtn
             // 
-            this.analysisBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.analysisBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.analysisBtn.Location = new System.Drawing.Point(500, 163);
             this.analysisBtn.Name = "analysisBtn";
             this.analysisBtn.Size = new System.Drawing.Size(75, 75);
             this.analysisBtn.TabIndex = 7;
             this.analysisBtn.Text = "分析";
-            this.analysisBtn.UseVisualStyleBackColor = true;
+            this.analysisBtn.UseVisualStyleBackColor = false;
             // 
             // printBtn
             // 
+            this.printBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.printBtn.Location = new System.Drawing.Point(640, 163);
             this.printBtn.Name = "printBtn";
             this.printBtn.Size = new System.Drawing.Size(75, 75);
             this.printBtn.TabIndex = 8;
             this.printBtn.Text = "打印";
-            this.printBtn.UseVisualStyleBackColor = true;
+            this.printBtn.UseVisualStyleBackColor = false;
             // 
             // newBtn
             // 
@@ -122,7 +123,7 @@
             this.newBtn.Size = new System.Drawing.Size(75, 75);
             this.newBtn.TabIndex = 11;
             this.newBtn.Text = "新建";
-            this.newBtn.UseVisualStyleBackColor = true;
+            this.newBtn.UseVisualStyleBackColor = false;
             // 
             // InitialInterface
             // 
