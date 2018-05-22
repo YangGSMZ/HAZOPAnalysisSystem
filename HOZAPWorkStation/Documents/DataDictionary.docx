@@ -11,7 +11,7 @@
 
 2.新建项目界面：
 	窗体属性（name）命名：NewProjectInterface；
-	控件集合：[Label标签编码过程中为使用，不做声明]
+	控件集合：[Label标签编码过程中未使用，不做声明]
 		Button类（name）：
 		{
 			报告封面选择btnCover，复审日期btnDate，保存btnSave，关闭btnClose；
@@ -29,4 +29,63 @@
 		{
 			是radioYes，否radioNo；
 		}
+		OpenFileDialog类（name）
+		{
+			CoverPicDialog；
+		}
+
+3.项目准备
+	*此项使用用户控件动态添加，因次建立一个用户控件PrepareUserControl,包含项目
+	 准备里的所有表项：项目基本信息BaseInfo、参与人员Participants、
+	 风险矩阵RiskMatrix、项目参数Parameters。
+	3.1项目基本信息表项
+		TabPage（name）命名：BaseInfo；
+		控件集合：[Label标签编码过程中未使用，不做声明]
+		Button类（name）：
+		{
+			报告封面选择btnCover，复审日期btnDate;
+		}
+
+		Textbox类（name）：
+		{
+			项目编号txtProNumber，项目名称txtProName，项目所属单位txtProCompany，
+			文件保存目录txtProDic，报告封面照片txtCoverPic，项目负责人txtManager，
+			复审日期txtReDate，创建日期txtCreateDate，创建人txtCreatePer，打印状态txtPrintState，
+			打印日期txtPrintDate，导出日期txtImportDate，项目概述rtxtDigest；
+		}
+
+		RadioButton类（name）：
+		{
+			是radioYes，否radioNo；
+		}
+		OpenFileDialog类（name）
+		{
+			CoverPicDialog；
+		}
+
+		ToolStrip类Items（name）
+		{
+			编辑tsbBaseInfoEdit，取消tsbBaseInfoCancel，
+			保存tsbBaseInfoSave，下一步tspBaseInfoNext；
+		}
+	3.2参与人员表项
+		ToolStrip类Itemns（name）
+		{
+			节点划分tspPreNoteSplit，帮助tspPreHelp，关闭tspPreClose，
+			增加tspParcipantAdd，编辑tspParcipantEdit，删除tspParcipantDelete，
+			取消tspParcipantCancel，保存tspParcipantSave，下一步tspParcipantNext；
+		}
+		DataGridView类（name）
+		{
+			DataGridView名：dgvPreUc；
+			列名：
+			{
+				序号dgvPreParticipantId，姓名dgvPreParticipantName，
+				专业dgvPreParticipantMajor,职务dgvPreParticipantDuty，
+				公司/单位dgvPreParticipantCompany，
+				。所属部门dgvPreParticipantDepartment；
+			}
+		}
+		
+		
 	    			   

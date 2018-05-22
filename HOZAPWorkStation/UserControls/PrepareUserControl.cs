@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace HOZAPWorkStation.UserControls
 {
-    public partial class BaseUserControl : UserControl
+    public partial class PrepareUserControl : UserControl
     {
-        public BaseUserControl()
+        public PrepareUserControl()
         {
             InitializeComponent();
         }
-
     }
 }
