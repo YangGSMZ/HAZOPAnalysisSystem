@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HOZAPWorkStation.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -84,6 +85,101 @@ namespace HOZAPWorkStation
         private void baseUserControl1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void nodeBtn_Click(object sender, EventArgs e)
+        {
+           
+            if (!MainTableControl.Controls.ContainsKey("节点划分"))
+            {
+                UcNodePartition uc = new UcNodePartition();
+                TabPage tp = new TabPage();
+                uc.Dock = DockStyle.Fill;
+                tp.Controls.Add(uc);
+                tp.Name = "tpNodePartition";
+                tp.Text = "节点划分";
+                this.MainTableControl.Controls.Add(tp);
+                this.MainTableControl.SelectTab("tpNodePartition");
+            }
+            else
+            {
+                this.MainTableControl.SelectTab("tpNodePartition");
+            }
+        }
+
+        const int CLOSE_SIZE = 18;//关闭按钮大小
+        private void MainTableControl_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            try
+            {
+                Rectangle myTabRect = this.MainTableControl.GetTabRect(e.Index);
+              
+                if (e.Index == 0)//系统首页不画关闭按钮
+                {
+                    //先添加TabPage属性   
+                    e.Graphics.DrawString(this.MainTableControl.TabPages[e.Index].Text
+                    , this.Font, SystemBrushes.ControlText, myTabRect.X+8 , myTabRect.Y+8 );
+                    return;
+                }
+                e.Graphics.DrawString(this.MainTableControl.TabPages[e.Index].Text
+                  , this.Font, SystemBrushes.ControlText, myTabRect.X + 2, myTabRect.Y + 8);
+                //再画一个矩形框
+                using (Pen p = new Pen(Color.Black))
+                {
+                    myTabRect.Offset(myTabRect.Width - (CLOSE_SIZE + 3), 2);
+                    myTabRect.Width = CLOSE_SIZE;
+                    myTabRect.Height = CLOSE_SIZE;
+                    e.Graphics.DrawRectangle(p, myTabRect);
+                }
+                
+                //填充矩形框
+                Color recColor = e.State == DrawItemState.Selected ? Color.DarkRed : Color.DarkGray;
+                using (Brush b = new SolidBrush(recColor))
+                {
+                    e.Graphics.FillRectangle(b, myTabRect);
+                }
+                //画关闭符号
+                using (Pen p = new Pen(Color.White))
+                {
+                    //画"/"线
+                    Point p1 = new Point(myTabRect.X + 3, myTabRect.Y + 3);
+                    Point p2 = new Point(myTabRect.X + myTabRect.Width - 3, myTabRect.Y + myTabRect.Height - 3);
+                    e.Graphics.DrawLine(p, p1, p2);
+                    //画"/"线
+                    Point p3 = new Point(myTabRect.X + 3, myTabRect.Y + myTabRect.Height - 3);
+                    Point p4 = new Point(myTabRect.X + myTabRect.Width - 3, myTabRect.Y + 3);
+                    e.Graphics.DrawLine(p, p3, p4);
+                }
+                e.Graphics.Dispose();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void MainTableControl_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                int x = e.X, y = e.Y;
+                //计算关闭区域   
+                if (this.MainTableControl.SelectedIndex == 0)//系统首页不关闭
+                {
+                    return;
+                }
+                Rectangle myTabRect = this.MainTableControl.GetTabRect(this.MainTableControl.SelectedIndex);
+                myTabRect.Offset(myTabRect.Width - (CLOSE_SIZE + 3), 2);
+                myTabRect.Width = CLOSE_SIZE;
+                myTabRect.Height = CLOSE_SIZE;
+                //如果鼠标在区域内就关闭选项卡   
+                bool isClose = x > myTabRect.X && x < myTabRect.Right
+                 && y > myTabRect.Y && y < myTabRect.Bottom;
+                if (isClose == true)
+                {
+                    this.MainTableControl.TabPages.Remove(this.MainTableControl.SelectedTab);
+                }
+            }
         }
     }
 }

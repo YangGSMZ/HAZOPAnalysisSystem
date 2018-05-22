@@ -68,6 +68,12 @@
     <Compile Include="UserControls\BaseUserControl.Designer.cs">
       <DependentUpon>BaseUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UcNodePartition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcNodePartition.Designer.cs">
+      <DependentUpon>UcNodePartition.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="InitialInterface.resx">
       <DependentUpon>InitialInterface.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +91,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\BaseUserControl.resx">
       <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcNodePartition.resx">
+      <DependentUpon>UcNodePartition.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Documents\DataDictionary.docx" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
