@@ -100,10 +100,13 @@ namespace HOZAPWorkStation
                 tp.Text = "节点划分";
                 this.MainTableControl.Controls.Add(tp);
                 this.MainTableControl.SelectTab("tpNodePartition");
+                setTag(this);
+               // InitialInterface_Load(sender,e);
             }
             else
             {
                 this.MainTableControl.SelectTab("tpNodePartition");
+                
             }
         }
 
@@ -156,6 +159,7 @@ namespace HOZAPWorkStation
             {
 
             }
+           
         }
 
         private void MainTableControl_MouseDown(object sender, MouseEventArgs e)
@@ -181,5 +185,7 @@ namespace HOZAPWorkStation
                 }
             }
         }
+
+       
     }
 }

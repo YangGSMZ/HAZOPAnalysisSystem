@@ -32,15 +32,14 @@
             this.initMenuStrip = new System.Windows.Forms.MenuStrip();
             this.menuSsripToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.initPanel = new System.Windows.Forms.Panel();
-            this.openBtn = new System.Windows.Forms.Button();
-            this.preBtn = new System.Windows.Forms.Button();
-            this.nodeBtn = new System.Windows.Forms.Button();
-            this.printBtn = new System.Windows.Forms.Button();
             this.tp_SysteamIndex = new System.Windows.Forms.TabPage();
             this.newBtn = new System.Windows.Forms.Button();
+            this.preBtn = new System.Windows.Forms.Button();
+            this.printBtn = new System.Windows.Forms.Button();
             this.analysisBtn = new System.Windows.Forms.Button();
+            this.nodeBtn = new System.Windows.Forms.Button();
+            this.openBtn = new System.Windows.Forms.Button();
             this.MainTableControl = new System.Windows.Forms.TabControl();
-            this.button1 = new System.Windows.Forms.Button();
             this.initMenuStrip.SuspendLayout();
             this.tp_SysteamIndex.SuspendLayout();
             this.MainTableControl.SuspendLayout();
@@ -70,59 +69,17 @@
             this.initPanel.Size = new System.Drawing.Size(800, 31);
             this.initPanel.TabIndex = 2;
             // 
-            // openBtn
-            // 
-            this.openBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.openBtn.Location = new System.Drawing.Point(94, 48);
-            this.openBtn.Name = "openBtn";
-            this.openBtn.Size = new System.Drawing.Size(75, 75);
-            this.openBtn.TabIndex = 4;
-            this.openBtn.Text = "打开";
-            this.openBtn.UseVisualStyleBackColor = false;
-            // 
-            // preBtn
-            // 
-            this.preBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.preBtn.Location = new System.Drawing.Point(213, 130);
-            this.preBtn.Name = "preBtn";
-            this.preBtn.Size = new System.Drawing.Size(75, 75);
-            this.preBtn.TabIndex = 5;
-            this.preBtn.Text = "准备";
-            this.preBtn.UseVisualStyleBackColor = false;
-            // 
-            // nodeBtn
-            // 
-            this.nodeBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.nodeBtn.Location = new System.Drawing.Point(333, 130);
-            this.nodeBtn.Name = "nodeBtn";
-            this.nodeBtn.Size = new System.Drawing.Size(75, 75);
-            this.nodeBtn.TabIndex = 6;
-            this.nodeBtn.Text = "节点";
-            this.nodeBtn.UseVisualStyleBackColor = false;
-            this.nodeBtn.Click += new System.EventHandler(this.nodeBtn_Click);
-            // 
-            // printBtn
-            // 
-            this.printBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.printBtn.Location = new System.Drawing.Point(591, 130);
-            this.printBtn.Name = "printBtn";
-            this.printBtn.Size = new System.Drawing.Size(75, 75);
-            this.printBtn.TabIndex = 8;
-            this.printBtn.Text = "打印";
-            this.printBtn.UseVisualStyleBackColor = false;
-            // 
             // tp_SysteamIndex
             // 
             this.tp_SysteamIndex.BackColor = System.Drawing.Color.LightGray;
             this.tp_SysteamIndex.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tp_SysteamIndex.Controls.Add(this.button1);
             this.tp_SysteamIndex.Controls.Add(this.newBtn);
             this.tp_SysteamIndex.Controls.Add(this.preBtn);
             this.tp_SysteamIndex.Controls.Add(this.printBtn);
             this.tp_SysteamIndex.Controls.Add(this.analysisBtn);
             this.tp_SysteamIndex.Controls.Add(this.nodeBtn);
             this.tp_SysteamIndex.Controls.Add(this.openBtn);
-            this.tp_SysteamIndex.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tp_SysteamIndex.Font = new System.Drawing.Font("宋体", 9F);
             this.tp_SysteamIndex.Location = new System.Drawing.Point(4, 29);
             this.tp_SysteamIndex.Name = "tp_SysteamIndex";
             this.tp_SysteamIndex.Padding = new System.Windows.Forms.Padding(3);
@@ -140,6 +97,26 @@
             this.newBtn.Text = "新建";
             this.newBtn.UseVisualStyleBackColor = false;
             // 
+            // preBtn
+            // 
+            this.preBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.preBtn.Location = new System.Drawing.Point(213, 130);
+            this.preBtn.Name = "preBtn";
+            this.preBtn.Size = new System.Drawing.Size(75, 75);
+            this.preBtn.TabIndex = 5;
+            this.preBtn.Text = "准备";
+            this.preBtn.UseVisualStyleBackColor = false;
+            // 
+            // printBtn
+            // 
+            this.printBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.printBtn.Location = new System.Drawing.Point(591, 130);
+            this.printBtn.Name = "printBtn";
+            this.printBtn.Size = new System.Drawing.Size(75, 75);
+            this.printBtn.TabIndex = 8;
+            this.printBtn.Text = "打印";
+            this.printBtn.UseVisualStyleBackColor = false;
+            // 
             // analysisBtn
             // 
             this.analysisBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -149,6 +126,27 @@
             this.analysisBtn.TabIndex = 7;
             this.analysisBtn.Text = "分析";
             this.analysisBtn.UseVisualStyleBackColor = false;
+            // 
+            // nodeBtn
+            // 
+            this.nodeBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.nodeBtn.Location = new System.Drawing.Point(333, 130);
+            this.nodeBtn.Name = "nodeBtn";
+            this.nodeBtn.Size = new System.Drawing.Size(75, 75);
+            this.nodeBtn.TabIndex = 6;
+            this.nodeBtn.Text = "节点";
+            this.nodeBtn.UseVisualStyleBackColor = false;
+            this.nodeBtn.Click += new System.EventHandler(this.nodeBtn_Click);
+            // 
+            // openBtn
+            // 
+            this.openBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.openBtn.Location = new System.Drawing.Point(94, 48);
+            this.openBtn.Name = "openBtn";
+            this.openBtn.Size = new System.Drawing.Size(75, 75);
+            this.openBtn.TabIndex = 4;
+            this.openBtn.Text = "打开";
+            this.openBtn.UseVisualStyleBackColor = false;
             // 
             // MainTableControl
             // 
@@ -164,15 +162,6 @@
             this.MainTableControl.TabIndex = 13;
             this.MainTableControl.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.MainTableControl_DrawItem);
             this.MainTableControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainTableControl_MouseDown);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(504, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 47);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // InitialInterface
             // 
@@ -203,14 +192,13 @@
         private System.Windows.Forms.MenuStrip initMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem menuSsripToolStripMenuItem;
         private System.Windows.Forms.Panel initPanel;
-        private System.Windows.Forms.Button openBtn;
-        private System.Windows.Forms.Button preBtn;
-        private System.Windows.Forms.Button nodeBtn;
-        private System.Windows.Forms.Button printBtn;
         private System.Windows.Forms.TabPage tp_SysteamIndex;
         private System.Windows.Forms.Button newBtn;
+        private System.Windows.Forms.Button preBtn;
+        private System.Windows.Forms.Button printBtn;
         private System.Windows.Forms.Button analysisBtn;
+        private System.Windows.Forms.Button nodeBtn;
+        private System.Windows.Forms.Button openBtn;
         private System.Windows.Forms.TabControl MainTableControl;
-        private System.Windows.Forms.Button button1;
     }
 }
