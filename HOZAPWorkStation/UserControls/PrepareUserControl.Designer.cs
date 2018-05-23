@@ -85,9 +85,6 @@
             this.tspParcipantSave = new System.Windows.Forms.ToolStripSplitButton();
             this.tspParcipantNext = new System.Windows.Forms.ToolStripSplitButton();
             this.dgvPreUc = new System.Windows.Forms.DataGridView();
-            this.RiskMatrix = new System.Windows.Forms.TabPage();
-            this.Parameters = new System.Windows.Forms.TabPage();
-            this.CoverPicDialog = new System.Windows.Forms.OpenFileDialog();
             this.dgvPreParticipantId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreParticipantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreParticipantMajor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,6 +93,9 @@
             this.dgvPreParticipantDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreParticipantRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreParticipantDisplay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RiskMatrix = new System.Windows.Forms.TabPage();
+            this.Parameters = new System.Windows.Forms.TabPage();
+            this.CoverPicDialog = new System.Windows.Forms.OpenFileDialog();
             this.PrepareToolStrip.SuspendLayout();
             this.PrepareTabControl.SuspendLayout();
             this.BaseInfo.SuspendLayout();
@@ -158,6 +158,7 @@
             // 
             // BaseInfo
             // 
+            this.BaseInfo.AutoScroll = true;
             this.BaseInfo.BackColor = System.Drawing.Color.Gainsboro;
             this.BaseInfo.Controls.Add(this.label10);
             this.BaseInfo.Controls.Add(this.panel1);
@@ -695,30 +696,6 @@
             this.dgvPreUc.Size = new System.Drawing.Size(1352, 593);
             this.dgvPreUc.TabIndex = 0;
             // 
-            // RiskMatrix
-            // 
-            this.RiskMatrix.Location = new System.Drawing.Point(4, 22);
-            this.RiskMatrix.Name = "RiskMatrix";
-            this.RiskMatrix.Padding = new System.Windows.Forms.Padding(3);
-            this.RiskMatrix.Size = new System.Drawing.Size(1358, 599);
-            this.RiskMatrix.TabIndex = 2;
-            this.RiskMatrix.Text = "3.风险矩阵";
-            this.RiskMatrix.UseVisualStyleBackColor = true;
-            // 
-            // Parameters
-            // 
-            this.Parameters.Location = new System.Drawing.Point(4, 22);
-            this.Parameters.Name = "Parameters";
-            this.Parameters.Padding = new System.Windows.Forms.Padding(3);
-            this.Parameters.Size = new System.Drawing.Size(1358, 599);
-            this.Parameters.TabIndex = 3;
-            this.Parameters.Text = "4.项目参数";
-            this.Parameters.UseVisualStyleBackColor = true;
-            // 
-            // CoverPicDialog
-            // 
-            this.CoverPicDialog.FileName = "openFileDialog1";
-            // 
             // dgvPreParticipantId
             // 
             this.dgvPreParticipantId.HeaderText = "序号";
@@ -758,6 +735,30 @@
             // 
             this.dgvPreParticipantDisplay.HeaderText = "显示顺序";
             this.dgvPreParticipantDisplay.Name = "dgvPreParticipantDisplay";
+            // 
+            // RiskMatrix
+            // 
+            this.RiskMatrix.Location = new System.Drawing.Point(4, 22);
+            this.RiskMatrix.Name = "RiskMatrix";
+            this.RiskMatrix.Padding = new System.Windows.Forms.Padding(3);
+            this.RiskMatrix.Size = new System.Drawing.Size(1358, 599);
+            this.RiskMatrix.TabIndex = 2;
+            this.RiskMatrix.Text = "3.风险矩阵";
+            this.RiskMatrix.UseVisualStyleBackColor = true;
+            // 
+            // Parameters
+            // 
+            this.Parameters.Location = new System.Drawing.Point(4, 22);
+            this.Parameters.Name = "Parameters";
+            this.Parameters.Padding = new System.Windows.Forms.Padding(3);
+            this.Parameters.Size = new System.Drawing.Size(1358, 599);
+            this.Parameters.TabIndex = 3;
+            this.Parameters.Text = "4.项目参数";
+            this.Parameters.UseVisualStyleBackColor = true;
+            // 
+            // CoverPicDialog
+            // 
+            this.CoverPicDialog.FileName = "openFileDialog1";
             // 
             // PrepareUserControl
             // 
