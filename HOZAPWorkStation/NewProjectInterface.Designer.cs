@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewProjectInterface));
             this.txtProNumber = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.CoverPicDialog = new System.Windows.Forms.OpenFileDialog();
             this.lblProNumber = new System.Windows.Forms.Label();
             this.txtProName = new System.Windows.Forms.TextBox();
             this.txtProCompany = new System.Windows.Forms.TextBox();
@@ -77,9 +77,9 @@
             this.txtProNumber.Size = new System.Drawing.Size(358, 21);
             this.txtProNumber.TabIndex = 1;
             // 
-            // openFileDialog1
+            // CoverPicDialog
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.CoverPicDialog.FileName = "openFileDialog1";
             // 
             // lblProNumber
             // 
@@ -484,7 +484,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtProNumber;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog CoverPicDialog;
         private System.Windows.Forms.Label lblProNumber;
         private System.Windows.Forms.TextBox txtProName;
         private System.Windows.Forms.TextBox txtProCompany;

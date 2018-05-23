@@ -62,11 +62,11 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\BaseUserControl.cs">
+    <Compile Include="UserControls\PrepareUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\BaseUserControl.Designer.cs">
-      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    <Compile Include="UserControls\PrepareUserControl.Designer.cs">
+      <DependentUpon>PrepareUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UcNodePartition.cs">
       <SubType>UserControl</SubType>
@@ -89,8 +89,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControls\BaseUserControl.resx">
-      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\PrepareUserControl.resx">
+      <DependentUpon>PrepareUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcNodePartition.resx">
       <DependentUpon>UcNodePartition.cs</DependentUpon>
