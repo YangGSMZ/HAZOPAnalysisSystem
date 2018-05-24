@@ -40,18 +40,9 @@
             this.nodeBtn = new System.Windows.Forms.Button();
             this.openBtn = new System.Windows.Forms.Button();
             this.MainTableControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.ucPrepareControl2 = new HOZAPWorkStation.UserControls.UcPrepareControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ucNodePartition1 = new HOZAPWorkStation.UserControls.UcNodePartition();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ucAnalysis1 = new HOZAPWorkStation.UserControls.UcAnalysis();
             this.initMenuStrip.SuspendLayout();
             this.tpSysteamIndex.SuspendLayout();
             this.MainTableControl.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // initMenuStrip
@@ -115,6 +106,7 @@
             this.preBtn.TabIndex = 5;
             this.preBtn.Text = "准备";
             this.preBtn.UseVisualStyleBackColor = false;
+           
             // 
             // printBtn
             // 
@@ -160,9 +152,6 @@
             // MainTableControl
             // 
             this.MainTableControl.Controls.Add(this.tpSysteamIndex);
-            this.MainTableControl.Controls.Add(this.tabPage1);
-            this.MainTableControl.Controls.Add(this.tabPage2);
-            this.MainTableControl.Controls.Add(this.tabPage3);
             this.MainTableControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTableControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.MainTableControl.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -174,66 +163,6 @@
             this.MainTableControl.TabIndex = 13;
             this.MainTableControl.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.MainTableControl_DrawItem);
             this.MainTableControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainTableControl_MouseDown);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.ucPrepareControl2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 361);
-            this.tabPage1.TabIndex = 1;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // ucPrepareControl2
-            // 
-            this.ucPrepareControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucPrepareControl2.Location = new System.Drawing.Point(3, 3);
-            this.ucPrepareControl2.Margin = new System.Windows.Forms.Padding(4);
-            this.ucPrepareControl2.Name = "ucPrepareControl2";
-            this.ucPrepareControl2.Size = new System.Drawing.Size(786, 355);
-            this.ucPrepareControl2.TabIndex = 0;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.ucNodePartition1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(792, 361);
-            this.tabPage2.TabIndex = 2;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // ucNodePartition1
-            // 
-            this.ucNodePartition1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucNodePartition1.Location = new System.Drawing.Point(3, 3);
-            this.ucNodePartition1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ucNodePartition1.Name = "ucNodePartition1";
-            this.ucNodePartition1.Size = new System.Drawing.Size(786, 355);
-            this.ucNodePartition1.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.ucAnalysis1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(792, 361);
-            this.tabPage3.TabIndex = 3;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // ucAnalysis1
-            // 
-            this.ucAnalysis1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucAnalysis1.Location = new System.Drawing.Point(3, 3);
-            this.ucAnalysis1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ucAnalysis1.Name = "ucAnalysis1";
-            this.ucAnalysis1.Size = new System.Drawing.Size(786, 355);
-            this.ucAnalysis1.TabIndex = 0;
             // 
             // InitialInterface
             // 
@@ -254,9 +183,6 @@
             this.initMenuStrip.PerformLayout();
             this.tpSysteamIndex.ResumeLayout(false);
             this.MainTableControl.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,11 +202,5 @@
         private System.Windows.Forms.Button nodeBtn;
         private System.Windows.Forms.Button openBtn;
         private System.Windows.Forms.TabControl MainTableControl;
-        private System.Windows.Forms.TabPage tabPage1;
-        private UserControls.UcPrepareControl ucPrepareControl2;
-        private System.Windows.Forms.TabPage tabPage2;
-        private UserControls.UcNodePartition ucNodePartition1;
-        private System.Windows.Forms.TabPage tabPage3;
-        private UserControls.UcAnalysis ucAnalysis1;
     }
 }
