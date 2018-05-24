@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcPrepareControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PrepareToolStrip = new System.Windows.Forms.ToolStrip();
             this.tspPreNoteSplit = new System.Windows.Forms.ToolStripSplitButton();
             this.tspPreHelp = new System.Windows.Forms.ToolStripSplitButton();
@@ -127,9 +127,12 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.Parameters = new System.Windows.Forms.TabPage();
-            this.CoverPicDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.richTextBox17 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox16 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox15 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox14 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox13 = new System.Windows.Forms.RichTextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -144,11 +147,8 @@
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.richTextBox11 = new System.Windows.Forms.RichTextBox();
             this.richTextBox12 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox13 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox14 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox15 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox16 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox17 = new System.Windows.Forms.RichTextBox();
+            this.Parameters = new System.Windows.Forms.TabPage();
+            this.CoverPicDialog = new System.Windows.Forms.OpenFileDialog();
             this.PrepareToolStrip.SuspendLayout();
             this.PrepareTabControl.SuspendLayout();
             this.BaseInfo.SuspendLayout();
@@ -838,14 +838,14 @@
             this.dgvPreUcRisk.AllowUserToAddRows = false;
             this.dgvPreUcRisk.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPreUcRisk.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreUcRisk.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreUcRisk.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPreUcRisk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPreUcRisk.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvPreUcRiskProb,
@@ -860,20 +860,20 @@
             this.dgvPreUcRisk.Location = new System.Drawing.Point(0, 0);
             this.dgvPreUcRisk.Name = "dgvPreUcRisk";
             this.dgvPreUcRisk.ReadOnly = true;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreUcRisk.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreUcRisk.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPreUcRisk.RowHeadersWidth = 60;
             this.dgvPreUcRisk.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgvPreUcRisk.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgvPreUcRisk.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvPreUcRisk.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPreUcRisk.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dgvPreUcRisk.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
@@ -889,10 +889,10 @@
             // dgvPreUcRiskProb
             // 
             this.dgvPreUcRiskProb.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskProb.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskProb.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPreUcRiskProb.HeaderText = "概率";
             this.dgvPreUcRiskProb.Name = "dgvPreUcRiskProb";
             this.dgvPreUcRiskProb.ReadOnly = true;
@@ -903,10 +903,10 @@
             // dgvPreUcRiskProIntro
             // 
             this.dgvPreUcRiskProIntro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskProIntro.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskProIntro.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPreUcRiskProIntro.HeaderText = "概率说明";
             this.dgvPreUcRiskProIntro.Name = "dgvPreUcRiskProIntro";
             this.dgvPreUcRiskProIntro.ReadOnly = true;
@@ -916,10 +916,10 @@
             // 
             // dgvPreUcRiskLight
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskLight.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskLight.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPreUcRiskLight.HeaderText = "1.轻微";
             this.dgvPreUcRiskLight.Name = "dgvPreUcRiskLight";
             this.dgvPreUcRiskLight.ReadOnly = true;
@@ -928,10 +928,10 @@
             // 
             // dgvPreUcRiskOverLig
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskOverLig.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskOverLig.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPreUcRiskOverLig.HeaderText = "2.较重";
             this.dgvPreUcRiskOverLig.Name = "dgvPreUcRiskOverLig";
             this.dgvPreUcRiskOverLig.ReadOnly = true;
@@ -940,10 +940,10 @@
             // 
             // dgvPreUcRiskSerio
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskSerio.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskSerio.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPreUcRiskSerio.HeaderText = "3.严重";
             this.dgvPreUcRiskSerio.Name = "dgvPreUcRiskSerio";
             this.dgvPreUcRiskSerio.ReadOnly = true;
@@ -952,10 +952,10 @@
             // 
             // dgvPreUcRiskGrave
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskGrave.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskGrave.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPreUcRiskGrave.HeaderText = "4.重大";
             this.dgvPreUcRiskGrave.Name = "dgvPreUcRiskGrave";
             this.dgvPreUcRiskGrave.ReadOnly = true;
@@ -964,10 +964,10 @@
             // 
             // dgvPreUcRiskDisas
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskDisas.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskDisas.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPreUcRiskDisas.HeaderText = "5.灾难性";
             this.dgvPreUcRiskDisas.Name = "dgvPreUcRiskDisas";
             this.dgvPreUcRiskDisas.ReadOnly = true;
@@ -1187,20 +1187,6 @@
             this.textBox7.Text = "灾难性";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Parameters
-            // 
-            this.Parameters.Location = new System.Drawing.Point(4, 22);
-            this.Parameters.Name = "Parameters";
-            this.Parameters.Padding = new System.Windows.Forms.Padding(3);
-            this.Parameters.Size = new System.Drawing.Size(1358, 599);
-            this.Parameters.TabIndex = 3;
-            this.Parameters.Text = "4.项目参数";
-            this.Parameters.UseVisualStyleBackColor = true;
-            // 
-            // CoverPicDialog
-            // 
-            this.CoverPicDialog.FileName = "openFileDialog1";
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.AutoScroll = true;
@@ -1243,6 +1229,71 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(658, 290);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
+            // richTextBox17
+            // 
+            this.richTextBox17.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.richTextBox17.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.richTextBox17.Location = new System.Drawing.Point(456, 398);
+            this.richTextBox17.Name = "richTextBox17";
+            this.richTextBox17.ReadOnly = true;
+            this.richTextBox17.Size = new System.Drawing.Size(188, 114);
+            this.richTextBox17.TabIndex = 24;
+            this.richTextBox17.Text = "可接受风险";
+            // 
+            // richTextBox16
+            // 
+            this.richTextBox16.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.richTextBox16.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.richTextBox16.Location = new System.Drawing.Point(230, 398);
+            this.richTextBox16.Name = "richTextBox16";
+            this.richTextBox16.ReadOnly = true;
+            this.richTextBox16.Size = new System.Drawing.Size(219, 114);
+            this.richTextBox16.TabIndex = 23;
+            this.richTextBox16.Text = "不需要任何新增的安全措施";
+            // 
+            // richTextBox15
+            // 
+            this.richTextBox15.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.richTextBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.richTextBox15.Location = new System.Drawing.Point(456, 277);
+            this.richTextBox15.Name = "richTextBox15";
+            this.richTextBox15.ReadOnly = true;
+            this.richTextBox15.Size = new System.Drawing.Size(188, 114);
+            this.richTextBox15.TabIndex = 22;
+            this.richTextBox15.Text = "可接受风险";
+            // 
+            // richTextBox14
+            // 
+            this.richTextBox14.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.richTextBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.richTextBox14.Location = new System.Drawing.Point(230, 277);
+            this.richTextBox14.Name = "richTextBox14";
+            this.richTextBox14.ReadOnly = true;
+            this.richTextBox14.Size = new System.Drawing.Size(219, 114);
+            this.richTextBox14.TabIndex = 21;
+            this.richTextBox14.Text = "在合理的情况下采取更多的安全措施";
+            // 
+            // richTextBox13
+            // 
+            this.richTextBox13.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.richTextBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.richTextBox13.Location = new System.Drawing.Point(456, 156);
+            this.richTextBox13.Name = "richTextBox13";
+            this.richTextBox13.ReadOnly = true;
+            this.richTextBox13.Size = new System.Drawing.Size(188, 114);
+            this.richTextBox13.TabIndex = 20;
+            this.richTextBox13.Text = "不可接受风险";
+            // 
             // textBox8
             // 
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1252,7 +1303,7 @@
             this.textBox8.Location = new System.Drawing.Point(4, 4);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(121, 24);
+            this.textBox8.Size = new System.Drawing.Size(122, 24);
             this.textBox8.TabIndex = 1;
             this.textBox8.Text = "风险等级";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1264,10 +1315,10 @@
             this.textBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox9.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox9.ForeColor = System.Drawing.Color.Black;
-            this.textBox9.Location = new System.Drawing.Point(132, 4);
+            this.textBox9.Location = new System.Drawing.Point(133, 4);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(312, 24);
+            this.textBox9.Size = new System.Drawing.Size(316, 24);
             this.textBox9.TabIndex = 2;
             this.textBox9.Text = "对应的行动要求";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1280,7 +1331,7 @@
             this.textBox10.Location = new System.Drawing.Point(4, 35);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(121, 19);
+            this.textBox10.Size = new System.Drawing.Size(122, 19);
             this.textBox10.TabIndex = 3;
             this.textBox10.Text = "A";
             this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1291,10 +1342,10 @@
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox2.Location = new System.Drawing.Point(132, 35);
+            this.richTextBox2.Location = new System.Drawing.Point(133, 35);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(89, 114);
+            this.richTextBox2.Size = new System.Drawing.Size(90, 114);
             this.richTextBox2.TabIndex = 4;
             this.richTextBox2.Text = "极高\n";
             // 
@@ -1304,10 +1355,10 @@
             this.richTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox4.Location = new System.Drawing.Point(132, 156);
+            this.richTextBox4.Location = new System.Drawing.Point(133, 156);
             this.richTextBox4.Name = "richTextBox4";
             this.richTextBox4.ReadOnly = true;
-            this.richTextBox4.Size = new System.Drawing.Size(89, 114);
+            this.richTextBox4.Size = new System.Drawing.Size(90, 114);
             this.richTextBox4.TabIndex = 6;
             this.richTextBox4.Text = "很高\n";
             // 
@@ -1317,10 +1368,10 @@
             this.richTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox7.Location = new System.Drawing.Point(132, 277);
+            this.richTextBox7.Location = new System.Drawing.Point(133, 277);
             this.richTextBox7.Name = "richTextBox7";
             this.richTextBox7.ReadOnly = true;
-            this.richTextBox7.Size = new System.Drawing.Size(89, 114);
+            this.richTextBox7.Size = new System.Drawing.Size(90, 114);
             this.richTextBox7.TabIndex = 8;
             this.richTextBox7.Text = "较低";
             // 
@@ -1330,10 +1381,10 @@
             this.richTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox8.Location = new System.Drawing.Point(132, 398);
+            this.richTextBox8.Location = new System.Drawing.Point(133, 398);
             this.richTextBox8.Name = "richTextBox8";
             this.richTextBox8.ReadOnly = true;
-            this.richTextBox8.Size = new System.Drawing.Size(89, 114);
+            this.richTextBox8.Size = new System.Drawing.Size(90, 114);
             this.richTextBox8.TabIndex = 9;
             this.richTextBox8.Text = "很低";
             // 
@@ -1345,7 +1396,7 @@
             this.textBox11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox11.Location = new System.Drawing.Point(4, 156);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(121, 19);
+            this.textBox11.Size = new System.Drawing.Size(122, 19);
             this.textBox11.TabIndex = 13;
             this.textBox11.Text = "B、C";
             this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1358,7 +1409,7 @@
             this.textBox12.Location = new System.Drawing.Point(4, 277);
             this.textBox12.Name = "textBox12";
             this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(121, 19);
+            this.textBox12.Size = new System.Drawing.Size(122, 19);
             this.textBox12.TabIndex = 14;
             this.textBox12.Text = "D";
             this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1371,7 +1422,7 @@
             this.textBox13.Location = new System.Drawing.Point(4, 398);
             this.textBox13.Name = "textBox13";
             this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(121, 19);
+            this.textBox13.Size = new System.Drawing.Size(122, 19);
             this.textBox13.TabIndex = 15;
             this.textBox13.Text = "E";
             this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1382,10 +1433,10 @@
             this.richTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox10.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox10.Location = new System.Drawing.Point(228, 35);
+            this.richTextBox10.Location = new System.Drawing.Point(230, 35);
             this.richTextBox10.Name = "richTextBox10";
             this.richTextBox10.ReadOnly = true;
-            this.richTextBox10.Size = new System.Drawing.Size(216, 114);
+            this.richTextBox10.Size = new System.Drawing.Size(219, 114);
             this.richTextBox10.TabIndex = 16;
             this.richTextBox10.Text = "立即停产或采取措施";
             // 
@@ -1394,10 +1445,10 @@
             this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox14.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox14.Location = new System.Drawing.Point(451, 4);
+            this.textBox14.Location = new System.Drawing.Point(456, 4);
             this.textBox14.Name = "textBox14";
             this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(186, 24);
+            this.textBox14.Size = new System.Drawing.Size(188, 24);
             this.textBox14.TabIndex = 17;
             this.textBox14.Text = "是否可接受";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1408,10 +1459,10 @@
             this.richTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox11.Location = new System.Drawing.Point(451, 35);
+            this.richTextBox11.Location = new System.Drawing.Point(456, 35);
             this.richTextBox11.Name = "richTextBox11";
             this.richTextBox11.ReadOnly = true;
-            this.richTextBox11.Size = new System.Drawing.Size(186, 114);
+            this.richTextBox11.Size = new System.Drawing.Size(188, 114);
             this.richTextBox11.TabIndex = 18;
             this.richTextBox11.Text = "不可接受风险";
             // 
@@ -1421,77 +1472,26 @@
             this.richTextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox12.Location = new System.Drawing.Point(228, 156);
+            this.richTextBox12.Location = new System.Drawing.Point(230, 156);
             this.richTextBox12.Name = "richTextBox12";
             this.richTextBox12.ReadOnly = true;
-            this.richTextBox12.Size = new System.Drawing.Size(216, 114);
+            this.richTextBox12.Size = new System.Drawing.Size(219, 114);
             this.richTextBox12.TabIndex = 19;
             this.richTextBox12.Text = "采取安全措施降低风险(需含工程措施)";
             // 
-            // richTextBox13
+            // Parameters
             // 
-            this.richTextBox13.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.richTextBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox13.Location = new System.Drawing.Point(451, 156);
-            this.richTextBox13.Name = "richTextBox13";
-            this.richTextBox13.ReadOnly = true;
-            this.richTextBox13.Size = new System.Drawing.Size(186, 114);
-            this.richTextBox13.TabIndex = 20;
-            this.richTextBox13.Text = "不可接受风险";
+            this.Parameters.Location = new System.Drawing.Point(4, 22);
+            this.Parameters.Name = "Parameters";
+            this.Parameters.Padding = new System.Windows.Forms.Padding(3);
+            this.Parameters.Size = new System.Drawing.Size(1358, 599);
+            this.Parameters.TabIndex = 3;
+            this.Parameters.Text = "4.项目参数";
+            this.Parameters.UseVisualStyleBackColor = true;
             // 
-            // richTextBox14
+            // CoverPicDialog
             // 
-            this.richTextBox14.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.richTextBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox14.Location = new System.Drawing.Point(228, 277);
-            this.richTextBox14.Name = "richTextBox14";
-            this.richTextBox14.ReadOnly = true;
-            this.richTextBox14.Size = new System.Drawing.Size(216, 114);
-            this.richTextBox14.TabIndex = 21;
-            this.richTextBox14.Text = "在合理的情况下采取更多的安全措施";
-            // 
-            // richTextBox15
-            // 
-            this.richTextBox15.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.richTextBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox15.Location = new System.Drawing.Point(451, 277);
-            this.richTextBox15.Name = "richTextBox15";
-            this.richTextBox15.ReadOnly = true;
-            this.richTextBox15.Size = new System.Drawing.Size(186, 114);
-            this.richTextBox15.TabIndex = 22;
-            this.richTextBox15.Text = "可接受风险";
-            // 
-            // richTextBox16
-            // 
-            this.richTextBox16.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.richTextBox16.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox16.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox16.Location = new System.Drawing.Point(228, 398);
-            this.richTextBox16.Name = "richTextBox16";
-            this.richTextBox16.ReadOnly = true;
-            this.richTextBox16.Size = new System.Drawing.Size(216, 114);
-            this.richTextBox16.TabIndex = 23;
-            this.richTextBox16.Text = "不需要任何新增的安全措施";
-            // 
-            // richTextBox17
-            // 
-            this.richTextBox17.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.richTextBox17.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox17.Location = new System.Drawing.Point(451, 398);
-            this.richTextBox17.Name = "richTextBox17";
-            this.richTextBox17.ReadOnly = true;
-            this.richTextBox17.Size = new System.Drawing.Size(186, 114);
-            this.richTextBox17.TabIndex = 24;
-            this.richTextBox17.Text = "可接受风险";
+            this.CoverPicDialog.FileName = "openFileDialog1";
             // 
             // UcPrepareControl
             // 
