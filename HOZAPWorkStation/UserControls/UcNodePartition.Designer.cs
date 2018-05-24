@@ -365,7 +365,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label8.Location = new System.Drawing.Point(50, 320);
+            this.label8.Location = new System.Drawing.Point(44, 320);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 12);
             this.label8.TabIndex = 35;
@@ -384,7 +384,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label7.Location = new System.Drawing.Point(50, 230);
+            this.label7.Location = new System.Drawing.Point(44, 230);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 12);
             this.label7.TabIndex = 33;
