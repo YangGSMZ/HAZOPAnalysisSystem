@@ -103,5 +103,15 @@ namespace HOZAPWorkStation.UserControls
             this.dgvPreUcRisk.Rows[index].Cells[6].Value = "D";
             this.dgvPreUcRisk.Rows[index].Cells[6].Style.BackColor = Color.LightBlue;
         }
+        /// <summary>
+        /// 用于绘制行的序号
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvPreParamSelable_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            //SolidBrush b = new SolidBrush(this.dgvPreParamSelable.RowHeadersDefaultCellStyle.ForeColor);
+            //e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dataGridView1.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 20, e.RowBounds.Location.Y + 4);
+        }
     }
 }
