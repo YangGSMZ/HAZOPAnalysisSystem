@@ -35,7 +35,7 @@
 		}
 
 3.项目准备
-	*此项使用用户控件动态添加，因次建立一个用户控件PrepareUserControl,包含项目
+	*此项使用用户控件动态添加，因次建立一个用户控件UcPrepareControl,包含项目
 	 准备里的所有表项：项目基本信息BaseInfo、参与人员Participants、
 	 风险矩阵RiskMatrix、项目参数Parameters。
 	3.1项目基本信息表项
@@ -77,13 +77,13 @@
 		}
 		DataGridView类（name）
 		{
-			DataGridView名：dgvPreUc；
+			DataGridView名：dgvPreUcPar；
 			列名：
 			{
 				序号dgvPreParticipantId，姓名dgvPreParticipantName，
 				专业dgvPreParticipantMajor,职务dgvPreParticipantDuty，
 				公司/单位dgvPreParticipantCompany，
-				。所属部门dgvPreParticipantDepartment；
+				所属部门dgvPreParticipantDepartment；
 			}
 		}
 	
