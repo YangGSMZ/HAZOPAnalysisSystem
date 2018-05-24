@@ -33,19 +33,25 @@
             this.menuSsripToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.initPanel = new System.Windows.Forms.Panel();
             this.tpSysteamIndex = new System.Windows.Forms.TabPage();
-            this.openBtn = new System.Windows.Forms.Button();
-            this.nodeBtn = new System.Windows.Forms.Button();
-            this.analysisBtn = new System.Windows.Forms.Button();
-            this.printBtn = new System.Windows.Forms.Button();
-            this.preBtn = new System.Windows.Forms.Button();
             this.newBtn = new System.Windows.Forms.Button();
+            this.preBtn = new System.Windows.Forms.Button();
+            this.printBtn = new System.Windows.Forms.Button();
+            this.analysisBtn = new System.Windows.Forms.Button();
+            this.nodeBtn = new System.Windows.Forms.Button();
+            this.openBtn = new System.Windows.Forms.Button();
             this.MainTableControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.ucPrepareControl2 = new HOZAPWorkStation.UserControls.UcPrepareControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ucNodePartition1 = new HOZAPWorkStation.UserControls.UcNodePartition();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.ucAnalysis1 = new HOZAPWorkStation.UserControls.UcAnalysis();
             this.initMenuStrip.SuspendLayout();
             this.tpSysteamIndex.SuspendLayout();
             this.MainTableControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // initMenuStrip
@@ -90,15 +96,45 @@
             this.tpSysteamIndex.TabIndex = 0;
             this.tpSysteamIndex.Text = "系统首页";
             // 
-            // openBtn
+            // newBtn
             // 
-            this.openBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.openBtn.Location = new System.Drawing.Point(94, 48);
-            this.openBtn.Name = "openBtn";
-            this.openBtn.Size = new System.Drawing.Size(75, 75);
-            this.openBtn.TabIndex = 4;
-            this.openBtn.Text = "打开";
-            this.openBtn.UseVisualStyleBackColor = false;
+            this.newBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.newBtn.Location = new System.Drawing.Point(94, 211);
+            this.newBtn.Name = "newBtn";
+            this.newBtn.Size = new System.Drawing.Size(75, 75);
+            this.newBtn.TabIndex = 11;
+            this.newBtn.Text = "新建";
+            this.newBtn.UseVisualStyleBackColor = false;
+            // 
+            // preBtn
+            // 
+            this.preBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.preBtn.Location = new System.Drawing.Point(213, 130);
+            this.preBtn.Name = "preBtn";
+            this.preBtn.Size = new System.Drawing.Size(75, 75);
+            this.preBtn.TabIndex = 5;
+            this.preBtn.Text = "准备";
+            this.preBtn.UseVisualStyleBackColor = false;
+            // 
+            // printBtn
+            // 
+            this.printBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.printBtn.Location = new System.Drawing.Point(591, 130);
+            this.printBtn.Name = "printBtn";
+            this.printBtn.Size = new System.Drawing.Size(75, 75);
+            this.printBtn.TabIndex = 8;
+            this.printBtn.Text = "打印";
+            this.printBtn.UseVisualStyleBackColor = false;
+            // 
+            // analysisBtn
+            // 
+            this.analysisBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.analysisBtn.Location = new System.Drawing.Point(453, 130);
+            this.analysisBtn.Name = "analysisBtn";
+            this.analysisBtn.Size = new System.Drawing.Size(75, 75);
+            this.analysisBtn.TabIndex = 7;
+            this.analysisBtn.Text = "分析";
+            this.analysisBtn.UseVisualStyleBackColor = false;
             // 
             // nodeBtn
             // 
@@ -111,50 +147,22 @@
             this.nodeBtn.UseVisualStyleBackColor = false;
             this.nodeBtn.Click += new System.EventHandler(this.nodeBtn_Click);
             // 
-            // analysisBtn
+            // openBtn
             // 
-            this.analysisBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.analysisBtn.Location = new System.Drawing.Point(453, 130);
-            this.analysisBtn.Name = "analysisBtn";
-            this.analysisBtn.Size = new System.Drawing.Size(75, 75);
-            this.analysisBtn.TabIndex = 7;
-            this.analysisBtn.Text = "分析";
-            this.analysisBtn.UseVisualStyleBackColor = false;
-            // 
-            // printBtn
-            // 
-            this.printBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.printBtn.Location = new System.Drawing.Point(591, 130);
-            this.printBtn.Name = "printBtn";
-            this.printBtn.Size = new System.Drawing.Size(75, 75);
-            this.printBtn.TabIndex = 8;
-            this.printBtn.Text = "打印";
-            this.printBtn.UseVisualStyleBackColor = false;
-            // 
-            // preBtn
-            // 
-            this.preBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.preBtn.Location = new System.Drawing.Point(213, 130);
-            this.preBtn.Name = "preBtn";
-            this.preBtn.Size = new System.Drawing.Size(75, 75);
-            this.preBtn.TabIndex = 5;
-            this.preBtn.Text = "准备";
-            this.preBtn.UseVisualStyleBackColor = false;
-            // 
-            // newBtn
-            // 
-            this.newBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.newBtn.Location = new System.Drawing.Point(94, 211);
-            this.newBtn.Name = "newBtn";
-            this.newBtn.Size = new System.Drawing.Size(75, 75);
-            this.newBtn.TabIndex = 11;
-            this.newBtn.Text = "新建";
-            this.newBtn.UseVisualStyleBackColor = false;
+            this.openBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.openBtn.Location = new System.Drawing.Point(94, 48);
+            this.openBtn.Name = "openBtn";
+            this.openBtn.Size = new System.Drawing.Size(75, 75);
+            this.openBtn.TabIndex = 4;
+            this.openBtn.Text = "打开";
+            this.openBtn.UseVisualStyleBackColor = false;
             // 
             // MainTableControl
             // 
             this.MainTableControl.Controls.Add(this.tpSysteamIndex);
             this.MainTableControl.Controls.Add(this.tabPage1);
+            this.MainTableControl.Controls.Add(this.tabPage2);
+            this.MainTableControl.Controls.Add(this.tabPage3);
             this.MainTableControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTableControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.MainTableControl.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -182,10 +190,50 @@
             // 
             this.ucPrepareControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucPrepareControl2.Location = new System.Drawing.Point(3, 3);
-            this.ucPrepareControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucPrepareControl2.Margin = new System.Windows.Forms.Padding(4);
             this.ucPrepareControl2.Name = "ucPrepareControl2";
             this.ucPrepareControl2.Size = new System.Drawing.Size(786, 355);
             this.ucPrepareControl2.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.ucNodePartition1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(792, 361);
+            this.tabPage2.TabIndex = 2;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ucNodePartition1
+            // 
+            this.ucNodePartition1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucNodePartition1.Location = new System.Drawing.Point(3, 3);
+            this.ucNodePartition1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucNodePartition1.Name = "ucNodePartition1";
+            this.ucNodePartition1.Size = new System.Drawing.Size(786, 355);
+            this.ucNodePartition1.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.ucAnalysis1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(792, 361);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // ucAnalysis1
+            // 
+            this.ucAnalysis1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAnalysis1.Location = new System.Drawing.Point(3, 3);
+            this.ucAnalysis1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucAnalysis1.Name = "ucAnalysis1";
+            this.ucAnalysis1.Size = new System.Drawing.Size(786, 355);
+            this.ucAnalysis1.TabIndex = 0;
             // 
             // InitialInterface
             // 
@@ -207,6 +255,8 @@
             this.tpSysteamIndex.ResumeLayout(false);
             this.MainTableControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +278,9 @@
         private System.Windows.Forms.TabControl MainTableControl;
         private System.Windows.Forms.TabPage tabPage1;
         private UserControls.UcPrepareControl ucPrepareControl2;
+        private System.Windows.Forms.TabPage tabPage2;
+        private UserControls.UcNodePartition ucNodePartition1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private UserControls.UcAnalysis ucAnalysis1;
     }
 }
