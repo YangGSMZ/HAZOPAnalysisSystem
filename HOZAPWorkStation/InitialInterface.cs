@@ -98,6 +98,7 @@ namespace HOZAPWorkStation
                 tp.Controls.Add(uc);
                 tp.Name = "tpNodePartition";
                 tp.Text = "节点划分";
+                tp.Font = new Font("宋体",9);
                 this.MainTableControl.Controls.Add(tp);
                 this.MainTableControl.SelectTab("tpNodePartition");
                 setTag(this);
@@ -195,6 +196,7 @@ namespace HOZAPWorkStation
                 tp.Controls.Add(uc);
                 tp.Name = "tpPrepare";
                 tp.Text = "项目准备";
+                tp.Font = new Font("宋体", 9);
                 this.MainTableControl.Controls.Add(tp);
                 this.MainTableControl.SelectTab("tpPrepare");
                 setTag(this);
