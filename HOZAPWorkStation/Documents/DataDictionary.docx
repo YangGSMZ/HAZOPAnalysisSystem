@@ -69,6 +69,7 @@
 			保存tsbBaseInfoSave，下一步tspBaseInfoNext；
 		}
 	3.2参与人员表项
+		TabPage（name）命名：Participants；
 		ToolStrip类Itemns（name）
 		{
 			节点划分tspPreNoteSplit，帮助tspPreHelp，关闭tspPreClose，
@@ -86,6 +87,20 @@
 				所属部门dgvPreParticipantDepartment；
 			}
 		}
+	3.3风险矩阵
+		TabPage（name）命名：RiskMatrix；
+		DataGridView类（name）
+		{
+			DataGridView名：dgvPreUcRisk；
+			列名：
+			{
+				概率dgvPreUcRiskProb，概率说明dgvPreUcRiskProIntro，
+				轻微dgvPreUcRiskLight,较重dgvPreUcRiskOverLig，
+				严重dgvPreUcRiskSerio，重大dgvPreUcRiskGrave，
+				严重性dgvPreUcRiskDisas；
+			}
+		}
+		[其余控件，编码中未使用，不做声明]
 	
 4.节点划分
 	*此项使用用户控件动态添加，因此建立一个用户控件UcNodePartition,此控件主要是为了增加节点
@@ -135,10 +150,8 @@
 			{
 				ToolStrip名:tsNdoePartition;
 				Items{
-
 						增加(A)tsbAdd,编辑(E)tsbEdite,删除(D)tsbDel,
 						取消(C)tsbConcel,保存(S)tsbSave,下一步tsbNext
-
 					 }
 			 }
 		 }
