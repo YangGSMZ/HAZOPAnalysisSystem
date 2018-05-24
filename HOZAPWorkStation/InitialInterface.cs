@@ -90,7 +90,7 @@ namespace HOZAPWorkStation
         private void nodeBtn_Click(object sender, EventArgs e)
         {
            
-            if (!MainTableControl.Controls.ContainsKey("节点划分"))
+            if (!MainTableControl.Controls.ContainsKey("tpNodePartition"))
             {
                 UcNodePartition uc = new UcNodePartition();
                 TabPage tp = new TabPage();
@@ -101,7 +101,6 @@ namespace HOZAPWorkStation
                 this.MainTableControl.Controls.Add(tp);
                 this.MainTableControl.SelectTab("tpNodePartition");
                 setTag(this);
-               // InitialInterface_Load(sender,e);
             }
             else
             {

@@ -86,6 +86,64 @@
 				。所属部门dgvPreParticipantDepartment；
 			}
 		}
+	
+4.节点划分
+	*此项使用用户控件动态添加，因此建立一个用户控件UcNodePartition,此控件主要是为了增加节点
+	 控件集合：[Label标签编码过程中未使用，不做声明]
+	 首先是:
+	 ToolStrip类
+	{
+		ToolStrip名:tsNdoePartition;
+		Items{
+
+		hazop分析:tsbHaZop;帮助:tsbHelp;关闭tsbClose;
+
+		}
+	 }
+	 然后左侧是：
+	 TabControl类（name）名:tcNode
+	 {
+		TabPage 名:tpNode
+		{
+			TreeView 名:tvNode
+		}
+	 }
+	 右侧是:
+	 TabControl类（name）名:tcNodeInfo
+	 {
+		TabPage 名:tpNodeInfo
+		{
+			控件集合：[Label标签与[Panel}编码过程中未使用，不做声明]
+			Textbox类（name）：
+			{
+				节点编号txtNodeId，节点名称txtNodeName，节点描述txtNdoeDesc，
+			    节点设计意图txtNodeUsage，节点生成时间:txtNodeCreateDate，选择模板txtSelectModel，
+			}
+
+			RadioButton类（name）：
+			{
+				连续流程rbContinuous，间歇流程rbInterim；
+			}
+			Button类（name）：
+			{
+				节点生成时间CreateNodeDatebtn;选择模板SelectModelbtn，
+			}
+			OpenFileDialog类（name）
+			{
+				ofdSelectModel；
+			}
+			ToolStrip类
+			{
+				ToolStrip名:tsNdoePartition;
+				Items{
+
+						增加(A)tsbAdd,编辑(E)tsbEdite,删除(D)tsbDel,
+						取消(C)tsbConcel,保存(S)tsbSave,下一步tsbNext
+
+					 }
+			 }
+		 }
+	  }
 		
 		
 	    			   
