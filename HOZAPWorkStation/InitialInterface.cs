@@ -30,7 +30,7 @@ namespace HOZAPWorkStation
         /// <param name="controls">窗体上的控件集</param>
         private void setTag(Control controls)
         {
-            foreach (Control control in controls.Controls)
+            foreach (Control control in this.tpSysteamIndex.Controls)
             {
                 control.Tag = control.Width + ":" + control.Height + ":" + control.Left + ":" + control.Top + ":" + control.Font.Size;
                 if (control.Controls.Count > 0)
@@ -49,7 +49,7 @@ namespace HOZAPWorkStation
         private void setControls(float newx, float newy, Control controls)
         {
             //foreach遍历控件集，重新设定控件值
-            foreach (Control control in controls.Controls)
+            foreach (Control control in this.tpSysteamIndex.Controls)
             {
                 string[] contag = control.Tag.ToString().Split(new char[] { ':' });
                 float param = System.Convert.ToSingle(contag[0]) * newx; //根据窗体缩放比例确定控件属性值
