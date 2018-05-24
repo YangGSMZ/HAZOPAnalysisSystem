@@ -121,6 +121,7 @@
             this.preBtn.TabIndex = 5;
             this.preBtn.Text = "准备";
             this.preBtn.UseVisualStyleBackColor = false;
+            this.preBtn.Click += new System.EventHandler(this.preBtn_Click);
             // 
             // printBtn
             // 

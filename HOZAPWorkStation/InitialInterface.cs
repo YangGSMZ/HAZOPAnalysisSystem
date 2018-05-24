@@ -185,6 +185,25 @@ namespace HOZAPWorkStation
             }
         }
 
-       
+        private void preBtn_Click(object sender, EventArgs e)
+        {
+            if (!MainTableControl.Controls.ContainsKey("tpPrepare"))
+            {
+                UcPrepareControl uc = new UcPrepareControl();
+                TabPage tp = new TabPage();
+                uc.Dock = DockStyle.Fill;
+                tp.Controls.Add(uc);
+                tp.Name = "tpPrepare";
+                tp.Text = "项目准备";
+                this.MainTableControl.Controls.Add(tp);
+                this.MainTableControl.SelectTab("tpPrepare");
+                setTag(this);
+            }
+            else
+            {
+                this.MainTableControl.SelectTab("tpPrepare");
+
+            }
+        }
     }
 }

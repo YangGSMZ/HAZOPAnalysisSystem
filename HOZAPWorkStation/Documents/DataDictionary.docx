@@ -94,10 +94,9 @@
 	 ToolStrip类
 	{
 		ToolStrip名:tsNdoePartition;
-		Items{
-
-		hazop分析:tsbHaZop;帮助:tsbHelp;关闭tsbClose;
-
+		Items
+		{
+			hazop分析:tsbHaZop;帮助:tsbHelp;关闭tsbClose;
 		}
 	 }
 	 然后左侧是：

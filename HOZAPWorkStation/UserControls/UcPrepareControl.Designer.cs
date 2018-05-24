@@ -759,6 +759,7 @@
             this.dgvPreUcPar.Location = new System.Drawing.Point(3, 3);
             this.dgvPreUcPar.Name = "dgvPreUcPar";
             this.dgvPreUcPar.RowTemplate.Height = 23;
+            this.dgvPreUcPar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvPreUcPar.Size = new System.Drawing.Size(1352, 593);
             this.dgvPreUcPar.TabIndex = 0;
             // 
@@ -881,7 +882,6 @@
             this.dgvPreUcRisk.RowTemplate.Height = 30;
             this.dgvPreUcRisk.RowTemplate.ReadOnly = true;
             this.dgvPreUcRisk.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPreUcRisk.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvPreUcRisk.ShowEditingIcon = false;
             this.dgvPreUcRisk.Size = new System.Drawing.Size(1348, 291);
             this.dgvPreUcRisk.TabIndex = 0;
@@ -1235,10 +1235,10 @@
             this.richTextBox17.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox17.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox17.Location = new System.Drawing.Point(456, 398);
+            this.richTextBox17.Location = new System.Drawing.Point(455, 398);
             this.richTextBox17.Name = "richTextBox17";
             this.richTextBox17.ReadOnly = true;
-            this.richTextBox17.Size = new System.Drawing.Size(188, 114);
+            this.richTextBox17.Size = new System.Drawing.Size(187, 114);
             this.richTextBox17.TabIndex = 24;
             this.richTextBox17.Text = "可接受风险";
             // 
@@ -1251,7 +1251,7 @@
             this.richTextBox16.Location = new System.Drawing.Point(230, 398);
             this.richTextBox16.Name = "richTextBox16";
             this.richTextBox16.ReadOnly = true;
-            this.richTextBox16.Size = new System.Drawing.Size(219, 114);
+            this.richTextBox16.Size = new System.Drawing.Size(218, 114);
             this.richTextBox16.TabIndex = 23;
             this.richTextBox16.Text = "不需要任何新增的安全措施";
             // 
@@ -1261,10 +1261,10 @@
             this.richTextBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox15.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox15.Location = new System.Drawing.Point(456, 277);
+            this.richTextBox15.Location = new System.Drawing.Point(455, 277);
             this.richTextBox15.Name = "richTextBox15";
             this.richTextBox15.ReadOnly = true;
-            this.richTextBox15.Size = new System.Drawing.Size(188, 114);
+            this.richTextBox15.Size = new System.Drawing.Size(187, 114);
             this.richTextBox15.TabIndex = 22;
             this.richTextBox15.Text = "可接受风险";
             // 
@@ -1277,7 +1277,7 @@
             this.richTextBox14.Location = new System.Drawing.Point(230, 277);
             this.richTextBox14.Name = "richTextBox14";
             this.richTextBox14.ReadOnly = true;
-            this.richTextBox14.Size = new System.Drawing.Size(219, 114);
+            this.richTextBox14.Size = new System.Drawing.Size(218, 114);
             this.richTextBox14.TabIndex = 21;
             this.richTextBox14.Text = "在合理的情况下采取更多的安全措施";
             // 
@@ -1287,10 +1287,10 @@
             this.richTextBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox13.Location = new System.Drawing.Point(456, 156);
+            this.richTextBox13.Location = new System.Drawing.Point(455, 156);
             this.richTextBox13.Name = "richTextBox13";
             this.richTextBox13.ReadOnly = true;
-            this.richTextBox13.Size = new System.Drawing.Size(188, 114);
+            this.richTextBox13.Size = new System.Drawing.Size(187, 114);
             this.richTextBox13.TabIndex = 20;
             this.richTextBox13.Text = "不可接受风险";
             // 
@@ -1318,7 +1318,7 @@
             this.textBox9.Location = new System.Drawing.Point(133, 4);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(316, 24);
+            this.textBox9.Size = new System.Drawing.Size(315, 24);
             this.textBox9.TabIndex = 2;
             this.textBox9.Text = "对应的行动要求";
             this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1436,7 +1436,7 @@
             this.richTextBox10.Location = new System.Drawing.Point(230, 35);
             this.richTextBox10.Name = "richTextBox10";
             this.richTextBox10.ReadOnly = true;
-            this.richTextBox10.Size = new System.Drawing.Size(219, 114);
+            this.richTextBox10.Size = new System.Drawing.Size(218, 114);
             this.richTextBox10.TabIndex = 16;
             this.richTextBox10.Text = "立即停产或采取措施";
             // 
@@ -1445,10 +1445,10 @@
             this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox14.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox14.Location = new System.Drawing.Point(456, 4);
+            this.textBox14.Location = new System.Drawing.Point(455, 4);
             this.textBox14.Name = "textBox14";
             this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(188, 24);
+            this.textBox14.Size = new System.Drawing.Size(187, 24);
             this.textBox14.TabIndex = 17;
             this.textBox14.Text = "是否可接受";
             this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1459,10 +1459,10 @@
             this.richTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox11.Location = new System.Drawing.Point(456, 35);
+            this.richTextBox11.Location = new System.Drawing.Point(455, 35);
             this.richTextBox11.Name = "richTextBox11";
             this.richTextBox11.ReadOnly = true;
-            this.richTextBox11.Size = new System.Drawing.Size(188, 114);
+            this.richTextBox11.Size = new System.Drawing.Size(187, 114);
             this.richTextBox11.TabIndex = 18;
             this.richTextBox11.Text = "不可接受风险";
             // 
@@ -1475,7 +1475,7 @@
             this.richTextBox12.Location = new System.Drawing.Point(230, 156);
             this.richTextBox12.Name = "richTextBox12";
             this.richTextBox12.ReadOnly = true;
-            this.richTextBox12.Size = new System.Drawing.Size(219, 114);
+            this.richTextBox12.Size = new System.Drawing.Size(218, 114);
             this.richTextBox12.TabIndex = 19;
             this.richTextBox12.Text = "采取安全措施降低风险(需含工程措施)";
             // 
