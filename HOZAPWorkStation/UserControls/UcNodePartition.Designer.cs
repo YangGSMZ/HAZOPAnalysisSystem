@@ -36,6 +36,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tcNode = new System.Windows.Forms.TabControl();
             this.tpNode = new System.Windows.Forms.TabPage();
+            this.trvUcNodePart = new System.Windows.Forms.TreeView();
             this.tvNode = new System.Windows.Forms.TreeView();
             this.tcNodeInfo = new System.Windows.Forms.TabControl();
             this.tpNodeInfo = new System.Windows.Forms.TabPage();
@@ -47,29 +48,29 @@
             this.tsbCancel = new System.Windows.Forms.ToolStripButton();
             this.tsbSave = new System.Windows.Forms.ToolStripButton();
             this.tsbNext = new System.Windows.Forms.ToolStripButton();
-            this.ofdSelectModel = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNodeId = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.rbContinuous = new System.Windows.Forms.RadioButton();
-            this.rbInterim = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtNodeName = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtNodeDesc = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtNodeUsage = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtNodeCreateDate = new System.Windows.Forms.TextBox();
-            this.CreateNodeDatebtn = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtSelectModel = new System.Windows.Forms.TextBox();
-            this.SelectModelbtn = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.SelectModelbtn = new System.Windows.Forms.Button();
+            this.txtSelectModel = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.CreateNodeDatebtn = new System.Windows.Forms.Button();
+            this.txtNodeCreateDate = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtNodeUsage = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNodeDesc = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtNodeName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.rbInterim = new System.Windows.Forms.RadioButton();
+            this.rbContinuous = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtNodeId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ofdSelectModel = new System.Windows.Forms.OpenFileDialog();
             this.tsNodePartition.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -152,6 +153,7 @@
             // 
             // tpNode
             // 
+            this.tpNode.Controls.Add(this.trvUcNodePart);
             this.tpNode.Controls.Add(this.tvNode);
             this.tpNode.Location = new System.Drawing.Point(4, 22);
             this.tpNode.Name = "tpNode";
@@ -160,6 +162,14 @@
             this.tpNode.TabIndex = 1;
             this.tpNode.Text = "节点列表";
             this.tpNode.UseVisualStyleBackColor = true;
+            // 
+            // trvUcNodePart
+            // 
+            this.trvUcNodePart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trvUcNodePart.Location = new System.Drawing.Point(3, 3);
+            this.trvUcNodePart.Name = "trvUcNodePart";
+            this.trvUcNodePart.Size = new System.Drawing.Size(197, 484);
+            this.trvUcNodePart.TabIndex = 1;
             // 
             // tvNode
             // 
@@ -268,10 +278,6 @@
             this.tsbNext.Size = new System.Drawing.Size(64, 24);
             this.tsbNext.Text = "下一步";
             // 
-            // ofdSelectModel
-            // 
-            this.ofdSelectModel.FileName = "openFileDialog1";
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label11);
@@ -301,159 +307,42 @@
             this.panel1.Size = new System.Drawing.Size(655, 452);
             this.panel1.TabIndex = 1;
             // 
-            // label1
+            // label11
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(52, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(11, 12);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "*";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(24, 431);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(116, 12);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "注：带*为必填项目";
             // 
-            // label2
+            // label10
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(70, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 12);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "节点编号：";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(44, 419);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 12);
+            this.label10.TabIndex = 41;
             // 
-            // txtNodeId
+            // SelectModelbtn
             // 
-            this.txtNodeId.Location = new System.Drawing.Point(136, 16);
-            this.txtNodeId.Name = "txtNodeId";
-            this.txtNodeId.Size = new System.Drawing.Size(166, 21);
-            this.txtNodeId.TabIndex = 24;
+            this.SelectModelbtn.Location = new System.Drawing.Point(318, 354);
+            this.SelectModelbtn.Name = "SelectModelbtn";
+            this.SelectModelbtn.Size = new System.Drawing.Size(69, 23);
+            this.SelectModelbtn.TabIndex = 40;
+            this.SelectModelbtn.Text = "浏览模板";
+            this.SelectModelbtn.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // txtSelectModel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label3.Location = new System.Drawing.Point(70, 60);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 12);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "节点类别：";
-            // 
-            // rbContinuous
-            // 
-            this.rbContinuous.AutoSize = true;
-            this.rbContinuous.Location = new System.Drawing.Point(138, 58);
-            this.rbContinuous.Name = "rbContinuous";
-            this.rbContinuous.Size = new System.Drawing.Size(71, 16);
-            this.rbContinuous.TabIndex = 26;
-            this.rbContinuous.TabStop = true;
-            this.rbContinuous.Text = "连续流程";
-            this.rbContinuous.UseVisualStyleBackColor = true;
-            // 
-            // rbInterim
-            // 
-            this.rbInterim.AutoSize = true;
-            this.rbInterim.Location = new System.Drawing.Point(235, 58);
-            this.rbInterim.Name = "rbInterim";
-            this.rbInterim.Size = new System.Drawing.Size(71, 16);
-            this.rbInterim.TabIndex = 27;
-            this.rbInterim.TabStop = true;
-            this.rbInterim.Text = "间歇流程";
-            this.rbInterim.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label4.Location = new System.Drawing.Point(70, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 12);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "节点名称：";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(53, 100);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(11, 12);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "*";
-            // 
-            // txtNodeName
-            // 
-            this.txtNodeName.Location = new System.Drawing.Point(136, 96);
-            this.txtNodeName.Name = "txtNodeName";
-            this.txtNodeName.Size = new System.Drawing.Size(263, 21);
-            this.txtNodeName.TabIndex = 30;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label6.Location = new System.Drawing.Point(70, 140);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 12);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "节点描述：";
-            // 
-            // txtNodeDesc
-            // 
-            this.txtNodeDesc.Location = new System.Drawing.Point(136, 136);
-            this.txtNodeDesc.Multiline = true;
-            this.txtNodeDesc.Name = "txtNodeDesc";
-            this.txtNodeDesc.Size = new System.Drawing.Size(263, 70);
-            this.txtNodeDesc.TabIndex = 32;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label7.Location = new System.Drawing.Point(44, 230);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 12);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "节点设计意图：";
-            // 
-            // txtNodeUsage
-            // 
-            this.txtNodeUsage.Location = new System.Drawing.Point(136, 226);
-            this.txtNodeUsage.Multiline = true;
-            this.txtNodeUsage.Name = "txtNodeUsage";
-            this.txtNodeUsage.Size = new System.Drawing.Size(263, 70);
-            this.txtNodeUsage.TabIndex = 34;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label8.Location = new System.Drawing.Point(44, 320);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 12);
-            this.label8.TabIndex = 35;
-            this.label8.Text = "节点生成日期：";
-            // 
-            // txtNodeCreateDate
-            // 
-            this.txtNodeCreateDate.Location = new System.Drawing.Point(136, 316);
-            this.txtNodeCreateDate.Name = "txtNodeCreateDate";
-            this.txtNodeCreateDate.Size = new System.Drawing.Size(166, 21);
-            this.txtNodeCreateDate.TabIndex = 36;
-            // 
-            // CreateNodeDatebtn
-            // 
-            this.CreateNodeDatebtn.Location = new System.Drawing.Point(320, 316);
-            this.CreateNodeDatebtn.Name = "CreateNodeDatebtn";
-            this.CreateNodeDatebtn.Size = new System.Drawing.Size(36, 23);
-            this.CreateNodeDatebtn.TabIndex = 37;
-            this.CreateNodeDatebtn.Text = "...";
-            this.CreateNodeDatebtn.UseVisualStyleBackColor = true;
+            this.txtSelectModel.Location = new System.Drawing.Point(136, 356);
+            this.txtSelectModel.Name = "txtSelectModel";
+            this.txtSelectModel.Size = new System.Drawing.Size(166, 21);
+            this.txtSelectModel.TabIndex = 39;
             // 
             // label9
             // 
@@ -466,42 +355,163 @@
             this.label9.TabIndex = 38;
             this.label9.Text = "选择模板：";
             // 
-            // txtSelectModel
+            // CreateNodeDatebtn
             // 
-            this.txtSelectModel.Location = new System.Drawing.Point(136, 356);
-            this.txtSelectModel.Name = "txtSelectModel";
-            this.txtSelectModel.Size = new System.Drawing.Size(166, 21);
-            this.txtSelectModel.TabIndex = 39;
+            this.CreateNodeDatebtn.Location = new System.Drawing.Point(320, 316);
+            this.CreateNodeDatebtn.Name = "CreateNodeDatebtn";
+            this.CreateNodeDatebtn.Size = new System.Drawing.Size(36, 23);
+            this.CreateNodeDatebtn.TabIndex = 37;
+            this.CreateNodeDatebtn.Text = "...";
+            this.CreateNodeDatebtn.UseVisualStyleBackColor = true;
             // 
-            // SelectModelbtn
+            // txtNodeCreateDate
             // 
-            this.SelectModelbtn.Location = new System.Drawing.Point(318, 354);
-            this.SelectModelbtn.Name = "SelectModelbtn";
-            this.SelectModelbtn.Size = new System.Drawing.Size(69, 23);
-            this.SelectModelbtn.TabIndex = 40;
-            this.SelectModelbtn.Text = "浏览模板";
-            this.SelectModelbtn.UseVisualStyleBackColor = true;
+            this.txtNodeCreateDate.Location = new System.Drawing.Point(136, 316);
+            this.txtNodeCreateDate.Name = "txtNodeCreateDate";
+            this.txtNodeCreateDate.Size = new System.Drawing.Size(166, 21);
+            this.txtNodeCreateDate.TabIndex = 36;
             // 
-            // label10
+            // label8
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(44, 419);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 12);
-            this.label10.TabIndex = 41;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label8.Location = new System.Drawing.Point(44, 320);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 12);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "节点生成日期：";
             // 
-            // label11
+            // txtNodeUsage
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(24, 431);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(116, 12);
-            this.label11.TabIndex = 42;
-            this.label11.Text = "注：带*为必填项目";
+            this.txtNodeUsage.Location = new System.Drawing.Point(136, 226);
+            this.txtNodeUsage.Multiline = true;
+            this.txtNodeUsage.Name = "txtNodeUsage";
+            this.txtNodeUsage.Size = new System.Drawing.Size(263, 70);
+            this.txtNodeUsage.TabIndex = 34;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label7.Location = new System.Drawing.Point(44, 230);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 12);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "节点设计意图：";
+            // 
+            // txtNodeDesc
+            // 
+            this.txtNodeDesc.Location = new System.Drawing.Point(136, 136);
+            this.txtNodeDesc.Multiline = true;
+            this.txtNodeDesc.Name = "txtNodeDesc";
+            this.txtNodeDesc.Size = new System.Drawing.Size(263, 70);
+            this.txtNodeDesc.TabIndex = 32;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label6.Location = new System.Drawing.Point(70, 140);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 12);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "节点描述：";
+            // 
+            // txtNodeName
+            // 
+            this.txtNodeName.Location = new System.Drawing.Point(136, 96);
+            this.txtNodeName.Name = "txtNodeName";
+            this.txtNodeName.Size = new System.Drawing.Size(263, 21);
+            this.txtNodeName.TabIndex = 30;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(53, 100);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(11, 12);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label4.Location = new System.Drawing.Point(70, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 12);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "节点名称：";
+            // 
+            // rbInterim
+            // 
+            this.rbInterim.AutoSize = true;
+            this.rbInterim.Location = new System.Drawing.Point(235, 58);
+            this.rbInterim.Name = "rbInterim";
+            this.rbInterim.Size = new System.Drawing.Size(71, 16);
+            this.rbInterim.TabIndex = 27;
+            this.rbInterim.TabStop = true;
+            this.rbInterim.Text = "间歇流程";
+            this.rbInterim.UseVisualStyleBackColor = true;
+            // 
+            // rbContinuous
+            // 
+            this.rbContinuous.AutoSize = true;
+            this.rbContinuous.Location = new System.Drawing.Point(138, 58);
+            this.rbContinuous.Name = "rbContinuous";
+            this.rbContinuous.Size = new System.Drawing.Size(71, 16);
+            this.rbContinuous.TabIndex = 26;
+            this.rbContinuous.TabStop = true;
+            this.rbContinuous.Text = "连续流程";
+            this.rbContinuous.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label3.Location = new System.Drawing.Point(70, 60);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 12);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "节点类别：";
+            // 
+            // txtNodeId
+            // 
+            this.txtNodeId.Location = new System.Drawing.Point(136, 16);
+            this.txtNodeId.Name = "txtNodeId";
+            this.txtNodeId.Size = new System.Drawing.Size(166, 21);
+            this.txtNodeId.TabIndex = 24;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label2.Location = new System.Drawing.Point(70, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 12);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "节点编号：";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(52, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 12);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "*";
+            // 
+            // ofdSelectModel
+            // 
+            this.ofdSelectModel.FileName = "openFileDialog1";
             // 
             // UcNodePartition
             // 
@@ -575,5 +585,6 @@
         private System.Windows.Forms.TextBox txtNodeId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TreeView trvUcNodePart;
     }
 }

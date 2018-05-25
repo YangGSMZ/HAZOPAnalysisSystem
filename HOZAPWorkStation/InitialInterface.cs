@@ -157,7 +157,7 @@ namespace HOZAPWorkStation
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
            
         }

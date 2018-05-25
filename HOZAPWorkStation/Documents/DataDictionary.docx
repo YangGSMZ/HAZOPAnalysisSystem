@@ -122,6 +122,8 @@
 			TreeView 名:tvNode
 		}
 	 }
+	 TreeView类（name）名：trvUcNodePart
+
 	 右侧是:
 	 TabControl类（name）名:tcNodeInfo
 	 {
@@ -156,6 +158,31 @@
 			 }
 		 }
 	  }
-		
+	
+5.HAZOP分析
+	*此项使用用户控件动态添加，因此建立一个用户控件UcAanlysis,此控件主要是为了增加节点
+	 控件集合：[Label标签编码过程中未使用，不做声明]
+	 TabControl类（name）名：
+	 {
+		节点列表tbcUcAanlyLeft，HAZOP分析工作表tbcUcAnalyRight；
+	 }
+	 TreeView类：
+	 {
+		节点列表trvUcAnaly；
+	 }
+	 DataGridView类：
+	 {
+		HAZOP分析工作表dgvUcAnalysis；
+	 }
+	 ToolStrip类：
+	 {
+		tspAnalyBottom；
+		Items
+		{
+			新增行tspUcAnalyAddRow，新增内行tspUcAnalyAddInRow，新增组tspUcAnalyAddGroup，
+			保存tspUcAnalySave，删除组tspUcAnalyDeletGroup，删除tspUcAnalyDelete；
+	    }
+	 }
+
 		
 	    			   

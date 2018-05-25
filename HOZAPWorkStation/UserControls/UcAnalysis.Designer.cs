@@ -28,57 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcAnalysis));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tspUcAanlyTop = new System.Windows.Forms.ToolStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tbcUcAanlyLeft = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.trvUcAnaly = new System.Windows.Forms.TreeView();
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tbcUcAnalyRight = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParameterAndGuide = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeviateDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip1.SuspendLayout();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvUcAnalysis = new System.Windows.Forms.DataGridView();
+            this.dgvUcAnalyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUcAnalyParamIntro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUcAnalyDeviate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUcAnalyReason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUcAnalyF0 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgvUcAnalyResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUcAnalySi = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgvUcAnalyLi = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgvUcAnalyRi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUcAnalyNowMeasure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUcAnalyFs = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgvUcAnalyS = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgvUcAnalyL = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgvUcAnalyR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUcAnalySugestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUcAnalyReponsible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUcAnalyRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tspAnalyBottom = new System.Windows.Forms.ToolStrip();
+            this.tspUcAnalyAddInRow = new System.Windows.Forms.ToolStripSplitButton();
+            this.tspUcAnalyAddRow = new System.Windows.Forms.ToolStripSplitButton();
+            this.tspUcAnalyAddGroup = new System.Windows.Forms.ToolStripSplitButton();
+            this.tspUcAnalySave = new System.Windows.Forms.ToolStripSplitButton();
+            this.tspUcAnalyDeletGroup = new System.Windows.Forms.ToolStripSplitButton();
+            this.tspUcAnalyDelete = new System.Windows.Forms.ToolStripSplitButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tbcUcAanlyLeft.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tbcUcAnalyRight.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUcAnalysis)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.tspAnalyBottom.SuspendLayout();
             this.SuspendLayout();
             // 
-            // toolStrip1
+            // tspUcAanlyTop
             // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(884, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.tspUcAanlyTop.Location = new System.Drawing.Point(0, 0);
+            this.tspUcAanlyTop.Name = "tspUcAanlyTop";
+            this.tspUcAanlyTop.Size = new System.Drawing.Size(1366, 25);
+            this.tspUcAanlyTop.TabIndex = 0;
+            this.tspUcAanlyTop.Text = "toolStrip1";
             // 
             // splitContainer1
             // 
@@ -88,29 +114,30 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.tabControl1);
+            this.splitContainer1.Panel1.Controls.Add(this.tbcUcAanlyLeft);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.tabControl2);
-            this.splitContainer1.Size = new System.Drawing.Size(884, 506);
+            this.splitContainer1.Panel2.Controls.Add(this.tbcUcAnalyRight);
+            this.splitContainer1.Size = new System.Drawing.Size(1366, 506);
             this.splitContainer1.SplitterDistance = 214;
             this.splitContainer1.TabIndex = 1;
             // 
-            // tabControl1
+            // tbcUcAanlyLeft
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(214, 506);
-            this.tabControl1.TabIndex = 0;
+            this.tbcUcAanlyLeft.Controls.Add(this.tabPage1);
+            this.tbcUcAanlyLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcUcAanlyLeft.Location = new System.Drawing.Point(0, 0);
+            this.tbcUcAanlyLeft.Name = "tbcUcAanlyLeft";
+            this.tbcUcAanlyLeft.SelectedIndex = 0;
+            this.tbcUcAanlyLeft.Size = new System.Drawing.Size(214, 506);
+            this.tbcUcAanlyLeft.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tabPage1.Controls.Add(this.trvUcAnaly);
             this.tabPage1.Controls.Add(this.treeView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -120,6 +147,14 @@
             this.tabPage1.Text = "节点列表";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // trvUcAnaly
+            // 
+            this.trvUcAnaly.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trvUcAnaly.Location = new System.Drawing.Point(3, 3);
+            this.trvUcAnaly.Name = "trvUcAnaly";
+            this.trvUcAnaly.Size = new System.Drawing.Size(196, 470);
+            this.trvUcAnaly.TabIndex = 1;
+            // 
             // treeView1
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -128,128 +163,328 @@
             this.treeView1.Size = new System.Drawing.Size(196, 470);
             this.treeView1.TabIndex = 0;
             // 
-            // tabControl2
+            // tbcUcAnalyRight
             // 
-            this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Location = new System.Drawing.Point(0, 0);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(666, 506);
-            this.tabControl2.TabIndex = 0;
+            this.tbcUcAnalyRight.Controls.Add(this.tabPage3);
+            this.tbcUcAnalyRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbcUcAnalyRight.Location = new System.Drawing.Point(0, 0);
+            this.tbcUcAnalyRight.Name = "tbcUcAnalyRight";
+            this.tbcUcAnalyRight.SelectedIndex = 0;
+            this.tbcUcAnalyRight.Size = new System.Drawing.Size(1148, 506);
+            this.tbcUcAnalyRight.TabIndex = 0;
             // 
             // tabPage3
             // 
+            this.tabPage3.AutoScroll = true;
             this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tabPage3.Controls.Add(this.panel2);
             this.tabPage3.Controls.Add(this.panel1);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(658, 480);
+            this.tabPage3.Size = new System.Drawing.Size(1140, 480);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "HAZOP分析工作表";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.toolStrip2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(3, 448);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(648, 25);
-            this.panel2.TabIndex = 1;
-            // 
-            // toolStrip2
-            // 
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton2});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(644, 25);
-            this.toolStrip2.TabIndex = 0;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.AutoScroll = true;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(648, 442);
+            this.panel1.Size = new System.Drawing.Size(1130, 470);
             this.panel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // panel3
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.ParameterAndGuide,
-            this.DeviateDesc,
-            this.Reason});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(648, 442);
-            this.dataGridView1.TabIndex = 0;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.dgvUcAnalysis);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1126, 441);
+            this.panel3.TabIndex = 2;
             // 
-            // ID
+            // dgvUcAnalysis
             // 
-            this.ID.HeaderText = "编号";
-            this.ID.Name = "ID";
+            this.dgvUcAnalysis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvUcAnalysis.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvUcAnalysis.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUcAnalysis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            this.dgvUcAnalysis.ColumnHeadersHeight = 25;
+            this.dgvUcAnalysis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvUcAnalysis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvUcAnalyId,
+            this.dgvUcAnalyParamIntro,
+            this.dgvUcAnalyDeviate,
+            this.dgvUcAnalyReason,
+            this.dgvUcAnalyF0,
+            this.dgvUcAnalyResult,
+            this.dgvUcAnalySi,
+            this.dgvUcAnalyLi,
+            this.dgvUcAnalyRi,
+            this.dgvUcAnalyNowMeasure,
+            this.dgvUcAnalyFs,
+            this.dgvUcAnalyS,
+            this.dgvUcAnalyL,
+            this.dgvUcAnalyR,
+            this.dgvUcAnalySugestion,
+            this.dgvUcAnalyReponsible,
+            this.dgvUcAnalyRemark});
+            this.dgvUcAnalysis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUcAnalysis.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvUcAnalysis.Location = new System.Drawing.Point(0, 0);
+            this.dgvUcAnalysis.Name = "dgvUcAnalysis";
+            this.dgvUcAnalysis.RowHeadersWidth = 60;
+            this.dgvUcAnalysis.RowTemplate.Height = 25;
+            this.dgvUcAnalysis.Size = new System.Drawing.Size(1122, 437);
+            this.dgvUcAnalysis.TabIndex = 0;
             // 
-            // ParameterAndGuide
+            // dgvUcAnalyId
             // 
-            this.ParameterAndGuide.HeaderText = "参数+引导词";
-            this.ParameterAndGuide.Name = "ParameterAndGuide";
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyId.DefaultCellStyle = dataGridViewCellStyle38;
+            this.dgvUcAnalyId.HeaderText = "编号";
+            this.dgvUcAnalyId.Name = "dgvUcAnalyId";
+            this.dgvUcAnalyId.Width = 60;
             // 
-            // DeviateDesc
+            // dgvUcAnalyParamIntro
             // 
-            this.DeviateDesc.HeaderText = "偏离描述";
-            this.DeviateDesc.Name = "DeviateDesc";
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyParamIntro.DefaultCellStyle = dataGridViewCellStyle39;
+            this.dgvUcAnalyParamIntro.HeaderText = "参数+引导词";
+            this.dgvUcAnalyParamIntro.Name = "dgvUcAnalyParamIntro";
+            this.dgvUcAnalyParamIntro.Width = 109;
             // 
-            // Reason
+            // dgvUcAnalyDeviate
             // 
-            this.Reason.HeaderText = "原因";
-            this.Reason.Name = "Reason";
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyDeviate.DefaultCellStyle = dataGridViewCellStyle40;
+            this.dgvUcAnalyDeviate.HeaderText = "偏离描述";
+            this.dgvUcAnalyDeviate.Name = "dgvUcAnalyDeviate";
+            this.dgvUcAnalyDeviate.Width = 88;
+            // 
+            // dgvUcAnalyReason
+            // 
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyReason.DefaultCellStyle = dataGridViewCellStyle41;
+            this.dgvUcAnalyReason.HeaderText = "原因";
+            this.dgvUcAnalyReason.Name = "dgvUcAnalyReason";
+            this.dgvUcAnalyReason.Width = 60;
+            // 
+            // dgvUcAnalyF0
+            // 
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyF0.DefaultCellStyle = dataGridViewCellStyle42;
+            this.dgvUcAnalyF0.HeaderText = "F0";
+            this.dgvUcAnalyF0.Name = "dgvUcAnalyF0";
+            this.dgvUcAnalyF0.Width = 27;
+            // 
+            // dgvUcAnalyResult
+            // 
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyResult.DefaultCellStyle = dataGridViewCellStyle43;
+            this.dgvUcAnalyResult.HeaderText = "后果";
+            this.dgvUcAnalyResult.Name = "dgvUcAnalyResult";
+            this.dgvUcAnalyResult.Width = 60;
+            // 
+            // dgvUcAnalySi
+            // 
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalySi.DefaultCellStyle = dataGridViewCellStyle44;
+            this.dgvUcAnalySi.HeaderText = "Si";
+            this.dgvUcAnalySi.Name = "dgvUcAnalySi";
+            this.dgvUcAnalySi.Width = 27;
+            // 
+            // dgvUcAnalyLi
+            // 
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyLi.DefaultCellStyle = dataGridViewCellStyle45;
+            this.dgvUcAnalyLi.HeaderText = "Li";
+            this.dgvUcAnalyLi.Name = "dgvUcAnalyLi";
+            this.dgvUcAnalyLi.Width = 27;
+            // 
+            // dgvUcAnalyRi
+            // 
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyRi.DefaultCellStyle = dataGridViewCellStyle46;
+            this.dgvUcAnalyRi.HeaderText = "Ri";
+            this.dgvUcAnalyRi.Name = "dgvUcAnalyRi";
+            this.dgvUcAnalyRi.ReadOnly = true;
+            this.dgvUcAnalyRi.Width = 46;
+            // 
+            // dgvUcAnalyNowMeasure
+            // 
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyNowMeasure.DefaultCellStyle = dataGridViewCellStyle47;
+            this.dgvUcAnalyNowMeasure.HeaderText = "现有措施";
+            this.dgvUcAnalyNowMeasure.Name = "dgvUcAnalyNowMeasure";
+            this.dgvUcAnalyNowMeasure.Width = 88;
+            // 
+            // dgvUcAnalyFs
+            // 
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyFs.DefaultCellStyle = dataGridViewCellStyle48;
+            this.dgvUcAnalyFs.HeaderText = "Fs";
+            this.dgvUcAnalyFs.Name = "dgvUcAnalyFs";
+            this.dgvUcAnalyFs.Width = 27;
+            // 
+            // dgvUcAnalyS
+            // 
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyS.DefaultCellStyle = dataGridViewCellStyle49;
+            this.dgvUcAnalyS.HeaderText = "S";
+            this.dgvUcAnalyS.Name = "dgvUcAnalyS";
+            this.dgvUcAnalyS.Width = 20;
+            // 
+            // dgvUcAnalyL
+            // 
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyL.DefaultCellStyle = dataGridViewCellStyle50;
+            this.dgvUcAnalyL.HeaderText = "L";
+            this.dgvUcAnalyL.Name = "dgvUcAnalyL";
+            this.dgvUcAnalyL.Width = 20;
+            // 
+            // dgvUcAnalyR
+            // 
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyR.DefaultCellStyle = dataGridViewCellStyle51;
+            this.dgvUcAnalyR.HeaderText = "R";
+            this.dgvUcAnalyR.Name = "dgvUcAnalyR";
+            this.dgvUcAnalyR.Width = 39;
+            // 
+            // dgvUcAnalySugestion
+            // 
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalySugestion.DefaultCellStyle = dataGridViewCellStyle52;
+            this.dgvUcAnalySugestion.HeaderText = "建议项";
+            this.dgvUcAnalySugestion.Name = "dgvUcAnalySugestion";
+            this.dgvUcAnalySugestion.Width = 74;
+            // 
+            // dgvUcAnalyReponsible
+            // 
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyReponsible.DefaultCellStyle = dataGridViewCellStyle53;
+            this.dgvUcAnalyReponsible.HeaderText = "负责单位/人";
+            this.dgvUcAnalyReponsible.Name = "dgvUcAnalyReponsible";
+            this.dgvUcAnalyReponsible.Width = 109;
+            // 
+            // dgvUcAnalyRemark
+            // 
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyRemark.DefaultCellStyle = dataGridViewCellStyle54;
+            this.dgvUcAnalyRemark.HeaderText = "备注";
+            this.dgvUcAnalyRemark.Name = "dgvUcAnalyRemark";
+            this.dgvUcAnalyRemark.Width = 60;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.tspAnalyBottom);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 441);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1126, 25);
+            this.panel2.TabIndex = 1;
+            // 
+            // tspAnalyBottom
+            // 
+            this.tspAnalyBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tspAnalyBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tspUcAnalyAddRow,
+            this.tspUcAnalyAddInRow,
+            this.tspUcAnalyAddGroup,
+            this.tspUcAnalySave,
+            this.tspUcAnalyDeletGroup,
+            this.tspUcAnalyDelete});
+            this.tspAnalyBottom.Location = new System.Drawing.Point(0, 0);
+            this.tspAnalyBottom.Name = "tspAnalyBottom";
+            this.tspAnalyBottom.Size = new System.Drawing.Size(1122, 21);
+            this.tspAnalyBottom.TabIndex = 0;
+            this.tspAnalyBottom.Text = "toolStrip2";
+            // 
+            // tspUcAnalyAddInRow
+            // 
+            this.tspUcAnalyAddInRow.Image = ((System.Drawing.Image)(resources.GetObject("tspUcAnalyAddInRow.Image")));
+            this.tspUcAnalyAddInRow.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspUcAnalyAddInRow.Name = "tspUcAnalyAddInRow";
+            this.tspUcAnalyAddInRow.Size = new System.Drawing.Size(88, 22);
+            this.tspUcAnalyAddInRow.Text = "新增内行";
+            // 
+            // tspUcAnalyAddRow
+            // 
+            this.tspUcAnalyAddRow.Image = ((System.Drawing.Image)(resources.GetObject("tspUcAnalyAddRow.Image")));
+            this.tspUcAnalyAddRow.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspUcAnalyAddRow.Name = "tspUcAnalyAddRow";
+            this.tspUcAnalyAddRow.Size = new System.Drawing.Size(76, 18);
+            this.tspUcAnalyAddRow.Text = "新增行";
+            // 
+            // tspUcAnalyAddGroup
+            // 
+            this.tspUcAnalyAddGroup.Image = ((System.Drawing.Image)(resources.GetObject("tspUcAnalyAddGroup.Image")));
+            this.tspUcAnalyAddGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspUcAnalyAddGroup.Name = "tspUcAnalyAddGroup";
+            this.tspUcAnalyAddGroup.Size = new System.Drawing.Size(76, 22);
+            this.tspUcAnalyAddGroup.Text = "新增组";
+            // 
+            // tspUcAnalySave
+            // 
+            this.tspUcAnalySave.Image = ((System.Drawing.Image)(resources.GetObject("tspUcAnalySave.Image")));
+            this.tspUcAnalySave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspUcAnalySave.Name = "tspUcAnalySave";
+            this.tspUcAnalySave.Size = new System.Drawing.Size(64, 22);
+            this.tspUcAnalySave.Text = "保存";
+            // 
+            // tspUcAnalyDeletGroup
+            // 
+            this.tspUcAnalyDeletGroup.Image = ((System.Drawing.Image)(resources.GetObject("tspUcAnalyDeletGroup.Image")));
+            this.tspUcAnalyDeletGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspUcAnalyDeletGroup.Name = "tspUcAnalyDeletGroup";
+            this.tspUcAnalyDeletGroup.Size = new System.Drawing.Size(76, 22);
+            this.tspUcAnalyDeletGroup.Text = "删除组";
+            // 
+            // tspUcAnalyDelete
+            // 
+            this.tspUcAnalyDelete.Image = ((System.Drawing.Image)(resources.GetObject("tspUcAnalyDelete.Image")));
+            this.tspUcAnalyDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspUcAnalyDelete.Name = "tspUcAnalyDelete";
+            this.tspUcAnalyDelete.Size = new System.Drawing.Size(64, 22);
+            this.tspUcAnalyDelete.Text = "删除";
             // 
             // UcAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.tspUcAanlyTop);
             this.Name = "UcAnalysis";
-            this.Size = new System.Drawing.Size(884, 531);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.Size = new System.Drawing.Size(1366, 531);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.tbcUcAanlyLeft.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabControl2.ResumeLayout(false);
+            this.tbcUcAnalyRight.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUcAnalysis)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tspAnalyBottom.ResumeLayout(false);
+            this.tspAnalyBottom.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,22 +492,41 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStrip tspUcAanlyTop;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tbcUcAanlyLeft;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabControl tbcUcAnalyRight;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ParameterAndGuide;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DeviateDesc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Reason;
+        private System.Windows.Forms.ToolStrip tspAnalyBottom;
+        private System.Windows.Forms.DataGridView dgvUcAnalysis;
+        private System.Windows.Forms.TreeView trvUcAnaly;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyParamIntro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyDeviate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyReason;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvUcAnalyF0;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyResult;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvUcAnalySi;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvUcAnalyLi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyRi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyNowMeasure;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvUcAnalyFs;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvUcAnalyS;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgvUcAnalyL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalySugestion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyReponsible;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyRemark;
+        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyAddRow;
+        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyAddInRow;
+        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyAddGroup;
+        private System.Windows.Forms.ToolStripSplitButton tspUcAnalySave;
+        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyDeletGroup;
+        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyDelete;
     }
 }

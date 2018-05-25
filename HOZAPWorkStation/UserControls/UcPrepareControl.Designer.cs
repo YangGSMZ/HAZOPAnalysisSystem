@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcPrepareControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle113 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle116 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle117 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle114 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle115 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle118 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle119 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle120 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle121 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle122 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle123 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle124 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle125 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle126 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle127 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle128 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PrepareToolStrip = new System.Windows.Forms.ToolStrip();
             this.tspPreNoteSplit = new System.Windows.Forms.ToolStripSplitButton();
             this.tspPreHelp = new System.Windows.Forms.ToolStripSplitButton();
@@ -190,17 +190,6 @@
             this.dgvPreUcRiskSerio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskGrave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskDisas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PrepareToolStrip.SuspendLayout();
             this.RiskMatrix.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -233,14 +222,6 @@
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreParamSelection)).BeginInit();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
-            this.splitContainer3.Panel1.SuspendLayout();
-            this.splitContainer3.Panel2.SuspendLayout();
-            this.splitContainer3.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // PrepareToolStrip
@@ -315,14 +296,14 @@
             this.dgvPreUcRisk.AllowUserToAddRows = false;
             this.dgvPreUcRisk.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPreUcRisk.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle113.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle113.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle113.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle113.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle113.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle113.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle113.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreUcRisk.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle113;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreUcRisk.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPreUcRisk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPreUcRisk.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gdvRiskMtxProb,
@@ -337,20 +318,20 @@
             this.dgvPreUcRisk.Location = new System.Drawing.Point(0, 0);
             this.dgvPreUcRisk.Name = "dgvPreUcRisk";
             this.dgvPreUcRisk.ReadOnly = true;
-            dataGridViewCellStyle116.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle116.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle116.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle116.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle116.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle116.SelectionForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle116.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreUcRisk.RowHeadersDefaultCellStyle = dataGridViewCellStyle116;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreUcRisk.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPreUcRisk.RowHeadersWidth = 60;
             this.dgvPreUcRisk.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle117.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle117.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle117.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgvPreUcRisk.RowsDefaultCellStyle = dataGridViewCellStyle117;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgvPreUcRisk.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPreUcRisk.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPreUcRisk.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dgvPreUcRisk.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
@@ -366,8 +347,8 @@
             // gdvRiskMtxProb
             // 
             this.gdvRiskMtxProb.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle114.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.gdvRiskMtxProb.DefaultCellStyle = dataGridViewCellStyle114;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gdvRiskMtxProb.DefaultCellStyle = dataGridViewCellStyle2;
             this.gdvRiskMtxProb.HeaderText = "概率";
             this.gdvRiskMtxProb.Name = "gdvRiskMtxProb";
             this.gdvRiskMtxProb.ReadOnly = true;
@@ -377,8 +358,8 @@
             // gdvRiskMtxProbIntro
             // 
             this.gdvRiskMtxProbIntro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle115.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.gdvRiskMtxProbIntro.DefaultCellStyle = dataGridViewCellStyle115;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gdvRiskMtxProbIntro.DefaultCellStyle = dataGridViewCellStyle3;
             this.gdvRiskMtxProbIntro.HeaderText = "概率说明";
             this.gdvRiskMtxProbIntro.Name = "gdvRiskMtxProbIntro";
             this.gdvRiskMtxProbIntro.ReadOnly = true;
@@ -496,7 +477,7 @@
             this.textBox2.Location = new System.Drawing.Point(253, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(408, 26);
+            this.textBox2.Size = new System.Drawing.Size(409, 26);
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "后果描述";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -522,7 +503,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(253, 35);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(408, 114);
+            this.richTextBox1.Size = new System.Drawing.Size(409, 114);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "误工伤害，不会导致残疾\n泄露至收集系统以内的地方\n设备损失<=10万元\n设备或车间停产<=1天";
             // 
@@ -535,7 +516,7 @@
             this.richTextBox3.Location = new System.Drawing.Point(253, 156);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(408, 114);
+            this.richTextBox3.Size = new System.Drawing.Size(409, 114);
             this.richTextBox3.TabIndex = 6;
             this.richTextBox3.Text = "工厂员工残疾伤害\n厂外人员需要就医\n泄露收集系统以外的地方(数量较少并不超出工厂街衢)\n设备损失1>=10万元，<=100万元\n设备或车间停产>=1天，<=1周\n" +
     "不影响销售\n";
@@ -549,7 +530,7 @@
             this.richTextBox5.Location = new System.Drawing.Point(253, 277);
             this.richTextBox5.Name = "richTextBox5";
             this.richTextBox5.ReadOnly = true;
-            this.richTextBox5.Size = new System.Drawing.Size(408, 114);
+            this.richTextBox5.Size = new System.Drawing.Size(409, 114);
             this.richTextBox5.TabIndex = 8;
             this.richTextBox5.Text = "厂内1人死亡\n厂外人员残疾伤害\n明显泄露至厂外，影响周围邻居，可能遭到投诉\n会受到当地媒体关注\n设备损失>100万元，<1000万元\n严重影响对特定客户的销售";
             // 
@@ -562,7 +543,7 @@
             this.richTextBox6.Location = new System.Drawing.Point(253, 398);
             this.richTextBox6.Name = "richTextBox6";
             this.richTextBox6.ReadOnly = true;
-            this.richTextBox6.Size = new System.Drawing.Size(408, 114);
+            this.richTextBox6.Size = new System.Drawing.Size(409, 114);
             this.richTextBox6.TabIndex = 9;
             this.richTextBox6.Text = "2-3人以内死亡\n厂外人员1人死亡\n明显影响环境，但短期内可以恢复，并会造成公众健康和就医\n会受到省级媒体关注\n设备损失>1000万元，<=5000万元\n设备或车" +
     "间停产>1个月，<=6个月\n影响市场份额";
@@ -576,7 +557,7 @@
             this.richTextBox9.Location = new System.Drawing.Point(253, 519);
             this.richTextBox9.Name = "richTextBox9";
             this.richTextBox9.ReadOnly = true;
-            this.richTextBox9.Size = new System.Drawing.Size(408, 114);
+            this.richTextBox9.Size = new System.Drawing.Size(409, 114);
             this.richTextBox9.TabIndex = 12;
             this.richTextBox9.Text = "3人以上死亡\n厂外人员多人死亡\n对周围社区造成长期的影响，导制厂外居民大面积疏散或严重健康影响\n会收到国家级媒体关注\n设备损失>5000万元\n设备或车间停产>6个" +
     "月\n可能是失去市场";
@@ -1083,7 +1064,6 @@
             this.PrepareTabControl.Controls.Add(this.Participants);
             this.PrepareTabControl.Controls.Add(this.RiskMatrix);
             this.PrepareTabControl.Controls.Add(this.Parameters);
-            this.PrepareTabControl.Controls.Add(this.tabPage1);
             this.PrepareTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PrepareTabControl.Location = new System.Drawing.Point(0, 25);
             this.PrepareTabControl.Name = "PrepareTabControl";
@@ -1541,7 +1521,7 @@
             this.tableLayoutPanel3.ColumnCount = 3;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 600F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 652F));
             this.tableLayoutPanel3.Controls.Add(this.panel7, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.panel8, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.panel4, 2, 0);
@@ -1684,14 +1664,14 @@
             this.dgvPreParamSled.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPreParamSled.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvPreParamSled.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle118.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle118.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle118.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle118.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle118.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle118.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle118.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreParamSled.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle118;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreParamSled.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPreParamSled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPreParamSled.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ParamNameSelected,
@@ -1788,14 +1768,14 @@
             this.dgvPreParamSelection.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPreParamSelection.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvPreParamSelection.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle119.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle119.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle119.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle119.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle119.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle119.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle119.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreParamSelection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle119;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreParamSelection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPreParamSelection.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ParamNameSelection,
             this.ParamNameSelIntroducer});
@@ -1811,8 +1791,8 @@
             // 
             // ParamNameSelection
             // 
-            dataGridViewCellStyle120.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ParamNameSelection.DefaultCellStyle = dataGridViewCellStyle120;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ParamNameSelection.DefaultCellStyle = dataGridViewCellStyle8;
             this.ParamNameSelection.HeaderText = "参数名称";
             this.ParamNameSelection.Name = "ParamNameSelection";
             this.ParamNameSelection.ReadOnly = true;
@@ -1820,8 +1800,8 @@
             // 
             // ParamNameSelIntroducer
             // 
-            dataGridViewCellStyle121.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ParamNameSelIntroducer.DefaultCellStyle = dataGridViewCellStyle121;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ParamNameSelIntroducer.DefaultCellStyle = dataGridViewCellStyle9;
             this.ParamNameSelIntroducer.HeaderText = "包含的引导词";
             this.ParamNameSelIntroducer.Name = "ParamNameSelIntroducer";
             this.ParamNameSelIntroducer.ReadOnly = true;
@@ -1840,10 +1820,10 @@
             // dgvPreUcRiskProb
             // 
             this.dgvPreUcRiskProb.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle122.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle122.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle122.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskProb.DefaultCellStyle = dataGridViewCellStyle122;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskProb.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvPreUcRiskProb.HeaderText = "概率";
             this.dgvPreUcRiskProb.Name = "dgvPreUcRiskProb";
             this.dgvPreUcRiskProb.ReadOnly = true;
@@ -1852,10 +1832,10 @@
             // 
             // dgvPreUcRiskLight
             // 
-            dataGridViewCellStyle123.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle123.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle123.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskLight.DefaultCellStyle = dataGridViewCellStyle123;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskLight.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvPreUcRiskLight.HeaderText = "1.轻微";
             this.dgvPreUcRiskLight.Name = "dgvPreUcRiskLight";
             this.dgvPreUcRiskLight.ReadOnly = true;
@@ -1877,10 +1857,10 @@
             // dgvPreUcRiskProIntro
             // 
             this.dgvPreUcRiskProIntro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle124.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle124.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle124.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskProIntro.DefaultCellStyle = dataGridViewCellStyle124;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskProIntro.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvPreUcRiskProIntro.HeaderText = "概率说明";
             this.dgvPreUcRiskProIntro.Name = "dgvPreUcRiskProIntro";
             this.dgvPreUcRiskProIntro.ReadOnly = true;
@@ -1889,10 +1869,10 @@
             // 
             // dgvPreUcRiskOverLig
             // 
-            dataGridViewCellStyle125.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle125.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle125.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskOverLig.DefaultCellStyle = dataGridViewCellStyle125;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskOverLig.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvPreUcRiskOverLig.HeaderText = "2.较重";
             this.dgvPreUcRiskOverLig.Name = "dgvPreUcRiskOverLig";
             this.dgvPreUcRiskOverLig.ReadOnly = true;
@@ -1901,10 +1881,10 @@
             // 
             // dgvPreUcRiskSerio
             // 
-            dataGridViewCellStyle126.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle126.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle126.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskSerio.DefaultCellStyle = dataGridViewCellStyle126;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskSerio.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvPreUcRiskSerio.HeaderText = "3.严重";
             this.dgvPreUcRiskSerio.Name = "dgvPreUcRiskSerio";
             this.dgvPreUcRiskSerio.ReadOnly = true;
@@ -1913,10 +1893,10 @@
             // 
             // dgvPreUcRiskGrave
             // 
-            dataGridViewCellStyle127.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle127.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle127.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskGrave.DefaultCellStyle = dataGridViewCellStyle127;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskGrave.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgvPreUcRiskGrave.HeaderText = "4.重大";
             this.dgvPreUcRiskGrave.Name = "dgvPreUcRiskGrave";
             this.dgvPreUcRiskGrave.ReadOnly = true;
@@ -1925,138 +1905,15 @@
             // 
             // dgvPreUcRiskDisas
             // 
-            dataGridViewCellStyle128.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle128.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle128.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskDisas.DefaultCellStyle = dataGridViewCellStyle128;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskDisas.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgvPreUcRiskDisas.HeaderText = "5.灾难性";
             this.dgvPreUcRiskDisas.Name = "dgvPreUcRiskDisas";
             this.dgvPreUcRiskDisas.ReadOnly = true;
             this.dgvPreUcRiskDisas.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPreUcRiskDisas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.AutoScroll = true;
-            this.tabPage1.AutoScrollMargin = new System.Drawing.Size(3, 0);
-            this.tabPage1.Controls.Add(this.splitContainer3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1358, 599);
-            this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer3
-            // 
-            this.splitContainer3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer3.Name = "splitContainer3";
-            // 
-            // splitContainer3.Panel1
-            // 
-            this.splitContainer3.Panel1.AutoScroll = true;
-            this.splitContainer3.Panel1.Controls.Add(this.panel9);
-            this.splitContainer3.Panel1.Controls.Add(this.dataGridView1);
-            this.splitContainer3.Panel1.Controls.Add(this.label13);
-            // 
-            // splitContainer3.Panel2
-            // 
-            this.splitContainer3.Panel2.AutoScroll = true;
-            this.splitContainer3.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer3.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer3.Panel2.Controls.Add(this.dataGridView2);
-            this.splitContainer3.Panel2.Controls.Add(this.label14);
-            this.splitContainer3.Panel2.Controls.Add(this.panel6);
-            this.splitContainer3.Size = new System.Drawing.Size(1352, 593);
-            this.splitContainer3.SplitterDistance = 450;
-            this.splitContainer3.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.button1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(63, 589);
-            this.panel6.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(3, 163);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label13.Location = new System.Drawing.Point(0, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(446, 23);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "参数";
-            // 
-            // label14
-            // 
-            this.label14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label14.Location = new System.Drawing.Point(63, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(831, 23);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "参数";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(446, 566);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(270, 218);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView2.TabIndex = 2;
-            // 
-            // panel9
-            // 
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel9.Location = new System.Drawing.Point(0, 560);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(446, 29);
-            this.panel9.TabIndex = 2;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(63, 561);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(831, 28);
-            this.flowLayoutPanel1.TabIndex = 3;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(345, 78);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // UcPrepareControl
             // 
@@ -2112,14 +1969,6 @@
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreParamSelection)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
-            this.splitContainer3.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2272,16 +2121,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ParamNameSelection;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParamNameSelIntroducer;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
