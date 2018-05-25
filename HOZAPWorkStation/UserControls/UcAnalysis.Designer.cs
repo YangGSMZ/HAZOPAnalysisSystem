@@ -41,6 +41,11 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParameterAndGuide = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeviateDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -52,6 +57,8 @@
             this.tabPage3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolStrip2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -146,9 +153,10 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.toolStrip2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(3, 454);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(3, 448);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(648, 25);
             this.panel2.TabIndex = 1;
@@ -159,7 +167,7 @@
             this.toolStripButton2});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(648, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(644, 25);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -174,11 +182,49 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(648, 451);
+            this.panel1.Size = new System.Drawing.Size(648, 442);
             this.panel1.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.ParameterAndGuide,
+            this.DeviateDesc,
+            this.Reason});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(648, 442);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "编号";
+            this.ID.Name = "ID";
+            // 
+            // ParameterAndGuide
+            // 
+            this.ParameterAndGuide.HeaderText = "参数+引导词";
+            this.ParameterAndGuide.Name = "ParameterAndGuide";
+            // 
+            // DeviateDesc
+            // 
+            this.DeviateDesc.HeaderText = "偏离描述";
+            this.DeviateDesc.Name = "DeviateDesc";
+            // 
+            // Reason
+            // 
+            this.Reason.HeaderText = "原因";
+            this.Reason.Name = "Reason";
             // 
             // UcAnalysis
             // 
@@ -202,6 +248,8 @@
             this.panel2.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +269,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ParameterAndGuide;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeviateDesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Reason;
     }
 }
