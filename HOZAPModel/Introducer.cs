@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HOZAPModel
 {
-    class Introducer
+    public class Introducer
     {
         /// <summary>
         /// 引导词ID，自增长

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HOZAPModel
 {
-    class SelectedPramas
+    public class SelectedPramas
     {
 
         /// <summary>

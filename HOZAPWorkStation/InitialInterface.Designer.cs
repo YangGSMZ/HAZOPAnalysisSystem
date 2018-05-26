@@ -96,6 +96,7 @@
             this.newBtn.TabIndex = 11;
             this.newBtn.Text = "新建";
             this.newBtn.UseVisualStyleBackColor = false;
+            this.newBtn.Click += new System.EventHandler(this.newBtn_Click);
             // 
             // preBtn
             // 

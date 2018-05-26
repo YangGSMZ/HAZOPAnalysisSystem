@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HAZOPDAL
+namespace HOZAPDAL
 {
     /// <summary>
     /// 数据库操作类

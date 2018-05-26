@@ -165,5 +165,15 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HAZOPBLL\HOZAPBLL.csproj">
+      <Project>{e66c42e9-eb58-456a-8fe9-a4e943e5b458}</Project>
+      <Name>HOZAPBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HOZAPModel\HOZAPModel.csproj">
+      <Project>{c42210de-8b16-48eb-a359-502db0baa0e5}</Project>
+      <Name>HOZAPModel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
