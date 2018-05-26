@@ -14,6 +14,8 @@ namespace HOZAPWorkStation.UserControls
     {
         public delegate void LoadAnalysisPageEvents();
         public event LoadAnalysisPageEvents MyLoadAnalysisPageEvents;
+        public delegate void CloseNodePartitionPageEvents();
+        public event CloseNodePartitionPageEvents MyCloseNodePartitionPageEvents;
         public UcNodePartition()
         {
             InitializeComponent();
@@ -24,6 +26,14 @@ namespace HOZAPWorkStation.UserControls
             if (MyLoadAnalysisPageEvents != null)
             {
                 MyLoadAnalysisPageEvents();
+            }
+        }
+
+        private void tsbClose_Click(object sender, EventArgs e)
+        {
+            if (MyCloseNodePartitionPageEvents != null)
+            {
+                MyCloseNodePartitionPageEvents();
             }
         }
     }

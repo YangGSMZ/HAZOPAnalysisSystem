@@ -70,6 +70,7 @@ namespace HOZAPWorkStation
         }
         private void InitialInterface_Load(object sender, EventArgs e)
         {
+         
             X = this.Width;
             Y = this.Height;
             setTag(this);
@@ -90,6 +91,7 @@ namespace HOZAPWorkStation
 
         private void nodeBtn_Click(object sender, EventArgs e)
         {
+           
             LoadNodePartitionPage();
 
         }
@@ -106,6 +108,7 @@ namespace HOZAPWorkStation
                 TabPage tp = new TabPage();
                 uc.Dock = DockStyle.Fill;
                 uc.MyLoadAnalysisPageEvents += new UcNodePartition.LoadAnalysisPageEvents(LoadAnalysisPage);
+                uc.MyCloseNodePartitionPageEvents += new UcNodePartition.CloseNodePartitionPageEvents(CloseCurrentPage);
                 tp.Controls.Add(uc);
                 tp.Name = "tpNodePartition";
                 tp.Text = "节点划分";
@@ -204,9 +207,17 @@ namespace HOZAPWorkStation
             }
         }
 
+        /// <summary>
+        /// 关闭当前展示的功能页
+        /// </summary>
+        private void CloseCurrentPage()
+        {
+            this.MainTableControl.TabPages.Remove(this.MainTableControl.SelectedTab);
+        }
        
         private void preBtn_Click(object sender, EventArgs e)
         {
+          
             LoadPreparePage();
         }
 
@@ -266,6 +277,13 @@ namespace HOZAPWorkStation
                 this.MainTableControl.SelectTab("tpAnalysis");
 
             }
+        }
+
+        private void newBtn_Click(object sender, EventArgs e)
+        {
+            NewProjectInterface NewProject = new NewProjectInterface();
+            NewProject.Show();
+          
         }
     }
 }
