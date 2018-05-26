@@ -127,6 +127,7 @@
             this.analysisBtn.TabIndex = 7;
             this.analysisBtn.Text = "分析";
             this.analysisBtn.UseVisualStyleBackColor = false;
+            this.analysisBtn.Click += new System.EventHandler(this.analysisBtn_Click);
             // 
             // nodeBtn
             // 

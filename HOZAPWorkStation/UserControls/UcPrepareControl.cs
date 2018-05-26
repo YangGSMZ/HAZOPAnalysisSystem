@@ -12,6 +12,9 @@ namespace HOZAPWorkStation.UserControls
 {
     public partial class UcPrepareControl : UserControl
     {
+
+        public delegate void LoadNodePartitionPageEvents();
+        public event LoadNodePartitionPageEvents MyLoadNodePartitionPageEvents;
         public UcPrepareControl()
         {
             InitializeComponent();
@@ -112,6 +115,14 @@ namespace HOZAPWorkStation.UserControls
         {
             //SolidBrush b = new SolidBrush(this.dgvPreParamSelable.RowHeadersDefaultCellStyle.ForeColor);
             //e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dataGridView1.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 20, e.RowBounds.Location.Y + 4);
+        }
+
+        private void tspPreNoteSplit_Click(object sender, EventArgs e)
+        {
+            if (MyLoadNodePartitionPageEvents != null)
+            {
+               MyLoadNodePartitionPageEvents();
+            }
         }
     }
 }

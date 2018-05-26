@@ -12,6 +12,8 @@ namespace HOZAPWorkStation.UserControls
 {
     public partial class UcNodePartition : UserControl
     {
+        public delegate void LoadAnalysisPageEvents();
+        public event LoadAnalysisPageEvents MyLoadAnalysisPageEvents;
         public UcNodePartition()
         {
             InitializeComponent();
@@ -19,7 +21,10 @@ namespace HOZAPWorkStation.UserControls
 
         private void tsbHaZop_Click(object sender, EventArgs e)
         {
-           
+            if (MyLoadAnalysisPageEvents != null)
+            {
+                MyLoadAnalysisPageEvents();
+            }
         }
     }
 }

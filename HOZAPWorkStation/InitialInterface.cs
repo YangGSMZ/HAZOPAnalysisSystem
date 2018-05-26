@@ -87,28 +87,41 @@ namespace HOZAPWorkStation
 
         }
 
+
         private void nodeBtn_Click(object sender, EventArgs e)
         {
-           
+            LoadNodePartitionPage();
+
+        }
+
+        /// <summary>
+        /// 节点划分功能页的加载
+        /// </summary>
+        /// <param name="e"></param>
+        private void LoadNodePartitionPage()
+        {
             if (!MainTableControl.Controls.ContainsKey("tpNodePartition"))
             {
                 UcNodePartition uc = new UcNodePartition();
                 TabPage tp = new TabPage();
                 uc.Dock = DockStyle.Fill;
+                uc.MyLoadAnalysisPageEvents += new UcNodePartition.LoadAnalysisPageEvents(LoadAnalysisPage);
                 tp.Controls.Add(uc);
                 tp.Name = "tpNodePartition";
                 tp.Text = "节点划分";
-                tp.Font = new Font("宋体",9);
+                tp.Font = new Font("宋体", 9);
                 this.MainTableControl.Controls.Add(tp);
                 this.MainTableControl.SelectTab("tpNodePartition");
-                setTag(this);
+
             }
             else
             {
                 this.MainTableControl.SelectTab("tpNodePartition");
-                
+
             }
         }
+
+
 
         const int CLOSE_SIZE = 18;//关闭按钮大小
         private void MainTableControl_DrawItem(object sender, DrawItemEventArgs e)
@@ -162,6 +175,11 @@ namespace HOZAPWorkStation
            
         }
 
+        /// <summary>
+        /// 功能页的关闭事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainTableControl_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -186,20 +204,30 @@ namespace HOZAPWorkStation
             }
         }
 
+       
         private void preBtn_Click(object sender, EventArgs e)
+        {
+            LoadPreparePage();
+        }
+
+        /// <summary>
+        /// 项目准备功能页的加载
+        /// </summary>   
+        private void LoadPreparePage()
         {
             if (!MainTableControl.Controls.ContainsKey("tpPrepare"))
             {
                 UcPrepareControl uc = new UcPrepareControl();
                 TabPage tp = new TabPage();
                 uc.Dock = DockStyle.Fill;
+                uc.MyLoadNodePartitionPageEvents += new UcPrepareControl.LoadNodePartitionPageEvents(LoadNodePartitionPage);
                 tp.Controls.Add(uc);
                 tp.Name = "tpPrepare";
                 tp.Text = "项目准备";
                 tp.Font = new Font("宋体", 9);
                 this.MainTableControl.Controls.Add(tp);
                 this.MainTableControl.SelectTab("tpPrepare");
-                setTag(this);
+
             }
             else
             {
@@ -208,6 +236,36 @@ namespace HOZAPWorkStation
             }
         }
 
-      
+
+        private void analysisBtn_Click(object sender, EventArgs e)
+        {
+            LoadAnalysisPage();
+        }
+
+
+        /// <summary>
+        /// hazop分析的功能页加载
+        /// </summary>     
+        private void LoadAnalysisPage()
+        {
+            if (!MainTableControl.Controls.ContainsKey("tpAnalysis"))
+            {
+                UcAnalysis uc = new UcAnalysis();
+                TabPage tp = new TabPage();
+                uc.Dock = DockStyle.Fill;
+                tp.Controls.Add(uc);
+                tp.Name = "tpAnalysis";
+                tp.Text = "hazop分析";
+                tp.Font = new Font("宋体", 9);
+                this.MainTableControl.Controls.Add(tp);
+                this.MainTableControl.SelectTab("tpAnalysis");
+
+            }
+            else
+            {
+                this.MainTableControl.SelectTab("tpAnalysis");
+
+            }
+        }
     }
 }
