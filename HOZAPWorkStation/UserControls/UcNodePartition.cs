@@ -16,5 +16,10 @@ namespace HOZAPWorkStation.UserControls
         {
             InitializeComponent();
         }
+
+        private void tsbHaZop_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

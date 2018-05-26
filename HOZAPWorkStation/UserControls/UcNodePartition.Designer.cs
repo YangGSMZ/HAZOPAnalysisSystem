@@ -105,6 +105,7 @@
             this.tsbHaZop.Name = "tsbHaZop";
             this.tsbHaZop.Size = new System.Drawing.Size(88, 22);
             this.tsbHaZop.Text = "hazop分析";
+            this.tsbHaZop.Click += new System.EventHandler(this.tsbHaZop_Click);
             // 
             // stbHelp
             // 
