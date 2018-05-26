@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcAnalysis));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -46,7 +47,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcAnalysis));
             this.tspUcAanlyTop = new System.Windows.Forms.ToolStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tbcUcAanlyLeft = new System.Windows.Forms.TabControl();
@@ -58,6 +58,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvUcAnalysis = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tspAnalyBottom = new System.Windows.Forms.ToolStrip();
+            this.tspUcAnalyAddRow = new System.Windows.Forms.ToolStripSplitButton();
+            this.tspUcAnalyAddInRow = new System.Windows.Forms.ToolStripSplitButton();
+            this.tspUcAnalyAddGroup = new System.Windows.Forms.ToolStripSplitButton();
+            this.tspUcAnalySave = new System.Windows.Forms.ToolStripSplitButton();
+            this.tspUcAnalyDeletGroup = new System.Windows.Forms.ToolStripSplitButton();
+            this.tspUcAnalyDelete = new System.Windows.Forms.ToolStripSplitButton();
             this.dgvUcAnalyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUcAnalyParamIntro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUcAnalyDeviate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,14 +83,6 @@
             this.dgvUcAnalySugestion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUcAnalyReponsible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUcAnalyRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tspAnalyBottom = new System.Windows.Forms.ToolStrip();
-            this.tspUcAnalyAddRow = new System.Windows.Forms.ToolStripSplitButton();
-            this.tspUcAnalyAddInRow = new System.Windows.Forms.ToolStripSplitButton();
-            this.tspUcAnalyAddGroup = new System.Windows.Forms.ToolStripSplitButton();
-            this.tspUcAnalySave = new System.Windows.Forms.ToolStripSplitButton();
-            this.tspUcAnalyDeletGroup = new System.Windows.Forms.ToolStripSplitButton();
-            this.tspUcAnalyDelete = new System.Windows.Forms.ToolStripSplitButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -102,7 +102,7 @@
             // 
             this.tspUcAanlyTop.Location = new System.Drawing.Point(0, 0);
             this.tspUcAanlyTop.Name = "tspUcAanlyTop";
-            this.tspUcAanlyTop.Size = new System.Drawing.Size(1366, 25);
+            this.tspUcAanlyTop.Size = new System.Drawing.Size(2300, 25);
             this.tspUcAanlyTop.TabIndex = 0;
             this.tspUcAanlyTop.Text = "toolStrip1";
             // 
@@ -119,8 +119,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tbcUcAnalyRight);
-            this.splitContainer1.Size = new System.Drawing.Size(1366, 506);
-            this.splitContainer1.SplitterDistance = 214;
+            this.splitContainer1.Size = new System.Drawing.Size(2300, 506);
+            this.splitContainer1.SplitterDistance = 360;
             this.splitContainer1.TabIndex = 1;
             // 
             // tbcUcAanlyLeft
@@ -130,7 +130,7 @@
             this.tbcUcAanlyLeft.Location = new System.Drawing.Point(0, 0);
             this.tbcUcAanlyLeft.Name = "tbcUcAanlyLeft";
             this.tbcUcAanlyLeft.SelectedIndex = 0;
-            this.tbcUcAanlyLeft.Size = new System.Drawing.Size(214, 506);
+            this.tbcUcAanlyLeft.Size = new System.Drawing.Size(360, 506);
             this.tbcUcAanlyLeft.TabIndex = 0;
             // 
             // tabPage1
@@ -142,7 +142,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(206, 480);
+            this.tabPage1.Size = new System.Drawing.Size(352, 480);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "节点列表";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -152,7 +152,7 @@
             this.trvUcAnaly.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trvUcAnaly.Location = new System.Drawing.Point(3, 3);
             this.trvUcAnaly.Name = "trvUcAnaly";
-            this.trvUcAnaly.Size = new System.Drawing.Size(196, 470);
+            this.trvUcAnaly.Size = new System.Drawing.Size(342, 470);
             this.trvUcAnaly.TabIndex = 1;
             // 
             // treeView1
@@ -160,7 +160,7 @@
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(196, 470);
+            this.treeView1.Size = new System.Drawing.Size(342, 470);
             this.treeView1.TabIndex = 0;
             // 
             // tbcUcAnalyRight
@@ -170,7 +170,7 @@
             this.tbcUcAnalyRight.Location = new System.Drawing.Point(0, 0);
             this.tbcUcAnalyRight.Name = "tbcUcAnalyRight";
             this.tbcUcAnalyRight.SelectedIndex = 0;
-            this.tbcUcAnalyRight.Size = new System.Drawing.Size(1148, 506);
+            this.tbcUcAnalyRight.Size = new System.Drawing.Size(1936, 506);
             this.tbcUcAnalyRight.TabIndex = 0;
             // 
             // tabPage3
@@ -181,7 +181,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1140, 480);
+            this.tabPage3.Size = new System.Drawing.Size(1928, 480);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "HAZOP分析工作表";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -195,33 +195,34 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1130, 470);
+            this.panel1.Size = new System.Drawing.Size(1918, 470);
             this.panel1.TabIndex = 0;
             // 
             // panel3
             // 
+            this.panel3.AutoScroll = true;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.dgvUcAnalysis);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1126, 441);
+            this.panel3.Size = new System.Drawing.Size(1914, 441);
             this.panel3.TabIndex = 2;
             // 
             // dgvUcAnalysis
             // 
-            this.dgvUcAnalysis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvUcAnalysis.AllowUserToDeleteRows = false;
             this.dgvUcAnalysis.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvUcAnalysis.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvUcAnalysis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvUcAnalysis.ColumnHeadersHeight = 25;
+            this.dgvUcAnalysis.ColumnHeadersHeight = 40;
             this.dgvUcAnalysis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvUcAnalysis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvUcAnalyId,
@@ -246,146 +247,10 @@
             this.dgvUcAnalysis.Location = new System.Drawing.Point(0, 0);
             this.dgvUcAnalysis.Name = "dgvUcAnalysis";
             this.dgvUcAnalysis.RowHeadersWidth = 60;
+            this.dgvUcAnalysis.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvUcAnalysis.RowTemplate.Height = 25;
-            this.dgvUcAnalysis.Size = new System.Drawing.Size(1122, 437);
+            this.dgvUcAnalysis.Size = new System.Drawing.Size(1910, 437);
             this.dgvUcAnalysis.TabIndex = 0;
-            // 
-            // dgvUcAnalyId
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyId.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvUcAnalyId.HeaderText = "编号";
-            this.dgvUcAnalyId.Name = "dgvUcAnalyId";
-            this.dgvUcAnalyId.Width = 60;
-            // 
-            // dgvUcAnalyParamIntro
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyParamIntro.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvUcAnalyParamIntro.HeaderText = "参数+引导词";
-            this.dgvUcAnalyParamIntro.Name = "dgvUcAnalyParamIntro";
-            this.dgvUcAnalyParamIntro.Width = 109;
-            // 
-            // dgvUcAnalyDeviate
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyDeviate.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvUcAnalyDeviate.HeaderText = "偏离描述";
-            this.dgvUcAnalyDeviate.Name = "dgvUcAnalyDeviate";
-            this.dgvUcAnalyDeviate.Width = 88;
-            // 
-            // dgvUcAnalyReason
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyReason.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvUcAnalyReason.HeaderText = "原因";
-            this.dgvUcAnalyReason.Name = "dgvUcAnalyReason";
-            this.dgvUcAnalyReason.Width = 60;
-            // 
-            // dgvUcAnalyF0
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyF0.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvUcAnalyF0.HeaderText = "F0";
-            this.dgvUcAnalyF0.Name = "dgvUcAnalyF0";
-            this.dgvUcAnalyF0.Width = 27;
-            // 
-            // dgvUcAnalyResult
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyResult.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvUcAnalyResult.HeaderText = "后果";
-            this.dgvUcAnalyResult.Name = "dgvUcAnalyResult";
-            this.dgvUcAnalyResult.Width = 60;
-            // 
-            // dgvUcAnalySi
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalySi.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvUcAnalySi.HeaderText = "Si";
-            this.dgvUcAnalySi.Name = "dgvUcAnalySi";
-            this.dgvUcAnalySi.Width = 27;
-            // 
-            // dgvUcAnalyLi
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyLi.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvUcAnalyLi.HeaderText = "Li";
-            this.dgvUcAnalyLi.Name = "dgvUcAnalyLi";
-            this.dgvUcAnalyLi.Width = 27;
-            // 
-            // dgvUcAnalyRi
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyRi.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvUcAnalyRi.HeaderText = "Ri";
-            this.dgvUcAnalyRi.Name = "dgvUcAnalyRi";
-            this.dgvUcAnalyRi.ReadOnly = true;
-            this.dgvUcAnalyRi.Width = 46;
-            // 
-            // dgvUcAnalyNowMeasure
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyNowMeasure.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvUcAnalyNowMeasure.HeaderText = "现有措施";
-            this.dgvUcAnalyNowMeasure.Name = "dgvUcAnalyNowMeasure";
-            this.dgvUcAnalyNowMeasure.Width = 88;
-            // 
-            // dgvUcAnalyFs
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyFs.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvUcAnalyFs.HeaderText = "Fs";
-            this.dgvUcAnalyFs.Name = "dgvUcAnalyFs";
-            this.dgvUcAnalyFs.Width = 27;
-            // 
-            // dgvUcAnalyS
-            // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyS.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvUcAnalyS.HeaderText = "S";
-            this.dgvUcAnalyS.Name = "dgvUcAnalyS";
-            this.dgvUcAnalyS.Width = 20;
-            // 
-            // dgvUcAnalyL
-            // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyL.DefaultCellStyle = dataGridViewCellStyle14;
-            this.dgvUcAnalyL.HeaderText = "L";
-            this.dgvUcAnalyL.Name = "dgvUcAnalyL";
-            this.dgvUcAnalyL.Width = 20;
-            // 
-            // dgvUcAnalyR
-            // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyR.DefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvUcAnalyR.HeaderText = "R";
-            this.dgvUcAnalyR.Name = "dgvUcAnalyR";
-            this.dgvUcAnalyR.Width = 39;
-            // 
-            // dgvUcAnalySugestion
-            // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalySugestion.DefaultCellStyle = dataGridViewCellStyle16;
-            this.dgvUcAnalySugestion.HeaderText = "建议项";
-            this.dgvUcAnalySugestion.Name = "dgvUcAnalySugestion";
-            this.dgvUcAnalySugestion.Width = 74;
-            // 
-            // dgvUcAnalyReponsible
-            // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyReponsible.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dgvUcAnalyReponsible.HeaderText = "负责单位/人";
-            this.dgvUcAnalyReponsible.Name = "dgvUcAnalyReponsible";
-            this.dgvUcAnalyReponsible.Width = 109;
-            // 
-            // dgvUcAnalyRemark
-            // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyRemark.DefaultCellStyle = dataGridViewCellStyle18;
-            this.dgvUcAnalyRemark.HeaderText = "备注";
-            this.dgvUcAnalyRemark.Name = "dgvUcAnalyRemark";
-            this.dgvUcAnalyRemark.Width = 60;
             // 
             // panel2
             // 
@@ -395,7 +260,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 441);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1126, 25);
+            this.panel2.Size = new System.Drawing.Size(1914, 25);
             this.panel2.TabIndex = 1;
             // 
             // tspAnalyBottom
@@ -410,7 +275,7 @@
             this.tspUcAnalyDelete});
             this.tspAnalyBottom.Location = new System.Drawing.Point(0, 0);
             this.tspAnalyBottom.Name = "tspAnalyBottom";
-            this.tspAnalyBottom.Size = new System.Drawing.Size(1122, 21);
+            this.tspAnalyBottom.Size = new System.Drawing.Size(1910, 21);
             this.tspAnalyBottom.TabIndex = 0;
             this.tspAnalyBottom.Text = "toolStrip2";
             // 
@@ -462,6 +327,158 @@
             this.tspUcAnalyDelete.Size = new System.Drawing.Size(64, 18);
             this.tspUcAnalyDelete.Text = "删除";
             // 
+            // dgvUcAnalyId
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyId.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvUcAnalyId.FillWeight = 1F;
+            this.dgvUcAnalyId.HeaderText = "编号";
+            this.dgvUcAnalyId.Name = "dgvUcAnalyId";
+            this.dgvUcAnalyId.Width = 60;
+            // 
+            // dgvUcAnalyParamIntro
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyParamIntro.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvUcAnalyParamIntro.FillWeight = 1F;
+            this.dgvUcAnalyParamIntro.HeaderText = "参数+引导词";
+            this.dgvUcAnalyParamIntro.Name = "dgvUcAnalyParamIntro";
+            // 
+            // dgvUcAnalyDeviate
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyDeviate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvUcAnalyDeviate.FillWeight = 1F;
+            this.dgvUcAnalyDeviate.HeaderText = "偏离描述";
+            this.dgvUcAnalyDeviate.Name = "dgvUcAnalyDeviate";
+            this.dgvUcAnalyDeviate.Width = 150;
+            // 
+            // dgvUcAnalyReason
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyReason.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvUcAnalyReason.FillWeight = 1F;
+            this.dgvUcAnalyReason.HeaderText = "原因";
+            this.dgvUcAnalyReason.Name = "dgvUcAnalyReason";
+            this.dgvUcAnalyReason.Width = 150;
+            // 
+            // dgvUcAnalyF0
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyF0.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvUcAnalyF0.FillWeight = 1F;
+            this.dgvUcAnalyF0.HeaderText = "F0";
+            this.dgvUcAnalyF0.Name = "dgvUcAnalyF0";
+            this.dgvUcAnalyF0.Width = 50;
+            // 
+            // dgvUcAnalyResult
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyResult.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvUcAnalyResult.FillWeight = 1F;
+            this.dgvUcAnalyResult.HeaderText = "后果";
+            this.dgvUcAnalyResult.Name = "dgvUcAnalyResult";
+            this.dgvUcAnalyResult.Width = 150;
+            // 
+            // dgvUcAnalySi
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalySi.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvUcAnalySi.FillWeight = 1F;
+            this.dgvUcAnalySi.HeaderText = "Si";
+            this.dgvUcAnalySi.Name = "dgvUcAnalySi";
+            this.dgvUcAnalySi.Width = 50;
+            // 
+            // dgvUcAnalyLi
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyLi.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvUcAnalyLi.FillWeight = 1F;
+            this.dgvUcAnalyLi.HeaderText = "Li";
+            this.dgvUcAnalyLi.Name = "dgvUcAnalyLi";
+            this.dgvUcAnalyLi.Width = 50;
+            // 
+            // dgvUcAnalyRi
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyRi.DefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvUcAnalyRi.FillWeight = 1F;
+            this.dgvUcAnalyRi.HeaderText = "Ri";
+            this.dgvUcAnalyRi.Name = "dgvUcAnalyRi";
+            this.dgvUcAnalyRi.ReadOnly = true;
+            this.dgvUcAnalyRi.Width = 50;
+            // 
+            // dgvUcAnalyNowMeasure
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyNowMeasure.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvUcAnalyNowMeasure.FillWeight = 1F;
+            this.dgvUcAnalyNowMeasure.HeaderText = "现有措施";
+            this.dgvUcAnalyNowMeasure.Name = "dgvUcAnalyNowMeasure";
+            this.dgvUcAnalyNowMeasure.Width = 150;
+            // 
+            // dgvUcAnalyFs
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyFs.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvUcAnalyFs.FillWeight = 1F;
+            this.dgvUcAnalyFs.HeaderText = "Fs";
+            this.dgvUcAnalyFs.Name = "dgvUcAnalyFs";
+            this.dgvUcAnalyFs.Width = 50;
+            // 
+            // dgvUcAnalyS
+            // 
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyS.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvUcAnalyS.FillWeight = 1F;
+            this.dgvUcAnalyS.HeaderText = "S";
+            this.dgvUcAnalyS.Name = "dgvUcAnalyS";
+            this.dgvUcAnalyS.Width = 50;
+            // 
+            // dgvUcAnalyL
+            // 
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyL.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvUcAnalyL.FillWeight = 1F;
+            this.dgvUcAnalyL.HeaderText = "L";
+            this.dgvUcAnalyL.Name = "dgvUcAnalyL";
+            this.dgvUcAnalyL.Width = 50;
+            // 
+            // dgvUcAnalyR
+            // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyR.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvUcAnalyR.FillWeight = 1F;
+            this.dgvUcAnalyR.HeaderText = "R";
+            this.dgvUcAnalyR.Name = "dgvUcAnalyR";
+            this.dgvUcAnalyR.Width = 50;
+            // 
+            // dgvUcAnalySugestion
+            // 
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalySugestion.DefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvUcAnalySugestion.FillWeight = 1F;
+            this.dgvUcAnalySugestion.HeaderText = "建议项";
+            this.dgvUcAnalySugestion.Name = "dgvUcAnalySugestion";
+            this.dgvUcAnalySugestion.Width = 150;
+            // 
+            // dgvUcAnalyReponsible
+            // 
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyReponsible.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvUcAnalyReponsible.FillWeight = 1F;
+            this.dgvUcAnalyReponsible.HeaderText = "负责单位/人";
+            this.dgvUcAnalyReponsible.Name = "dgvUcAnalyReponsible";
+            // 
+            // dgvUcAnalyRemark
+            // 
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyRemark.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvUcAnalyRemark.FillWeight = 1F;
+            this.dgvUcAnalyRemark.HeaderText = "备注";
+            this.dgvUcAnalyRemark.Name = "dgvUcAnalyRemark";
+            this.dgvUcAnalyRemark.Width = 150;
+            // 
             // UcAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -469,7 +486,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.tspUcAanlyTop);
             this.Name = "UcAnalysis";
-            this.Size = new System.Drawing.Size(1366, 531);
+            this.Size = new System.Drawing.Size(2300, 531);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -505,6 +522,12 @@
         private System.Windows.Forms.DataGridView dgvUcAnalysis;
         private System.Windows.Forms.TreeView trvUcAnaly;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyAddRow;
+        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyAddInRow;
+        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyAddGroup;
+        private System.Windows.Forms.ToolStripSplitButton tspUcAnalySave;
+        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyDeletGroup;
+        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyParamIntro;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyDeviate;
@@ -522,11 +545,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalySugestion;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyReponsible;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyRemark;
-        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyAddRow;
-        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyAddInRow;
-        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyAddGroup;
-        private System.Windows.Forms.ToolStripSplitButton tspUcAnalySave;
-        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyDeletGroup;
-        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyDelete;
     }
 }
