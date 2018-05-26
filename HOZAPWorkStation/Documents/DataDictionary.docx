@@ -1,4 +1,7 @@
-1.起始界面：
+
+namespace HOZAPWorkStation
+{
+	1.起始界面：
 	窗体属性（name）命名：InitialInterface；
 	控件集合：
 		Button类（name）：
@@ -9,7 +12,7 @@
 
 		MenuStrip类（name）：菜单initMenuStrip；
 
-2.新建项目界面：
+	2.新建项目界面：
 	窗体属性（name）命名：NewProjectInterface；
 	控件集合：[Label标签编码过程中未使用，不做声明]
 		Button类（name）：
@@ -34,7 +37,7 @@
 			CoverPicDialog；
 		}
 
-3.项目准备
+	3.项目准备
 	*此项使用用户控件动态添加，因次建立一个用户控件UcPrepareControl,包含项目
 	 准备里的所有表项：项目基本信息BaseInfo、参与人员Participants、
 	 风险矩阵RiskMatrix、项目参数Parameters。
@@ -102,7 +105,7 @@
 		}
 		[其余控件，编码中未使用，不做声明]
 	
-4.节点划分
+	4.节点划分
 	*此项使用用户控件动态添加，因此建立一个用户控件UcNodePartition,此控件主要是为了增加节点
 	 控件集合：[Label标签编码过程中未使用，不做声明]
 	 首先是:
@@ -159,7 +162,7 @@
 		 }
 	  }
 	
-5.HAZOP分析
+	5.HAZOP分析
 	*此项使用用户控件动态添加，因此建立一个用户控件UcAanlysis,此控件主要是为了增加节点
 	 控件集合：[Label标签编码过程中未使用，不做声明]
 	 TabControl类（name）名：
@@ -183,6 +186,7 @@
 			保存tspUcAnalySave，删除组tspUcAnalyDeletGroup，删除tspUcAnalyDelete；
 	    }
 	 }
-
+}//namespace HOZAPWorkStation
 		
+
 	    			   
