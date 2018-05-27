@@ -102,7 +102,7 @@
             // 
             this.tspUcAanlyTop.Location = new System.Drawing.Point(0, 0);
             this.tspUcAanlyTop.Name = "tspUcAanlyTop";
-            this.tspUcAanlyTop.Size = new System.Drawing.Size(2300, 25);
+            this.tspUcAanlyTop.Size = new System.Drawing.Size(1366, 25);
             this.tspUcAanlyTop.TabIndex = 0;
             this.tspUcAanlyTop.Text = "toolStrip1";
             // 
@@ -119,8 +119,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tbcUcAnalyRight);
-            this.splitContainer1.Size = new System.Drawing.Size(2300, 506);
-            this.splitContainer1.SplitterDistance = 360;
+            this.splitContainer1.Size = new System.Drawing.Size(1366, 506);
+            this.splitContainer1.SplitterDistance = 214;
             this.splitContainer1.TabIndex = 1;
             // 
             // tbcUcAanlyLeft
@@ -130,7 +130,7 @@
             this.tbcUcAanlyLeft.Location = new System.Drawing.Point(0, 0);
             this.tbcUcAanlyLeft.Name = "tbcUcAanlyLeft";
             this.tbcUcAanlyLeft.SelectedIndex = 0;
-            this.tbcUcAanlyLeft.Size = new System.Drawing.Size(360, 506);
+            this.tbcUcAanlyLeft.Size = new System.Drawing.Size(214, 506);
             this.tbcUcAanlyLeft.TabIndex = 0;
             // 
             // tabPage1
@@ -142,7 +142,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(352, 480);
+            this.tabPage1.Size = new System.Drawing.Size(206, 480);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "节点列表";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -152,16 +152,15 @@
             this.trvUcAnaly.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trvUcAnaly.Location = new System.Drawing.Point(3, 3);
             this.trvUcAnaly.Name = "trvUcAnaly";
-            this.trvUcAnaly.Size = new System.Drawing.Size(342, 470);
+            this.trvUcAnaly.Size = new System.Drawing.Size(196, 470);
             this.trvUcAnaly.TabIndex = 1;
-            this.trvUcAnaly.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvUcAnaly_AfterSelect);
             // 
             // treeView1
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(342, 470);
+            this.treeView1.Size = new System.Drawing.Size(196, 470);
             this.treeView1.TabIndex = 0;
             // 
             // tbcUcAnalyRight
@@ -171,7 +170,7 @@
             this.tbcUcAnalyRight.Location = new System.Drawing.Point(0, 0);
             this.tbcUcAnalyRight.Name = "tbcUcAnalyRight";
             this.tbcUcAnalyRight.SelectedIndex = 0;
-            this.tbcUcAnalyRight.Size = new System.Drawing.Size(1936, 506);
+            this.tbcUcAnalyRight.Size = new System.Drawing.Size(1148, 506);
             this.tbcUcAnalyRight.TabIndex = 0;
             // 
             // tabPage3
@@ -182,7 +181,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1928, 480);
+            this.tabPage3.Size = new System.Drawing.Size(1140, 480);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "HAZOP分析工作表";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -196,7 +195,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1918, 470);
+            this.panel1.Size = new System.Drawing.Size(1130, 470);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -207,7 +206,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1914, 441);
+            this.panel3.Size = new System.Drawing.Size(1126, 441);
             this.panel3.TabIndex = 2;
             // 
             // dgvUcAnalysis
@@ -250,7 +249,7 @@
             this.dgvUcAnalysis.RowHeadersWidth = 60;
             this.dgvUcAnalysis.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvUcAnalysis.RowTemplate.Height = 25;
-            this.dgvUcAnalysis.Size = new System.Drawing.Size(1910, 437);
+            this.dgvUcAnalysis.Size = new System.Drawing.Size(1122, 437);
             this.dgvUcAnalysis.TabIndex = 0;
             // 
             // dgvUcAnalyId
@@ -403,7 +402,7 @@
             this.dgvUcAnalyRemark.FillWeight = 1F;
             this.dgvUcAnalyRemark.HeaderText = "备注";
             this.dgvUcAnalyRemark.Name = "dgvUcAnalyRemark";
-            this.dgvUcAnalyRemark.Width = 150;
+            this.dgvUcAnalyRemark.Width = 60;
             // 
             // panel2
             // 
@@ -413,7 +412,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 441);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1914, 25);
+            this.panel2.Size = new System.Drawing.Size(1126, 25);
             this.panel2.TabIndex = 1;
             // 
             // tspAnalyBottom
@@ -428,7 +427,7 @@
             this.tspUcAnalyDelete});
             this.tspAnalyBottom.Location = new System.Drawing.Point(0, 0);
             this.tspAnalyBottom.Name = "tspAnalyBottom";
-            this.tspAnalyBottom.Size = new System.Drawing.Size(1910, 21);
+            this.tspAnalyBottom.Size = new System.Drawing.Size(1122, 21);
             this.tspAnalyBottom.TabIndex = 0;
             this.tspAnalyBottom.Text = "toolStrip2";
             // 
@@ -487,7 +486,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.tspUcAanlyTop);
             this.Name = "UcAnalysis";
-            this.Size = new System.Drawing.Size(2300, 531);
+            this.Size = new System.Drawing.Size(1366, 531);
             this.Load += new System.EventHandler(this.UcAnalysis_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

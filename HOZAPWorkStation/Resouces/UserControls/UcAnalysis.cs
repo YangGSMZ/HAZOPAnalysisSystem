@@ -39,25 +39,14 @@ namespace HOZAPWorkStation.UserControls
                     }
                 }
             }
+           
+
 
         }
 
         private void UcAnalysis_Load(object sender, System.EventArgs e)
         {
             CreateTree();
-        }
-
-        /// <summary>
-        /// 选中节点后发生，子节点数为0，判断为叶子节点
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void trvUcAnaly_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            if ((sender as TreeView).SelectedNode != null&& (sender as TreeView).SelectedNode.Nodes.Count==0)
-            {
-                MessageBox.Show(trvUcAnaly.SelectedNode.Text);
-            }
         }
     }
 }
