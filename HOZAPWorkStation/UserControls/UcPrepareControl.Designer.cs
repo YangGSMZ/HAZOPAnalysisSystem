@@ -1664,7 +1664,7 @@
             // 
             // dgvPreParamSled
             // 
-            this.dgvPreParamSled.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPreParamSled.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPreParamSled.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvPreParamSled.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -1685,6 +1685,7 @@
             this.dgvPreParamSled.Name = "dgvPreParamSled";
             this.dgvPreParamSled.ReadOnly = true;
             this.dgvPreParamSled.RowHeadersWidth = 60;
+            this.dgvPreParamSled.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dgvPreParamSled.RowTemplate.Height = 23;
             this.dgvPreParamSled.RowTemplate.ReadOnly = true;
             this.dgvPreParamSled.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -1757,7 +1758,7 @@
             // dgvPreParamSelection
             // 
             this.dgvPreParamSelection.AllowUserToResizeRows = false;
-            this.dgvPreParamSelection.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPreParamSelection.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPreParamSelection.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvPreParamSelection.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -1776,6 +1777,7 @@
             this.dgvPreParamSelection.Location = new System.Drawing.Point(0, 23);
             this.dgvPreParamSelection.Name = "dgvPreParamSelection";
             this.dgvPreParamSelection.RowHeadersWidth = 60;
+            this.dgvPreParamSelection.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             this.dgvPreParamSelection.RowTemplate.Height = 23;
             this.dgvPreParamSelection.RowTemplate.ReadOnly = true;
             this.dgvPreParamSelection.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -1893,50 +1895,62 @@
             // SelectPramas
             // 
             this.SelectPramas.DataPropertyName = "PramasID";
+            this.SelectPramas.FillWeight = 1F;
             this.SelectPramas.HeaderText = "";
             this.SelectPramas.Name = "SelectPramas";
             this.SelectPramas.ReadOnly = true;
+            this.SelectPramas.Width = 60;
             // 
             // ParamNameSelected
             // 
             this.ParamNameSelected.DataPropertyName = "Name";
+            this.ParamNameSelected.FillWeight = 1F;
             this.ParamNameSelected.HeaderText = "参数名称";
             this.ParamNameSelected.Name = "ParamNameSelected";
             this.ParamNameSelected.ReadOnly = true;
             this.ParamNameSelected.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ParamNameSelected.Width = 200;
             // 
             // IntroducerSelected
             // 
             this.IntroducerSelected.DataPropertyName = "AllIntroducer";
+            this.IntroducerSelected.FillWeight = 1F;
             this.IntroducerSelected.HeaderText = "包含的引导词";
             this.IntroducerSelected.Name = "IntroducerSelected";
             this.IntroducerSelected.ReadOnly = true;
+            this.IntroducerSelected.Width = 400;
             // 
             // PramasID
             // 
             this.PramasID.DataPropertyName = "PramasID";
+            this.PramasID.FillWeight = 1F;
             this.PramasID.HeaderText = "";
             this.PramasID.Name = "PramasID";
+            this.PramasID.Width = 60;
             // 
             // ParamNameSelection
             // 
             this.ParamNameSelection.DataPropertyName = "Name";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ParamNameSelection.DefaultCellStyle = dataGridViewCellStyle8;
+            this.ParamNameSelection.FillWeight = 1F;
             this.ParamNameSelection.HeaderText = "参数名称";
             this.ParamNameSelection.Name = "ParamNameSelection";
             this.ParamNameSelection.ReadOnly = true;
             this.ParamNameSelection.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ParamNameSelection.Width = 200;
             // 
             // ParamNameSelIntroducer
             // 
             this.ParamNameSelIntroducer.DataPropertyName = "AllIntroducer";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.ParamNameSelIntroducer.DefaultCellStyle = dataGridViewCellStyle9;
+            this.ParamNameSelIntroducer.FillWeight = 1F;
             this.ParamNameSelIntroducer.HeaderText = "包含的引导词";
             this.ParamNameSelIntroducer.Name = "ParamNameSelIntroducer";
             this.ParamNameSelIntroducer.ReadOnly = true;
             this.ParamNameSelIntroducer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ParamNameSelIntroducer.Width = 400;
             // 
             // UcPrepareControl
             // 
