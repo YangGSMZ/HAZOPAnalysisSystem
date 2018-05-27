@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HOZAPModel;
+using HOZAPBLL;
+using HAZOPCommon;
+using HAZOPBLL;
 
 namespace HOZAPWorkStation.UserControls
 {
@@ -15,6 +19,7 @@ namespace HOZAPWorkStation.UserControls
 
         public delegate void LoadNodePartitionPageEvents();
         public event LoadNodePartitionPageEvents MyLoadNodePartitionPageEvents;
+       
         public UcPrepareControl()
         {
             InitializeComponent();
@@ -105,6 +110,12 @@ namespace HOZAPWorkStation.UserControls
             this.dgvPreUcRisk.Rows[index].Cells[5].Style.BackColor = Color.Green;
             this.dgvPreUcRisk.Rows[index].Cells[6].Value = "D";
             this.dgvPreUcRisk.Rows[index].Cells[6].Style.BackColor = Color.LightBlue;
+
+
+
+            PreParamSledDataBind();
+            PreParamSelectionDataBind();
+
         }
         /// <summary>
         /// 用于绘制行的序号
@@ -117,6 +128,7 @@ namespace HOZAPWorkStation.UserControls
             //e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dataGridView1.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 20, e.RowBounds.Location.Y + 4);
         }
 
+
         private void tspPreNoteSplit_Click(object sender, EventArgs e)
         {
             if (MyLoadNodePartitionPageEvents != null)
@@ -124,5 +136,80 @@ namespace HOZAPWorkStation.UserControls
                MyLoadNodePartitionPageEvents();
             }
         }
+
+        /// <summary>
+        /// 为选择的参数展示表的数据绑定
+        /// </summary>
+        private void PreParamSelectionDataBind()
+        {
+            PramasBLL pbll = new PramasBLL();
+            IntroducerBLL ibll = new IntroducerBLL();
+            string ProName = "111";
+            List<Pramas> plist = pbll.Get_PramasList(ProName);
+            List<Introducer> introducerlist = new List<Introducer>();
+
+            List<DisplayPramasAndIntroducer> displaylist = new List<DisplayPramasAndIntroducer>();
+            for (int i = 0; i < plist.Count; i++)
+            {
+                DisplayPramasAndIntroducer displayinfo = new DisplayPramasAndIntroducer();
+                displayinfo.PramasID = plist[i].PramasID;
+                displayinfo.Name = plist[i].Name;
+                introducerlist = ibll.Get_IntroducerList(plist[i].PramasID);
+                for (int j = 0; j < introducerlist.Count; j++)
+                {
+                    if (j == introducerlist.Count - 1)
+                    {
+                        displayinfo.AllIntroducer += introducerlist[j].IntroducerText;
+                    }
+                    else
+                    {
+                        displayinfo.AllIntroducer += introducerlist[j].IntroducerText + "、";
+                    }
+
+                }
+                displaylist.Add(displayinfo);
+
+            }
+            dgvPreParamSelection.DataSource = displaylist;
+        }
+
+
+        /// <summary>
+        /// 已选参数展示表的数据绑定
+        /// </summary>
+        private void PreParamSledDataBind()
+        {
+            SelectedPramasBLL spbll = new SelectedPramasBLL();
+            IntroducerBLL ibll = new IntroducerBLL(); 
+            string ProName = "111";
+            List<SelectedPramas> splist = spbll.Get_SelectedPramasList(ProName);
+            List<Introducer> introducerlist = new List<Introducer>();
+
+            List<DisplayPramasAndIntroducer> displaylist = new List<DisplayPramasAndIntroducer>();
+            for (int i = 0; i < splist.Count; i++)
+            {
+                DisplayPramasAndIntroducer displayinfo = new DisplayPramasAndIntroducer();
+                displayinfo.PramasID = splist[i].PramasId;
+                displayinfo.Name = splist[i].PramasText;
+                introducerlist = ibll.Get_IntroducerList(splist[i].PramasId);
+                for (int j = 0; j < introducerlist.Count; j++)
+                {
+                    if(j == introducerlist.Count - 1)
+                    {
+                        displayinfo.AllIntroducer += introducerlist[j].IntroducerText;
+                    }
+                    else
+                    {
+                        displayinfo.AllIntroducer += introducerlist[j].IntroducerText + "、";
+                    }
+                    
+                }
+                displaylist.Add(displayinfo);
+
+             }
+            dgvPreParamSled.DataSource = displaylist;
+        }
+
+
     }
 }

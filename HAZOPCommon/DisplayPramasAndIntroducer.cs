@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HOZAPModel
+namespace HAZOPCommon
 {
-    public class Pramas
+    public class DisplayPramasAndIntroducer
     {
         /// <summary>
         /// 参数ID
@@ -39,5 +39,13 @@ namespace HOZAPModel
                 return this._PramasName;
             }
         }
+
+        string _AllIntroducer;
+        public string AllIntroducer
+        {
+            set { this._AllIntroducer = value; }
+            get { return this._AllIntroducer; }
+        }
+
     }
 }
