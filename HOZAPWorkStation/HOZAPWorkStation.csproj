@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControls\dgvCcAnalys.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\dgvCcAnalys.Designer.cs">
+      <DependentUpon>dgvCcAnalys.cs</DependentUpon>
+    </Compile>
     <Compile Include="InitialInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <Compile Include="UserControls\UcNodePartition.Designer.cs">
       <DependentUpon>UcNodePartition.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomControls\dgvCcAnalys.resx">
+      <DependentUpon>dgvCcAnalys.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InitialInterface.resx">
       <DependentUpon>InitialInterface.cs</DependentUpon>
     </EmbeddedResource>
