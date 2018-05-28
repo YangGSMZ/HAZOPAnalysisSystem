@@ -14,10 +14,28 @@ namespace HOZAPWorkStation
 {
     public partial class AddParticipant : Form
     {
+        public delegate void ParticipantInfoDataBindEvents();
+        public event ParticipantInfoDataBindEvents MyParticipantInfoDataBindEvents;
         public AddParticipant()
         {
             InitializeComponent();
         }
+
+        private static AddParticipant _instance;
+        //创建窗体对象的静态方法
+        public static AddParticipant InstanceObject()
+        {
+            if (_instance == null)
+                _instance = new AddParticipant();
+            return _instance;
+        }
+
+        //窗体关闭事件
+        private void AddParticipant_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _instance = null;
+        }
+      
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -37,6 +55,8 @@ namespace HOZAPWorkStation
                 if (pbll.Add_Participant(participantinfo))
                 {
                     MessageBox.Show("添加成功!");
+                    MyParticipantInfoDataBindEvents();
+                    this.Close();
                 }
                 else
                 {
@@ -50,5 +70,12 @@ namespace HOZAPWorkStation
             }
            
         }
+
+        private void btnConcel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+      
     }
 }

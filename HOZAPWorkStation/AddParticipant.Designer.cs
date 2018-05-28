@@ -44,7 +44,7 @@
             this.cbRolePlay = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnConcel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -193,21 +193,22 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button2
+            // btnConcel
             // 
-            this.button2.Location = new System.Drawing.Point(262, 259);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "取  消";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnConcel.Location = new System.Drawing.Point(262, 259);
+            this.btnConcel.Name = "btnConcel";
+            this.btnConcel.Size = new System.Drawing.Size(75, 23);
+            this.btnConcel.TabIndex = 16;
+            this.btnConcel.Text = "取  消";
+            this.btnConcel.UseVisualStyleBackColor = true;
+            this.btnConcel.Click += new System.EventHandler(this.btnConcel_Click);
             // 
             // AddParticipant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 299);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnConcel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cbRolePlay);
@@ -230,6 +231,7 @@
             this.Name = "AddParticipant";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "人员详细信息录入";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddParticipant_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,6 +255,6 @@
         private System.Windows.Forms.ComboBox cbRolePlay;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnConcel;
     }
 }

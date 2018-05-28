@@ -212,9 +212,10 @@ namespace HOZAPWorkStation.UserControls
 
         private void tspParcipantAdd_Click(object sender, EventArgs e)
         {
-            AddParticipant addparticipant = new AddParticipant();
-            addparticipant.Show();
-            
+            AddParticipant addparticipant = AddParticipant.InstanceObject();
+            addparticipant.MyParticipantInfoDataBindEvents += new AddParticipant.ParticipantInfoDataBindEvents(ParticipantInfoDataBind);
+            addparticipant.Focus();   //让窗体获得焦点
+            addparticipant.Show();    //显示窗体
         }
         /// <summary>
         /// 项目参与人员信息展示表的数据绑定

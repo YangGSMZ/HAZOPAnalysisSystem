@@ -217,7 +217,6 @@ namespace HOZAPWorkStation
        
         private void preBtn_Click(object sender, EventArgs e)
         {
-          
             LoadPreparePage();
         }
 
@@ -281,9 +280,9 @@ namespace HOZAPWorkStation
 
         private void newBtn_Click(object sender, EventArgs e)
         {
+
             NewProjectInterface NewProject = new NewProjectInterface();
             NewProject.Show();
-          
         }
     }
 }
