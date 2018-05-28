@@ -12,10 +12,10 @@ namespace HOZAPDAL
     public class ParticipantDAL
     {
         /// <summary>
-        /// 添加参与项目人员信息
+        /// 添加项目成员信息
         /// </summary>
-        /// <param name="participantinfo">项目人员信息类</param>
-        /// <returns></returns>
+        /// <param name="participantinfo">项目成员信息</param>
+        /// <returns>trueOrfalse</returns>
         public bool Add_Participant(Participant participantinfo)
         {
             bool IsSuccess = false;
@@ -43,7 +43,11 @@ namespace HOZAPDAL
             }
             return IsSuccess;
         }
-
+        /// <summary>
+        /// 根据项目名获取所有参与人员信息
+        /// </summary>
+        /// <param name="ProName">项目名</param>
+        /// <returns>成员信息列表</returns>
         public List<Participant> Get_ParticipantInfoList(string ProName)
         {
             string sql = "select * from tb_Participant where ProName=@ProName";
@@ -71,7 +75,11 @@ namespace HOZAPDAL
             return participantinfolist;
         }
 
-
+        /// <summary>
+        /// 根据成员的ID删除成员信息
+        /// </summary>
+        /// <param name="ID">成员的ID</param>
+        /// <returns>trueOrfalse</returns>
         public bool Del_ParticipantInfo(int ID)
         {
             bool IsSuccess = false;

@@ -11,10 +11,10 @@ namespace HOZAPDAL
     public class PramasDAL
     {
         /// <summary>
-        /// 查询不在已经选择的参数表中的参数数据
+        /// 根据项目名获取未选择的参数列表
         /// </summary>
         /// <param name="ProName">项目名</param>
-        /// <returns></returns>
+        /// <returns>参数列表</returns>
         public List<Pramas> Get_PramasList(string ProName)
         {
             string sql = " select* from tb_Pramas where PramasID not in(select PramasID from tb_SelectedPramas where ProName =@ProName)";

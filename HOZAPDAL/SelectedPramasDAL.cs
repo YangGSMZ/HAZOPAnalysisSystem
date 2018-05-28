@@ -11,10 +11,10 @@ namespace HOZAPDAL
     public class SelectedPramasDAL
     {
         /// <summary>
-        /// 用于查询项目选择的参数
+        /// 根据项目名获取已选择项目参数列表
         /// </summary>
-        /// <param name="ProName">项目名称</param>
-        /// <returns></returns>
+        /// <param name="ProName">项目名</param>
+        /// <returns>已选择项目参数列表</returns>
         public List<SelectedPramas> Get_SelectedPramasList(string ProName)
         {
             string sql = "select * from tb_SelectedPramas where ProName=@ProName";
