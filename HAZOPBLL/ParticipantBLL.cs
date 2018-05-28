@@ -19,5 +19,9 @@ namespace HAZOPBLL
         {
             return dal.Get_ParticipantInfoList(ProName);
         }
+        public bool Del_ParticipantInfo(int ID)
+        {
+            return dal.Del_ParticipantInfo(ID);
+        }
     }
 }

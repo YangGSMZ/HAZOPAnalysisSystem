@@ -19,7 +19,8 @@ namespace HOZAPWorkStation.UserControls
 
         public delegate void LoadNodePartitionPageEvents();
         public event LoadNodePartitionPageEvents MyLoadNodePartitionPageEvents;
-       
+        ParticipantBLL pbll = new ParticipantBLL();
+
         public UcPrepareControl()
         {
             InitializeComponent();
@@ -124,7 +125,7 @@ namespace HOZAPWorkStation.UserControls
         /// <param name="e"></param>
         private void dgvPreParamSelable_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            //SolidBrush b = new SolidBrush(this.dgvPreParamSelable.RowHeadersDefaultCellStyle.ForeColor);
+           // SolidBrush b = new SolidBrush(this.dgvPreParamSelable.RowHeadersDefaultCellStyle.ForeColor);
             //e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dataGridView1.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 20, e.RowBounds.Location.Y + 4);
         }
 
@@ -147,7 +148,6 @@ namespace HOZAPWorkStation.UserControls
             string ProName = "111";
             List<Pramas> plist = pbll.Get_PramasList(ProName);
             List<Introducer> introducerlist = new List<Introducer>();
-
             List<DisplayPramasAndIntroducer> displaylist = new List<DisplayPramasAndIntroducer>();
             for (int i = 0; i < plist.Count; i++)
             {
@@ -216,16 +216,35 @@ namespace HOZAPWorkStation.UserControls
             addparticipant.Show();
             
         }
-
+        /// <summary>
+        /// 项目参与人员信息展示表的数据绑定
+        /// </summary>
         private void ParticipantInfoDataBind()
         {
-            ParticipantBLL pbll = new ParticipantBLL();
+          
             List<Participant> ParticipantInfoList = pbll.Get_ParticipantInfoList("111");
             dgvPreUcPar.AutoGenerateColumns = false;
             dgvPreUcPar.DataSource = ParticipantInfoList;
            
-
         }
 
+        private void tspParcipantDelete_Click(object sender, EventArgs e)
+        {
+
+            DialogResult dr= MessageBox.Show("是否删除当前选中行的项目人员信息!","提示",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+            if (dr==DialogResult.Yes)
+            {
+                
+                if (pbll.Del_ParticipantInfo(Convert.ToInt32(dgvPreUcPar.CurrentRow.Cells["ID"].Value)))
+                {
+                    ParticipantInfoDataBind();
+                }
+                else
+                {
+                    MessageBox.Show("删除失败!");
+                }
+            }
+           
+        }
     }
 }

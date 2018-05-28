@@ -72,5 +72,16 @@ namespace HOZAPDAL
         }
 
 
+        public bool Del_ParticipantInfo(int ID)
+        {
+            bool IsSuccess = false;
+            string sql = "delete from tb_Participant where ID=@ID";
+            if (SqlHelper.ExecuteNonQuery(sql,new SqlParameter("@ID", ID)) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
+
     }
 }
