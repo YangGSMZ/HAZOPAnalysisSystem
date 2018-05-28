@@ -36,8 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -45,6 +43,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PrepareToolStrip = new System.Windows.Forms.ToolStrip();
             this.tspPreNoteSplit = new System.Windows.Forms.ToolStripButton();
             this.tspPreHelp = new System.Windows.Forms.ToolStripSplitButton();
@@ -110,6 +110,7 @@
             this.dgvPreParticipantCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreParticipantDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreParticipantRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPreParticipantDisplay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrepareTabControl = new System.Windows.Forms.TabControl();
             this.BaseInfo = new System.Windows.Forms.TabPage();
@@ -169,9 +170,6 @@
             this.tspPreParamSeledNoAll = new System.Windows.Forms.ToolStripSplitButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvPreParamSled = new System.Windows.Forms.DataGridView();
-            this.SelectPramas = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ParamNameSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IntroducerSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnPreParaCancel = new System.Windows.Forms.Button();
@@ -179,9 +177,6 @@
             this.btnPreParaDafult = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvPreParamSelection = new System.Windows.Forms.DataGridView();
-            this.PramasID = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ParamNameSelection = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParamNameSelIntroducer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvPreUcRiskProb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskLight = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -192,6 +187,14 @@
             this.dgvPreUcRiskSerio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskGrave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskDisas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.PramasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParamNameSelection = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParamNameSelIntroducer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SelectPramas = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SelectedPramasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParamNameSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IntroducerSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrepareToolStrip.SuspendLayout();
             this.RiskMatrix.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -1015,6 +1018,7 @@
             this.dgvPreParticipantCompany,
             this.dgvPreParticipantDepartment,
             this.dgvPreParticipantRole,
+            this.dgvPreParticipantDisplay,
             this.ID});
             this.dgvPreUcPar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPreUcPar.Location = new System.Drawing.Point(3, 3);
@@ -1064,6 +1068,11 @@
             this.dgvPreParticipantRole.DataPropertyName = "Roleplay";
             this.dgvPreParticipantRole.HeaderText = "项目角色";
             this.dgvPreParticipantRole.Name = "dgvPreParticipantRole";
+            // 
+            // dgvPreParticipantDisplay
+            // 
+            this.dgvPreParticipantDisplay.HeaderText = "显示顺序";
+            this.dgvPreParticipantDisplay.Name = "dgvPreParticipantDisplay";
             // 
             // ID
             // 
@@ -1689,6 +1698,7 @@
             this.dgvPreParamSled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPreParamSled.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SelectPramas,
+            this.SelectedPramasID,
             this.ParamNameSelected,
             this.IntroducerSelected});
             this.dgvPreParamSled.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1702,36 +1712,6 @@
             this.dgvPreParamSled.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPreParamSled.Size = new System.Drawing.Size(642, 530);
             this.dgvPreParamSled.TabIndex = 1;
-            this.dgvPreParamSled.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPreParamSled_CellContentClick);
-            this.dgvPreParamSled.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvPreParamSled_RowPostPaint);
-            // 
-            // SelectPramas
-            // 
-            this.SelectPramas.DataPropertyName = "PramasID";
-            this.SelectPramas.FillWeight = 1F;
-            this.SelectPramas.HeaderText = "";
-            this.SelectPramas.Name = "SelectPramas";
-            this.SelectPramas.ReadOnly = true;
-            this.SelectPramas.Width = 60;
-            // 
-            // ParamNameSelected
-            // 
-            this.ParamNameSelected.DataPropertyName = "Name";
-            this.ParamNameSelected.FillWeight = 1F;
-            this.ParamNameSelected.HeaderText = "参数名称";
-            this.ParamNameSelected.Name = "ParamNameSelected";
-            this.ParamNameSelected.ReadOnly = true;
-            this.ParamNameSelected.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ParamNameSelected.Width = 200;
-            // 
-            // IntroducerSelected
-            // 
-            this.IntroducerSelected.DataPropertyName = "AllIntroducer";
-            this.IntroducerSelected.FillWeight = 1F;
-            this.IntroducerSelected.HeaderText = "包含的引导词";
-            this.IntroducerSelected.Name = "IntroducerSelected";
-            this.IntroducerSelected.ReadOnly = true;
-            this.IntroducerSelected.Width = 400;
             // 
             // label12
             // 
@@ -1811,6 +1791,7 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPreParamSelection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPreParamSelection.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IsSelect,
             this.PramasID,
             this.ParamNameSelection,
             this.ParamNameSelIntroducer});
@@ -1824,42 +1805,6 @@
             this.dgvPreParamSelection.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPreParamSelection.Size = new System.Drawing.Size(594, 534);
             this.dgvPreParamSelection.TabIndex = 1;
-            this.dgvPreParamSelection.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPreParamSelection_CellContentClick);
-            this.dgvPreParamSelection.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvPreParamSelection_RowPostPaint);
-            // 
-            // PramasID
-            // 
-            this.PramasID.DataPropertyName = "PramasID";
-            this.PramasID.FalseValue = "0";
-            this.PramasID.FillWeight = 1F;
-            this.PramasID.HeaderText = "";
-            this.PramasID.Name = "PramasID";
-            this.PramasID.TrueValue = "1";
-            this.PramasID.Width = 60;
-            // 
-            // ParamNameSelection
-            // 
-            this.ParamNameSelection.DataPropertyName = "Name";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ParamNameSelection.DefaultCellStyle = dataGridViewCellStyle8;
-            this.ParamNameSelection.FillWeight = 1F;
-            this.ParamNameSelection.HeaderText = "参数名称";
-            this.ParamNameSelection.Name = "ParamNameSelection";
-            this.ParamNameSelection.ReadOnly = true;
-            this.ParamNameSelection.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ParamNameSelection.Width = 200;
-            // 
-            // ParamNameSelIntroducer
-            // 
-            this.ParamNameSelIntroducer.DataPropertyName = "AllIntroducer";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ParamNameSelIntroducer.DefaultCellStyle = dataGridViewCellStyle9;
-            this.ParamNameSelIntroducer.FillWeight = 1F;
-            this.ParamNameSelIntroducer.HeaderText = "包含的引导词";
-            this.ParamNameSelIntroducer.Name = "ParamNameSelIntroducer";
-            this.ParamNameSelIntroducer.ReadOnly = true;
-            this.ParamNameSelIntroducer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ParamNameSelIntroducer.Width = 400;
             // 
             // label11
             // 
@@ -1968,6 +1913,79 @@
             this.dgvPreUcRiskDisas.ReadOnly = true;
             this.dgvPreUcRiskDisas.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPreUcRiskDisas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // IsSelect
+            // 
+            this.IsSelect.FillWeight = 1F;
+            this.IsSelect.HeaderText = "";
+            this.IsSelect.Name = "IsSelect";
+            this.IsSelect.Width = 60;
+            // 
+            // PramasID
+            // 
+            this.PramasID.DataPropertyName = "PramasID";
+            this.PramasID.HeaderText = "PramasID";
+            this.PramasID.Name = "PramasID";
+            this.PramasID.Visible = false;
+            // 
+            // ParamNameSelection
+            // 
+            this.ParamNameSelection.DataPropertyName = "Name";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ParamNameSelection.DefaultCellStyle = dataGridViewCellStyle8;
+            this.ParamNameSelection.FillWeight = 1F;
+            this.ParamNameSelection.HeaderText = "参数名称";
+            this.ParamNameSelection.Name = "ParamNameSelection";
+            this.ParamNameSelection.ReadOnly = true;
+            this.ParamNameSelection.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ParamNameSelection.Width = 200;
+            // 
+            // ParamNameSelIntroducer
+            // 
+            this.ParamNameSelIntroducer.DataPropertyName = "AllIntroducer";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ParamNameSelIntroducer.DefaultCellStyle = dataGridViewCellStyle9;
+            this.ParamNameSelIntroducer.FillWeight = 1F;
+            this.ParamNameSelIntroducer.HeaderText = "包含的引导词";
+            this.ParamNameSelIntroducer.Name = "ParamNameSelIntroducer";
+            this.ParamNameSelIntroducer.ReadOnly = true;
+            this.ParamNameSelIntroducer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ParamNameSelIntroducer.Width = 400;
+            // 
+            // SelectPramas
+            // 
+            this.SelectPramas.FillWeight = 1F;
+            this.SelectPramas.HeaderText = "";
+            this.SelectPramas.Name = "SelectPramas";
+            this.SelectPramas.ReadOnly = true;
+            this.SelectPramas.Width = 60;
+            // 
+            // SelectedPramasID
+            // 
+            this.SelectedPramasID.DataPropertyName = "PramasID";
+            this.SelectedPramasID.HeaderText = "SelectedPramasID";
+            this.SelectedPramasID.Name = "SelectedPramasID";
+            this.SelectedPramasID.ReadOnly = true;
+            this.SelectedPramasID.Visible = false;
+            // 
+            // ParamNameSelected
+            // 
+            this.ParamNameSelected.DataPropertyName = "Name";
+            this.ParamNameSelected.FillWeight = 1F;
+            this.ParamNameSelected.HeaderText = "参数名称";
+            this.ParamNameSelected.Name = "ParamNameSelected";
+            this.ParamNameSelected.ReadOnly = true;
+            this.ParamNameSelected.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ParamNameSelected.Width = 200;
+            // 
+            // IntroducerSelected
+            // 
+            this.IntroducerSelected.DataPropertyName = "AllIntroducer";
+            this.IntroducerSelected.FillWeight = 1F;
+            this.IntroducerSelected.HeaderText = "包含的引导词";
+            this.IntroducerSelected.Name = "IntroducerSelected";
+            this.IntroducerSelected.ReadOnly = true;
+            this.IntroducerSelected.Width = 400;
             // 
             // UcPrepareControl
             // 
@@ -2160,12 +2178,8 @@
         private System.Windows.Forms.DataGridView dgvPreParamSelection;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ToolStripButton tspPreNoteSplit;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectPramas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ParamNameSelected;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IntroducerSelected;
         private System.Windows.Forms.ToolStripButton tspParcipantAdd;
         private System.Windows.Forms.DataGridView dgvPreUcPar;
-        private System.Windows.Forms.ToolStripButton tspParcipantDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPreParticipantId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPreParticipantName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPreParticipantMajor;
@@ -2173,8 +2187,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPreParticipantCompany;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPreParticipantDepartment;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPreParticipantRole;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvPreParticipantDisplay;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn PramasID;
+        private System.Windows.Forms.ToolStripButton tspParcipantDelete;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectPramas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SelectedPramasID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ParamNameSelected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IntroducerSelected;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PramasID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParamNameSelection;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParamNameSelIntroducer;
     }

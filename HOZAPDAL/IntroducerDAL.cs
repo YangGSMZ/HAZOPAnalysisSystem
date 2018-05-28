@@ -10,6 +10,11 @@ namespace HOZAPDAL
 {
     public class IntroducerDAL
     {
+        /// <summary>
+        /// 根据参数ID获取所有引导词列表
+        /// </summary>
+        /// <param name="PramasId">参数ID</param>
+        /// <returns>引导词列表</returns>
         public List<Introducer> Get_IntroducerList(int PramasId)
         {
             string sql = "select * from tb_Introducer where PramasId=@PramasId";

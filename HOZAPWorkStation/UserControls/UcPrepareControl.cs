@@ -171,7 +171,9 @@ namespace HOZAPWorkStation.UserControls
                 displaylist.Add(displayinfo);
 
             }
+            dgvPreParamSelection.AutoGenerateColumns = false;
             dgvPreParamSelection.DataSource = displaylist;
+           
         }
 
 
@@ -208,6 +210,7 @@ namespace HOZAPWorkStation.UserControls
                 displaylist.Add(displayinfo);
 
              }
+            dgvPreParamSled.AutoGenerateColumns = false;
             dgvPreParamSled.DataSource = displaylist;
         }
 
