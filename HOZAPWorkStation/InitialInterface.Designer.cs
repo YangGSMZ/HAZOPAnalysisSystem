@@ -178,6 +178,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.initMenuStrip;
             this.Name = "InitialInterface";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InitialInterface";
             this.Load += new System.EventHandler(this.InitialInterface_Load);
             this.Resize += new System.EventHandler(this.InitialInterface_Resize);

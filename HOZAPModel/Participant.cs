@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HOZAPModel
 {
-    class Participant
+    public class Participant
     {
         /// <summary>
         /// 参与人员ID

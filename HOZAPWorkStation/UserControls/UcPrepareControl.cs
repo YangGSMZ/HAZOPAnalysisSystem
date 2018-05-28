@@ -112,7 +112,7 @@ namespace HOZAPWorkStation.UserControls
             this.dgvPreUcRisk.Rows[index].Cells[6].Style.BackColor = Color.LightBlue;
 
 
-
+            ParticipantInfoDataBind();
             PreParamSledDataBind();
             PreParamSelectionDataBind();
 
@@ -210,6 +210,22 @@ namespace HOZAPWorkStation.UserControls
             dgvPreParamSled.DataSource = displaylist;
         }
 
+        private void tspParcipantAdd_Click(object sender, EventArgs e)
+        {
+            AddParticipant addparticipant = new AddParticipant();
+            addparticipant.Show();
+            
+        }
+
+        private void ParticipantInfoDataBind()
+        {
+            ParticipantBLL pbll = new ParticipantBLL();
+            List<Participant> ParticipantInfoList = pbll.Get_ParticipantInfoList("111");
+            dgvPreUcPar.AutoGenerateColumns = false;
+            dgvPreUcPar.DataSource = ParticipantInfoList;
+           
+
+        }
 
     }
 }

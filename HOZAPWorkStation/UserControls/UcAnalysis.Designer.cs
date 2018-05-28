@@ -60,6 +60,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.dgvUcAnalysis = new System.Windows.Forms.DataGridView();
             this.dgvUcAnalyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUcAnalyParamIntro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,7 +87,6 @@
             this.tspUcAnalySave = new System.Windows.Forms.ToolStripSplitButton();
             this.tspUcAnalyDeletGroup = new System.Windows.Forms.ToolStripSplitButton();
             this.tspUcAnalyDelete = new System.Windows.Forms.ToolStripSplitButton();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.dgvCcAnalys1 = new HOZAPWorkStation.CustomControls.dgvCcAnalys();
             this.dgcCcAnalyNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcCcAnalyParams = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -115,10 +115,10 @@
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUcAnalysis)).BeginInit();
             this.panel2.SuspendLayout();
             this.tspAnalyBottom.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCcAnalys1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,6 +174,7 @@
             // trvUcAnaly
             // 
             this.trvUcAnaly.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trvUcAnaly.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.trvUcAnaly.Location = new System.Drawing.Point(3, 3);
             this.trvUcAnaly.Name = "trvUcAnaly";
             this.trvUcAnaly.Size = new System.Drawing.Size(342, 470);
@@ -234,6 +235,15 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1914, 441);
             this.panel3.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dgvCcAnalys1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1910, 437);
+            this.panel4.TabIndex = 1;
             // 
             // dgvUcAnalysis
             // 
@@ -515,15 +525,6 @@
             this.tspUcAnalyDelete.Size = new System.Drawing.Size(64, 18);
             this.tspUcAnalyDelete.Text = "删除";
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.dgvCcAnalys1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1910, 437);
-            this.panel4.TabIndex = 1;
-            // 
             // dgvCcAnalys1
             // 
             this.dgvCcAnalys1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
@@ -714,12 +715,12 @@
             this.tabPage3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUcAnalysis)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tspAnalyBottom.ResumeLayout(false);
             this.tspAnalyBottom.PerformLayout();
-            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCcAnalys1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
