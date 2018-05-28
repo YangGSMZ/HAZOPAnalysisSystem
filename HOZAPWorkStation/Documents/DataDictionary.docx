@@ -163,6 +163,9 @@ namespace HOZAPWorkStation
 	  }
 	
 	5.HAZOP分析
+
+	**这里的分析表使用的datagridview采用自定义控件dgvCcAnalys，保留用户控件UcAanlysis，以备用
+	
 	*此项使用用户控件动态添加，因此建立一个用户控件UcAanlysis,此控件主要是为了增加节点
 	 控件集合：[Label标签编码过程中未使用，不做声明]
 	 TabControl类（name）名：
