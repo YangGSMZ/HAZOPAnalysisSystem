@@ -118,17 +118,18 @@ namespace HOZAPWorkStation.UserControls
             PreParamSelectionDataBind();
 
         }
-        /// <summary>
-        /// 用于绘制行的序号
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dgvPreParamSelable_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-           // SolidBrush b = new SolidBrush(this.dgvPreParamSelable.RowHeadersDefaultCellStyle.ForeColor);
-            //e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dataGridView1.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 20, e.RowBounds.Location.Y + 4);
-        }
-
+        //#region 未引用
+        ///// <summary>
+        ///// 用于绘制行的序号
+        ///// </summary>
+        ///// <param name="sender"></param>
+        ///// <param name="e"></param>
+        //private void dgvPreParamSelable_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        //{
+        //    SolidBrush b = new SolidBrush(this.dgvPreUcPar.RowHeadersDefaultCellStyle.ForeColor);
+        //    e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dgvPreUcPar.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 20, e.RowBounds.Location.Y + 4);
+        //}
+        //#endregion
 
         private void tspPreNoteSplit_Click(object sender, EventArgs e)
         {
@@ -246,6 +247,69 @@ namespace HOZAPWorkStation.UserControls
                 }
             }
            
+        }
+
+        /// <summary>
+        /// 绘制参数页可选参数中列表dgvPreParamSelection的行号
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvPreParamSelection_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            SolidBrush b = new SolidBrush(this.dgvPreParamSelection.RowHeadersDefaultCellStyle.ForeColor);
+            e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dgvPreParamSelection.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 20, e.RowBounds.Location.Y + 4);
+        }
+
+        /// <summary>
+        /// 用于改变dgvPreParamSelection复选框的选中状态
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvPreParamSelection_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                DataGridViewCheckBoxCell checkbox =(DataGridViewCheckBoxCell)dgvPreParamSelection.Rows[e.RowIndex].Cells[0];
+                if ((int)checkbox.Value == 1)
+                {
+                    checkbox.Value = 0;
+                }
+                else
+                {
+                    checkbox.Value = 1;
+                }
+            }
+        }
+        /// <summary>
+        /// 用于改变dgvPreParamSled复选框的选中状态
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvPreParamSled_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)dgvPreParamSled.Rows[e.RowIndex].Cells[0];
+                if ((int)checkbox.Value == 1)
+                {
+                    checkbox.Value = 0;
+                }
+                else
+                {
+                    checkbox.Value = 1;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 绘制参数页可选参数中列表dgvPreParamSled的行号
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvPreParamSled_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            SolidBrush b = new SolidBrush(this.dgvPreParamSelection.RowHeadersDefaultCellStyle.ForeColor);
+            e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dgvPreParamSelection.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 20, e.RowBounds.Location.Y + 4);
         }
     }
 }
