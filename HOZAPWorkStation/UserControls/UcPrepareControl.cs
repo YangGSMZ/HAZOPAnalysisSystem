@@ -298,7 +298,7 @@ namespace HOZAPWorkStation.UserControls
             }
         }
         /// <summary>
-        /// 用于改变dgvPreParamSled复选框的选中状态。
+        /// 用于改变dgvPreParamSled复选框的选中状态
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
