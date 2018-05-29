@@ -172,6 +172,7 @@ namespace HOZAPWorkStation.UserControls
             }
             dgvPreParamSelection.AutoGenerateColumns = false;
             dgvPreParamSelection.DataSource = displaylist;
+            
            
         }
 
@@ -250,5 +251,7 @@ namespace HOZAPWorkStation.UserControls
             }
            
         }
+
+    
     }
 }
