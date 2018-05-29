@@ -214,6 +214,11 @@ namespace HOZAPWorkStation.UserControls
             dgvPreParamSled.DataSource = displaylist;
         }
 
+        /// <summary>
+        /// 添加“参与人员”信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tspParcipantAdd_Click(object sender, EventArgs e)
         {
             AddParticipant addparticipant = AddParticipant.InstanceObject();
@@ -233,6 +238,11 @@ namespace HOZAPWorkStation.UserControls
            
         }
 
+        /// <summary>
+        /// 删除“参与人员”信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tspParcipantDelete_Click(object sender, EventArgs e)
         {
 
@@ -273,6 +283,10 @@ namespace HOZAPWorkStation.UserControls
             if (e.ColumnIndex == 0)
             {
                 DataGridViewCheckBoxCell checkbox =(DataGridViewCheckBoxCell)dgvPreParamSelection.Rows[e.RowIndex].Cells[0];
+                if (checkbox.Value == null)
+                {
+                    checkbox.Value = 0;
+                }
                 if ((int)checkbox.Value == 1)
                 {
                     checkbox.Value = 0;
@@ -284,7 +298,7 @@ namespace HOZAPWorkStation.UserControls
             }
         }
         /// <summary>
-        /// 用于改变dgvPreParamSled复选框的选中状态
+        /// 用于改变dgvPreParamSled复选框的选中状态。
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -293,6 +307,10 @@ namespace HOZAPWorkStation.UserControls
             if (e.ColumnIndex == 0)
             {
                 DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)dgvPreParamSled.Rows[e.RowIndex].Cells[0];
+                if (checkbox.Value == null)
+                {
+                    checkbox.Value = 0;
+                }
                 if ((int)checkbox.Value == 1)
                 {
                     checkbox.Value = 0;
@@ -311,8 +329,8 @@ namespace HOZAPWorkStation.UserControls
         /// <param name="e"></param>
         private void dgvPreParamSled_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            SolidBrush b = new SolidBrush(this.dgvPreParamSelection.RowHeadersDefaultCellStyle.ForeColor);
-            e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dgvPreParamSelection.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 20, e.RowBounds.Location.Y + 4);
+            SolidBrush b = new SolidBrush(this.dgvPreParamSled.RowHeadersDefaultCellStyle.ForeColor);
+            e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dgvPreParamSled.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 20, e.RowBounds.Location.Y + 4);
         }
     }
 }
