@@ -686,7 +686,7 @@
             // dgcCcAnalyCompany
             // 
             this.dgcCcAnalyCompany.FillWeight = 1F;
-            this.dgcCcAnalyCompany.HeaderText = "负责单位/ren";
+            this.dgcCcAnalyCompany.HeaderText = "负责单位/人";
             this.dgcCcAnalyCompany.Name = "dgcCcAnalyCompany";
             // 
             // dgcCcAnalyMark
