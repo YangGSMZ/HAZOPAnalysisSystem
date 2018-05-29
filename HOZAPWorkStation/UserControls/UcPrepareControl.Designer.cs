@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcPrepareControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PrepareToolStrip = new System.Windows.Forms.ToolStrip();
             this.tspPreNoteSplit = new System.Windows.Forms.ToolStripButton();
             this.tspPreHelp = new System.Windows.Forms.ToolStripSplitButton();
@@ -170,10 +170,6 @@
             this.tspPreParamSeledNoAll = new System.Windows.Forms.ToolStripSplitButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvPreParamSled = new System.Windows.Forms.DataGridView();
-            this.SelectPramas = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.SelectedPramasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParamNameSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IntroducerSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnPreParaCancel = new System.Windows.Forms.Button();
@@ -181,10 +177,6 @@
             this.btnPreParaDafult = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvPreParamSelection = new System.Windows.Forms.DataGridView();
-            this.IsSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.PramasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParamNameSelection = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParamNameSelIntroducer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvPreUcRiskProb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskLight = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -195,6 +187,14 @@
             this.dgvPreUcRiskSerio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskGrave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskDisas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.PramasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParamNameSelection = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParamNameSelIntroducer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SelectPramas = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SelectedPramasID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParamNameSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IntroducerSelected = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrepareToolStrip.SuspendLayout();
             this.RiskMatrix.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -302,14 +302,14 @@
             this.dgvPreUcRisk.AllowUserToAddRows = false;
             this.dgvPreUcRisk.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPreUcRisk.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreUcRisk.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle65.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle65.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle65.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle65.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle65.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle65.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreUcRisk.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle65;
             this.dgvPreUcRisk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPreUcRisk.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gdvRiskMtxProb,
@@ -322,23 +322,22 @@
             this.dgvPreUcRisk.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPreUcRisk.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.dgvPreUcRisk.Location = new System.Drawing.Point(0, 0);
-            this.dgvPreUcRisk.MultiSelect = false;
             this.dgvPreUcRisk.Name = "dgvPreUcRisk";
             this.dgvPreUcRisk.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreUcRisk.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle68.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle68.ForeColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreUcRisk.RowHeadersDefaultCellStyle = dataGridViewCellStyle68;
             this.dgvPreUcRisk.RowHeadersWidth = 60;
             this.dgvPreUcRisk.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgvPreUcRisk.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle69.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle69.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgvPreUcRisk.RowsDefaultCellStyle = dataGridViewCellStyle69;
             this.dgvPreUcRisk.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvPreUcRisk.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dgvPreUcRisk.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
@@ -354,8 +353,8 @@
             // gdvRiskMtxProb
             // 
             this.gdvRiskMtxProb.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.gdvRiskMtxProb.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gdvRiskMtxProb.DefaultCellStyle = dataGridViewCellStyle66;
             this.gdvRiskMtxProb.HeaderText = "概率";
             this.gdvRiskMtxProb.Name = "gdvRiskMtxProb";
             this.gdvRiskMtxProb.ReadOnly = true;
@@ -365,8 +364,8 @@
             // gdvRiskMtxProbIntro
             // 
             this.gdvRiskMtxProbIntro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.gdvRiskMtxProbIntro.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gdvRiskMtxProbIntro.DefaultCellStyle = dataGridViewCellStyle67;
             this.gdvRiskMtxProbIntro.HeaderText = "概率说明";
             this.gdvRiskMtxProbIntro.Name = "gdvRiskMtxProbIntro";
             this.gdvRiskMtxProbIntro.ReadOnly = true;
@@ -1688,14 +1687,14 @@
             this.dgvPreParamSled.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPreParamSled.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvPreParamSled.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreParamSled.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle70.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle70.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle70.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle70.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle70.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle70.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreParamSled.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle70;
             this.dgvPreParamSled.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPreParamSled.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SelectPramas,
@@ -1715,41 +1714,6 @@
             this.dgvPreParamSled.TabIndex = 1;
             this.dgvPreParamSled.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPreParamSled_CellContentClick);
             this.dgvPreParamSled.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvPreParamSled_RowPostPaint);
-            // 
-            // SelectPramas
-            // 
-            this.SelectPramas.FillWeight = 1F;
-            this.SelectPramas.HeaderText = "";
-            this.SelectPramas.Name = "SelectPramas";
-            this.SelectPramas.ReadOnly = true;
-            this.SelectPramas.Width = 60;
-            // 
-            // SelectedPramasID
-            // 
-            this.SelectedPramasID.DataPropertyName = "PramasID";
-            this.SelectedPramasID.HeaderText = "SelectedPramasID";
-            this.SelectedPramasID.Name = "SelectedPramasID";
-            this.SelectedPramasID.ReadOnly = true;
-            this.SelectedPramasID.Visible = false;
-            // 
-            // ParamNameSelected
-            // 
-            this.ParamNameSelected.DataPropertyName = "Name";
-            this.ParamNameSelected.FillWeight = 1F;
-            this.ParamNameSelected.HeaderText = "参数名称";
-            this.ParamNameSelected.Name = "ParamNameSelected";
-            this.ParamNameSelected.ReadOnly = true;
-            this.ParamNameSelected.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ParamNameSelected.Width = 200;
-            // 
-            // IntroducerSelected
-            // 
-            this.IntroducerSelected.DataPropertyName = "AllIntroducer";
-            this.IntroducerSelected.FillWeight = 1F;
-            this.IntroducerSelected.HeaderText = "包含的引导词";
-            this.IntroducerSelected.Name = "IntroducerSelected";
-            this.IntroducerSelected.ReadOnly = true;
-            this.IntroducerSelected.Width = 400;
             // 
             // label12
             // 
@@ -1783,6 +1747,7 @@
             this.btnPreParaCancel.TabIndex = 2;
             this.btnPreParaCancel.Text = "取消（⬅）";
             this.btnPreParaCancel.UseVisualStyleBackColor = true;
+            this.btnPreParaCancel.Click += new System.EventHandler(this.btnPreParaCancel_Click);
             // 
             // btnPreParaSelect
             // 
@@ -1791,8 +1756,9 @@
             this.btnPreParaSelect.Name = "btnPreParaSelect";
             this.btnPreParaSelect.Size = new System.Drawing.Size(80, 25);
             this.btnPreParaSelect.TabIndex = 1;
-            this.btnPreParaSelect.Text = "选择（➡）";
+            this.btnPreParaSelect.Text = "选择(➡)";
             this.btnPreParaSelect.UseVisualStyleBackColor = true;
+            this.btnPreParaSelect.Click += new System.EventHandler(this.btnPreParaSelect_Click);
             // 
             // btnPreParaDafult
             // 
@@ -1820,14 +1786,14 @@
             this.dgvPreParamSelection.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPreParamSelection.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvPreParamSelection.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreParamSelection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle71.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle71.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreParamSelection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle71;
             this.dgvPreParamSelection.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IsSelect,
             this.PramasID,
@@ -1846,44 +1812,6 @@
             this.dgvPreParamSelection.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPreParamSelection_CellContentClick);
             this.dgvPreParamSelection.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvPreParamSelection_RowPostPaint);
             // 
-            // IsSelect
-            // 
-            this.IsSelect.FillWeight = 1F;
-            this.IsSelect.HeaderText = "";
-            this.IsSelect.Name = "IsSelect";
-            this.IsSelect.Width = 60;
-            // 
-            // PramasID
-            // 
-            this.PramasID.DataPropertyName = "PramasID";
-            this.PramasID.HeaderText = "PramasID";
-            this.PramasID.Name = "PramasID";
-            this.PramasID.Visible = false;
-            // 
-            // ParamNameSelection
-            // 
-            this.ParamNameSelection.DataPropertyName = "Name";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ParamNameSelection.DefaultCellStyle = dataGridViewCellStyle8;
-            this.ParamNameSelection.FillWeight = 1F;
-            this.ParamNameSelection.HeaderText = "参数名称";
-            this.ParamNameSelection.Name = "ParamNameSelection";
-            this.ParamNameSelection.ReadOnly = true;
-            this.ParamNameSelection.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ParamNameSelection.Width = 200;
-            // 
-            // ParamNameSelIntroducer
-            // 
-            this.ParamNameSelIntroducer.DataPropertyName = "AllIntroducer";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ParamNameSelIntroducer.DefaultCellStyle = dataGridViewCellStyle9;
-            this.ParamNameSelIntroducer.FillWeight = 1F;
-            this.ParamNameSelIntroducer.HeaderText = "包含的引导词";
-            this.ParamNameSelIntroducer.Name = "ParamNameSelIntroducer";
-            this.ParamNameSelIntroducer.ReadOnly = true;
-            this.ParamNameSelIntroducer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ParamNameSelIntroducer.Width = 400;
-            // 
             // label11
             // 
             this.label11.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1897,10 +1825,10 @@
             // dgvPreUcRiskProb
             // 
             this.dgvPreUcRiskProb.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskProb.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle74.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle74.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskProb.DefaultCellStyle = dataGridViewCellStyle74;
             this.dgvPreUcRiskProb.HeaderText = "概率";
             this.dgvPreUcRiskProb.Name = "dgvPreUcRiskProb";
             this.dgvPreUcRiskProb.ReadOnly = true;
@@ -1909,10 +1837,10 @@
             // 
             // dgvPreUcRiskLight
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskLight.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle75.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle75.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskLight.DefaultCellStyle = dataGridViewCellStyle75;
             this.dgvPreUcRiskLight.HeaderText = "1.轻微";
             this.dgvPreUcRiskLight.Name = "dgvPreUcRiskLight";
             this.dgvPreUcRiskLight.ReadOnly = true;
@@ -1934,10 +1862,10 @@
             // dgvPreUcRiskProIntro
             // 
             this.dgvPreUcRiskProIntro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskProIntro.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle76.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle76.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskProIntro.DefaultCellStyle = dataGridViewCellStyle76;
             this.dgvPreUcRiskProIntro.HeaderText = "概率说明";
             this.dgvPreUcRiskProIntro.Name = "dgvPreUcRiskProIntro";
             this.dgvPreUcRiskProIntro.ReadOnly = true;
@@ -1946,10 +1874,10 @@
             // 
             // dgvPreUcRiskOverLig
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskOverLig.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle77.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle77.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskOverLig.DefaultCellStyle = dataGridViewCellStyle77;
             this.dgvPreUcRiskOverLig.HeaderText = "2.较重";
             this.dgvPreUcRiskOverLig.Name = "dgvPreUcRiskOverLig";
             this.dgvPreUcRiskOverLig.ReadOnly = true;
@@ -1958,10 +1886,10 @@
             // 
             // dgvPreUcRiskSerio
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskSerio.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle78.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle78.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskSerio.DefaultCellStyle = dataGridViewCellStyle78;
             this.dgvPreUcRiskSerio.HeaderText = "3.严重";
             this.dgvPreUcRiskSerio.Name = "dgvPreUcRiskSerio";
             this.dgvPreUcRiskSerio.ReadOnly = true;
@@ -1970,10 +1898,10 @@
             // 
             // dgvPreUcRiskGrave
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskGrave.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle79.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle79.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskGrave.DefaultCellStyle = dataGridViewCellStyle79;
             this.dgvPreUcRiskGrave.HeaderText = "4.重大";
             this.dgvPreUcRiskGrave.Name = "dgvPreUcRiskGrave";
             this.dgvPreUcRiskGrave.ReadOnly = true;
@@ -1982,15 +1910,94 @@
             // 
             // dgvPreUcRiskDisas
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dgvPreUcRiskDisas.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle80.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle80.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dgvPreUcRiskDisas.DefaultCellStyle = dataGridViewCellStyle80;
             this.dgvPreUcRiskDisas.HeaderText = "5.灾难性";
             this.dgvPreUcRiskDisas.Name = "dgvPreUcRiskDisas";
             this.dgvPreUcRiskDisas.ReadOnly = true;
             this.dgvPreUcRiskDisas.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPreUcRiskDisas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // IsSelect
+            // 
+            this.IsSelect.FalseValue = "0";
+            this.IsSelect.FillWeight = 1F;
+            this.IsSelect.HeaderText = "";
+            this.IsSelect.IndeterminateValue = "0";
+            this.IsSelect.Name = "IsSelect";
+            this.IsSelect.TrueValue = "1";
+            this.IsSelect.Width = 60;
+            // 
+            // PramasID
+            // 
+            this.PramasID.DataPropertyName = "PramasID";
+            this.PramasID.HeaderText = "PramasID";
+            this.PramasID.Name = "PramasID";
+            this.PramasID.Visible = false;
+            // 
+            // ParamNameSelection
+            // 
+            this.ParamNameSelection.DataPropertyName = "Name";
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ParamNameSelection.DefaultCellStyle = dataGridViewCellStyle72;
+            this.ParamNameSelection.FillWeight = 1F;
+            this.ParamNameSelection.HeaderText = "参数名称";
+            this.ParamNameSelection.Name = "ParamNameSelection";
+            this.ParamNameSelection.ReadOnly = true;
+            this.ParamNameSelection.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ParamNameSelection.Width = 200;
+            // 
+            // ParamNameSelIntroducer
+            // 
+            this.ParamNameSelIntroducer.DataPropertyName = "AllIntroducer";
+            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ParamNameSelIntroducer.DefaultCellStyle = dataGridViewCellStyle73;
+            this.ParamNameSelIntroducer.FillWeight = 1F;
+            this.ParamNameSelIntroducer.HeaderText = "包含的引导词";
+            this.ParamNameSelIntroducer.Name = "ParamNameSelIntroducer";
+            this.ParamNameSelIntroducer.ReadOnly = true;
+            this.ParamNameSelIntroducer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ParamNameSelIntroducer.Width = 400;
+            // 
+            // SelectPramas
+            // 
+            this.SelectPramas.FalseValue = "0";
+            this.SelectPramas.FillWeight = 1F;
+            this.SelectPramas.HeaderText = "";
+            this.SelectPramas.IndeterminateValue = "0";
+            this.SelectPramas.Name = "SelectPramas";
+            this.SelectPramas.ReadOnly = true;
+            this.SelectPramas.TrueValue = "1";
+            this.SelectPramas.Width = 60;
+            // 
+            // SelectedPramasID
+            // 
+            this.SelectedPramasID.DataPropertyName = "PramasID";
+            this.SelectedPramasID.HeaderText = "SelectedPramasID";
+            this.SelectedPramasID.Name = "SelectedPramasID";
+            this.SelectedPramasID.ReadOnly = true;
+            this.SelectedPramasID.Visible = false;
+            // 
+            // ParamNameSelected
+            // 
+            this.ParamNameSelected.DataPropertyName = "Name";
+            this.ParamNameSelected.FillWeight = 1F;
+            this.ParamNameSelected.HeaderText = "参数名称";
+            this.ParamNameSelected.Name = "ParamNameSelected";
+            this.ParamNameSelected.ReadOnly = true;
+            this.ParamNameSelected.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ParamNameSelected.Width = 200;
+            // 
+            // IntroducerSelected
+            // 
+            this.IntroducerSelected.DataPropertyName = "AllIntroducer";
+            this.IntroducerSelected.FillWeight = 1F;
+            this.IntroducerSelected.HeaderText = "包含的引导词";
+            this.IntroducerSelected.Name = "IntroducerSelected";
+            this.IntroducerSelected.ReadOnly = true;
+            this.IntroducerSelected.Width = 400;
             // 
             // UcPrepareControl
             // 
@@ -2180,7 +2187,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxGrave;
         private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxDisastrous;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dgvPreParamSelection;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ToolStripButton tspPreNoteSplit;
         private System.Windows.Forms.ToolStripButton tspParcipantAdd;
@@ -2195,13 +2201,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPreParticipantDisplay;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.ToolStripButton tspParcipantDelete;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectPramas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SelectedPramasID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ParamNameSelected;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IntroducerSelected;
+        private System.Windows.Forms.DataGridView dgvPreParamSelection;
         private System.Windows.Forms.DataGridViewCheckBoxColumn IsSelect;
         private System.Windows.Forms.DataGridViewTextBoxColumn PramasID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParamNameSelection;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParamNameSelIntroducer;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn SelectPramas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SelectedPramasID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ParamNameSelected;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IntroducerSelected;
     }
 }

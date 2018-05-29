@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HOZAPModel
 {
-    class Node
+    public class Node
     {
         /// <summary>
         /// 节点编号

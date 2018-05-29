@@ -22,20 +22,31 @@ namespace HOZAPWorkStation.UserControls
             trvUcAnaly.Nodes.Add(root);
             SelectedPramasBLL spbll = new SelectedPramasBLL();
             IntroducerBLL ibll = new IntroducerBLL();
+            NodeBLL nbll = new NodeBLL();
+            List<Node> nodelist = nbll.Get_NodeList("111");
             List<SelectedPramas> sp = spbll.Get_SelectedPramasList("111");
-            if (sp != null)
+            if (nodelist != null)
             {
-                for (int i = 0; i < sp.Count; i++)
+                for (int i = 0; i < nodelist.Count; i++)
                 {
                     TreeNode node1 = new TreeNode();
-                    node1.Text = sp[i].PramasText;
+                    node1.Text = nodelist[i].NodeName;
                     root.Nodes.Add(node1);
-                    List<Introducer> Introducerlist = ibll.Get_IntroducerList(sp[i].PramasId);
-                    for (int j = 0; j < Introducerlist.Count; j++)
+                    if (sp != null)
                     {
-                        TreeNode node2 = new TreeNode();
-                        node2.Text = Introducerlist[j].IntroducerText;
-                        node1.Nodes.Add(node2);
+                        for (int j = 0; j < sp.Count; j++)
+                        {
+                            TreeNode node2 = new TreeNode();
+                            node2.Text = sp[j].PramasText;
+                            node1.Nodes.Add(node2);
+                            List<Introducer> Introducerlist = ibll.Get_IntroducerList(sp[j].PramasId);
+                            for (int k = 0; k < Introducerlist.Count; k++)
+                            {
+                                TreeNode node3 = new TreeNode();
+                                node3.Text = Introducerlist[k].IntroducerText;
+                                node2.Nodes.Add(node3);
+                            }
+                        }
                     }
                 }
             }

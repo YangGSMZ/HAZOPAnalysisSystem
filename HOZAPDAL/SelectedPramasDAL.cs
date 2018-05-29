@@ -1,6 +1,7 @@
 ﻿using HOZAPModel;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -36,9 +37,50 @@ namespace HOZAPDAL
             }
             return SelectedPramasList;
         }
-
-
-
+        /// <summary>
+        /// 批量添加选择的参数信息
+        /// </summary>
+        /// <param name="PramasInfoList">选择的参数信息列表</param>
+        /// <returns>trueOrfalse</returns>
+        public bool Add_SelectedPramasinfo(List<SelectedPramas> PramasInfoList)
+        {
+            bool IsSuccess = false;
+            StringBuilder sb = new StringBuilder();
+            List<SqlParameter> spmlist = new List<SqlParameter>();
+            sb.Append("BEGIN ");
+            for (int i = 0; i < PramasInfoList.Count; i++)
+            {
+                sb.Append("insert into tb_SelectedPramas values(" + PramasInfoList[i].PramasId + ",'" + PramasInfoList[i].PramasText + "','" + PramasInfoList[i].ProName + "')");        
+             }
+            sb.Append(" END;");
+            if (SqlHelper.ExecuteNonQuery(sb.ToString())>0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
+        /// <summary>
+        /// 根据参数ID删除已选着的参数
+        /// </summary>
+        /// <param name="PramasID">参数ID</param>
+        /// <returns>trueOrfalse</returns>
+        public bool Del_SelectedPramasinfo(List<int> PramasID)
+        {
+            bool IsSuccess = false;
+            StringBuilder sb = new StringBuilder();
+            List<SqlParameter> spmlist = new List<SqlParameter>();
+            sb.Append("BEGIN ");
+            for (int i = 0; i < PramasID.Count; i++)
+            {
+                sb.Append("delete from tb_SelectedPramas where PramasID="+PramasID[i]);
+            }
+            sb.Append(" END;");
+            if (SqlHelper.ExecuteNonQuery(sb.ToString()) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
 
     }
 }

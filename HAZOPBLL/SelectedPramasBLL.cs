@@ -20,5 +20,24 @@ namespace HOZAPBLL
         {
             return dal.Get_SelectedPramasList(ProName);
         }
+
+        /// <summary>
+        /// 批量添加选择的参数信息
+        /// </summary>
+        /// <param name="PramasInfoList">选择的参数信息列表</param>
+        /// <returns>trueOrfalse</returns>
+        public bool Add_SelectedPramasinfo(List<SelectedPramas> PramasInfoList)
+        {
+            return dal.Add_SelectedPramasinfo(PramasInfoList);
+        }
+        /// <summary>
+        /// 根据参数ID删除已选着的参数
+        /// </summary>
+        /// <param name="PramasID">参数ID</param>
+        /// <returns>trueOrfalse</returns>
+        public bool Del_SelectedPramasinfo(List<int> PramasID)
+        {
+            return dal.Del_SelectedPramasinfo(PramasID);
+        }
     }
 }
