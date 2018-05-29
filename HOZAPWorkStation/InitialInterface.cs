@@ -281,7 +281,8 @@ namespace HOZAPWorkStation
         private void newBtn_Click(object sender, EventArgs e)
         {
 
-            NewProjectInterface NewProject = new NewProjectInterface();
+            NewProjectInterface NewProject = NewProjectInterface.InstanceObject();
+            NewProject.Focus();
             NewProject.Show();
         }
     }
