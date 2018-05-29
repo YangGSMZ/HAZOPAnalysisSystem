@@ -20,6 +20,7 @@ namespace HOZAPWorkStation.UserControls
         public delegate void LoadNodePartitionPageEvents();
         public event LoadNodePartitionPageEvents MyLoadNodePartitionPageEvents;
         ParticipantBLL pbll = new ParticipantBLL();
+        SelectedPramasBLL spbll = new SelectedPramasBLL();
 
         public UcPrepareControl()
         {
@@ -148,28 +149,32 @@ namespace HOZAPWorkStation.UserControls
             IntroducerBLL ibll = new IntroducerBLL();
             string ProName = "111";
             List<Pramas> plist = pbll.Get_PramasList(ProName);
-            List<Introducer> introducerlist = new List<Introducer>();
-            List<DisplayPramasAndIntroducer> displaylist = new List<DisplayPramasAndIntroducer>();
-            for (int i = 0; i < plist.Count; i++)
+            List<DisplayPramasAndIntroducer> displaylist = null;
+            if (plist != null)
             {
-                DisplayPramasAndIntroducer displayinfo = new DisplayPramasAndIntroducer();
-                displayinfo.PramasID = plist[i].PramasID;
-                displayinfo.Name = plist[i].Name;
-                introducerlist = ibll.Get_IntroducerList(plist[i].PramasID);
-                for (int j = 0; j < introducerlist.Count; j++)
+                List<Introducer> introducerlist = new List<Introducer>();
+                displaylist = new List<DisplayPramasAndIntroducer>();
+                for (int i = 0; i < plist.Count; i++)
                 {
-                    if (j == introducerlist.Count - 1)
+                    DisplayPramasAndIntroducer displayinfo = new DisplayPramasAndIntroducer();
+                    displayinfo.PramasID = plist[i].PramasID;
+                    displayinfo.Name = plist[i].Name;
+                    introducerlist = ibll.Get_IntroducerList(plist[i].PramasID);
+                    for (int j = 0; j < introducerlist.Count; j++)
                     {
-                        displayinfo.AllIntroducer += introducerlist[j].IntroducerText;
+                        if (j == introducerlist.Count - 1)
+                        {
+                            displayinfo.AllIntroducer += introducerlist[j].IntroducerText;
+                        }
+                        else
+                        {
+                            displayinfo.AllIntroducer += introducerlist[j].IntroducerText + "、";
+                        }
+
                     }
-                    else
-                    {
-                        displayinfo.AllIntroducer += introducerlist[j].IntroducerText + "、";
-                    }
+                    displaylist.Add(displayinfo);
 
                 }
-                displaylist.Add(displayinfo);
-
             }
             dgvPreParamSelection.AutoGenerateColumns = false;
             dgvPreParamSelection.DataSource = displaylist;
@@ -182,34 +187,38 @@ namespace HOZAPWorkStation.UserControls
         /// </summary>
         private void PreParamSledDataBind()
         {
-            SelectedPramasBLL spbll = new SelectedPramasBLL();
+          
             IntroducerBLL ibll = new IntroducerBLL(); 
             string ProName = "111";
             List<SelectedPramas> splist = spbll.Get_SelectedPramasList(ProName);
-            List<Introducer> introducerlist = new List<Introducer>();
-
-            List<DisplayPramasAndIntroducer> displaylist = new List<DisplayPramasAndIntroducer>();
-            for (int i = 0; i < splist.Count; i++)
+            List<DisplayPramasAndIntroducer> displaylist = null;
+            if (splist != null)
             {
-                DisplayPramasAndIntroducer displayinfo = new DisplayPramasAndIntroducer();
-                displayinfo.PramasID = splist[i].PramasId;
-                displayinfo.Name = splist[i].PramasText;
-                introducerlist = ibll.Get_IntroducerList(splist[i].PramasId);
-                for (int j = 0; j < introducerlist.Count; j++)
+                List<Introducer> introducerlist = new List<Introducer>();
+                displaylist = new List<DisplayPramasAndIntroducer>();
+                for (int i = 0; i < splist.Count; i++)
                 {
-                    if(j == introducerlist.Count - 1)
+                    DisplayPramasAndIntroducer displayinfo = new DisplayPramasAndIntroducer();
+                    displayinfo.PramasID = splist[i].PramasId;
+                    displayinfo.Name = splist[i].PramasText;
+                    introducerlist = ibll.Get_IntroducerList(splist[i].PramasId);
+                    for (int j = 0; j < introducerlist.Count; j++)
                     {
-                        displayinfo.AllIntroducer += introducerlist[j].IntroducerText;
-                    }
-                    else
-                    {
-                        displayinfo.AllIntroducer += introducerlist[j].IntroducerText + "、";
-                    }
-                    
-                }
-                displaylist.Add(displayinfo);
+                        if (j == introducerlist.Count - 1)
+                        {
+                            displayinfo.AllIntroducer += introducerlist[j].IntroducerText;
+                        }
+                        else
+                        {
+                            displayinfo.AllIntroducer += introducerlist[j].IntroducerText + "、";
+                        }
 
-             }
+                    }
+                    displaylist.Add(displayinfo);
+
+                }
+            }
+         
             dgvPreParamSled.AutoGenerateColumns = false;
             dgvPreParamSled.DataSource = displaylist;
         }
@@ -261,6 +270,7 @@ namespace HOZAPWorkStation.UserControls
         {
             SolidBrush b = new SolidBrush(this.dgvPreParamSelection.RowHeadersDefaultCellStyle.ForeColor);
             e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dgvPreParamSelection.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 20, e.RowBounds.Location.Y + 4);
+           
         }
 
         /// <summary>
@@ -273,6 +283,10 @@ namespace HOZAPWorkStation.UserControls
             if (e.ColumnIndex == 0)
             {
                 DataGridViewCheckBoxCell checkbox =(DataGridViewCheckBoxCell)dgvPreParamSelection.Rows[e.RowIndex].Cells[0];
+                if (checkbox.Value == null)
+                {
+                    checkbox.Value = 0;
+                }
                 if ((int)checkbox.Value == 1)
                 {
                     checkbox.Value = 0;
@@ -290,9 +304,15 @@ namespace HOZAPWorkStation.UserControls
         /// <param name="e"></param>
         private void dgvPreParamSled_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+         
             if (e.ColumnIndex == 0)
             {
-                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)dgvPreParamSled.Rows[e.RowIndex].Cells[0];
+               
+                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)dgvPreParamSled.Rows[e.RowIndex].Cells[0];          
+                if (checkbox.Value == null)
+                {
+                    checkbox.Value = 0;
+                }
                 if ((int)checkbox.Value == 1)
                 {
                     checkbox.Value = 0;
@@ -313,6 +333,70 @@ namespace HOZAPWorkStation.UserControls
         {
             SolidBrush b = new SolidBrush(this.dgvPreParamSelection.RowHeadersDefaultCellStyle.ForeColor);
             e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dgvPreParamSelection.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 20, e.RowBounds.Location.Y + 4);
+        }
+       
+
+        private void btnPreParaSelect_Click(object sender, EventArgs e)
+        {
+            List<SelectedPramas> SelectedPramasInfoList = new List<SelectedPramas>();
+            foreach (DataGridViewRow row in dgvPreParamSelection.Rows)
+            {
+                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (checkbox.Value == null)
+                {
+                    checkbox.Value = 0;
+                }
+                if ((int)checkbox.Value == 1)
+                {
+                    SelectedPramas SelectedPramasInfo = new SelectedPramas();
+                    SelectedPramasInfo.PramasId =Convert.ToInt32(row.Cells["PramasID"].Value);
+                    SelectedPramasInfo.PramasText = row.Cells["ParamNameSelection"].Value.ToString();
+                    SelectedPramasInfo.ProName = "111";
+                    SelectedPramasInfoList.Add(SelectedPramasInfo);
+                }
+            }
+            if (SelectedPramasInfoList.Count > 0)
+            {
+                if (spbll.Add_SelectedPramasinfo(SelectedPramasInfoList))
+                {
+                    PreParamSledDataBind();
+                    PreParamSelectionDataBind();
+                }
+            }
+            else
+            {
+                MessageBox.Show("请选择参数!");                
+            }             
+        }
+
+        private void btnPreParaCancel_Click(object sender, EventArgs e)
+        {
+            List<int> PramasID = new List<int>();
+            foreach (DataGridViewRow row in dgvPreParamSled.Rows)
+            {
+                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (checkbox.Value == null)
+                {
+                    checkbox.Value = 0;
+                }
+                if ((int)checkbox.Value == 1)
+                {
+
+                    PramasID.Add(Convert.ToInt32(row.Cells["SelectedPramasID"].Value));
+                }
+            }
+            if (PramasID.Count > 0)
+            {
+                if (spbll.Del_SelectedPramasinfo(PramasID))
+                {
+                    PreParamSledDataBind();
+                    PreParamSelectionDataBind();
+                }
+            }
+            else
+            {
+                MessageBox.Show("请选择需要取消的参数!");
+            }
         }
     }
 }
