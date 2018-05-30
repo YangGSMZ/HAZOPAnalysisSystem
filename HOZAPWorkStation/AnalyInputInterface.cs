@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HOZAPWorkStation
 {
-    public partial class AnalySelectInterface : Form
+    public partial class AnalyInputInterface : Form
     {
-        public AnalySelectInterface()
+        public AnalyInputInterface()
         {
             InitializeComponent();
         }
