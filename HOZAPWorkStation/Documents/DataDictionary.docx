@@ -189,6 +189,26 @@ namespace HOZAPWorkStation
 			保存tspUcAnalySave，删除组tspUcAnalyDeletGroup，删除tspUcAnalyDelete；
 	    }
 	 }
+
+	 6.分析页的录入窗口
+	 窗体命名：AnalyInputInterface
+	 控件集：
+	 {
+		DataGridView类：
+		{
+			专家经验库：dgvTbcPageAnaExpert
+			Items：
+			{
+				记录列：Records，标题被隐藏
+			}
+			个人经验库：dgvTbcPageAnaPersonal
+			Items：
+			{
+				记录列：RecodPersonal，标题被隐藏
+			}
+		}
+		RichTextBox：rtbAnaInputInterface
+	 }
 }//namespace HOZAPWorkStation
 
 namespace HOZAPModel

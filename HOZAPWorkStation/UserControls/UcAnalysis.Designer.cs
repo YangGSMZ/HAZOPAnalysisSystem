@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcAnalysis));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,9 +50,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcAnalysis));
             this.tspUcAanlyTop = new System.Windows.Forms.ToolStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tbcUcAanlyLeft = new System.Windows.Forms.TabControl();
@@ -61,6 +61,24 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dgvCcAnalys1 = new HOZAPWorkStation.CustomControls.dgvCcAnalys();
+            this.dgcCcAnalyNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcCcAnalyParams = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcCcAnalyDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcCcAnalyReason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcCcAnalyF0 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgcCcAnalyConseq = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcCcAnalySi = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgcCcAnalyLi = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgcCcAnalyRi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcCcAnalyMessure = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcCcAnalyFs = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgcCcAnalyS = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgcCcAnalyL = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgcCcAnalyR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcCcAnalySugges = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcCcAnalyCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcCcAnalyMark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUcAnalysis = new System.Windows.Forms.DataGridView();
             this.dgvUcAnalyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUcAnalyParamIntro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,24 +105,6 @@
             this.tspUcAnalySave = new System.Windows.Forms.ToolStripSplitButton();
             this.tspUcAnalyDeletGroup = new System.Windows.Forms.ToolStripSplitButton();
             this.tspUcAnalyDelete = new System.Windows.Forms.ToolStripSplitButton();
-            this.dgvCcAnalys1 = new HOZAPWorkStation.CustomControls.dgvCcAnalys();
-            this.dgcCcAnalyNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcCcAnalyParams = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcCcAnalyDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcCcAnalyReason = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcCcAnalyF0 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgcCcAnalyConseq = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcCcAnalySi = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgcCcAnalyLi = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgcCcAnalyRi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcCcAnalyMessure = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcCcAnalyFs = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgcCcAnalyS = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgcCcAnalyL = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dgcCcAnalyR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcCcAnalySugges = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcCcAnalyCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcCcAnalyMark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -116,10 +116,10 @@
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCcAnalys1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUcAnalysis)).BeginInit();
             this.panel2.SuspendLayout();
             this.tspAnalyBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCcAnalys1)).BeginInit();
             this.SuspendLayout();
             // 
             // tspUcAanlyTop
@@ -244,6 +244,178 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1910, 437);
             this.panel4.TabIndex = 1;
+            // 
+            // dgvCcAnalys1
+            // 
+            this.dgvCcAnalys1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dgvCcAnalys1.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvCcAnalys1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCcAnalys1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCcAnalys1.ColumnHeadersHeight = 35;
+            this.dgvCcAnalys1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvCcAnalys1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgcCcAnalyNum,
+            this.dgcCcAnalyParams,
+            this.dgcCcAnalyDesc,
+            this.dgcCcAnalyReason,
+            this.dgcCcAnalyF0,
+            this.dgcCcAnalyConseq,
+            this.dgcCcAnalySi,
+            this.dgcCcAnalyLi,
+            this.dgcCcAnalyRi,
+            this.dgcCcAnalyMessure,
+            this.dgcCcAnalyFs,
+            this.dgcCcAnalyS,
+            this.dgcCcAnalyL,
+            this.dgcCcAnalyR,
+            this.dgcCcAnalySugges,
+            this.dgcCcAnalyCompany,
+            this.dgcCcAnalyMark});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCcAnalys1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCcAnalys1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCcAnalys1.Location = new System.Drawing.Point(0, 0);
+            this.dgvCcAnalys1.MergeColumnHeaderBackColor = System.Drawing.SystemColors.Control;
+            this.dgvCcAnalys1.MergeColumnNames = ((System.Collections.Generic.List<string>)(resources.GetObject("dgvCcAnalys1.MergeColumnNames")));
+            this.dgvCcAnalys1.Name = "dgvCcAnalys1";
+            this.dgvCcAnalys1.RowTemplate.Height = 23;
+            this.dgvCcAnalys1.Size = new System.Drawing.Size(1910, 437);
+            this.dgvCcAnalys1.TabIndex = 0;
+            this.dgvCcAnalys1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCcAnalys1_CellDoubleClick);
+            // 
+            // dgcCcAnalyNum
+            // 
+            this.dgcCcAnalyNum.FillWeight = 1F;
+            this.dgcCcAnalyNum.HeaderText = "编号";
+            this.dgcCcAnalyNum.Name = "dgcCcAnalyNum";
+            this.dgcCcAnalyNum.Width = 60;
+            // 
+            // dgcCcAnalyParams
+            // 
+            this.dgcCcAnalyParams.FillWeight = 1F;
+            this.dgcCcAnalyParams.HeaderText = "参数+引导词";
+            this.dgcCcAnalyParams.Name = "dgcCcAnalyParams";
+            // 
+            // dgcCcAnalyDesc
+            // 
+            this.dgcCcAnalyDesc.FillWeight = 1F;
+            this.dgcCcAnalyDesc.HeaderText = "偏离描述";
+            this.dgcCcAnalyDesc.Name = "dgcCcAnalyDesc";
+            this.dgcCcAnalyDesc.Width = 200;
+            // 
+            // dgcCcAnalyReason
+            // 
+            this.dgcCcAnalyReason.FillWeight = 1F;
+            this.dgcCcAnalyReason.HeaderText = "原因";
+            this.dgcCcAnalyReason.Name = "dgcCcAnalyReason";
+            this.dgcCcAnalyReason.Width = 200;
+            // 
+            // dgcCcAnalyF0
+            // 
+            this.dgcCcAnalyF0.FillWeight = 1F;
+            this.dgcCcAnalyF0.HeaderText = "F0";
+            this.dgcCcAnalyF0.Name = "dgcCcAnalyF0";
+            this.dgcCcAnalyF0.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgcCcAnalyF0.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgcCcAnalyF0.Width = 50;
+            // 
+            // dgcCcAnalyConseq
+            // 
+            this.dgcCcAnalyConseq.FillWeight = 1F;
+            this.dgcCcAnalyConseq.HeaderText = "后果";
+            this.dgcCcAnalyConseq.Name = "dgcCcAnalyConseq";
+            this.dgcCcAnalyConseq.Width = 200;
+            // 
+            // dgcCcAnalySi
+            // 
+            this.dgcCcAnalySi.FillWeight = 1F;
+            this.dgcCcAnalySi.HeaderText = "Si";
+            this.dgcCcAnalySi.Name = "dgcCcAnalySi";
+            this.dgcCcAnalySi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgcCcAnalySi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgcCcAnalySi.Width = 50;
+            // 
+            // dgcCcAnalyLi
+            // 
+            this.dgcCcAnalyLi.FillWeight = 1F;
+            this.dgcCcAnalyLi.HeaderText = "Li";
+            this.dgcCcAnalyLi.Name = "dgcCcAnalyLi";
+            this.dgcCcAnalyLi.Width = 50;
+            // 
+            // dgcCcAnalyRi
+            // 
+            this.dgcCcAnalyRi.FillWeight = 1F;
+            this.dgcCcAnalyRi.HeaderText = "Ri";
+            this.dgcCcAnalyRi.Name = "dgcCcAnalyRi";
+            this.dgcCcAnalyRi.Width = 50;
+            // 
+            // dgcCcAnalyMessure
+            // 
+            this.dgcCcAnalyMessure.FillWeight = 1F;
+            this.dgcCcAnalyMessure.HeaderText = "现有措施";
+            this.dgcCcAnalyMessure.Name = "dgcCcAnalyMessure";
+            this.dgcCcAnalyMessure.Width = 200;
+            // 
+            // dgcCcAnalyFs
+            // 
+            this.dgcCcAnalyFs.FillWeight = 1F;
+            this.dgcCcAnalyFs.HeaderText = "Fs";
+            this.dgcCcAnalyFs.Name = "dgcCcAnalyFs";
+            this.dgcCcAnalyFs.Width = 50;
+            // 
+            // dgcCcAnalyS
+            // 
+            this.dgcCcAnalyS.FillWeight = 1F;
+            this.dgcCcAnalyS.HeaderText = "S";
+            this.dgcCcAnalyS.Name = "dgcCcAnalyS";
+            this.dgcCcAnalyS.Width = 50;
+            // 
+            // dgcCcAnalyL
+            // 
+            this.dgcCcAnalyL.FillWeight = 1F;
+            this.dgcCcAnalyL.HeaderText = "L";
+            this.dgcCcAnalyL.Name = "dgcCcAnalyL";
+            this.dgcCcAnalyL.Width = 50;
+            // 
+            // dgcCcAnalyR
+            // 
+            this.dgcCcAnalyR.FillWeight = 1F;
+            this.dgcCcAnalyR.HeaderText = "R";
+            this.dgcCcAnalyR.Name = "dgcCcAnalyR";
+            this.dgcCcAnalyR.Width = 50;
+            // 
+            // dgcCcAnalySugges
+            // 
+            this.dgcCcAnalySugges.FillWeight = 1F;
+            this.dgcCcAnalySugges.HeaderText = "建议项";
+            this.dgcCcAnalySugges.Name = "dgcCcAnalySugges";
+            this.dgcCcAnalySugges.Width = 200;
+            // 
+            // dgcCcAnalyCompany
+            // 
+            this.dgcCcAnalyCompany.FillWeight = 1F;
+            this.dgcCcAnalyCompany.HeaderText = "负责单位/人";
+            this.dgcCcAnalyCompany.Name = "dgcCcAnalyCompany";
+            // 
+            // dgcCcAnalyMark
+            // 
+            this.dgcCcAnalyMark.FillWeight = 1F;
+            this.dgcCcAnalyMark.HeaderText = "备注";
+            this.dgcCcAnalyMark.Name = "dgcCcAnalyMark";
+            this.dgcCcAnalyMark.Width = 200;
             // 
             // dgvUcAnalysis
             // 
@@ -525,177 +697,6 @@
             this.tspUcAnalyDelete.Size = new System.Drawing.Size(64, 18);
             this.tspUcAnalyDelete.Text = "删除";
             // 
-            // dgvCcAnalys1
-            // 
-            this.dgvCcAnalys1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dgvCcAnalys1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dgvCcAnalys1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCcAnalys1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCcAnalys1.ColumnHeadersHeight = 35;
-            this.dgvCcAnalys1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvCcAnalys1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgcCcAnalyNum,
-            this.dgcCcAnalyParams,
-            this.dgcCcAnalyDesc,
-            this.dgcCcAnalyReason,
-            this.dgcCcAnalyF0,
-            this.dgcCcAnalyConseq,
-            this.dgcCcAnalySi,
-            this.dgcCcAnalyLi,
-            this.dgcCcAnalyRi,
-            this.dgcCcAnalyMessure,
-            this.dgcCcAnalyFs,
-            this.dgcCcAnalyS,
-            this.dgcCcAnalyL,
-            this.dgcCcAnalyR,
-            this.dgcCcAnalySugges,
-            this.dgcCcAnalyCompany,
-            this.dgcCcAnalyMark});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCcAnalys1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCcAnalys1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCcAnalys1.Location = new System.Drawing.Point(0, 0);
-            this.dgvCcAnalys1.MergeColumnHeaderBackColor = System.Drawing.SystemColors.Control;
-            this.dgvCcAnalys1.MergeColumnNames = ((System.Collections.Generic.List<string>)(resources.GetObject("dgvCcAnalys1.MergeColumnNames")));
-            this.dgvCcAnalys1.Name = "dgvCcAnalys1";
-            this.dgvCcAnalys1.RowTemplate.Height = 23;
-            this.dgvCcAnalys1.Size = new System.Drawing.Size(1910, 437);
-            this.dgvCcAnalys1.TabIndex = 0;
-            // 
-            // dgcCcAnalyNum
-            // 
-            this.dgcCcAnalyNum.FillWeight = 1F;
-            this.dgcCcAnalyNum.HeaderText = "编号";
-            this.dgcCcAnalyNum.Name = "dgcCcAnalyNum";
-            this.dgcCcAnalyNum.Width = 60;
-            // 
-            // dgcCcAnalyParams
-            // 
-            this.dgcCcAnalyParams.FillWeight = 1F;
-            this.dgcCcAnalyParams.HeaderText = "参数+引导词";
-            this.dgcCcAnalyParams.Name = "dgcCcAnalyParams";
-            // 
-            // dgcCcAnalyDesc
-            // 
-            this.dgcCcAnalyDesc.FillWeight = 1F;
-            this.dgcCcAnalyDesc.HeaderText = "偏离描述";
-            this.dgcCcAnalyDesc.Name = "dgcCcAnalyDesc";
-            this.dgcCcAnalyDesc.Width = 200;
-            // 
-            // dgcCcAnalyReason
-            // 
-            this.dgcCcAnalyReason.FillWeight = 1F;
-            this.dgcCcAnalyReason.HeaderText = "原因";
-            this.dgcCcAnalyReason.Name = "dgcCcAnalyReason";
-            this.dgcCcAnalyReason.Width = 200;
-            // 
-            // dgcCcAnalyF0
-            // 
-            this.dgcCcAnalyF0.FillWeight = 1F;
-            this.dgcCcAnalyF0.HeaderText = "F0";
-            this.dgcCcAnalyF0.Name = "dgcCcAnalyF0";
-            this.dgcCcAnalyF0.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgcCcAnalyF0.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dgcCcAnalyF0.Width = 50;
-            // 
-            // dgcCcAnalyConseq
-            // 
-            this.dgcCcAnalyConseq.FillWeight = 1F;
-            this.dgcCcAnalyConseq.HeaderText = "后果";
-            this.dgcCcAnalyConseq.Name = "dgcCcAnalyConseq";
-            this.dgcCcAnalyConseq.Width = 200;
-            // 
-            // dgcCcAnalySi
-            // 
-            this.dgcCcAnalySi.FillWeight = 1F;
-            this.dgcCcAnalySi.HeaderText = "Si";
-            this.dgcCcAnalySi.Name = "dgcCcAnalySi";
-            this.dgcCcAnalySi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgcCcAnalySi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dgcCcAnalySi.Width = 50;
-            // 
-            // dgcCcAnalyLi
-            // 
-            this.dgcCcAnalyLi.FillWeight = 1F;
-            this.dgcCcAnalyLi.HeaderText = "Li";
-            this.dgcCcAnalyLi.Name = "dgcCcAnalyLi";
-            this.dgcCcAnalyLi.Width = 50;
-            // 
-            // dgcCcAnalyRi
-            // 
-            this.dgcCcAnalyRi.FillWeight = 1F;
-            this.dgcCcAnalyRi.HeaderText = "Ri";
-            this.dgcCcAnalyRi.Name = "dgcCcAnalyRi";
-            this.dgcCcAnalyRi.Width = 50;
-            // 
-            // dgcCcAnalyMessure
-            // 
-            this.dgcCcAnalyMessure.FillWeight = 1F;
-            this.dgcCcAnalyMessure.HeaderText = "现有措施";
-            this.dgcCcAnalyMessure.Name = "dgcCcAnalyMessure";
-            this.dgcCcAnalyMessure.Width = 200;
-            // 
-            // dgcCcAnalyFs
-            // 
-            this.dgcCcAnalyFs.FillWeight = 1F;
-            this.dgcCcAnalyFs.HeaderText = "Fs";
-            this.dgcCcAnalyFs.Name = "dgcCcAnalyFs";
-            this.dgcCcAnalyFs.Width = 50;
-            // 
-            // dgcCcAnalyS
-            // 
-            this.dgcCcAnalyS.FillWeight = 1F;
-            this.dgcCcAnalyS.HeaderText = "S";
-            this.dgcCcAnalyS.Name = "dgcCcAnalyS";
-            this.dgcCcAnalyS.Width = 50;
-            // 
-            // dgcCcAnalyL
-            // 
-            this.dgcCcAnalyL.FillWeight = 1F;
-            this.dgcCcAnalyL.HeaderText = "L";
-            this.dgcCcAnalyL.Name = "dgcCcAnalyL";
-            this.dgcCcAnalyL.Width = 50;
-            // 
-            // dgcCcAnalyR
-            // 
-            this.dgcCcAnalyR.FillWeight = 1F;
-            this.dgcCcAnalyR.HeaderText = "R";
-            this.dgcCcAnalyR.Name = "dgcCcAnalyR";
-            this.dgcCcAnalyR.Width = 50;
-            // 
-            // dgcCcAnalySugges
-            // 
-            this.dgcCcAnalySugges.FillWeight = 1F;
-            this.dgcCcAnalySugges.HeaderText = "建议项";
-            this.dgcCcAnalySugges.Name = "dgcCcAnalySugges";
-            this.dgcCcAnalySugges.Width = 200;
-            // 
-            // dgcCcAnalyCompany
-            // 
-            this.dgcCcAnalyCompany.FillWeight = 1F;
-            this.dgcCcAnalyCompany.HeaderText = "负责单位/人";
-            this.dgcCcAnalyCompany.Name = "dgcCcAnalyCompany";
-            // 
-            // dgcCcAnalyMark
-            // 
-            this.dgcCcAnalyMark.FillWeight = 1F;
-            this.dgcCcAnalyMark.HeaderText = "备注";
-            this.dgcCcAnalyMark.Name = "dgcCcAnalyMark";
-            this.dgcCcAnalyMark.Width = 200;
-            // 
             // UcAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -716,12 +717,12 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCcAnalys1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUcAnalysis)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tspAnalyBottom.ResumeLayout(false);
             this.tspAnalyBottom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCcAnalys1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

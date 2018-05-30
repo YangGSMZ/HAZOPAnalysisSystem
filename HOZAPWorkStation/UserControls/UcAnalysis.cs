@@ -70,5 +70,49 @@ namespace HOZAPWorkStation.UserControls
                 MessageBox.Show(trvUcAnaly.SelectedNode.Text);
             }
         }
+
+        /// <summary>
+        ///窗体和用户控件之间传递数据 
+        /// </summary>
+        /// <param name="sender">需要传递数据的窗体</param>
+        private void AnalyInputInterface_RefreshParent(object sender, DataGridViewCellEventArgs e)
+        {
+            //强制转化传递过来的输入窗体类型
+            AnalyInputInterface analyInputInterface = (AnalyInputInterface)(sender);
+            e = ClickEventE;
+            Refresh(analyInputInterface,e);
+            //this.dgvCcAnalys1.Rows[0].Cells[1].Value = analyInputInterface.GetRichTextBoxContext();
+        }
+        /// <summary>
+        /// 实施刷新用户控件中的datagridview数据
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Refresh(object sender, DataGridViewCellEventArgs e)
+        {
+            AnalyInputInterface analyInputInterface = (AnalyInputInterface)(sender);
+            this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = analyInputInterface.GetRichTextBoxContext();
+        }
+        /// <summary>
+        /// 双击弹出录入对话框
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvCcAnalys1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AnalyInputInterface analyInputInterface = new AnalyInputInterface();
+            //订阅事件
+            analyInputInterface.RefreshParent += new System.Action<object, DataGridViewCellEventArgs>(AnalyInputInterface_RefreshParent);
+            ClickEventE = e;
+            analyInputInterface.Show();
+        }
+        /// <summary>
+        /// 获取双击事件e
+        /// </summary>
+        public DataGridViewCellEventArgs ClickEventE
+        {
+            set;
+            get;
+        }
     }
 }
