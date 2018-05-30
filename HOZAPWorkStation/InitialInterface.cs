@@ -13,6 +13,7 @@ namespace HOZAPWorkStation
 {
     public partial class InitialInterface : Form
     {
+        public static string ProName="111";
         public InitialInterface()
         {
             InitializeComponent();

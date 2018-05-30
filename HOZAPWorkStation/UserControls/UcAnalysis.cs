@@ -18,13 +18,13 @@ namespace HOZAPWorkStation.UserControls
         private void CreateTree()
         {
             TreeNode root = new TreeNode();
-            root.Text = "111";
+            root.Text = InitialInterface.ProName;
             trvUcAnaly.Nodes.Add(root);
             SelectedPramasBLL spbll = new SelectedPramasBLL();
             IntroducerBLL ibll = new IntroducerBLL();
             NodeBLL nbll = new NodeBLL();
-            List<Node> nodelist = nbll.Get_NodeList("111");
-            List<SelectedPramas> sp = spbll.Get_SelectedPramasList("111");
+            List<Node> nodelist = nbll.Get_NodeList(InitialInterface.ProName);
+            List<SelectedPramas> sp = spbll.Get_SelectedPramasList(InitialInterface.ProName);
             if (nodelist != null)
             {
                 for (int i = 0; i < nodelist.Count; i++)

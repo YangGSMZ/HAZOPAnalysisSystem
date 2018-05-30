@@ -66,6 +66,12 @@
     <Compile Include="AddParticipant.Designer.cs">
       <DependentUpon>AddParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="AnalySelectInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalySelectInterface.Designer.cs">
+      <DependentUpon>AnalySelectInterface.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\dgvCcAnalys.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </Compile>
     <EmbeddedResource Include="AddParticipant.resx">
       <DependentUpon>AddParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalySelectInterface.resx">
+      <DependentUpon>AnalySelectInterface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\dgvCcAnalys.resx">
       <DependentUpon>dgvCcAnalys.cs</DependentUpon>

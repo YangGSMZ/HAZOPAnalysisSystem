@@ -51,7 +51,7 @@ namespace HOZAPWorkStation
                 participantinfo.Company = txtCompany.Text.Trim();
                 participantinfo.Department = txtDepartment.Text.Trim();
                 participantinfo.RolePlay = RolePlay;
-                participantinfo.ProName = "111";
+                participantinfo.ProName = InitialInterface.ProName;
                 if (pbll.Add_Participant(participantinfo))
                 {
                     MessageBox.Show("添加成功!");

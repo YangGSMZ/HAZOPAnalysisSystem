@@ -1,7 +1,7 @@
-
 namespace HOZAPWorkStation
 {
 	1.起始界面：
+	全局变量：String ProName;用于不同窗体间传递项目名；
 	窗体属性（name）命名：InitialInterface；
 	控件集合：
 		Button类（name）：
@@ -190,6 +190,11 @@ namespace HOZAPWorkStation
 	    }
 	 }
 }//namespace HOZAPWorkStation
+
+namespace HOZAPModel
+{
+	只定义了每个数据库表使用的字段；
+}//namespace HOZAPModel
 		
 
 	    			   

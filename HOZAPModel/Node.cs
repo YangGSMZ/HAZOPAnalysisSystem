@@ -25,7 +25,7 @@ namespace HOZAPModel
         }
 
         /// <summary>
-        /// 节点分类
+        /// 节点分类[暂时不做分类，默认是连续性]
         /// </summary>
         string _NodeSort;
         public string NodeSort

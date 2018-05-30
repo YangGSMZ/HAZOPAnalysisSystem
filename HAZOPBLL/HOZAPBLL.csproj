@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="IntroducerBLL.cs" />
     <Compile Include="NodeBLL.cs" />
     <Compile Include="ParticipantBLL.cs" />

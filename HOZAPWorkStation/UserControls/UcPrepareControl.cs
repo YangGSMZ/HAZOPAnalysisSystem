@@ -147,7 +147,7 @@ namespace HOZAPWorkStation.UserControls
         {
             PramasBLL pbll = new PramasBLL();
             IntroducerBLL ibll = new IntroducerBLL();
-            string ProName = "111";
+            string ProName = InitialInterface.ProName;
             List<Pramas> plist = pbll.Get_PramasList(ProName);
             List<DisplayPramasAndIntroducer> displaylist = null;
             if (plist != null)
@@ -189,7 +189,7 @@ namespace HOZAPWorkStation.UserControls
         {
           
             IntroducerBLL ibll = new IntroducerBLL(); 
-            string ProName = "111";
+            string ProName = InitialInterface.ProName;
             List<SelectedPramas> splist = spbll.Get_SelectedPramasList(ProName);
             List<DisplayPramasAndIntroducer> displaylist = null;
             if (splist != null)
@@ -236,7 +236,7 @@ namespace HOZAPWorkStation.UserControls
         private void ParticipantInfoDataBind()
         {
           
-            List<Participant> ParticipantInfoList = pbll.Get_ParticipantInfoList("111");
+            List<Participant> ParticipantInfoList = pbll.Get_ParticipantInfoList(InitialInterface.ProName);
             dgvPreUcPar.AutoGenerateColumns = false;
             dgvPreUcPar.DataSource = ParticipantInfoList;
            
@@ -351,7 +351,7 @@ namespace HOZAPWorkStation.UserControls
                     SelectedPramas SelectedPramasInfo = new SelectedPramas();
                     SelectedPramasInfo.PramasId =Convert.ToInt32(row.Cells["PramasID"].Value);
                     SelectedPramasInfo.PramasText = row.Cells["ParamNameSelection"].Value.ToString();
-                    SelectedPramasInfo.ProName = "111";
+                    SelectedPramasInfo.ProName = InitialInterface.ProName;
                     SelectedPramasInfoList.Add(SelectedPramasInfo);
                 }
             }
