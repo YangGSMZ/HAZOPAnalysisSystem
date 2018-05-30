@@ -398,5 +398,95 @@ namespace HOZAPWorkStation.UserControls
                 MessageBox.Show("请选择需要取消的参数!");
             }
         }
+
+        /// <summary>
+        /// 可选择参数全部选中
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tspPreParamSelAll_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvPreParamSelection.Rows)
+            {
+                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (checkbox.Value == null)
+                {
+                    checkbox.Value = 0;
+                }
+                if ((int)checkbox.Value ==0)
+                {
+
+                    checkbox.Value = 1;
+                }
+            }
+        }
+        /// <summary>
+        /// 可选择参数全部不选中
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tspPreParamSelNoAll_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvPreParamSelection.Rows)
+            {
+                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (checkbox.Value == null)
+                {
+                    checkbox.Value = 0;
+                }
+                if ((int)checkbox.Value == 1)
+                {
+
+                    checkbox.Value = 0;
+                }
+            }
+        }
+        /// <summary>
+        /// 已选参数全部选中
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tspPreParamSeledAll_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvPreParamSled.Rows)
+            {
+                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (checkbox.Value == null)
+                {
+                    checkbox.Value = 0;
+                }
+                if ((int)checkbox.Value == 0)
+                {
+
+                    checkbox.Value = 1;
+                }
+            }
+        }
+        /// <summary>
+        /// 已选参数全部不选中
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tspPreParamSeledNoAll_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvPreParamSled.Rows)
+            {
+                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (checkbox.Value == null)
+                {
+                    checkbox.Value = 0;
+                }
+                if ((int)checkbox.Value == 1)
+                {
+
+                    checkbox.Value = 0;
+                }
+            }
+        }
+
+        private void tspPreParamSelNext_Click(object sender, EventArgs e)
+        {
+            tspPreNoteSplit_Click(sender,e);
+        }
     }
 }
