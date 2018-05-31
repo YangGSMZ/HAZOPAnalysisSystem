@@ -66,6 +66,12 @@
     <Compile Include="AddParticipant.Designer.cs">
       <DependentUpon>AddParticipant.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPramas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPramas.Designer.cs">
+      <DependentUpon>AddPramas.cs</DependentUpon>
+    </Compile>
     <Compile Include="AnalyInputInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </Compile>
     <EmbeddedResource Include="AddParticipant.resx">
       <DependentUpon>AddParticipant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPramas.resx">
+      <DependentUpon>AddPramas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AnalyInputInterface.resx">
       <DependentUpon>AnalyInputInterface.cs</DependentUpon>

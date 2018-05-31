@@ -1,6 +1,7 @@
 ﻿using HOZAPModel;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,36 @@ namespace HOZAPDAL
                 }
             }
             return PramasList;
+        }
+
+        /// <summary>
+        /// 添加项目参数
+        /// </summary>
+        /// <param name="PramasName">参数名</param>
+        /// <returns>trueOrfalse</returns>
+        public bool Add_Pramas(string PramasName)
+        {
+            bool IsSuccess = false;
+            string sql = "insert into tb_Pramas values(@PramasText,@Type)";
+            SqlParameter[] spm =
+            {
+                new SqlParameter("@PramasText",SqlDbType.VarChar),
+                new SqlParameter("@Type",SqlDbType.Int)
+            };
+            spm[0].Value = PramasName;
+            spm[1].Value = 1;
+            if (SqlHelper.ExecuteNonQuery(sql, spm) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
+
+        public int Get_PramasId(string PramasName)
+        {
+            string sql = "select PramasID from tb_Pramas where PramasText=@PramasText";
+            int PramasID = (int)SqlHelper.ExecuteScalar(sql,new SqlParameter("@PramasText",PramasName));
+            return PramasID;
         }
 
     }

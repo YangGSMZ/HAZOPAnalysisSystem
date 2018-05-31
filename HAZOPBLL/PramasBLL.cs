@@ -21,5 +21,19 @@ namespace HAZOPBLL
             return dal.Get_PramasList(ProName);
          
         }
+        /// <summary>
+        /// 添加项目参数
+        /// </summary>
+        /// <param name="PramasName">参数名</param>
+        /// <returns>trueOrfalse</returns>
+        public bool Add_Pramas(string PramasName)
+        {
+            return dal.Add_Pramas(PramasName);
+        }
+
+        public int Get_PramasId(string PramasName)
+        {
+            return dal.Get_PramasId(PramasName);
+        }
     }
 }

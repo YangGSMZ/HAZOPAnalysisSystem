@@ -163,8 +163,11 @@
             this.tspPreParamSelAdd = new System.Windows.Forms.ToolStripButton();
             this.tspPreParamSelEdit = new System.Windows.Forms.ToolStripButton();
             this.tspPreParamSelDel = new System.Windows.Forms.ToolStripButton();
+            this.tspPreParamSelNext = new System.Windows.Forms.ToolStripButton();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tspPreParamSelected = new System.Windows.Forms.ToolStrip();
+            this.tspPreParamSeledAll = new System.Windows.Forms.ToolStripButton();
+            this.tspPreParamSeledNoAll = new System.Windows.Forms.ToolStripButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvPreParamSled = new System.Windows.Forms.DataGridView();
             this.SelectPramas = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -192,9 +195,6 @@
             this.dgvPreUcRiskSerio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskGrave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskDisas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tspPreParamSeledAll = new System.Windows.Forms.ToolStripButton();
-            this.tspPreParamSeledNoAll = new System.Windows.Forms.ToolStripButton();
-            this.tspPreParamSelNext = new System.Windows.Forms.ToolStripButton();
             this.PrepareToolStrip.SuspendLayout();
             this.RiskMatrix.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -483,7 +483,7 @@
             this.textBox2.Location = new System.Drawing.Point(253, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(408, 26);
+            this.textBox2.Size = new System.Drawing.Size(409, 26);
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "后果描述";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -509,7 +509,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(253, 35);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(408, 114);
+            this.richTextBox1.Size = new System.Drawing.Size(409, 114);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "误工伤害，不会导致残疾\n泄露至收集系统以内的地方\n设备损失<=10万元\n设备或车间停产<=1天";
             // 
@@ -522,7 +522,7 @@
             this.richTextBox3.Location = new System.Drawing.Point(253, 156);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(408, 114);
+            this.richTextBox3.Size = new System.Drawing.Size(409, 114);
             this.richTextBox3.TabIndex = 6;
             this.richTextBox3.Text = "工厂员工残疾伤害\n厂外人员需要就医\n泄露收集系统以外的地方(数量较少并不超出工厂街衢)\n设备损失1>=10万元，<=100万元\n设备或车间停产>=1天，<=1周\n" +
     "不影响销售\n";
@@ -536,7 +536,7 @@
             this.richTextBox5.Location = new System.Drawing.Point(253, 277);
             this.richTextBox5.Name = "richTextBox5";
             this.richTextBox5.ReadOnly = true;
-            this.richTextBox5.Size = new System.Drawing.Size(408, 114);
+            this.richTextBox5.Size = new System.Drawing.Size(409, 114);
             this.richTextBox5.TabIndex = 8;
             this.richTextBox5.Text = "厂内1人死亡\n厂外人员残疾伤害\n明显泄露至厂外，影响周围邻居，可能遭到投诉\n会受到当地媒体关注\n设备损失>100万元，<1000万元\n严重影响对特定客户的销售";
             // 
@@ -549,7 +549,7 @@
             this.richTextBox6.Location = new System.Drawing.Point(253, 398);
             this.richTextBox6.Name = "richTextBox6";
             this.richTextBox6.ReadOnly = true;
-            this.richTextBox6.Size = new System.Drawing.Size(408, 114);
+            this.richTextBox6.Size = new System.Drawing.Size(409, 114);
             this.richTextBox6.TabIndex = 9;
             this.richTextBox6.Text = "2-3人以内死亡\n厂外人员1人死亡\n明显影响环境，但短期内可以恢复，并会造成公众健康和就医\n会受到省级媒体关注\n设备损失>1000万元，<=5000万元\n设备或车" +
     "间停产>1个月，<=6个月\n影响市场份额";
@@ -563,7 +563,7 @@
             this.richTextBox9.Location = new System.Drawing.Point(253, 519);
             this.richTextBox9.Name = "richTextBox9";
             this.richTextBox9.ReadOnly = true;
-            this.richTextBox9.Size = new System.Drawing.Size(408, 114);
+            this.richTextBox9.Size = new System.Drawing.Size(409, 114);
             this.richTextBox9.TabIndex = 12;
             this.richTextBox9.Text = "3人以上死亡\n厂外人员多人死亡\n对周围社区造成长期的影响，导制厂外居民大面积疏散或严重健康影响\n会收到国家级媒体关注\n设备损失>5000万元\n设备或车间停产>6个" +
     "月\n可能是失去市场";
@@ -1610,6 +1610,7 @@
             this.tspPreParamSelAdd.Name = "tspPreParamSelAdd";
             this.tspPreParamSelAdd.Size = new System.Drawing.Size(52, 21);
             this.tspPreParamSelAdd.Text = "新增";
+            this.tspPreParamSelAdd.Click += new System.EventHandler(this.tspPreParamSelAdd_Click);
             // 
             // tspPreParamSelEdit
             // 
@@ -1618,6 +1619,7 @@
             this.tspPreParamSelEdit.Name = "tspPreParamSelEdit";
             this.tspPreParamSelEdit.Size = new System.Drawing.Size(52, 21);
             this.tspPreParamSelEdit.Text = "编辑";
+            this.tspPreParamSelEdit.Click += new System.EventHandler(this.tspPreParamSelEdit_Click);
             // 
             // tspPreParamSelDel
             // 
@@ -1626,6 +1628,15 @@
             this.tspPreParamSelDel.Name = "tspPreParamSelDel";
             this.tspPreParamSelDel.Size = new System.Drawing.Size(52, 21);
             this.tspPreParamSelDel.Text = "删除";
+            // 
+            // tspPreParamSelNext
+            // 
+            this.tspPreParamSelNext.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSelNext.Image")));
+            this.tspPreParamSelNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreParamSelNext.Name = "tspPreParamSelNext";
+            this.tspPreParamSelNext.Size = new System.Drawing.Size(64, 21);
+            this.tspPreParamSelNext.Text = "下一步";
+            this.tspPreParamSelNext.Click += new System.EventHandler(this.tspPreParamSelNext_Click);
             // 
             // panel8
             // 
@@ -1647,6 +1658,24 @@
             this.tspPreParamSelected.Size = new System.Drawing.Size(646, 24);
             this.tspPreParamSelected.TabIndex = 0;
             this.tspPreParamSelected.Text = "toolStrip1";
+            // 
+            // tspPreParamSeledAll
+            // 
+            this.tspPreParamSeledAll.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSeledAll.Image")));
+            this.tspPreParamSeledAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreParamSeledAll.Name = "tspPreParamSeledAll";
+            this.tspPreParamSeledAll.Size = new System.Drawing.Size(52, 21);
+            this.tspPreParamSeledAll.Text = "全选";
+            this.tspPreParamSeledAll.Click += new System.EventHandler(this.tspPreParamSeledAll_Click);
+            // 
+            // tspPreParamSeledNoAll
+            // 
+            this.tspPreParamSeledNoAll.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSeledNoAll.Image")));
+            this.tspPreParamSeledNoAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreParamSeledNoAll.Name = "tspPreParamSeledNoAll";
+            this.tspPreParamSeledNoAll.Size = new System.Drawing.Size(64, 21);
+            this.tspPreParamSeledNoAll.Text = "全不选";
+            this.tspPreParamSeledNoAll.Click += new System.EventHandler(this.tspPreParamSeledNoAll_Click);
             // 
             // panel4
             // 
@@ -1976,33 +2005,6 @@
             this.dgvPreUcRiskDisas.ReadOnly = true;
             this.dgvPreUcRiskDisas.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPreUcRiskDisas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // tspPreParamSeledAll
-            // 
-            this.tspPreParamSeledAll.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSeledAll.Image")));
-            this.tspPreParamSeledAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreParamSeledAll.Name = "tspPreParamSeledAll";
-            this.tspPreParamSeledAll.Size = new System.Drawing.Size(52, 21);
-            this.tspPreParamSeledAll.Text = "全选";
-            this.tspPreParamSeledAll.Click += new System.EventHandler(this.tspPreParamSeledAll_Click);
-            // 
-            // tspPreParamSeledNoAll
-            // 
-            this.tspPreParamSeledNoAll.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSeledNoAll.Image")));
-            this.tspPreParamSeledNoAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreParamSeledNoAll.Name = "tspPreParamSeledNoAll";
-            this.tspPreParamSeledNoAll.Size = new System.Drawing.Size(64, 21);
-            this.tspPreParamSeledNoAll.Text = "全不选";
-            this.tspPreParamSeledNoAll.Click += new System.EventHandler(this.tspPreParamSeledNoAll_Click);
-            // 
-            // tspPreParamSelNext
-            // 
-            this.tspPreParamSelNext.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSelNext.Image")));
-            this.tspPreParamSelNext.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreParamSelNext.Name = "tspPreParamSelNext";
-            this.tspPreParamSelNext.Size = new System.Drawing.Size(64, 21);
-            this.tspPreParamSelNext.Text = "下一步";
-            this.tspPreParamSelNext.Click += new System.EventHandler(this.tspPreParamSelNext_Click);
             // 
             // UcPrepareControl
             // 
