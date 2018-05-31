@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace HOZAPDAL
 {
+    /// <summary>
+    /// 操作项目成员信息表
+    /// </summary>
     public class ParticipantDAL
     {
         /// <summary>

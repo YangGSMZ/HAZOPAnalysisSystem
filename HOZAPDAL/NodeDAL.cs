@@ -8,11 +8,19 @@ using System.Threading.Tasks;
 
 namespace HOZAPDAL
 {
+    /// <summary>
+    /// 操作节点数据表
+    /// </summary>
    public  class NodeDAL
     {
+        /// <summary>
+        /// 根据项目名称获取节点列表
+        /// </summary>
+        /// <param name="ProName">项目名称</param>
+        /// <returns></returns>
         public List<Node> Get_NodeList(string ProName)
         {
-            string sql = " select* from tb_Node where  ProName =@ProName";
+            string sql = " select* from tb_Node where ProName =@ProName";
             List<Node> NodeList = null;
             using (SqlDataReader sdr = SqlHelper.ExecuteReader(sql, new SqlParameter("@ProName", ProName)))
             {
