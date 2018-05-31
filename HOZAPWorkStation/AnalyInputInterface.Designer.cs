@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalyInputInterface));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbcAnalyInputInterface = new System.Windows.Forms.TabControl();
@@ -43,11 +43,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.rtbAnaInputInterface = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tspAnaInputInterface = new System.Windows.Forms.ToolStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
+            this.toolStripSplitButton3 = new System.Windows.Forms.ToolStripSplitButton();
             this.panel1.SuspendLayout();
             this.tbcAnalyInputInterface.SuspendLayout();
             this.tbcPageExpert.SuspendLayout();
@@ -112,9 +112,9 @@
             // 
             // Records
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Records.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Records.DefaultCellStyle = dataGridViewCellStyle7;
             this.Records.FillWeight = 1F;
             this.Records.HeaderText = "记录";
             this.Records.Name = "Records";
@@ -144,14 +144,14 @@
             this.dgvTbcPageAnaPersonal.ColumnHeadersVisible = false;
             this.dgvTbcPageAnaPersonal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RecordPersonal});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTbcPageAnaPersonal.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTbcPageAnaPersonal.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvTbcPageAnaPersonal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTbcPageAnaPersonal.Location = new System.Drawing.Point(3, 3);
             this.dgvTbcPageAnaPersonal.Name = "dgvTbcPageAnaPersonal";
@@ -162,9 +162,9 @@
             // 
             // RecordPersonal
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.RecordPersonal.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RecordPersonal.DefaultCellStyle = dataGridViewCellStyle8;
             this.RecordPersonal.FillWeight = 1F;
             this.RecordPersonal.HeaderText = "记录";
             this.RecordPersonal.Name = "RecordPersonal";
@@ -202,36 +202,27 @@
             this.rtbAnaInputInterface.Name = "rtbAnaInputInterface";
             this.rtbAnaInputInterface.Size = new System.Drawing.Size(482, 163);
             this.rtbAnaInputInterface.TabIndex = 0;
-            this.rtbAnaInputInterface.Text = "";
-            // 
-            // label2
-            // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label2.ForeColor = System.Drawing.Color.Crimson;
-            this.label2.Location = new System.Drawing.Point(6, 428);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 31);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "提示：内容可以通过鼠标单击经验库选择，也可以在内容框内输入。";
+            this.rtbAnaInputInterface.Text = "【非“专家经验库”，请先添加到“个人经验库”，以免数据丢失】";
             // 
             // panel3
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.tspAnaInputInterface);
-            this.panel3.Location = new System.Drawing.Point(245, 428);
+            this.panel3.Location = new System.Drawing.Point(4, 429);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(239, 31);
+            this.panel3.Size = new System.Drawing.Size(480, 30);
             this.panel3.TabIndex = 4;
             // 
             // tspAnaInputInterface
             // 
+            this.tspAnaInputInterface.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tspAnaInputInterface.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSplitButton1,
+            this.toolStripSplitButton3,
             this.toolStripSplitButton2});
-            this.tspAnaInputInterface.Location = new System.Drawing.Point(0, 0);
+            this.tspAnaInputInterface.Location = new System.Drawing.Point(0, 3);
             this.tspAnaInputInterface.Name = "tspAnaInputInterface";
-            this.tspAnaInputInterface.Size = new System.Drawing.Size(235, 25);
+            this.tspAnaInputInterface.Size = new System.Drawing.Size(478, 25);
             this.tspAnaInputInterface.TabIndex = 0;
             this.tspAnaInputInterface.Text = "toolStrip1";
             // 
@@ -252,13 +243,20 @@
             this.toolStripSplitButton2.Text = "确定";
             this.toolStripSplitButton2.ButtonClick += new System.EventHandler(this.toolStripSplitButton2_ButtonClick);
             // 
+            // toolStripSplitButton3
+            // 
+            this.toolStripSplitButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton3.Image")));
+            this.toolStripSplitButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton3.Name = "toolStripSplitButton3";
+            this.toolStripSplitButton3.Size = new System.Drawing.Size(124, 22);
+            this.toolStripSplitButton3.Text = "删除个人经验库";
+            // 
             // AnalyInputInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -291,7 +289,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ToolStrip tspAnaInputInterface;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
@@ -304,5 +301,6 @@
         private System.Windows.Forms.DataGridView dgvTbcPageAnaPersonal;
         private System.Windows.Forms.RichTextBox rtbAnaInputInterface;
         private System.Windows.Forms.DataGridViewTextBoxColumn RecordPersonal;
+        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton3;
     }
 }
