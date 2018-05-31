@@ -20,5 +20,14 @@ namespace HAZOPBLL
         {
             return dal.Get_IntroducerList(PramasId);
         }
+        /// <summary>
+        ///为参数添加引导词
+        /// </summary>
+        /// <param name="IntroducerList">引导词信息列表</param>
+        /// <returns>trueOrfalse</returns>
+        public bool Add_Introducerinfo(List<Introducer> IntroducerList)
+        {
+            return dal.Add_Introducerinfo(IntroducerList);
+        }
     }
 }

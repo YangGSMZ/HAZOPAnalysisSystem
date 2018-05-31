@@ -46,7 +46,6 @@ namespace HOZAPDAL
         {
             bool IsSuccess = false;
             StringBuilder sb = new StringBuilder();
-            List<SqlParameter> spmlist = new List<SqlParameter>();
             sb.Append("BEGIN ");
             for (int i = 0; i < PramasInfoList.Count; i++)
             {
@@ -68,7 +67,6 @@ namespace HOZAPDAL
         {
             bool IsSuccess = false;
             StringBuilder sb = new StringBuilder();
-            List<SqlParameter> spmlist = new List<SqlParameter>();
             sb.Append("BEGIN ");
             for (int i = 0; i < PramasID.Count; i++)
             {

@@ -488,5 +488,22 @@ namespace HOZAPWorkStation.UserControls
         {
             tspPreNoteSplit_Click(sender,e);
         }
+
+        private void tspPreParamSelAdd_Click(object sender, EventArgs e)
+        {
+            AddPramas addpramas =AddPramas.InstanceObject();
+            addpramas.Focus();
+            addpramas.MyPreParamSelectionDataBindEvents += new AddPramas.PreParamSelectionDataBindEvents(PreParamSelectionDataBind);
+            addpramas.Show();
+
+        }
+
+        private void tspPreParamSelEdit_Click(object sender, EventArgs e)
+        {
+            AddPramas addpramas = AddPramas.InstanceObject();
+            addpramas.Focus();
+            addpramas.MyPreParamSelectionDataBindEvents += new AddPramas.PreParamSelectionDataBindEvents(PreParamSelectionDataBind);
+            addpramas.Show();
+        }
     }
 }

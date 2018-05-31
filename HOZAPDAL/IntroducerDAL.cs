@@ -36,5 +36,29 @@ namespace HOZAPDAL
             }
             return IntroducerList;
         }
+
+        /// <summary>
+        ///为参数添加引导词
+        /// </summary>
+        /// <param name="IntroducerList">引导词信息列表</param>
+        /// <returns>trueOrfalse</returns>
+        public bool Add_Introducerinfo(List<Introducer> IntroducerList)
+        {
+            bool IsSuccess = false;
+            StringBuilder sb = new StringBuilder();
+            sb.Append("BEGIN ");
+            for (int i = 0; i < IntroducerList.Count; i++)
+            {
+                sb.Append("insert into tb_Introducer values('" + IntroducerList[i].IntroducerText+ "'," + IntroducerList[i].PramasId + ")");
+            }
+            sb.Append(" END;");
+            if (SqlHelper.ExecuteNonQuery(sb.ToString()) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
+
+
     }
 }
