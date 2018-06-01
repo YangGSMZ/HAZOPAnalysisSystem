@@ -89,10 +89,10 @@ namespace HOZAPModel
         }
 
         /// <summary>
-        /// 创建日期，暂定为datatime类型，不行改为string
+        /// 创建日期，改为string
         /// </summary>
-        DateTime _NodeCreateDate;
-        public DateTime NodeCreateDate
+        string _NodeCreateDate;
+        public string NodeCreateDate
         {
             set
             {

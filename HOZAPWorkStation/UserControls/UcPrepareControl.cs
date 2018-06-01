@@ -132,6 +132,11 @@ namespace HOZAPWorkStation.UserControls
         //}
         //#endregion
 
+        /// <summary>
+        /// 节点划分按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tspPreNoteSplit_Click(object sender, EventArgs e)
         {
             if (MyLoadNodePartitionPageEvents != null)
@@ -335,7 +340,11 @@ namespace HOZAPWorkStation.UserControls
             e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dgvPreParamSelection.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 20, e.RowBounds.Location.Y + 4);
         }
        
-
+        /// <summary>
+        /// 参数选择按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPreParaSelect_Click(object sender, EventArgs e)
         {
             List<SelectedPramas> SelectedPramasInfoList = new List<SelectedPramas>();
