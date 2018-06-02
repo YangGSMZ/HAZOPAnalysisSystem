@@ -39,5 +39,13 @@ namespace HOZAPModel
                 return this._PramasName;
             }
         }
+        int _Type;
+        public int Type
+        {
+            set { this._Type = value; }
+            get { return this._Type; }
+        }
+
+             
     }
 }

@@ -46,6 +46,7 @@
     <Compile Include="NodeDAL.cs" />
     <Compile Include="ParticipantDAL.cs" />
     <Compile Include="PramasDAL.cs" />
+    <Compile Include="ProjectDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReasonDAL.cs" />
     <Compile Include="SelectedPramasDAL.cs" />

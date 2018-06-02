@@ -45,6 +45,7 @@
     <Compile Include="NodeBLL.cs" />
     <Compile Include="ParticipantBLL.cs" />
     <Compile Include="PramasBLL.cs" />
+    <Compile Include="ProjectBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReasonBLL.cs" />
     <Compile Include="SelectedPramasBLL.cs" />

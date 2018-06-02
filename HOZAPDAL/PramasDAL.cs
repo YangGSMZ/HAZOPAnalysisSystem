@@ -35,6 +35,7 @@ namespace HOZAPDAL
                         Pramas pramas = new Pramas();
                         pramas.PramasID = sdr.GetInt32(0);
                         pramas.Name = sdr.GetString(1);
+                        pramas.Type = sdr.GetInt32(2);
                         PramasList.Add(pramas);
                     }
                 }

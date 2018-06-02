@@ -409,6 +409,7 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel1
             // 
@@ -477,6 +478,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "新建项目";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewProjectInterface_FormClosing);
+            this.Load += new System.EventHandler(this.NewProjectInterface_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

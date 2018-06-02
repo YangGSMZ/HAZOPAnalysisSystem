@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace HOZAPModel
 {
-    class Project
+    public class Project
     {
         /// <summary>
         /// 工程编号
         /// </summary>
-        int _ProNumber;
-        public int ProNumber
+        string _ProNumber;
+        public string ProNumber
         {
             set
             {
@@ -121,7 +121,7 @@ namespace HOZAPModel
         }
 
         /// <summary>
-        /// 创建日期
+        /// 创建人
         /// </summary>
         string _CreatePer;
         public string CreatePer

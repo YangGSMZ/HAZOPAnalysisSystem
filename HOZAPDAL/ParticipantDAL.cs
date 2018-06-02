@@ -94,5 +94,22 @@ namespace HOZAPDAL
             return IsSuccess;
         }
 
+        public bool Update_ParticipantInfo(List<Participant> ParticipantInfoList)
+        {
+            bool IsSuccess = false;
+            StringBuilder sb = new StringBuilder();
+            sb.Append("BEGIN ");
+            for (int i = 0; i < ParticipantInfoList.Count; i++)
+            {
+                sb.Append("Update tb_Participant set Name='" + ParticipantInfoList[i].Name + "',Majary='" + ParticipantInfoList[i].Majary + "',Postion='" + ParticipantInfoList[i].Postion + "',Company='" + ParticipantInfoList[i].Company + "',Department='" + ParticipantInfoList[i].Department + "',RolePlay='"+ ParticipantInfoList[i] .RolePlay+ "',ProName='" + ParticipantInfoList[i].ProName + "' where ID="+ ParticipantInfoList[i].ID);
+            }
+            sb.Append(" END;");
+            if (SqlHelper.ExecuteNonQuery(sb.ToString()) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
+
     }
 }

@@ -284,6 +284,7 @@ namespace HOZAPWorkStation
 
             NewProjectInterface NewProject = NewProjectInterface.InstanceObject();
             NewProject.Focus();
+            NewProject.MyLoadPreparePageEvents += new NewProjectInterface.LoadPreparePageEvents(LoadPreparePage);
             NewProject.Show();
         }
     }
