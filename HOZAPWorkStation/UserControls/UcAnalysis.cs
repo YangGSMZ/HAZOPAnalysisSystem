@@ -14,7 +14,9 @@ namespace HOZAPWorkStation.UserControls
             InitializeComponent();
         }
 
-
+        /// <summary>
+        /// 创建TreeView
+        /// </summary>
         private void CreateTree()
         {
             TreeNode root = new TreeNode();
@@ -50,7 +52,6 @@ namespace HOZAPWorkStation.UserControls
                     }
                 }
             }
-
         }
 
         private void UcAnalysis_Load(object sender, System.EventArgs e)

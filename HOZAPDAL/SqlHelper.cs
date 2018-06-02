@@ -19,6 +19,12 @@ namespace HOZAPDAL
         #endregion
 
         #region 用于数据的增删改
+        /// <summary>
+        /// 执行SQL语句
+        /// </summary>
+        /// <param name="sql">要执行的SQL语句</param>
+        /// <param name="pms">SQL语句中使用的参数</param>
+        /// <returns></returns>
         public static int ExecuteNonQuery(string sql,params SqlParameter[] pms)
         {
             using (SqlConnection con = new SqlConnection(ConnStr))
@@ -37,6 +43,12 @@ namespace HOZAPDAL
         #endregion
 
         #region 返回单个数据值
+        /// <summary>
+        /// 执行SQL语句并返回单个数据值
+        /// </summary>
+        /// <param name="sql">要执行的SQL语句</param>
+        /// <param name="pms">执行SQL语句使用的参数</param>
+        /// <returns></returns>
         public static object ExecuteScalar(string sql, params SqlParameter[] pms)
         {
             using (SqlConnection con = new SqlConnection(ConnStr))

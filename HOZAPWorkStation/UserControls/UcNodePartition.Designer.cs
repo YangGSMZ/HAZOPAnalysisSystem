@@ -49,6 +49,8 @@
             this.tsbSave = new System.Windows.Forms.ToolStripButton();
             this.tsbNext = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.calCreateNodeDate = new System.Windows.Forms.MonthCalendar();
+            this.lblUcNodeNewNodeTip = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.SelectModelbtn = new System.Windows.Forms.Button();
@@ -172,6 +174,7 @@
             this.trvUcNodePart.Name = "trvUcNodePart";
             this.trvUcNodePart.Size = new System.Drawing.Size(197, 484);
             this.trvUcNodePart.TabIndex = 1;
+            this.trvUcNodePart.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trvUcNodePart_AfterSelect);
             // 
             // tvNode
             // 
@@ -239,6 +242,7 @@
             this.tsbAdd.Size = new System.Drawing.Size(68, 24);
             this.tsbAdd.Tag = "";
             this.tsbAdd.Text = "增加(A)";
+            this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
             // 
             // tsbEdite
             // 
@@ -247,6 +251,7 @@
             this.tsbEdite.Name = "tsbEdite";
             this.tsbEdite.Size = new System.Drawing.Size(67, 24);
             this.tsbEdite.Text = "编辑(E)";
+            this.tsbEdite.Click += new System.EventHandler(this.tsbEdite_Click);
             // 
             // tsbDel
             // 
@@ -263,6 +268,7 @@
             this.tsbCancel.Name = "tsbCancel";
             this.tsbCancel.Size = new System.Drawing.Size(68, 24);
             this.tsbCancel.Text = "取消(C)";
+            this.tsbCancel.Click += new System.EventHandler(this.tsbCancel_Click);
             // 
             // tsbSave
             // 
@@ -271,6 +277,7 @@
             this.tsbSave.Name = "tsbSave";
             this.tsbSave.Size = new System.Drawing.Size(67, 24);
             this.tsbSave.Text = "保存(S)";
+            this.tsbSave.Click += new System.EventHandler(this.tsbSave_Click);
             // 
             // tsbNext
             // 
@@ -279,9 +286,12 @@
             this.tsbNext.Name = "tsbNext";
             this.tsbNext.Size = new System.Drawing.Size(64, 24);
             this.tsbNext.Text = "下一步";
+            this.tsbNext.Click += new System.EventHandler(this.tsbNext_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.calCreateNodeDate);
+            this.panel1.Controls.Add(this.lblUcNodeNewNodeTip);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.SelectModelbtn);
@@ -309,6 +319,26 @@
             this.panel1.Size = new System.Drawing.Size(655, 452);
             this.panel1.TabIndex = 1;
             // 
+            // calCreateNodeDate
+            // 
+            this.calCreateNodeDate.Location = new System.Drawing.Point(411, 251);
+            this.calCreateNodeDate.Name = "calCreateNodeDate";
+            this.calCreateNodeDate.TabIndex = 44;
+            this.calCreateNodeDate.Visible = false;
+            this.calCreateNodeDate.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.calCreateNodeDate_DateSelected);
+            // 
+            // lblUcNodeNewNodeTip
+            // 
+            this.lblUcNodeNewNodeTip.AutoSize = true;
+            this.lblUcNodeNewNodeTip.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
+            this.lblUcNodeNewNodeTip.ForeColor = System.Drawing.Color.Red;
+            this.lblUcNodeNewNodeTip.Location = new System.Drawing.Point(308, 20);
+            this.lblUcNodeNewNodeTip.Name = "lblUcNodeNewNodeTip";
+            this.lblUcNodeNewNodeTip.Size = new System.Drawing.Size(64, 12);
+            this.lblUcNodeNewNodeTip.TabIndex = 43;
+            this.lblUcNodeNewNodeTip.Text = "*新增节点";
+            this.lblUcNodeNewNodeTip.Visible = false;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -332,6 +362,7 @@
             // 
             // SelectModelbtn
             // 
+            this.SelectModelbtn.Enabled = false;
             this.SelectModelbtn.Location = new System.Drawing.Point(318, 354);
             this.SelectModelbtn.Name = "SelectModelbtn";
             this.SelectModelbtn.Size = new System.Drawing.Size(69, 23);
@@ -341,6 +372,8 @@
             // 
             // txtSelectModel
             // 
+            this.txtSelectModel.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtSelectModel.Enabled = false;
             this.txtSelectModel.Location = new System.Drawing.Point(136, 356);
             this.txtSelectModel.Name = "txtSelectModel";
             this.txtSelectModel.Size = new System.Drawing.Size(166, 21);
@@ -359,17 +392,22 @@
             // 
             // CreateNodeDatebtn
             // 
+            this.CreateNodeDatebtn.Enabled = false;
             this.CreateNodeDatebtn.Location = new System.Drawing.Point(320, 316);
             this.CreateNodeDatebtn.Name = "CreateNodeDatebtn";
             this.CreateNodeDatebtn.Size = new System.Drawing.Size(36, 23);
             this.CreateNodeDatebtn.TabIndex = 37;
             this.CreateNodeDatebtn.Text = "...";
             this.CreateNodeDatebtn.UseVisualStyleBackColor = true;
+            this.CreateNodeDatebtn.Click += new System.EventHandler(this.CreateNodeDatebtn_Click);
             // 
             // txtNodeCreateDate
             // 
+            this.txtNodeCreateDate.BackColor = System.Drawing.Color.White;
+            this.txtNodeCreateDate.Enabled = false;
             this.txtNodeCreateDate.Location = new System.Drawing.Point(136, 316);
             this.txtNodeCreateDate.Name = "txtNodeCreateDate";
+            this.txtNodeCreateDate.ReadOnly = true;
             this.txtNodeCreateDate.Size = new System.Drawing.Size(166, 21);
             this.txtNodeCreateDate.TabIndex = 36;
             // 
@@ -386,6 +424,8 @@
             // 
             // txtNodeUsage
             // 
+            this.txtNodeUsage.BackColor = System.Drawing.Color.White;
+            this.txtNodeUsage.Enabled = false;
             this.txtNodeUsage.Location = new System.Drawing.Point(136, 226);
             this.txtNodeUsage.Multiline = true;
             this.txtNodeUsage.Name = "txtNodeUsage";
@@ -405,6 +445,8 @@
             // 
             // txtNodeDesc
             // 
+            this.txtNodeDesc.BackColor = System.Drawing.Color.White;
+            this.txtNodeDesc.Enabled = false;
             this.txtNodeDesc.Location = new System.Drawing.Point(136, 136);
             this.txtNodeDesc.Multiline = true;
             this.txtNodeDesc.Name = "txtNodeDesc";
@@ -424,10 +466,13 @@
             // 
             // txtNodeName
             // 
+            this.txtNodeName.BackColor = System.Drawing.Color.White;
+            this.txtNodeName.Enabled = false;
             this.txtNodeName.Location = new System.Drawing.Point(136, 96);
             this.txtNodeName.Name = "txtNodeName";
             this.txtNodeName.Size = new System.Drawing.Size(263, 21);
             this.txtNodeName.TabIndex = 30;
+            this.txtNodeName.Leave += new System.EventHandler(this.txtNodeName_Leave);
             // 
             // label5
             // 
@@ -453,17 +498,19 @@
             // rbInterim
             // 
             this.rbInterim.AutoSize = true;
+            this.rbInterim.Enabled = false;
             this.rbInterim.Location = new System.Drawing.Point(235, 58);
             this.rbInterim.Name = "rbInterim";
             this.rbInterim.Size = new System.Drawing.Size(71, 16);
             this.rbInterim.TabIndex = 27;
-            this.rbInterim.TabStop = true;
             this.rbInterim.Text = "间歇流程";
             this.rbInterim.UseVisualStyleBackColor = true;
             // 
             // rbContinuous
             // 
+            this.rbContinuous.AutoCheck = false;
             this.rbContinuous.AutoSize = true;
+            this.rbContinuous.Checked = true;
             this.rbContinuous.Location = new System.Drawing.Point(138, 58);
             this.rbContinuous.Name = "rbContinuous";
             this.rbContinuous.Size = new System.Drawing.Size(71, 16);
@@ -485,10 +532,13 @@
             // 
             // txtNodeId
             // 
+            this.txtNodeId.BackColor = System.Drawing.Color.White;
+            this.txtNodeId.Enabled = false;
             this.txtNodeId.Location = new System.Drawing.Point(136, 16);
             this.txtNodeId.Name = "txtNodeId";
             this.txtNodeId.Size = new System.Drawing.Size(166, 21);
             this.txtNodeId.TabIndex = 24;
+            this.txtNodeId.Leave += new System.EventHandler(this.txtNodeId_Leave);
             // 
             // label2
             // 
@@ -523,6 +573,7 @@
             this.Controls.Add(this.tsNodePartition);
             this.Name = "UcNodePartition";
             this.Size = new System.Drawing.Size(884, 541);
+            this.Load += new System.EventHandler(this.UcNodePartition_Load);
             this.tsNodePartition.ResumeLayout(false);
             this.tsNodePartition.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -588,5 +639,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TreeView trvUcNodePart;
+        private System.Windows.Forms.Label lblUcNodeNewNodeTip;
+        private System.Windows.Forms.MonthCalendar calCreateNodeDate;
     }
 }

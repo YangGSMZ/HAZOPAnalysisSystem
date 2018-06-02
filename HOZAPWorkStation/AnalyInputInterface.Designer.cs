@@ -43,10 +43,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.rtbAnaInputInterface = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tspAnaInputInterface = new System.Windows.Forms.ToolStrip();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.toolStripSplitButton3 = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
             this.panel1.SuspendLayout();
             this.tbcAnalyInputInterface.SuspendLayout();
@@ -204,34 +204,25 @@
             this.rtbAnaInputInterface.TabIndex = 0;
             this.rtbAnaInputInterface.Text = "";
             // 
-            // label2
-            // 
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label2.ForeColor = System.Drawing.Color.Crimson;
-            this.label2.Location = new System.Drawing.Point(6, 428);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 31);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "提示：内容可以通过鼠标单击经验库选择，也可以在内容框内输入。";
-            // 
             // panel3
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.tspAnaInputInterface);
-            this.panel3.Location = new System.Drawing.Point(245, 428);
+            this.panel3.Location = new System.Drawing.Point(4, 429);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(239, 31);
+            this.panel3.Size = new System.Drawing.Size(480, 30);
             this.panel3.TabIndex = 4;
             // 
             // tspAnaInputInterface
             // 
+            this.tspAnaInputInterface.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tspAnaInputInterface.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSplitButton1,
+            this.toolStripSplitButton3,
             this.toolStripSplitButton2});
-            this.tspAnaInputInterface.Location = new System.Drawing.Point(0, 0);
+            this.tspAnaInputInterface.Location = new System.Drawing.Point(0, 3);
             this.tspAnaInputInterface.Name = "tspAnaInputInterface";
-            this.tspAnaInputInterface.Size = new System.Drawing.Size(235, 25);
+            this.tspAnaInputInterface.Size = new System.Drawing.Size(478, 25);
             this.tspAnaInputInterface.TabIndex = 0;
             this.tspAnaInputInterface.Text = "toolStrip1";
             // 
@@ -242,6 +233,14 @@
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
             this.toolStripSplitButton1.Size = new System.Drawing.Size(136, 22);
             this.toolStripSplitButton1.Text = "添加到个人经验库";
+            // 
+            // toolStripSplitButton3
+            // 
+            this.toolStripSplitButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton3.Image")));
+            this.toolStripSplitButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton3.Name = "toolStripSplitButton3";
+            this.toolStripSplitButton3.Size = new System.Drawing.Size(124, 22);
+            this.toolStripSplitButton3.Text = "删除个人经验库";
             // 
             // toolStripSplitButton2
             // 
@@ -258,7 +257,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
@@ -291,7 +289,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ToolStrip tspAnaInputInterface;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
@@ -304,5 +301,6 @@
         private System.Windows.Forms.DataGridView dgvTbcPageAnaPersonal;
         private System.Windows.Forms.RichTextBox rtbAnaInputInterface;
         private System.Windows.Forms.DataGridViewTextBoxColumn RecordPersonal;
+        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton3;
     }
 }

@@ -8,6 +8,9 @@ using System.Data.SqlClient;
 
 namespace HOZAPDAL
 {
+    /// <summary>
+    /// 操作引导词数据表
+    /// </summary>
     public class IntroducerDAL
     {
         /// <summary>
