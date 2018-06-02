@@ -1,6 +1,8 @@
 ﻿using HAZOPBLL;
+using HAZOPCommon;
 using HOZAPBLL;
 using HOZAPModel;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -33,6 +35,7 @@ namespace HOZAPWorkStation.UserControls
                 {
                     TreeNode node1 = new TreeNode();
                     node1.Text = nodelist[i].NodeName;
+                    node1.Tag = nodelist[i].NodeId;
                     root.Nodes.Add(node1);
                     if (sp != null)
                     {
@@ -40,12 +43,14 @@ namespace HOZAPWorkStation.UserControls
                         {
                             TreeNode node2 = new TreeNode();
                             node2.Text = sp[j].PramasText;
+                            node2.Tag = sp[j].PramasId;
                             node1.Nodes.Add(node2);
                             List<Introducer> Introducerlist = ibll.Get_IntroducerList(sp[j].PramasId);
                             for (int k = 0; k < Introducerlist.Count; k++)
                             {
                                 TreeNode node3 = new TreeNode();
                                 node3.Text = Introducerlist[k].IntroducerText;
+                                node3.Tag = Introducerlist[k].IntroducerId;
                                 node2.Nodes.Add(node3);
                             }
                         }
@@ -66,10 +71,29 @@ namespace HOZAPWorkStation.UserControls
         /// <param name="e"></param>
         private void trvUcAnaly_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if ((sender as TreeView).SelectedNode != null&& (sender as TreeView).SelectedNode.Nodes.Count==0)
+            TreeView treeView = sender as TreeView;
+            //选中项目名称则清空数据显示
+            if (treeView!=null&&treeView.SelectedNode.Parent == null)
             {
-                MessageBox.Show(trvUcAnaly.SelectedNode.Text);
+                dgvCcAnalys1.DataSource = null;
             }
+            //选中叶子节点，引导词
+            if (treeView != null && treeView.SelectedNode.Nodes.Count == 0)
+            {
+                dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
+                dgvCcAnalys1.DataSource = DataBindIntroduce();
+            }
+        }
+
+        /// <summary>
+        /// 绑定选择叶子节点引导词的数据
+        /// </summary>
+        /// <returns></returns>
+        private List<DisplayAnalysisResult> DataBindIntroduce()
+        {
+            List<DisplayAnalysisResult> list = new List<DisplayAnalysisResult>();
+            list = null;
+            return list;
         }
 
         /// <summary>
@@ -82,7 +106,6 @@ namespace HOZAPWorkStation.UserControls
             AnalyInputInterface analyInputInterface = (AnalyInputInterface)(sender);
             e = ClickEventE;
             Refresh(analyInputInterface,e);
-            //this.dgvCcAnalys1.Rows[0].Cells[1].Value = analyInputInterface.GetRichTextBoxContext();
         }
         /// <summary>
         /// 实施刷新用户控件中的datagridview数据
@@ -105,6 +128,8 @@ namespace HOZAPWorkStation.UserControls
             //订阅事件
             analyInputInterface.RefreshParent += new System.Action<object, DataGridViewCellEventArgs>(AnalyInputInterface_RefreshParent);
             ClickEventE = e;
+            analyInputInterface.ReceiveEventE = e;
+            analyInputInterface.ReceiveSelectedTreeNode = this.trvUcAnaly.SelectedNode;
             analyInputInterface.Show();
         }
         /// <summary>

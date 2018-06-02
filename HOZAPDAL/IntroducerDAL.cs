@@ -61,7 +61,5 @@ namespace HOZAPDAL
             }
             return IsSuccess;
         }
-
-
     }
 }

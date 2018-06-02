@@ -43,7 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisplayAnalyInput.cs" />
+    <Compile Include="DisplayAnalysisResult.cs" />
     <Compile Include="DisplayPramasAndIntroducer.cs" />
+    <Compile Include="DisplayReasons.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
