@@ -38,5 +38,10 @@ namespace HAZOPBLL
         {
             return dal.Del_ParticipantInfo(ID);
         }
+
+        public bool Update_ParticipantInfo(List<Participant> ParticipantInfoList)
+        {
+            return dal.Update_ParticipantInfo(ParticipantInfoList);
+        }
     }
 }

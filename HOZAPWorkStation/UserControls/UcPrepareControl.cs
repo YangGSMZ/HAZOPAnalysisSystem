@@ -115,8 +115,30 @@ namespace HOZAPWorkStation.UserControls
 
 
             ParticipantInfoDataBind();
+          
             PreParamSledDataBind();
             PreParamSelectionDataBind();
+
+            #region 暂时不用的元素
+            txtCoverPic.Enabled = false;
+            txtImportDate.Enabled = false;
+            txtPrintDate.Enabled = false;
+            txtPrintState.Enabled = false;
+            txtReDate.Enabled = false;
+            txtProDic.Enabled = false;
+            txtCreateDate.Enabled = false;
+            radioNo.Enabled = false;
+            radioYes.Enabled = false;
+            #endregion
+            #region 用到的元素
+            txtProNumber.Enabled = false;
+            txtProName.Enabled = false;
+            txtProCompany.Enabled = false;
+            txtManager.Enabled = false;
+            txtCreatePer.Enabled = false;
+            rtxtDigest.Enabled = false;
+            #endregion
+            ProjectInfoBind();
 
         }
         //#region 未引用
@@ -164,6 +186,7 @@ namespace HOZAPWorkStation.UserControls
                     DisplayPramasAndIntroducer displayinfo = new DisplayPramasAndIntroducer();
                     displayinfo.PramasID = plist[i].PramasID;
                     displayinfo.Name = plist[i].Name;
+                    displayinfo.Type = plist[i].Type;
                     introducerlist = ibll.Get_IntroducerList(plist[i].PramasID);
                     for (int j = 0; j < introducerlist.Count; j++)
                     {
@@ -240,11 +263,9 @@ namespace HOZAPWorkStation.UserControls
         /// </summary>
         private void ParticipantInfoDataBind()
         {
-          
             List<Participant> ParticipantInfoList = pbll.Get_ParticipantInfoList(InitialInterface.ProName);
             dgvPreUcPar.AutoGenerateColumns = false;
             dgvPreUcPar.DataSource = ParticipantInfoList;
-           
         }
 
         private void tspParcipantDelete_Click(object sender, EventArgs e)
@@ -509,10 +530,10 @@ namespace HOZAPWorkStation.UserControls
 
         private void tspPreParamSelEdit_Click(object sender, EventArgs e)
         {
-            AddPramas addpramas = AddPramas.InstanceObject();
-            addpramas.Focus();
-            addpramas.MyPreParamSelectionDataBindEvents += new AddPramas.PreParamSelectionDataBindEvents(PreParamSelectionDataBind);
-            addpramas.Show();
+            UpdataPramasInfo updatapramasinfo = UpdataPramasInfo.InstanceObject();
+            updatapramasinfo.Focus();
+            updatapramasinfo.MyPreParamSelectionDataBindEvents += new UpdataPramasInfo.PreParamSelectionDataBindEvents(PreParamSelectionDataBind);
+            updatapramasinfo.Show();
         }
 
         private void tspParcipantNext_Click(object sender, EventArgs e)
@@ -527,7 +548,140 @@ namespace HOZAPWorkStation.UserControls
 
         private void tsbBaseInfoEdit_Click(object sender, EventArgs e)
         {
-
+            txtProNumber.Enabled = true;
+            //txtProName.Enabled = true;//项目名不允许修改
+            txtProCompany.Enabled = true;
+            txtManager.Enabled = true;
+            txtCreatePer.Enabled = true;
+            rtxtDigest.Enabled = true;
         }
+
+        private void tspParcipantEdit_Click(object sender, EventArgs e)
+        {
+            this.dgvPreUcPar.ReadOnly = false;
+        }
+        /// <summary>
+        /// 默认选中系统提供的参数
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPreParaDafult_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvPreParamSelection.Rows)
+            {
+                if ((int)row.Cells["Type"].Value==0)
+                {
+                    DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)row.Cells[0];
+                    if (checkbox.Value == null)
+                    {
+                        checkbox.Value = 1;
+                    }
+                    if ((int)checkbox.Value == 0)
+                    {
+
+                        checkbox.Value = 1;
+                    }
+                }
+              
+            }
+        }
+        /// <summary>
+        ///取消参与人员编辑内容，不保存
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tspParcipantCancel_Click(object sender, EventArgs e)
+        {
+            ParticipantInfoDataBind();
+            this.dgvPreUcPar.ReadOnly = true;
+        }
+
+        private void tspParcipantSave_Click(object sender, EventArgs e)
+        {
+            List<Participant> ParticipantInfoList = new List<Participant>();
+            foreach (DataGridViewRow row in dgvPreUcPar.Rows)
+            {
+                Participant ParticipantInfo = new Participant();
+                ParticipantInfo.ID = (int)row.Cells["ID"].Value;
+                ParticipantInfo.Name = row.Cells["dgvPreParticipantName"].Value.ToString() ;
+                ParticipantInfo.Majary = row.Cells["dgvPreParticipantMajor"].Value.ToString();
+                ParticipantInfo.Postion = row.Cells["dgvPreParticipantDuty"].Value.ToString();
+                ParticipantInfo.Company = row.Cells["dgvPreParticipantCompany"].Value.ToString();
+                ParticipantInfo.Department = row.Cells["dgvPreParticipantDepartment"].Value.ToString();
+                ParticipantInfo.RolePlay = row.Cells["dgvPreParticipantRole"].Value.ToString();
+                ParticipantInfo.ProName = InitialInterface.ProName;
+                ParticipantInfoList.Add(ParticipantInfo);
+            }
+            if (pbll.Update_ParticipantInfo(ParticipantInfoList))
+            {
+               MessageBox.Show("保存成功！");
+               ParticipantInfoDataBind();
+            }
+        }
+
+        private void tsbBaseInfoCancel_Click(object sender, EventArgs e)
+        {
+            ProjectInfoBind();
+            #region 用到的元素
+            txtProNumber.Enabled = false;
+            txtProName.Enabled = false;
+            txtProCompany.Enabled = false;
+            txtManager.Enabled = false;
+            txtCreatePer.Enabled = false;
+            rtxtDigest.Enabled = false;
+            #endregion 
+        }
+
+        private void ProjectInfoBind()
+        {
+            Project ProjectInfo = new Project();
+            ProjectBLL projectbll = new ProjectBLL();
+            ProjectInfo = projectbll.Get_ProjectInfo(InitialInterface.ProName);
+            txtProNumber.Text = ProjectInfo.ProNumber;
+            txtProName.Text = ProjectInfo.Name;
+            txtProCompany.Text = ProjectInfo.Compartment;
+            txtProDic.Text = ProjectInfo.ProDic;
+            txtCoverPic.Text = ProjectInfo.ProCoverPic;
+            txtManager.Text = ProjectInfo.ProManager;
+            txtReDate.Text = ProjectInfo.ReviewDate;
+            txtCreatePer.Text = ProjectInfo.CreatePer;
+            txtPrintDate.Text = ProjectInfo.PrintState;
+            txtPrintState.Text = ProjectInfo.PrintState;
+            txtImportDate.Text = ProjectInfo.ImportDate;
+            rtxtDigest.Text = ProjectInfo.ProDigest;
+        }
+
+        //private void tsbBaseInfoSave_Click(object sender, EventArgs e)
+        //{
+        //    string ProName = txtProName.Text.Trim();
+        //    string Manager = txtManager.Text.Trim();
+        //    Project ProjectInfo = new Project();
+        //    ProjectBLL pbll = new ProjectBLL();
+        //    if (!string.IsNullOrEmpty(ProName) && !string.IsNullOrEmpty(Manager))
+        //    {
+        //        ProjectInfo.ProNumber = txtProNumber.Text;
+        //        ProjectInfo.Name = ProName;
+        //        ProjectInfo.Compartment = txtProCompany.Text;
+        //        ProjectInfo.ProDic = txtProDic.Text;
+        //        ProjectInfo.ProCoverPic = txtCoverPic.Text;
+        //        ProjectInfo.ProManager = txtManager.Text;
+        //        ProjectInfo.ReviewDate = txtReDate.Text;
+        //        ProjectInfo.CreatePer = txtCreatePer.Text;
+        //        ProjectInfo.PrintState = txtPrintState.Text;
+        //        ProjectInfo.PrintDate = txtPrintState.Text;
+        //        ProjectInfo.ImportDate = txtImportDate.Text;
+        //        ProjectInfo.ProDigest = rtxtDigest.Text;
+        //        if (false)
+        //        {
+                   
+        //            MessageBox.Show("修改成功！");
+        //        }
+
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("请输入必要的信息！");
+        //    }
+        //}
     }
 }

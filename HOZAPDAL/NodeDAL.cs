@@ -21,7 +21,7 @@ namespace HOZAPDAL
         /// <returns></returns>
         public List<Node> Get_NodeList(string ProName)
         {
-            string sql = " select* from tb_Node where ProName =@ProName";
+            string sql = " select * from tb_Node where ProName =@ProName";
             List<Node> NodeList = null;
             using (SqlDataReader sdr = SqlHelper.ExecuteReader(sql, new SqlParameter("@ProName", ProName)))
             {

@@ -47,5 +47,11 @@ namespace HAZOPCommon
             get { return this._AllIntroducer; }
         }
 
+        int _Type;
+        public int Type
+        {
+            set { this._Type = value; }
+            get { return this._Type; }
+        }
     }
 }
