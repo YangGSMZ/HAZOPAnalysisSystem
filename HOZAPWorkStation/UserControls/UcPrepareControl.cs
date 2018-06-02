@@ -505,5 +505,20 @@ namespace HOZAPWorkStation.UserControls
             addpramas.MyPreParamSelectionDataBindEvents += new AddPramas.PreParamSelectionDataBindEvents(PreParamSelectionDataBind);
             addpramas.Show();
         }
+
+        private void tspParcipantNext_Click(object sender, EventArgs e)
+        {
+            PrepareTabControl.SelectedIndex = 2;
+        }
+
+        private void tspBaseInfoNext_Click(object sender, EventArgs e)
+        {
+            PrepareTabControl.SelectedIndex = 1;
+        }
+
+        private void tsbBaseInfoEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

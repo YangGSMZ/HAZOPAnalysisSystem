@@ -101,7 +101,6 @@
             this.tspParcipantDelete = new System.Windows.Forms.ToolStripButton();
             this.tspParcipantCancel = new System.Windows.Forms.ToolStripSplitButton();
             this.tspParcipantSave = new System.Windows.Forms.ToolStripSplitButton();
-            this.tspParcipantNext = new System.Windows.Forms.ToolStripSplitButton();
             this.dgvPreUcPar = new System.Windows.Forms.DataGridView();
             this.dgvPreParticipantId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreParticipantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,10 +116,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tspPreUc = new System.Windows.Forms.ToolStrip();
-            this.tsbBaseInfoEdit = new System.Windows.Forms.ToolStripSplitButton();
             this.tsbBaseInfoCancel = new System.Windows.Forms.ToolStripSplitButton();
             this.tsbBaseInfoSave = new System.Windows.Forms.ToolStripSplitButton();
-            this.tspBaseInfoNext = new System.Windows.Forms.ToolStripSplitButton();
             this.rtxtDigest = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtImportDate = new System.Windows.Forms.TextBox();
@@ -195,6 +192,9 @@
             this.dgvPreUcRiskSerio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskGrave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskDisas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tspParcipantNext = new System.Windows.Forms.ToolStripButton();
+            this.tspBaseInfoNext = new System.Windows.Forms.ToolStripButton();
+            this.tsbBaseInfoEdit = new System.Windows.Forms.ToolStripButton();
             this.PrepareToolStrip.SuspendLayout();
             this.RiskMatrix.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -483,7 +483,7 @@
             this.textBox2.Location = new System.Drawing.Point(253, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(409, 26);
+            this.textBox2.Size = new System.Drawing.Size(408, 26);
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "后果描述";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -509,7 +509,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(253, 35);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(409, 114);
+            this.richTextBox1.Size = new System.Drawing.Size(408, 114);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "误工伤害，不会导致残疾\n泄露至收集系统以内的地方\n设备损失<=10万元\n设备或车间停产<=1天";
             // 
@@ -522,7 +522,7 @@
             this.richTextBox3.Location = new System.Drawing.Point(253, 156);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(409, 114);
+            this.richTextBox3.Size = new System.Drawing.Size(408, 114);
             this.richTextBox3.TabIndex = 6;
             this.richTextBox3.Text = "工厂员工残疾伤害\n厂外人员需要就医\n泄露收集系统以外的地方(数量较少并不超出工厂街衢)\n设备损失1>=10万元，<=100万元\n设备或车间停产>=1天，<=1周\n" +
     "不影响销售\n";
@@ -536,7 +536,7 @@
             this.richTextBox5.Location = new System.Drawing.Point(253, 277);
             this.richTextBox5.Name = "richTextBox5";
             this.richTextBox5.ReadOnly = true;
-            this.richTextBox5.Size = new System.Drawing.Size(409, 114);
+            this.richTextBox5.Size = new System.Drawing.Size(408, 114);
             this.richTextBox5.TabIndex = 8;
             this.richTextBox5.Text = "厂内1人死亡\n厂外人员残疾伤害\n明显泄露至厂外，影响周围邻居，可能遭到投诉\n会受到当地媒体关注\n设备损失>100万元，<1000万元\n严重影响对特定客户的销售";
             // 
@@ -549,7 +549,7 @@
             this.richTextBox6.Location = new System.Drawing.Point(253, 398);
             this.richTextBox6.Name = "richTextBox6";
             this.richTextBox6.ReadOnly = true;
-            this.richTextBox6.Size = new System.Drawing.Size(409, 114);
+            this.richTextBox6.Size = new System.Drawing.Size(408, 114);
             this.richTextBox6.TabIndex = 9;
             this.richTextBox6.Text = "2-3人以内死亡\n厂外人员1人死亡\n明显影响环境，但短期内可以恢复，并会造成公众健康和就医\n会受到省级媒体关注\n设备损失>1000万元，<=5000万元\n设备或车" +
     "间停产>1个月，<=6个月\n影响市场份额";
@@ -563,7 +563,7 @@
             this.richTextBox9.Location = new System.Drawing.Point(253, 519);
             this.richTextBox9.Name = "richTextBox9";
             this.richTextBox9.ReadOnly = true;
-            this.richTextBox9.Size = new System.Drawing.Size(409, 114);
+            this.richTextBox9.Size = new System.Drawing.Size(408, 114);
             this.richTextBox9.TabIndex = 12;
             this.richTextBox9.Text = "3人以上死亡\n厂外人员多人死亡\n对周围社区造成长期的影响，导制厂外居民大面积疏散或严重健康影响\n会收到国家级媒体关注\n设备损失>5000万元\n设备或车间停产>6个" +
     "月\n可能是失去市场";
@@ -996,14 +996,6 @@
             this.tspParcipantSave.Size = new System.Drawing.Size(64, 29);
             this.tspParcipantSave.Text = "保存";
             // 
-            // tspParcipantNext
-            // 
-            this.tspParcipantNext.Image = ((System.Drawing.Image)(resources.GetObject("tspParcipantNext.Image")));
-            this.tspParcipantNext.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspParcipantNext.Name = "tspParcipantNext";
-            this.tspParcipantNext.Size = new System.Drawing.Size(76, 29);
-            this.tspParcipantNext.Text = "下一步";
-            // 
             // dgvPreUcPar
             // 
             this.dgvPreUcPar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1175,14 +1167,6 @@
             this.tspPreUc.TabIndex = 0;
             this.tspPreUc.Text = "toolStrip1";
             // 
-            // tsbBaseInfoEdit
-            // 
-            this.tsbBaseInfoEdit.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaseInfoEdit.Image")));
-            this.tsbBaseInfoEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbBaseInfoEdit.Name = "tsbBaseInfoEdit";
-            this.tsbBaseInfoEdit.Size = new System.Drawing.Size(64, 31);
-            this.tsbBaseInfoEdit.Text = "编辑";
-            // 
             // tsbBaseInfoCancel
             // 
             this.tsbBaseInfoCancel.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaseInfoCancel.Image")));
@@ -1198,14 +1182,6 @@
             this.tsbBaseInfoSave.Name = "tsbBaseInfoSave";
             this.tsbBaseInfoSave.Size = new System.Drawing.Size(64, 31);
             this.tsbBaseInfoSave.Text = "保存";
-            // 
-            // tspBaseInfoNext
-            // 
-            this.tspBaseInfoNext.Image = ((System.Drawing.Image)(resources.GetObject("tspBaseInfoNext.Image")));
-            this.tspBaseInfoNext.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspBaseInfoNext.Name = "tspBaseInfoNext";
-            this.tspBaseInfoNext.Size = new System.Drawing.Size(76, 31);
-            this.tspBaseInfoNext.Text = "下一步";
             // 
             // rtxtDigest
             // 
@@ -2006,6 +1982,33 @@
             this.dgvPreUcRiskDisas.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPreUcRiskDisas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // tspParcipantNext
+            // 
+            this.tspParcipantNext.Image = ((System.Drawing.Image)(resources.GetObject("tspParcipantNext.Image")));
+            this.tspParcipantNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspParcipantNext.Name = "tspParcipantNext";
+            this.tspParcipantNext.Size = new System.Drawing.Size(64, 29);
+            this.tspParcipantNext.Text = "下一步";
+            this.tspParcipantNext.Click += new System.EventHandler(this.tspParcipantNext_Click);
+            // 
+            // tspBaseInfoNext
+            // 
+            this.tspBaseInfoNext.Image = ((System.Drawing.Image)(resources.GetObject("tspBaseInfoNext.Image")));
+            this.tspBaseInfoNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspBaseInfoNext.Name = "tspBaseInfoNext";
+            this.tspBaseInfoNext.Size = new System.Drawing.Size(64, 31);
+            this.tspBaseInfoNext.Text = "下一步";
+            this.tspBaseInfoNext.Click += new System.EventHandler(this.tspBaseInfoNext_Click);
+            // 
+            // tsbBaseInfoEdit
+            // 
+            this.tsbBaseInfoEdit.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaseInfoEdit.Image")));
+            this.tsbBaseInfoEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBaseInfoEdit.Name = "tsbBaseInfoEdit";
+            this.tsbBaseInfoEdit.Size = new System.Drawing.Size(52, 31);
+            this.tsbBaseInfoEdit.Text = "编辑";
+            this.tsbBaseInfoEdit.Click += new System.EventHandler(this.tsbBaseInfoEdit_Click);
+            // 
             // UcPrepareControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -2113,16 +2116,13 @@
         private System.Windows.Forms.ToolStripSplitButton tspParcipantEdit;
         private System.Windows.Forms.ToolStripSplitButton tspParcipantCancel;
         private System.Windows.Forms.ToolStripSplitButton tspParcipantSave;
-        private System.Windows.Forms.ToolStripSplitButton tspParcipantNext;
         private System.Windows.Forms.TabControl PrepareTabControl;
         private System.Windows.Forms.TabPage BaseInfo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStrip tspPreUc;
-        private System.Windows.Forms.ToolStripSplitButton tsbBaseInfoEdit;
         private System.Windows.Forms.ToolStripSplitButton tsbBaseInfoCancel;
         private System.Windows.Forms.ToolStripSplitButton tsbBaseInfoSave;
-        private System.Windows.Forms.ToolStripSplitButton tspBaseInfoNext;
         private System.Windows.Forms.RichTextBox rtxtDigest;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtImportDate;
@@ -2217,5 +2217,8 @@
         private System.Windows.Forms.ToolStripButton tspPreParamSeledAll;
         private System.Windows.Forms.ToolStripButton tspPreParamSeledNoAll;
         private System.Windows.Forms.ToolStripButton tspPreParamSelNext;
+        private System.Windows.Forms.ToolStripButton tspParcipantNext;
+        private System.Windows.Forms.ToolStripButton tspBaseInfoNext;
+        private System.Windows.Forms.ToolStripButton tsbBaseInfoEdit;
     }
 }
