@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsequenceDAL.cs" />
     <Compile Include="IntroducerDAL.cs" />
+    <Compile Include="MeasureDAL.cs" />
     <Compile Include="NodeDAL.cs" />
     <Compile Include="ParticipantDAL.cs" />
     <Compile Include="PramasDAL.cs" />

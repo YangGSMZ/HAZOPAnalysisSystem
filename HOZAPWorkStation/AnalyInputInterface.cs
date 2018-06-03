@@ -59,11 +59,13 @@ namespace HOZAPWorkStation
             //绑定后果，列表里对应“后果”列
             if (ReceiveEventE.ColumnIndex == 6)
             {
+                ConsequenceDataBind();
                 this.Text = "后果录入界面";
             }
             //绑定措施，列表里对应“现有措施”列
             if (ReceiveEventE.ColumnIndex == 10)
             {
+                MeasureDataBind();
                 this.Text = "措施录入界面";
             }
 
@@ -91,6 +93,35 @@ namespace HOZAPWorkStation
             }
         }
 
+        private void MeasureDataBind()
+        {
+            MeasureBLL measureBLL = new MeasureBLL();
+            if (ReceiveSelectedTreeNode != null)
+            {
+                int id = Convert.ToInt32(ReceiveSelectedTreeNode.Tag);
+                List<DisplayMeasure> measureList = measureBLL.Get_MeasuresList(id);
+                this.dgvTbcPageAnaExpert.AutoGenerateColumns = false;
+                this.dgvTbcPageAnaExpert.Columns["Records"].DataPropertyName = "MessureText";
+                this.dgvTbcPageAnaExpert.DataSource = measureList;
+            }
+        }
+
+        /// <summary>
+        /// 绑定后果数据库
+        /// </summary>
+        private void ConsequenceDataBind()
+        {
+            ConsequenceBLL consequenceBLL = new ConsequenceBLL();
+            if (ReceiveSelectedTreeNode != null)
+            {
+                int id = Convert.ToInt32(ReceiveSelectedTreeNode.Tag);
+                List<DisplayConsequence> consequenceList = consequenceBLL.Get_ConsequenceList(id);
+                this.dgvTbcPageAnaExpert.AutoGenerateColumns = false;
+                this.dgvTbcPageAnaExpert.Columns["Records"].DataPropertyName = "ConseqText";
+                this.dgvTbcPageAnaExpert.DataSource = consequenceList;
+            }
+        }
+
         /// <summary>
         /// 绑定原因库
         /// </summary>
@@ -103,6 +134,7 @@ namespace HOZAPWorkStation
                 int id = Convert.ToInt32(ReceiveSelectedTreeNode.Tag);
                 List<DisplayReasons> reasonsList = reasonBLL.Get_ReasonsList(id);
                 this.dgvTbcPageAnaExpert.AutoGenerateColumns = false;
+                this.dgvTbcPageAnaExpert.Columns["Records"].DataPropertyName = "ReasonText";
                 this.dgvTbcPageAnaExpert.DataSource = reasonsList;
             }
         }
@@ -138,6 +170,16 @@ namespace HOZAPWorkStation
                 this.RefreshParent(this, null);
             }
             this.Close();
+        }
+
+        /// <summary>
+        /// 单击选中专家经验库里的数据
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvTbcPageAnaExpert_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.rtbAnaInputInterface.Text = this.dgvTbcPageAnaExpert.SelectedCells[0].Value.ToString();
         }
     }
 }

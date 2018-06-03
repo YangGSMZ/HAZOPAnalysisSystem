@@ -2033,7 +2033,6 @@
             this.tsbBaseInfoSave.Name = "tsbBaseInfoSave";
             this.tsbBaseInfoSave.Size = new System.Drawing.Size(52, 31);
             this.tsbBaseInfoSave.Text = "保存";
-            this.tsbBaseInfoSave.Click += new System.EventHandler(this.tsbBaseInfoSave_Click);
             // 
             // UcPrepareControl
             // 

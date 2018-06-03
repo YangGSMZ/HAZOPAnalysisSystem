@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalyInputInterface));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbcAnalyInputInterface = new System.Windows.Forms.TabControl();
             this.tbcPageExpert = new System.Windows.Forms.TabPage();
             this.dgvTbcPageAnaExpert = new System.Windows.Forms.DataGridView();
+            this.Records = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbcPagePersonal = new System.Windows.Forms.TabPage();
             this.dgvTbcPageAnaPersonal = new System.Windows.Forms.DataGridView();
             this.RecordPersonal = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +48,6 @@
             this.btnAnalyInputAdd = new System.Windows.Forms.ToolStripButton();
             this.btnAnalyInputDelete = new System.Windows.Forms.ToolStripButton();
             this.btnAnalyInputEntry = new System.Windows.Forms.ToolStripButton();
-            this.Records = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tbcAnalyInputInterface.SuspendLayout();
             this.tbcPageExpert.SuspendLayout();
@@ -103,12 +103,26 @@
             this.dgvTbcPageAnaExpert.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Records});
             this.dgvTbcPageAnaExpert.Location = new System.Drawing.Point(3, 3);
+            this.dgvTbcPageAnaExpert.MultiSelect = false;
             this.dgvTbcPageAnaExpert.Name = "dgvTbcPageAnaExpert";
             this.dgvTbcPageAnaExpert.RowHeadersWidth = 30;
             this.dgvTbcPageAnaExpert.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTbcPageAnaExpert.RowTemplate.Height = 23;
             this.dgvTbcPageAnaExpert.Size = new System.Drawing.Size(468, 203);
             this.dgvTbcPageAnaExpert.TabIndex = 0;
+            this.dgvTbcPageAnaExpert.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTbcPageAnaExpert_CellClick);
+            // 
+            // Records
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Records.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Records.FillWeight = 1F;
+            this.Records.HeaderText = "记录";
+            this.Records.Name = "Records";
+            this.Records.ReadOnly = true;
+            this.Records.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Records.Width = 465;
             // 
             // tbcPagePersonal
             // 
@@ -132,14 +146,14 @@
             this.dgvTbcPageAnaPersonal.ColumnHeadersVisible = false;
             this.dgvTbcPageAnaPersonal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RecordPersonal});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTbcPageAnaPersonal.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTbcPageAnaPersonal.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTbcPageAnaPersonal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTbcPageAnaPersonal.Location = new System.Drawing.Point(3, 3);
             this.dgvTbcPageAnaPersonal.Name = "dgvTbcPageAnaPersonal";
@@ -150,9 +164,9 @@
             // 
             // RecordPersonal
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.RecordPersonal.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RecordPersonal.DefaultCellStyle = dataGridViewCellStyle5;
             this.RecordPersonal.FillWeight = 1F;
             this.RecordPersonal.HeaderText = "记录";
             this.RecordPersonal.Name = "RecordPersonal";
@@ -238,19 +252,6 @@
             this.btnAnalyInputEntry.Size = new System.Drawing.Size(52, 22);
             this.btnAnalyInputEntry.Text = "确定";
             this.btnAnalyInputEntry.Click += new System.EventHandler(this.btnAnalyInputEntry_Click);
-            // 
-            // Records
-            // 
-            this.Records.DataPropertyName = "ReasonText";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Records.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Records.FillWeight = 1F;
-            this.Records.HeaderText = "记录";
-            this.Records.Name = "Records";
-            this.Records.ReadOnly = true;
-            this.Records.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Records.Width = 465;
             // 
             // AnalyInputInterface
             // 

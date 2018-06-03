@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DisplayMeasure.cs" />
     <Compile Include="DisplayAnalyInput.cs" />
     <Compile Include="DisplayAnalysisResult.cs" />
+    <Compile Include="DisplayConsequence.cs" />
     <Compile Include="DisplayPramasAndIntroducer.cs" />
     <Compile Include="DisplayReasons.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
