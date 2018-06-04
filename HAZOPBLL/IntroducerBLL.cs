@@ -29,5 +29,13 @@ namespace HAZOPBLL
         {
             return dal.Add_Introducerinfo(IntroducerList);
         }
+        public bool Del_IntroducerByPramasID(List<int> PramasIDList)
+        {
+            return dal.Del_IntroducerByPramasID(PramasIDList);
+        }
+        public bool Check_IntroducerByPramasID(int PramasId)
+        {
+            return dal.Check_IntroducerByPramasID(PramasId);
+        }
     }
 }

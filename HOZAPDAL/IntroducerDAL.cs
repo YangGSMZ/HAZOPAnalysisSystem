@@ -61,7 +61,38 @@ namespace HOZAPDAL
             }
             return IsSuccess;
         }
+        /// <summary>
+        /// 根据参数ID删除相关的引导词
+        /// </summary>
+        /// <param name="PramasIDList">参数ID集合</param>
+        /// <returns>trueOrfalse</returns>
+        public bool Del_IntroducerByPramasID(List<int> PramasIDList)
+        {
+            bool IsSuccess = false;
+            StringBuilder sb = new StringBuilder();
+            sb.Append("BEGIN ");
+            for (int i = 0; i < PramasIDList.Count; i++)
+            {
+                sb.Append("delete from tb_Introducer where PramasID=" + PramasIDList[i]);
+            }
+            sb.Append(" END;");
+            if (SqlHelper.ExecuteNonQuery(sb.ToString()) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
 
+        public bool Check_IntroducerByPramasID(int PramasId)
+        {
+            bool IsSuccess = false;
+            string sql = "select count(*) from tb_Introducer where PramasId=@PramasId";
+            if((int)SqlHelper.ExecuteScalar(sql, new SqlParameter("@PramasId", PramasId)) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
 
     }
 }
