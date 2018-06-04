@@ -36,13 +36,13 @@
             this.btnAddRow = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvIntroducer = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Introducer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeviationDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtPramasName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Introducer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeviationDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -68,6 +68,7 @@
             this.btnSub.TabIndex = 6;
             this.btnSub.Text = "确定";
             this.btnSub.UseVisualStyleBackColor = true;
+            this.btnSub.Click += new System.EventHandler(this.btnSub_Click);
             // 
             // groupBox2
             // 
@@ -98,6 +99,7 @@
             this.btnDelRow.TabIndex = 1;
             this.btnDelRow.Text = "-";
             this.btnDelRow.UseVisualStyleBackColor = true;
+            this.btnDelRow.Click += new System.EventHandler(this.btnDelRow_Click);
             // 
             // btnAddRow
             // 
@@ -107,6 +109,7 @@
             this.btnAddRow.TabIndex = 0;
             this.btnAddRow.Text = "+";
             this.btnAddRow.UseVisualStyleBackColor = true;
+            this.btnAddRow.Click += new System.EventHandler(this.btnAddRow_Click);
             // 
             // panel1
             // 
@@ -134,22 +137,6 @@
             this.dgvIntroducer.RowTemplate.Height = 23;
             this.dgvIntroducer.Size = new System.Drawing.Size(433, 141);
             this.dgvIntroducer.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "序号";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Introducer
-            // 
-            this.Introducer.HeaderText = "引导词";
-            this.Introducer.Name = "Introducer";
-            // 
-            // DeviationDesc
-            // 
-            this.DeviationDesc.HeaderText = "偏离描述";
-            this.DeviationDesc.Name = "DeviationDesc";
             // 
             // groupBox1
             // 
@@ -189,6 +176,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "*";
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "序号";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Introducer
+            // 
+            this.Introducer.HeaderText = "引导词";
+            this.Introducer.Name = "Introducer";
+            // 
+            // DeviationDesc
+            // 
+            this.DeviationDesc.HeaderText = "偏离描述";
+            this.DeviationDesc.Name = "DeviationDesc";
+            // 
             // UpdataPramasInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -225,12 +228,12 @@
         private System.Windows.Forms.Button btnAddRow;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvIntroducer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Introducer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DeviationDesc;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtPramasName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Introducer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeviationDesc;
     }
 }

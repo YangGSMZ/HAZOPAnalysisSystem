@@ -231,6 +231,7 @@ namespace HOZAPWorkStation
                 UcPrepareControl uc = new UcPrepareControl();
                 TabPage tp = new TabPage();
                 uc.Dock = DockStyle.Fill;
+                uc.MyCloseUcPrepareControlPageEvents += new UcPrepareControl.CloseUcPrepareControlPageEvents(CloseCurrentPage);
                 uc.MyLoadNodePartitionPageEvents += new UcPrepareControl.LoadNodePartitionPageEvents(LoadNodePartitionPage);
                 tp.Controls.Add(uc);
                 tp.Name = "tpPrepare";

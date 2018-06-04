@@ -35,5 +35,18 @@ namespace HAZOPBLL
         {
             return dal.Get_PramasId(PramasName);
         }
+        public bool Del_PramasById(List<int> PramasIDList)
+        {
+            return dal.Del_PramasById(PramasIDList);
+        }
+        public Pramas Get_PramasInfo(int PramasID)
+        {
+            return dal.Get_PramasInfo(PramasID);
+        }
+        public bool Update_Pramas(Pramas PramasInfo)
+        {
+            return dal.Update_Pramas(PramasInfo);
+        }
+      
     }
 }

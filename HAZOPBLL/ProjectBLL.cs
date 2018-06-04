@@ -19,5 +19,13 @@ namespace HAZOPBLL
         {
             return dal.Get_ProjectInfo(ProName);
         }
+        public bool Update_ProjectInfo(Project ProjectInfo)
+        {
+            return dal.Update_ProjectInfo(ProjectInfo);
+        }
+        public bool Check_ProjectName(string ProName)
+        {
+            return dal.Check_ProjectName(ProName);
+        }
     }
 }

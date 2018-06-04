@@ -50,6 +50,16 @@ namespace HOZAPDAL
             return IsSuccess;
         }
 
+        public bool Check_ProjectName(string ProName)
+        {
+            bool IsSuccess = false;
+            string sql = "select count(*) from tb_Project where ProName=@ProName";
+            if((int)SqlHelper.ExecuteScalar(sql,new SqlParameter("@ProName", ProName)) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
 
         public Project Get_ProjectInfo(string ProName)
         {
@@ -78,5 +88,44 @@ namespace HOZAPDAL
             return ProjectInfo;
         }
 
+        public bool Update_ProjectInfo(Project ProjectInfo)
+        {
+            bool IsSuccess = false;
+            string sql = "update tb_Project set ProNumber=@ProNumber,Compartment=@Compartment,ProDic=@ProDic,ProCoverPic=@ProCoverPic,ProManager=@ProManager,ReViewDate=@ReViewDate,CreatePer=@CreatePer,PrintState=@PrintState,PrintDate=@PrintDate,ImportDate=@ImportDate,ProDigest=@ProDigest where ProName=@ProName";
+            SqlParameter[] spm =
+     {
+                new SqlParameter("@ProNumber",SqlDbType.VarChar),
+                new SqlParameter("@ProName",SqlDbType.VarChar),
+                new SqlParameter("@Compartment",SqlDbType.VarChar),
+                new SqlParameter("@ProDic",SqlDbType.VarChar),
+                new SqlParameter("@ProCoverPic",SqlDbType.VarChar),
+                new SqlParameter("@ProManager",SqlDbType.VarChar),
+                new SqlParameter("@ReViewDate",SqlDbType.VarChar),
+                new SqlParameter("@CreatePer",SqlDbType.VarChar),
+                new SqlParameter("@PrintState",SqlDbType.VarChar),
+                new SqlParameter("@PrintDate",SqlDbType.VarChar),
+                new SqlParameter("@ImportDate",SqlDbType.VarChar),
+                new SqlParameter("@ProDigest",SqlDbType.VarChar)
+
+            };
+            spm[0].Value = ProjectInfo.ProNumber;
+            spm[1].Value = ProjectInfo.Name;
+            spm[2].Value = ProjectInfo.Compartment;
+            spm[3].Value = ProjectInfo.ProDic;
+            spm[4].Value = ProjectInfo.ProCoverPic;
+            spm[5].Value = ProjectInfo.ProManager;
+            spm[6].Value = ProjectInfo.ReviewDate;
+            spm[7].Value = ProjectInfo.CreatePer;
+            spm[8].Value = ProjectInfo.PrintState;
+            spm[9].Value = ProjectInfo.PrintDate;
+            spm[10].Value = ProjectInfo.ImportDate;
+            spm[11].Value = ProjectInfo.ProDigest;
+            if (SqlHelper.ExecuteNonQuery(sql, spm) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+           
+        }
     }
 }

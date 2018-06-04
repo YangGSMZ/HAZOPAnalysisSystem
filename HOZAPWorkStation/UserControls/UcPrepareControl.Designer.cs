@@ -48,7 +48,6 @@
             this.PrepareToolStrip = new System.Windows.Forms.ToolStrip();
             this.tspPreNoteSplit = new System.Windows.Forms.ToolStripButton();
             this.tspPreHelp = new System.Windows.Forms.ToolStripSplitButton();
-            this.tspPreClose = new System.Windows.Forms.ToolStripSplitButton();
             this.RiskMatrix = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvPreUcRisk = new System.Windows.Forms.DataGridView();
@@ -119,6 +118,7 @@
             this.tspPreUc = new System.Windows.Forms.ToolStrip();
             this.tsbBaseInfoEdit = new System.Windows.Forms.ToolStripButton();
             this.tsbBaseInfoCancel = new System.Windows.Forms.ToolStripButton();
+            this.tsbBaseInfoSave = new System.Windows.Forms.ToolStripButton();
             this.tspBaseInfoNext = new System.Windows.Forms.ToolStripButton();
             this.rtxtDigest = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -195,7 +195,7 @@
             this.dgvPreUcRiskSerio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskGrave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskDisas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tsbBaseInfoSave = new System.Windows.Forms.ToolStripButton();
+            this.tspPreClose = new System.Windows.Forms.ToolStripButton();
             this.PrepareToolStrip.SuspendLayout();
             this.RiskMatrix.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -258,14 +258,6 @@
             this.tspPreHelp.Name = "tspPreHelp";
             this.tspPreHelp.Size = new System.Drawing.Size(64, 22);
             this.tspPreHelp.Text = "帮助";
-            // 
-            // tspPreClose
-            // 
-            this.tspPreClose.Image = ((System.Drawing.Image)(resources.GetObject("tspPreClose.Image")));
-            this.tspPreClose.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreClose.Name = "tspPreClose";
-            this.tspPreClose.Size = new System.Drawing.Size(64, 22);
-            this.tspPreClose.Text = "关闭";
             // 
             // RiskMatrix
             // 
@@ -1209,6 +1201,15 @@
             this.tsbBaseInfoCancel.Text = "取消";
             this.tsbBaseInfoCancel.Click += new System.EventHandler(this.tsbBaseInfoCancel_Click);
             // 
+            // tsbBaseInfoSave
+            // 
+            this.tsbBaseInfoSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaseInfoSave.Image")));
+            this.tsbBaseInfoSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBaseInfoSave.Name = "tsbBaseInfoSave";
+            this.tsbBaseInfoSave.Size = new System.Drawing.Size(52, 31);
+            this.tsbBaseInfoSave.Text = "保存";
+            this.tsbBaseInfoSave.Click += new System.EventHandler(this.tsbBaseInfoSave_Click);
+            // 
             // tspBaseInfoNext
             // 
             this.tspBaseInfoNext.Image = ((System.Drawing.Image)(resources.GetObject("tspBaseInfoNext.Image")));
@@ -1639,6 +1640,7 @@
             this.tspPreParamSelDel.Name = "tspPreParamSelDel";
             this.tspPreParamSelDel.Size = new System.Drawing.Size(52, 21);
             this.tspPreParamSelDel.Text = "删除";
+            this.tspPreParamSelDel.Click += new System.EventHandler(this.tspPreParamSelDel_Click);
             // 
             // tspPreParamSelNext
             // 
@@ -2026,13 +2028,14 @@
             this.dgvPreUcRiskDisas.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPreUcRiskDisas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // tsbBaseInfoSave
+            // tspPreClose
             // 
-            this.tsbBaseInfoSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaseInfoSave.Image")));
-            this.tsbBaseInfoSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbBaseInfoSave.Name = "tsbBaseInfoSave";
-            this.tsbBaseInfoSave.Size = new System.Drawing.Size(52, 31);
-            this.tsbBaseInfoSave.Text = "保存";
+            this.tspPreClose.Image = ((System.Drawing.Image)(resources.GetObject("tspPreClose.Image")));
+            this.tspPreClose.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreClose.Name = "tspPreClose";
+            this.tspPreClose.Size = new System.Drawing.Size(52, 22);
+            this.tspPreClose.Text = "关闭";
+            this.tspPreClose.Click += new System.EventHandler(this.tspPreClose_Click);
             // 
             // UcPrepareControl
             // 
@@ -2097,7 +2100,6 @@
 
         private System.Windows.Forms.ToolStrip PrepareToolStrip;
         private System.Windows.Forms.ToolStripSplitButton tspPreHelp;
-        private System.Windows.Forms.ToolStripSplitButton tspPreClose;
         private System.Windows.Forms.TabPage RiskMatrix;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgvPreUcRisk;
@@ -2246,5 +2248,6 @@
         private System.Windows.Forms.ToolStripButton tspParcipantSave;
         private System.Windows.Forms.ToolStripButton tsbBaseInfoCancel;
         private System.Windows.Forms.ToolStripButton tsbBaseInfoSave;
+        private System.Windows.Forms.ToolStripButton tspPreClose;
     }
 }

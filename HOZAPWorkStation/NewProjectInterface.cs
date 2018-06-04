@@ -43,34 +43,46 @@ namespace HOZAPWorkStation
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            
             string ProName = txtProName.Text.Trim();
             string Manager = txtManager.Text.Trim();
             Project ProjectInfo = new Project();
             ProjectBLL pbll = new ProjectBLL();
+           
             if (!string.IsNullOrEmpty(ProName) && !string.IsNullOrEmpty(Manager))
             {
-                ProjectInfo.ProNumber =  txtProNumber.Text;
-                ProjectInfo.Name = ProName;
-                ProjectInfo.Compartment = txtProCompany.Text;
-                ProjectInfo.ProDic = txtProDic.Text;
-                ProjectInfo.ProCoverPic = txtCoverPic.Text;
-                ProjectInfo.ProManager = txtManager.Text;
-                ProjectInfo.ReviewDate = txtReDate.Text;
-                ProjectInfo.CreatePer = txtCreatePer.Text;
-                ProjectInfo.PrintState = txtPrintState.Text;
-                ProjectInfo.PrintDate = txtPrintState.Text;
-                ProjectInfo.ImportDate = txtImportDate.Text;
-                ProjectInfo.ProDigest = rtxtDigest.Text;
-                if (pbll.Add_ProjectInfo(ProjectInfo))
+                if (!pbll.Check_ProjectName(ProName))
                 {
-                    InitialInterface.ProName = ProName;
-                    MessageBox.Show("新建成功！");
-                    if (MyLoadPreparePageEvents!=null)
+                    ProjectInfo.ProNumber = txtProNumber.Text;
+                    ProjectInfo.Name = ProName;
+                    ProjectInfo.Compartment = txtProCompany.Text;
+                    ProjectInfo.ProDic = txtProDic.Text;
+                    ProjectInfo.ProCoverPic = txtCoverPic.Text;
+                    ProjectInfo.ProManager = txtManager.Text;
+                    ProjectInfo.ReviewDate = txtReDate.Text;
+                    ProjectInfo.CreatePer = txtCreatePer.Text;
+                    ProjectInfo.PrintState = txtPrintState.Text;
+                    ProjectInfo.PrintDate = txtPrintState.Text;
+                    ProjectInfo.ImportDate = txtImportDate.Text;
+                    ProjectInfo.ProDigest = rtxtDigest.Text;
+                    if (pbll.Add_ProjectInfo(ProjectInfo))
                     {
-                        MyLoadPreparePageEvents();
+                        InitialInterface.ProName = ProName;
+                        MessageBox.Show("新建成功！");
+                        if (MyLoadPreparePageEvents != null)
+                        {
+                            MyLoadPreparePageEvents();
 
+                        }
                     }
                 }
+                else
+                {
+                 
+                    MessageBox.Show("该项目名已存在，请重新输入！");
+                    txtProName.Text = null;
+                }
+              
 
             }
             else

@@ -19,6 +19,9 @@ namespace HOZAPWorkStation.UserControls
 
         public delegate void LoadNodePartitionPageEvents();
         public event LoadNodePartitionPageEvents MyLoadNodePartitionPageEvents;
+        public delegate void CloseUcPrepareControlPageEvents();
+        public event CloseUcPrepareControlPageEvents MyCloseUcPrepareControlPageEvents;
+        public Action<List<int>> SendPramasID;
         ParticipantBLL pbll = new ParticipantBLL();
         SelectedPramasBLL spbll = new SelectedPramasBLL();
 
@@ -188,17 +191,20 @@ namespace HOZAPWorkStation.UserControls
                     displayinfo.Name = plist[i].Name;
                     displayinfo.Type = plist[i].Type;
                     introducerlist = ibll.Get_IntroducerList(plist[i].PramasID);
-                    for (int j = 0; j < introducerlist.Count; j++)
+                    if (introducerlist != null)
                     {
-                        if (j == introducerlist.Count - 1)
+                        for (int j = 0; j < introducerlist.Count; j++)
                         {
-                            displayinfo.AllIntroducer += introducerlist[j].IntroducerText;
-                        }
-                        else
-                        {
-                            displayinfo.AllIntroducer += introducerlist[j].IntroducerText + "、";
-                        }
+                            if (j == introducerlist.Count - 1)
+                            {
+                                displayinfo.AllIntroducer += introducerlist[j].IntroducerText;
+                            }
+                            else
+                            {
+                                displayinfo.AllIntroducer += introducerlist[j].IntroducerText + "、";
+                            }
 
+                        }
                     }
                     displaylist.Add(displayinfo);
 
@@ -527,13 +533,67 @@ namespace HOZAPWorkStation.UserControls
             addpramas.Show();
 
         }
-
+        /// <summary>
+        /// 修改参数信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tspPreParamSelEdit_Click(object sender, EventArgs e)
         {
-            UpdataPramasInfo updatapramasinfo = UpdataPramasInfo.InstanceObject();
-            updatapramasinfo.Focus();
-            updatapramasinfo.MyPreParamSelectionDataBindEvents += new UpdataPramasInfo.PreParamSelectionDataBindEvents(PreParamSelectionDataBind);
-            updatapramasinfo.Show();
+            List<int> PramasIdList = new List<int>();
+            foreach (DataGridViewRow row in dgvPreParamSelection.Rows)
+            {
+
+                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (checkbox.Value == null)
+                {
+                    checkbox.Value = 0;
+                }
+                if ((int)checkbox.Value == 1)
+                {
+                    if ((int)row.Cells["Type"].Value == 0)
+                    {
+                        MessageBox.Show("选项为系统参数，无法修改！");
+                        return;
+                    }
+                    else
+                    {
+                        PramasIdList.Add(Convert.ToInt32(row.Cells["PramasID"].Value));
+                    }
+                }
+
+            }
+            if (PramasIdList.Count == 1)
+            {
+               
+                UpdataPramasInfo updatapramasinfo = UpdataPramasInfo.InstanceObject();
+                updatapramasinfo.Focus();
+                SendPramasID += updatapramasinfo.SetInfo ;
+                updatapramasinfo.MyPreParamSelectionDataBindEvents += new UpdataPramasInfo.PreParamSelectionDataBindEvents(PreParamSelectionDataBind);
+                updatapramasinfo.Show();
+                if (SendPramasID != null)
+                {
+                    SendPramasID(PramasIdList);
+                }
+                else
+                {
+                    return;
+                }
+              
+
+            }
+            else
+            {
+                if (PramasIdList.Count > 1)
+                {
+                    MessageBox.Show("一次只能修改一个参数信息！");
+                }
+                else
+                {
+                    MessageBox.Show("请选择所需修改的参数信息！");
+                }
+            }
+           
         }
 
         private void tspParcipantNext_Click(object sender, EventArgs e)
@@ -651,37 +711,105 @@ namespace HOZAPWorkStation.UserControls
             rtxtDigest.Text = ProjectInfo.ProDigest;
         }
 
-        //private void tsbBaseInfoSave_Click(object sender, EventArgs e)
-        //{
-        //    string ProName = txtProName.Text.Trim();
-        //    string Manager = txtManager.Text.Trim();
-        //    Project ProjectInfo = new Project();
-        //    ProjectBLL pbll = new ProjectBLL();
-        //    if (!string.IsNullOrEmpty(ProName) && !string.IsNullOrEmpty(Manager))
-        //    {
-        //        ProjectInfo.ProNumber = txtProNumber.Text;
-        //        ProjectInfo.Name = ProName;
-        //        ProjectInfo.Compartment = txtProCompany.Text;
-        //        ProjectInfo.ProDic = txtProDic.Text;
-        //        ProjectInfo.ProCoverPic = txtCoverPic.Text;
-        //        ProjectInfo.ProManager = txtManager.Text;
-        //        ProjectInfo.ReviewDate = txtReDate.Text;
-        //        ProjectInfo.CreatePer = txtCreatePer.Text;
-        //        ProjectInfo.PrintState = txtPrintState.Text;
-        //        ProjectInfo.PrintDate = txtPrintState.Text;
-        //        ProjectInfo.ImportDate = txtImportDate.Text;
-        //        ProjectInfo.ProDigest = rtxtDigest.Text;
-        //        if (false)
-        //        {
-                   
-        //            MessageBox.Show("修改成功！");
-        //        }
+        private void tsbBaseInfoSave_Click(object sender, EventArgs e)
+        {
+            string ProName = txtProName.Text.Trim();
+            string Manager = txtManager.Text.Trim();
+            Project ProjectInfo = new Project();
+            ProjectBLL pbll = new ProjectBLL();
+            if (!string.IsNullOrEmpty(Manager))
+            {
+                ProjectInfo.ProNumber = txtProNumber.Text;
+                ProjectInfo.Name = ProName;
+                ProjectInfo.Compartment = txtProCompany.Text;
+                ProjectInfo.ProDic = txtProDic.Text;
+                ProjectInfo.ProCoverPic = txtCoverPic.Text;
+                ProjectInfo.ProManager = txtManager.Text;
+                ProjectInfo.ReviewDate = txtReDate.Text;
+                ProjectInfo.CreatePer = txtCreatePer.Text;
+                ProjectInfo.PrintState = txtPrintState.Text;
+                ProjectInfo.PrintDate = txtPrintState.Text;
+                ProjectInfo.ImportDate = txtImportDate.Text;
+                ProjectInfo.ProDigest = rtxtDigest.Text;
+                if (pbll.Update_ProjectInfo(ProjectInfo))
+                {
 
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("请输入必要的信息！");
-        //    }
-        //}
+                    MessageBox.Show("修改成功！");
+                    ProjectInfoBind();
+                    #region 用到的元素
+                    txtProNumber.Enabled = false;
+                    txtProName.Enabled = false;
+                    txtProCompany.Enabled = false;
+                    txtManager.Enabled = false;
+                    txtCreatePer.Enabled = false;
+                    rtxtDigest.Enabled = false;
+                    #endregion
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("请输入必要的信息！");
+            }
+        }
+
+
+        /// <summary>
+        /// 删除参数及相关信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tspPreParamSelDel_Click(object sender, EventArgs e)
+        {
+           
+            List<int> PramasIdList = new List<int>();
+            foreach (DataGridViewRow row in dgvPreParamSelection.Rows)
+            {
+               
+                DataGridViewCheckBoxCell checkbox = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (checkbox.Value == null)
+                {
+                    checkbox.Value = 0;
+                }
+                if ((int)checkbox.Value == 1)
+                {
+                    if ((int)row.Cells["Type"].Value == 0)
+                    {
+                        MessageBox.Show("选项中有系统参数，无法删除！");
+                        return;
+                    }
+                    else
+                    {
+                        PramasIdList.Add(Convert.ToInt32(row.Cells["PramasID"].Value));
+                    }
+                }
+              
+            }
+            if (PramasIdList.Count>0)
+            {
+                PramasBLL pbll = new PramasBLL();
+                IntroducerBLL ibll = new IntroducerBLL();
+                if (pbll.Del_PramasById(PramasIdList))
+                {
+                    ibll.Del_IntroducerByPramasID(PramasIdList);
+                    MessageBox.Show("删除成功！");
+                    PreParamSelectionDataBind();
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("请选择要删除的参数信息！");
+            }
+        }
+
+        private void tspPreClose_Click(object sender, EventArgs e)
+        {
+            if (MyCloseUcPrepareControlPageEvents != null)
+            {
+                MyCloseUcPrepareControlPageEvents();
+            }
+        }
     }
 }
