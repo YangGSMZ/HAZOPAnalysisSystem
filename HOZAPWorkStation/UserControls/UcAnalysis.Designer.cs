@@ -28,46 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcAnalysis));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle65 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tspUcAanlyTop = new System.Windows.Forms.ToolStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tbcUcAanlyLeft = new System.Windows.Forms.TabControl();
@@ -104,9 +104,10 @@
             this.tspUcAnalyRefresh = new System.Windows.Forms.ToolStripSplitButton();
             this.tspUcAnalySave = new System.Windows.Forms.ToolStripSplitButton();
             this.tspUcAnalyDelete = new System.Windows.Forms.ToolStripSplitButton();
+            this.tspUcAnalyOutPut = new System.Windows.Forms.ToolStripSplitButton();
             this.dgcCcAnalyNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcCcAnalyParams = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcCcAnalyParamsAndIntro = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dgcCcAnalyParamsAndIntro = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dgcCcAnalyDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcCcAnalyReason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcCcAnalyF0 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -269,14 +270,14 @@
             this.dgvCcAnalys1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvCcAnalys1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvCcAnalys1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCcAnalys1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCcAnalys1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCcAnalys1.ColumnHeadersHeight = 35;
             this.dgvCcAnalys1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCcAnalys1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -298,14 +299,14 @@
             this.dgcCcAnalySugges,
             this.dgcCcAnalyCompany,
             this.dgcCcAnalyMark});
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle59.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle59.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle59.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle59.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle59.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCcAnalys1.DefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCcAnalys1.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgvCcAnalys1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCcAnalys1.Location = new System.Drawing.Point(0, 0);
             this.dgvCcAnalys1.MergeColumnHeaderBackColor = System.Drawing.SystemColors.Control;
@@ -324,14 +325,14 @@
             this.dgvUcAnalysis.AllowUserToDeleteRows = false;
             this.dgvUcAnalysis.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvUcAnalysis.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle60.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle60.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle60.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle60.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle60.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUcAnalysis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUcAnalysis.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvUcAnalysis.ColumnHeadersHeight = 40;
             this.dgvUcAnalysis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvUcAnalysis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -352,14 +353,14 @@
             this.dgvUcAnalySugestion,
             this.dgvUcAnalyReponsible,
             this.dgvUcAnalyRemark});
-            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle78.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle78.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle78.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUcAnalysis.DefaultCellStyle = dataGridViewCellStyle78;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUcAnalysis.DefaultCellStyle = dataGridViewCellStyle39;
             this.dgvUcAnalysis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUcAnalysis.Enabled = false;
             this.dgvUcAnalysis.GridColor = System.Drawing.SystemColors.ControlLight;
@@ -374,8 +375,8 @@
             // 
             // dgvUcAnalyId
             // 
-            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyId.DefaultCellStyle = dataGridViewCellStyle61;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyId.DefaultCellStyle = dataGridViewCellStyle22;
             this.dgvUcAnalyId.FillWeight = 1F;
             this.dgvUcAnalyId.HeaderText = "编号";
             this.dgvUcAnalyId.Name = "dgvUcAnalyId";
@@ -383,16 +384,16 @@
             // 
             // dgvUcAnalyParamIntro
             // 
-            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyParamIntro.DefaultCellStyle = dataGridViewCellStyle62;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyParamIntro.DefaultCellStyle = dataGridViewCellStyle23;
             this.dgvUcAnalyParamIntro.FillWeight = 1F;
             this.dgvUcAnalyParamIntro.HeaderText = "参数+引导词";
             this.dgvUcAnalyParamIntro.Name = "dgvUcAnalyParamIntro";
             // 
             // dgvUcAnalyDeviate
             // 
-            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyDeviate.DefaultCellStyle = dataGridViewCellStyle63;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyDeviate.DefaultCellStyle = dataGridViewCellStyle24;
             this.dgvUcAnalyDeviate.FillWeight = 1F;
             this.dgvUcAnalyDeviate.HeaderText = "偏离描述";
             this.dgvUcAnalyDeviate.Name = "dgvUcAnalyDeviate";
@@ -400,8 +401,8 @@
             // 
             // dgvUcAnalyReason
             // 
-            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyReason.DefaultCellStyle = dataGridViewCellStyle64;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyReason.DefaultCellStyle = dataGridViewCellStyle25;
             this.dgvUcAnalyReason.FillWeight = 1F;
             this.dgvUcAnalyReason.HeaderText = "原因";
             this.dgvUcAnalyReason.Name = "dgvUcAnalyReason";
@@ -409,8 +410,8 @@
             // 
             // dgvUcAnalyF0
             // 
-            dataGridViewCellStyle65.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyF0.DefaultCellStyle = dataGridViewCellStyle65;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyF0.DefaultCellStyle = dataGridViewCellStyle26;
             this.dgvUcAnalyF0.FillWeight = 1F;
             this.dgvUcAnalyF0.HeaderText = "F0";
             this.dgvUcAnalyF0.Name = "dgvUcAnalyF0";
@@ -418,8 +419,8 @@
             // 
             // dgvUcAnalyResult
             // 
-            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyResult.DefaultCellStyle = dataGridViewCellStyle66;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyResult.DefaultCellStyle = dataGridViewCellStyle27;
             this.dgvUcAnalyResult.FillWeight = 1F;
             this.dgvUcAnalyResult.HeaderText = "后果";
             this.dgvUcAnalyResult.Name = "dgvUcAnalyResult";
@@ -427,8 +428,8 @@
             // 
             // dgvUcAnalySi
             // 
-            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalySi.DefaultCellStyle = dataGridViewCellStyle67;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalySi.DefaultCellStyle = dataGridViewCellStyle28;
             this.dgvUcAnalySi.FillWeight = 1F;
             this.dgvUcAnalySi.HeaderText = "Si";
             this.dgvUcAnalySi.Name = "dgvUcAnalySi";
@@ -436,8 +437,8 @@
             // 
             // dgvUcAnalyLi
             // 
-            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyLi.DefaultCellStyle = dataGridViewCellStyle68;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyLi.DefaultCellStyle = dataGridViewCellStyle29;
             this.dgvUcAnalyLi.FillWeight = 1F;
             this.dgvUcAnalyLi.HeaderText = "Li";
             this.dgvUcAnalyLi.Name = "dgvUcAnalyLi";
@@ -445,8 +446,8 @@
             // 
             // dgvUcAnalyRi
             // 
-            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyRi.DefaultCellStyle = dataGridViewCellStyle69;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyRi.DefaultCellStyle = dataGridViewCellStyle30;
             this.dgvUcAnalyRi.FillWeight = 1F;
             this.dgvUcAnalyRi.HeaderText = "Ri";
             this.dgvUcAnalyRi.Name = "dgvUcAnalyRi";
@@ -455,8 +456,8 @@
             // 
             // dgvUcAnalyNowMeasure
             // 
-            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyNowMeasure.DefaultCellStyle = dataGridViewCellStyle70;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyNowMeasure.DefaultCellStyle = dataGridViewCellStyle31;
             this.dgvUcAnalyNowMeasure.FillWeight = 1F;
             this.dgvUcAnalyNowMeasure.HeaderText = "现有措施";
             this.dgvUcAnalyNowMeasure.Name = "dgvUcAnalyNowMeasure";
@@ -464,8 +465,8 @@
             // 
             // dgvUcAnalyFs
             // 
-            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyFs.DefaultCellStyle = dataGridViewCellStyle71;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyFs.DefaultCellStyle = dataGridViewCellStyle32;
             this.dgvUcAnalyFs.FillWeight = 1F;
             this.dgvUcAnalyFs.HeaderText = "Fs";
             this.dgvUcAnalyFs.Name = "dgvUcAnalyFs";
@@ -473,8 +474,8 @@
             // 
             // dgvUcAnalyS
             // 
-            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyS.DefaultCellStyle = dataGridViewCellStyle72;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyS.DefaultCellStyle = dataGridViewCellStyle33;
             this.dgvUcAnalyS.FillWeight = 1F;
             this.dgvUcAnalyS.HeaderText = "S";
             this.dgvUcAnalyS.Name = "dgvUcAnalyS";
@@ -482,8 +483,8 @@
             // 
             // dgvUcAnalyL
             // 
-            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyL.DefaultCellStyle = dataGridViewCellStyle73;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyL.DefaultCellStyle = dataGridViewCellStyle34;
             this.dgvUcAnalyL.FillWeight = 1F;
             this.dgvUcAnalyL.HeaderText = "L";
             this.dgvUcAnalyL.Name = "dgvUcAnalyL";
@@ -491,8 +492,8 @@
             // 
             // dgvUcAnalyR
             // 
-            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyR.DefaultCellStyle = dataGridViewCellStyle74;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyR.DefaultCellStyle = dataGridViewCellStyle35;
             this.dgvUcAnalyR.FillWeight = 1F;
             this.dgvUcAnalyR.HeaderText = "R";
             this.dgvUcAnalyR.Name = "dgvUcAnalyR";
@@ -500,8 +501,8 @@
             // 
             // dgvUcAnalySugestion
             // 
-            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalySugestion.DefaultCellStyle = dataGridViewCellStyle75;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalySugestion.DefaultCellStyle = dataGridViewCellStyle36;
             this.dgvUcAnalySugestion.FillWeight = 1F;
             this.dgvUcAnalySugestion.HeaderText = "建议项";
             this.dgvUcAnalySugestion.Name = "dgvUcAnalySugestion";
@@ -509,16 +510,16 @@
             // 
             // dgvUcAnalyReponsible
             // 
-            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyReponsible.DefaultCellStyle = dataGridViewCellStyle76;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyReponsible.DefaultCellStyle = dataGridViewCellStyle37;
             this.dgvUcAnalyReponsible.FillWeight = 1F;
             this.dgvUcAnalyReponsible.HeaderText = "负责单位/人";
             this.dgvUcAnalyReponsible.Name = "dgvUcAnalyReponsible";
             // 
             // dgvUcAnalyRemark
             // 
-            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvUcAnalyRemark.DefaultCellStyle = dataGridViewCellStyle77;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvUcAnalyRemark.DefaultCellStyle = dataGridViewCellStyle38;
             this.dgvUcAnalyRemark.FillWeight = 1F;
             this.dgvUcAnalyRemark.HeaderText = "备注";
             this.dgvUcAnalyRemark.Name = "dgvUcAnalyRemark";
@@ -542,7 +543,8 @@
             this.tspUcAnalyAddRow,
             this.tspUcAnalyRefresh,
             this.tspUcAnalySave,
-            this.tspUcAnalyDelete});
+            this.tspUcAnalyDelete,
+            this.tspUcAnalyOutPut});
             this.tspAnalyBottom.Location = new System.Drawing.Point(0, 0);
             this.tspAnalyBottom.Name = "tspAnalyBottom";
             this.tspAnalyBottom.Size = new System.Drawing.Size(1910, 21);
@@ -564,6 +566,7 @@
             this.tspUcAnalyRefresh.Name = "tspUcAnalyRefresh";
             this.tspUcAnalyRefresh.Size = new System.Drawing.Size(64, 18);
             this.tspUcAnalyRefresh.Text = "刷新";
+            this.tspUcAnalyRefresh.ButtonClick += new System.EventHandler(this.tspUcAnalyRefresh_ButtonClick);
             // 
             // tspUcAnalySave
             // 
@@ -581,29 +584,41 @@
             this.tspUcAnalyDelete.Size = new System.Drawing.Size(64, 18);
             this.tspUcAnalyDelete.Text = "删除";
             // 
+            // tspUcAnalyOutPut
+            // 
+            this.tspUcAnalyOutPut.Image = ((System.Drawing.Image)(resources.GetObject("tspUcAnalyOutPut.Image")));
+            this.tspUcAnalyOutPut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspUcAnalyOutPut.Name = "tspUcAnalyOutPut";
+            this.tspUcAnalyOutPut.Size = new System.Drawing.Size(64, 18);
+            this.tspUcAnalyOutPut.Text = "导出";
+            this.tspUcAnalyOutPut.ButtonClick += new System.EventHandler(this.tspUcAnalyOutPut_ButtonClick);
+            // 
             // dgcCcAnalyNum
             // 
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyNum.DefaultCellStyle = dataGridViewCellStyle41;
+            this.dgcCcAnalyNum.DataPropertyName = "RecordName";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyNum.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgcCcAnalyNum.FillWeight = 1F;
             this.dgcCcAnalyNum.HeaderText = "编号";
             this.dgcCcAnalyNum.Name = "dgcCcAnalyNum";
+            this.dgcCcAnalyNum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.dgcCcAnalyNum.Width = 60;
             // 
             // dgcCcAnalyParams
             // 
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyParams.DefaultCellStyle = dataGridViewCellStyle42;
+            this.dgcCcAnalyParams.DataPropertyName = "Pramas";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyParams.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgcCcAnalyParams.FillWeight = 1F;
             this.dgcCcAnalyParams.HeaderText = "参数";
             this.dgcCcAnalyParams.Name = "dgcCcAnalyParams";
-            this.dgcCcAnalyParams.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dgcCcAnalyParamsAndIntro
             // 
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyParamsAndIntro.DefaultCellStyle = dataGridViewCellStyle43;
-            this.dgcCcAnalyParamsAndIntro.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.dgcCcAnalyParamsAndIntro.DataPropertyName = "PramasAndIntroduce";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyParamsAndIntro.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgcCcAnalyParamsAndIntro.FillWeight = 1F;
             this.dgcCcAnalyParamsAndIntro.HeaderText = "参数+引导词";
             this.dgcCcAnalyParamsAndIntro.Name = "dgcCcAnalyParamsAndIntro";
@@ -613,8 +628,9 @@
             // 
             // dgcCcAnalyDesc
             // 
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyDesc.DefaultCellStyle = dataGridViewCellStyle44;
+            this.dgcCcAnalyDesc.DataPropertyName = "DeviateDescription";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyDesc.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgcCcAnalyDesc.FillWeight = 1F;
             this.dgcCcAnalyDesc.HeaderText = "偏离描述";
             this.dgcCcAnalyDesc.Name = "dgcCcAnalyDesc";
@@ -622,8 +638,9 @@
             // 
             // dgcCcAnalyReason
             // 
-            dataGridViewCellStyle45.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyReason.DefaultCellStyle = dataGridViewCellStyle45;
+            this.dgcCcAnalyReason.DataPropertyName = "Reason";
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyReason.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgcCcAnalyReason.FillWeight = 1F;
             this.dgcCcAnalyReason.HeaderText = "原因";
             this.dgcCcAnalyReason.Name = "dgcCcAnalyReason";
@@ -631,9 +648,10 @@
             // 
             // dgcCcAnalyF0
             // 
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle46.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyF0.DefaultCellStyle = dataGridViewCellStyle46;
+            this.dgcCcAnalyF0.DataPropertyName = "F0";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyF0.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgcCcAnalyF0.FillWeight = 1F;
             this.dgcCcAnalyF0.HeaderText = "F0";
             this.dgcCcAnalyF0.Name = "dgcCcAnalyF0";
@@ -643,8 +661,9 @@
             // 
             // dgcCcAnalyConseq
             // 
-            dataGridViewCellStyle47.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyConseq.DefaultCellStyle = dataGridViewCellStyle47;
+            this.dgcCcAnalyConseq.DataPropertyName = "Consequence";
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyConseq.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgcCcAnalyConseq.FillWeight = 1F;
             this.dgcCcAnalyConseq.HeaderText = "后果";
             this.dgcCcAnalyConseq.Name = "dgcCcAnalyConseq";
@@ -652,9 +671,10 @@
             // 
             // dgcCcAnalySi
             // 
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle48.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalySi.DefaultCellStyle = dataGridViewCellStyle48;
+            this.dgcCcAnalySi.DataPropertyName = "Si";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalySi.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgcCcAnalySi.FillWeight = 1F;
             this.dgcCcAnalySi.HeaderText = "Si";
             this.dgcCcAnalySi.Name = "dgcCcAnalySi";
@@ -664,9 +684,10 @@
             // 
             // dgcCcAnalyLi
             // 
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle49.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyLi.DefaultCellStyle = dataGridViewCellStyle49;
+            this.dgcCcAnalyLi.DataPropertyName = "Li";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyLi.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgcCcAnalyLi.FillWeight = 1F;
             this.dgcCcAnalyLi.HeaderText = "Li";
             this.dgcCcAnalyLi.Name = "dgcCcAnalyLi";
@@ -675,8 +696,9 @@
             // 
             // dgcCcAnalyRi
             // 
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyRi.DefaultCellStyle = dataGridViewCellStyle50;
+            this.dgcCcAnalyRi.DataPropertyName = "Ri";
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyRi.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgcCcAnalyRi.FillWeight = 1F;
             this.dgcCcAnalyRi.HeaderText = "Ri";
             this.dgcCcAnalyRi.Name = "dgcCcAnalyRi";
@@ -684,8 +706,9 @@
             // 
             // dgcCcAnalyMessure
             // 
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyMessure.DefaultCellStyle = dataGridViewCellStyle51;
+            this.dgcCcAnalyMessure.DataPropertyName = "Measure";
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyMessure.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgcCcAnalyMessure.FillWeight = 1F;
             this.dgcCcAnalyMessure.HeaderText = "现有措施";
             this.dgcCcAnalyMessure.Name = "dgcCcAnalyMessure";
@@ -693,9 +716,10 @@
             // 
             // dgcCcAnalyFs
             // 
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyFs.DefaultCellStyle = dataGridViewCellStyle52;
+            this.dgcCcAnalyFs.DataPropertyName = "Fs";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyFs.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgcCcAnalyFs.FillWeight = 1F;
             this.dgcCcAnalyFs.HeaderText = "Fs";
             this.dgcCcAnalyFs.Name = "dgcCcAnalyFs";
@@ -704,9 +728,10 @@
             // 
             // dgcCcAnalyS
             // 
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyS.DefaultCellStyle = dataGridViewCellStyle53;
+            this.dgcCcAnalyS.DataPropertyName = "S";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyS.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgcCcAnalyS.FillWeight = 1F;
             this.dgcCcAnalyS.HeaderText = "S";
             this.dgcCcAnalyS.Name = "dgcCcAnalyS";
@@ -715,9 +740,10 @@
             // 
             // dgcCcAnalyL
             // 
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyL.DefaultCellStyle = dataGridViewCellStyle54;
+            this.dgcCcAnalyL.DataPropertyName = "L";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyL.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgcCcAnalyL.FillWeight = 1F;
             this.dgcCcAnalyL.HeaderText = "L";
             this.dgcCcAnalyL.Name = "dgcCcAnalyL";
@@ -726,8 +752,9 @@
             // 
             // dgcCcAnalyR
             // 
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyR.DefaultCellStyle = dataGridViewCellStyle55;
+            this.dgcCcAnalyR.DataPropertyName = "R";
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyR.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgcCcAnalyR.FillWeight = 1F;
             this.dgcCcAnalyR.HeaderText = "R";
             this.dgcCcAnalyR.Name = "dgcCcAnalyR";
@@ -735,8 +762,9 @@
             // 
             // dgcCcAnalySugges
             // 
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalySugges.DefaultCellStyle = dataGridViewCellStyle56;
+            this.dgcCcAnalySugges.DataPropertyName = "Suggestion";
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalySugges.DefaultCellStyle = dataGridViewCellStyle17;
             this.dgcCcAnalySugges.FillWeight = 1F;
             this.dgcCcAnalySugges.HeaderText = "建议项";
             this.dgcCcAnalySugges.Name = "dgcCcAnalySugges";
@@ -744,16 +772,18 @@
             // 
             // dgcCcAnalyCompany
             // 
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyCompany.DefaultCellStyle = dataGridViewCellStyle57;
+            this.dgcCcAnalyCompany.DataPropertyName = "Company";
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyCompany.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgcCcAnalyCompany.FillWeight = 1F;
             this.dgcCcAnalyCompany.HeaderText = "负责单位/人";
             this.dgcCcAnalyCompany.Name = "dgcCcAnalyCompany";
             // 
             // dgcCcAnalyMark
             // 
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dgcCcAnalyMark.DefaultCellStyle = dataGridViewCellStyle58;
+            this.dgcCcAnalyMark.DataPropertyName = "Mark";
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dgcCcAnalyMark.DefaultCellStyle = dataGridViewCellStyle19;
             this.dgcCcAnalyMark.FillWeight = 1F;
             this.dgcCcAnalyMark.HeaderText = "备注";
             this.dgcCcAnalyMark.Name = "dgcCcAnalyMark";
@@ -828,9 +858,10 @@
         private System.Windows.Forms.Panel panel4;
         private CustomControls.dgvCcAnalys dgvCcAnalys1;
         private System.Windows.Forms.ToolStripButton tspUcAnalyAddRow;
+        private System.Windows.Forms.ToolStripSplitButton tspUcAnalyOutPut;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcCcAnalyNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcCcAnalyParams;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dgcCcAnalyParamsAndIntro;
+        private System.Windows.Forms.DataGridViewButtonColumn dgcCcAnalyParamsAndIntro;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcCcAnalyDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcCcAnalyReason;
         private System.Windows.Forms.DataGridViewButtonColumn dgcCcAnalyF0;

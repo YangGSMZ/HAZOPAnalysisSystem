@@ -4,92 +4,96 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Design;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
+using System.Reflection;
+using System.Runtime.InteropServices;
 
-namespace HOZAPWorkStation.CustomControls
-{
-    public partial class dgvCcAnalys : DataGridView
+    /// <summary>
+    /// DataGridView行合并.请对属性MergeColumnNames 赋值既可
+    /// </summary>
+    public partial class RowMergeView : DataGridView
     {
-        public dgvCcAnalys()
+        #region 构造函数
+        public RowMergeView()
         {
             InitializeComponent();
         }
+        #endregion
         #region 重写的事件
         protected override void OnPaint(PaintEventArgs pe)
         {
-            // TODO: 在此处添加自定义绘制代码
-            // 调用基类 OnPaint
-            base.OnPaint(pe);
+        // TODO: 在此处添加自定义绘制代码
+        // 调用基类 OnPaint
+        base.OnPaint(pe);
         }
         protected override void OnCellPainting(DataGridViewCellPaintingEventArgs e)
         {
-            //try
-            //{
-            //    if (e.RowIndex > -1 && e.ColumnIndex > -1)
-            //    {
-            //        DrawCell(e);
-            //    }
-            //    else
-            //    {
-            //        #region 二维表头，暂未使用
-            //        //if (e.RowIndex == -1)
-            //        //{
-            //        //    if (SpanRows.ContainsKey(e.ColumnIndex)) //被合并的列
-            //        //    {
-            //        //        //画边框
-            //        //        Graphics g = e.Graphics;
-            //        //        e.Paint(e.CellBounds, DataGridViewPaintParts.Background | DataGridViewPaintParts.Border);
+        try
+        {
+            if (e.RowIndex > -1 && e.ColumnIndex > -1)
+            {
+                DrawCell(e);
+            }
+            else
+            {
+                //#region 二维表头
+                //if (e.RowIndex == -1)
+                //{
+                //    if (SpanRows.ContainsKey(e.ColumnIndex)) //被合并的列
+                //    {
+                //        //画边框
+                //        Graphics g = e.Graphics;
+                //        e.Paint(e.CellBounds, DataGridViewPaintParts.Background | DataGridViewPaintParts.Border);
 
-            //        //        int left = e.CellBounds.Left, top = e.CellBounds.Top + 2,
-            //        //        right = e.CellBounds.Right, bottom = e.CellBounds.Bottom;
+                //        int left = e.CellBounds.Left, top = e.CellBounds.Top + 2,
+                //        right = e.CellBounds.Right, bottom = e.CellBounds.Bottom;
 
-            //        //        switch (SpanRows[e.ColumnIndex].Position)
-            //        //        {
-            //        //            case 1:
-            //        //                left += 2;
-            //        //                break;
-            //        //            case 2:
-            //        //                break;
-            //        //            case 3:
-            //        //                right -= 2;
-            //        //                break;
-            //        //        }
+                //        switch (SpanRows[e.ColumnIndex].Position)
+                //        {
+                //            case 1:
+                //                left += 2;
+                //                break;
+                //            case 2:
+                //                break;
+                //            case 3:
+                //                right -= 2;
+                //                break;
+                //        }
 
-            //        //        //画上半部分底色
-            //        //        g.FillRectangle(new SolidBrush(this._mergecolumnheaderbackcolor), left, top,
-            //        //        right - left, (bottom - top) / 2);
+                //        //画上半部分底色
+                //        g.FillRectangle(new SolidBrush(this._mergecolumnheaderbackcolor), left, top,
+                //        right - left, (bottom - top) / 2);
 
-            //        //        //画中线
-            //        //        g.DrawLine(new Pen(this.GridColor), left, (top + bottom) / 2,
-            //        //        right, (top + bottom) / 2);
+                //        //画中线
+                //        g.DrawLine(new Pen(this.GridColor), left, (top + bottom) / 2,
+                //        right, (top + bottom) / 2);
 
-            //        //        //写小标题
-            //        //        StringFormat sf = new StringFormat();
-            //        //        sf.Alignment = StringAlignment.Center;
-            //        //        sf.LineAlignment = StringAlignment.Center;
+                //        //写小标题
+                //        StringFormat sf = new StringFormat();
+                //        sf.Alignment = StringAlignment.Center;
+                //        sf.LineAlignment = StringAlignment.Center;
 
-            //        //        g.DrawString(e.Value + "", e.CellStyle.Font, Brushes.Black,
-            //        //        new Rectangle(left, (top + bottom) / 2, right - left, (bottom - top) / 2), sf);
-            //        //        left = this.GetColumnDisplayRectangle(SpanRows[e.ColumnIndex].Left, true).Left - 2;
+                //        g.DrawString(e.Value + "", e.CellStyle.Font, Brushes.Black,
+                //        new Rectangle(left, (top + bottom) / 2, right - left, (bottom - top) / 2), sf);
+                //        left = this.GetColumnDisplayRectangle(SpanRows[e.ColumnIndex].Left, true).Left - 2;
 
-            //        //        if (left < 0) left = this.GetCellDisplayRectangle(-1, -1, true).Width;
-            //        //        right = this.GetColumnDisplayRectangle(SpanRows[e.ColumnIndex].Right, true).Right - 2;
-            //        //        if (right < 0) right = this.Width;
+                //        if (left < 0) left = this.GetCellDisplayRectangle(-1, -1, true).Width;
+                //        right = this.GetColumnDisplayRectangle(SpanRows[e.ColumnIndex].Right, true).Right - 2;
+                //        if (right < 0) right = this.Width;
 
-            //        //        g.DrawString(SpanRows[e.ColumnIndex].Text, e.CellStyle.Font, Brushes.Black,
-            //        //        new Rectangle(left, top, right - left, (bottom - top) / 2), sf);
-            //        //        e.Handled = true;
-            //        //    }
-            //        //}
-            //        #endregion
-            //    }
-            //    base.OnCellPainting(e);
-            //}
-            //catch
-            //{ }
+                //        g.DrawString(SpanRows[e.ColumnIndex].Text, e.CellStyle.Font, Brushes.Black,
+                //        new Rectangle(left, top, right - left, (bottom - top) / 2), sf);
+                //        e.Handled = true;
+                //    }
+                //}
+                //#endregion
+            }
+            base.OnCellPainting(e);
+            }
+            catch
+            { }
         }
         protected override void OnCellClick(DataGridViewCellEventArgs e)
         {
@@ -103,7 +107,7 @@ namespace HOZAPWorkStation.CustomControls
         /// <param name="e"></param>
         private void DrawCell(DataGridViewCellPaintingEventArgs e)
         {
-            if (e.CellStyle.Alignment == DataGridViewContentAlignment.NotSet)
+        if (e.CellStyle.Alignment == DataGridViewContentAlignment.NotSet)
             {
                 e.CellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
@@ -165,7 +169,7 @@ namespace HOZAPWorkStation.CustomControls
                         }
                     }
                     #endregion
-                    count = DownRows + UpRows - 1;
+                    count = DownRows +UpRows - 1;
                     if (count < 2)
                     {
                         return;
@@ -308,22 +312,21 @@ namespace HOZAPWorkStation.CustomControls
                 SpanRows[i] = new SpanInfo(Text, 2, ColIndex, Right);
             }
         }
-        #region 暂未使用
-        ///// <summary>
-        ///// 清除合并的列
-        ///// </summary>
-        //public void ClearSpanInfo()
-        //{
-        //    SpanRows.Clear();
-        //}
-        //private void DataGridViewEx_Scroll(object sender, ScrollEventArgs e)
-        //{
-        //    if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)// && e.Type == ScrollEventType.EndScroll)
-        //    {
-        //        timer1.Enabled = false; timer1.Enabled = true;
-        //    }
-        //}
-        #endregion
+        /// <summary>
+        /// 清除合并的列
+        /// </summary>
+        public void ClearSpanInfo()
+        {
+            SpanRows.Clear();
+            //ReDrawHead();
+        }
+        private void DataGridViewEx_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)// && e.Type == ScrollEventType.EndScroll)
+            {
+                timer1.Enabled = false; timer1.Enabled = true;
+            }
+        }
         //刷新显示表头
         public void ReDrawHead()
         {
@@ -334,7 +337,7 @@ namespace HOZAPWorkStation.CustomControls
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
+            timer1.Enabled = false;
             ReDrawHead();
         }
         /// <summary>
@@ -348,10 +351,5 @@ namespace HOZAPWorkStation.CustomControls
         }
         private Color _mergecolumnheaderbackcolor = System.Drawing.SystemColors.Control;
         #endregion
-
-        private void dgvCcAnalys_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-
-        }
     }
-}
+

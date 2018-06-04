@@ -7,11 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
-using Excel = Microsoft.Office.Interop.Excel;
+using ExcelApp = Microsoft.Office.Interop.Excel;
 
 namespace HOZAPWorkStation.ExportExcel
 {
-    class ExportExcel
+    class ExportToExcel
     { 
         /// <summary>    
         ///导出DataGridView中的数据到Excel文件    
@@ -29,7 +29,7 @@ namespace HOZAPWorkStation.ExportExcel
             //默然文件后缀    
             dlg.DefaultExt = "xlsx ";
             //文件后缀列表    
-            dlg.Filter = "EXCEL文件(*.XLSX)|*.xlsx ";
+            dlg.Filter = "Excel文件(*.xlsx)|*.xlsx ";
             //默然路径是系统当前路径    
             dlg.InitialDirectory = Directory.GetCurrentDirectory();
             //打开保存对话框    
@@ -84,15 +84,16 @@ namespace HOZAPWorkStation.ExportExcel
                     return;
                 }
             }
-            Excel.Application objExcel = null;
-            Excel.Workbook objWorkbook = null;
-            Excel.Worksheet objsheet = null;
+            ExcelApp.Application objExcel = null;
+            ExcelApp.Workbook objWorkbook = null;
+            ExcelApp.Worksheet objsheet = null;
             try
             {
                 //申明对象    
-                objExcel = new Excel.Application();
-                objWorkbook = objExcel.Workbooks.Add(Missing.Value);
-                objsheet = (Excel.Worksheet)objWorkbook.ActiveSheet;
+                objExcel = new Microsoft.Office.Interop.Excel.Application();
+                objWorkbook = objExcel.Workbooks.Add(true);
+                objsheet = (Worksheet)objWorkbook.Worksheets.Add(Type.Missing, Type.Missing, 1, Type.Missing);
+
                 //设置EXCEL不可见    
                 objExcel.Visible = true;
 
@@ -108,9 +109,7 @@ namespace HOZAPWorkStation.ExportExcel
                 }    
                 //向Excel中逐行逐列写入表格中的数据    
                 for (int row = 0; row <= dgv.RowCount - 1; row++)
-                {
-                    //tempProgressBar.PerformStep();    
-
+                {  
                     displayColumnsCount = 1;
                     for (int col = 0; col < colscount; col++)
                     {
@@ -128,30 +127,20 @@ namespace HOZAPWorkStation.ExportExcel
 
                         }
                     }
-                }   
+                }
+                //设置自适应行高
+                Range range = objsheet.Range[objsheet.Cells[1, 1], objsheet.Cells[rowscount, colscount]];
+                range.WrapText = true;
+                range.EntireRow.AutoFit();
                 //保存文件    
-                objWorkbook.SaveAs(fileNameString, Missing.Value, Missing.Value, Missing.Value, Missing.Value,
-                        Missing.Value, Excel.XlSaveAsAccessMode.xlShared, Missing.Value, Missing.Value, Missing.Value,
-                        Missing.Value, Missing.Value);
+                objWorkbook.SaveAs(fileNameString, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             }
             catch (Exception error)
             {
                 MessageBox.Show(error.Message, "警告 ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            finally
-            {
-                //关闭Excel应用    
-                if (objWorkbook != null) objWorkbook.Close(Missing.Value, Missing.Value, Missing.Value);
-                if (objExcel.Workbooks != null) objExcel.Workbooks.Close();
-                if (objExcel != null) objExcel.Quit();
-
-                objsheet = null;
-                objWorkbook = null;
-                objExcel = null;
-            }
-            MessageBox.Show(fileNameString + "/n/n导出完毕! ", "提示 ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            MessageBox.Show("导出完毕! ", "提示 ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

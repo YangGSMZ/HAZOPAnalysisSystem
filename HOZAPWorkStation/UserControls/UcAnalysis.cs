@@ -2,8 +2,10 @@
 using HAZOPCommon;
 using HOZAPBLL;
 using HOZAPModel;
+using HOZAPWorkStation.ExportExcel;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 
@@ -69,27 +71,32 @@ namespace HOZAPWorkStation.UserControls
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        List<Introducer> dgvComboxDataintroducersList;
+        //List<Introducer> dgvComboxDataintroducersList;
         private void trvUcAnaly_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TreeView treeView = sender as TreeView;
+
+            AnalyResultBLL analyResultBLL = new AnalyResultBLL();
+
             //记录选择节点的ID，如果是参数ID，在绑定引导词的时候会用到
             this.dgvCcAnalys1.Tag = treeView.SelectedNode.Tag;
+
+
             //选中项目名称则清空数据显示，且“参数”列不可见
-            if (treeView!=null&&treeView.SelectedNode.Level == 0)
+            if (treeView != null && treeView.SelectedNode.Level == 0)
             {
                 dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
                 dgvCcAnalys1.DataSource = null;
             }
-            //选中叶子节点即引导词，绑定引导词数据，且“参数”列不可见
-            if (treeView != null && treeView.SelectedNode.Level == 3)
-            {
-                dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
-                //绑定除combox之外的列
-                dgvCcAnalys1.DataSource = DataBindIntroduce();
-                //单独绑定会变化的combox，选项固定的combox固定
 
+            //选中节点 节点，绑定节点下所有参数引导词数据，且“参数”列可见
+            if (treeView != null && treeView.SelectedNode.Level == 1)
+            {
+                dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = true;
+                List<AnalysResultTotal> resultList= analyResultBLL.Get_All(InitialInterface.ProName);
+                dgvCcAnalys1.DataSource = resultList;
             }
+
             //选中参数节点，绑定参数下所有引导词数据，且“参数”列不可见
             //此时，“参数+引导词”列才能选择，绑定数据源
             if (treeView != null && treeView.SelectedNode.Level == 2)
@@ -97,25 +104,24 @@ namespace HOZAPWorkStation.UserControls
                 dgvCcAnalys1.Columns["dgcCcAnalyParamsAndIntro"].ReadOnly = false;
                 dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
                 //绑定“参数+引导词”列
-                IntroducerBLL introducerBLL = new IntroducerBLL();
-                int id = Convert.ToInt32(this.dgvCcAnalys1.Tag);
-                dgvComboxDataintroducersList = introducerBLL.Get_IntroducerList(id);
+                //IntroducerBLL introducerBLL = new IntroducerBLL();
+                //int id = Convert.ToInt32(this.dgvCcAnalys1.Tag);
+                //dgvComboxDataintroducersList = introducerBLL.Get_IntroducerList(id);
                 //绑定除combox之外的列
 
             }
-            else
-            {
-                dgvCcAnalys1.Columns["dgcCcAnalyParamsAndIntro"].ReadOnly = false;
-            }
-            //选中节点 节点，绑定节点下所有参数引导词数据，且“参数”列可见
-            if (treeView != null && treeView.SelectedNode.Level == 1)
-            {
-                dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = true;
-                //绑定除combox之外的列
 
-                //单独绑定会变化的combox，选项固定的combox固定
-
+            //选中叶子节点即引导词，绑定引导词数据，且“参数”列不可见
+            if (treeView != null && treeView.SelectedNode.Level == 3)
+            {
+                dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
             }
+        }
+
+        private void UcAnalyCombox_TransferToCombox(object sender, DataGridViewCellEventArgs e)
+        {
+            UcAnalyCombox ucAnalyCombox = (UcAnalyCombox)(sender);
+            this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = ucAnalyCombox.GetBoxContext();
         }
 
         /// <summary>
@@ -189,15 +195,14 @@ namespace HOZAPWorkStation.UserControls
                 //选中“参数+引导词”
                 if (e.ColumnIndex == 2)
                 {
-                    DataGridViewComboBoxCell combox = this.dgvCcAnalys1.Rows[e.RowIndex].Cells["dgcCcAnalyParamsAndIntro"] as DataGridViewComboBoxCell;
-                    combox.Items.Clear();
-                    if (dgvComboxDataintroducersList!=null&&dgvComboxDataintroducersList.Count>0)
+                    if (this.trvUcAnaly != null && this.trvUcAnaly.SelectedNode.Level == 2)
                     {
-                        for (int i = 0; i < dgvComboxDataintroducersList.Count; i++)
-                        {
-                            combox.Items.Add(dgvComboxDataintroducersList[i].IntroducerText);
-                        }
-                    }
+                        UcAnalyCombox ucAnalyCombox = new UcAnalyCombox();
+                        //订阅事件
+                        ucAnalyCombox.TransferToCombox += new System.Action<object, DataGridViewCellEventArgs>(UcAnalyCombox_TransferToCombox);
+                        ucAnalyCombox.ReceiveSelectedTreeNode = this.trvUcAnaly.SelectedNode;
+                        ucAnalyCombox.Show();
+                    } 
                 }
                 //选中F0
                 if (e.ColumnIndex==5)
@@ -293,6 +298,30 @@ namespace HOZAPWorkStation.UserControls
         private void dgvCcAnalys1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
+        }
+
+        private void tspUcAnalyRefresh_ButtonClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        /// <summary>
+        ///  /// <summary>
+        /// 解决给绑定数据源报错
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rowMergeView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
+
+        private void tspUcAnalyOutPut_ButtonClick(object sender, EventArgs e)
+        {
+            ExportToExcel.DataGridViewToExcel(this.dgvCcAnalys1);
         }
     }
 }

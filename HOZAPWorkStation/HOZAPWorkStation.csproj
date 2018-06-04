@@ -46,6 +46,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Excel">
+      <HintPath>F:\天然气工程 备用\Pipeline\lib\Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="microsoft.office.interop.excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>F:\天然气工程 备用\Pipeline\lib\microsoft.office.interop.excel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Controls.Ribbon" />
@@ -84,7 +93,11 @@
     <Compile Include="CustomControls\dgvCcAnalys.Designer.cs">
       <DependentUpon>dgvCcAnalys.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExportExcel\ExportExcel.cs" />
+    <Compile Include="CustomControls\RowMergeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomControls\RowMergeView.designer.cs" />
+    <Compile Include="ExportExcel\ExportToExcel.cs" />
     <Compile Include="InitialInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +126,12 @@
     </Compile>
     <Compile Include="UserControls\UcAnalsFrequency.Designer.cs">
       <DependentUpon>UcAnalsFrequency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcAnalyCombox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcAnalyCombox.Designer.cs">
+      <DependentUpon>UcAnalyCombox.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UcAnalyLevel.cs">
       <SubType>Form</SubType>
@@ -156,6 +175,7 @@
     <EmbeddedResource Include="CustomControls\dgvCcAnalys.resx">
       <DependentUpon>dgvCcAnalys.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\RowMergeView.resx" />
     <EmbeddedResource Include="InitialInterface.resx">
       <DependentUpon>InitialInterface.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcAnalsFrequency.resx">
       <DependentUpon>UcAnalsFrequency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcAnalyCombox.resx">
+      <DependentUpon>UcAnalyCombox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcAnalyLevel.resx">
       <DependentUpon>UcAnalyLevel.cs</DependentUpon>
@@ -257,15 +280,6 @@
       <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
       <VersionMajor>2</VersionMajor>
       <VersionMinor>5</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="Microsoft.Office.Interop.Excel">
-      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>7</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>

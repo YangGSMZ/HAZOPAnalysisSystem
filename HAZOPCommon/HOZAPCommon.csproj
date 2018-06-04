@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnalysResultTotal.cs" />
     <Compile Include="DisplayMeasure.cs" />
     <Compile Include="DisplayAnalyInput.cs" />
     <Compile Include="DisplayAnalysisResult.cs" />

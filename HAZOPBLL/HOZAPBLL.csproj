@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnalyResultBLL.cs" />
     <Compile Include="ConsequenceBLL.cs" />
     <Compile Include="IntroducerBLL.cs" />
     <Compile Include="MeasureBLL.cs" />
