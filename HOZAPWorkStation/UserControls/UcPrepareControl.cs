@@ -19,6 +19,8 @@ namespace HOZAPWorkStation.UserControls
 
         public delegate void LoadNodePartitionPageEvents();
         public event LoadNodePartitionPageEvents MyLoadNodePartitionPageEvents;
+        public delegate void CloseUcPrepareControlPageEvents();
+        public event CloseUcPrepareControlPageEvents MyCloseUcPrepareControlPageEvents;
         public Action<List<int>> SendPramasID;
         ParticipantBLL pbll = new ParticipantBLL();
         SelectedPramasBLL spbll = new SelectedPramasBLL();
@@ -799,6 +801,14 @@ namespace HOZAPWorkStation.UserControls
             else
             {
                 MessageBox.Show("请选择要删除的参数信息！");
+            }
+        }
+
+        private void tspPreClose_Click(object sender, EventArgs e)
+        {
+            if (MyCloseUcPrepareControlPageEvents != null)
+            {
+                MyCloseUcPrepareControlPageEvents();
             }
         }
     }
