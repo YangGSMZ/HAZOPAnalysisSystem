@@ -108,6 +108,24 @@
     <Compile Include="UpdataPramasInfo.Designer.cs">
       <DependentUpon>UpdataPramasInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UcAnalsFrequency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcAnalsFrequency.Designer.cs">
+      <DependentUpon>UcAnalsFrequency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcAnalyLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcAnalyLevel.Designer.cs">
+      <DependentUpon>UcAnalyLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcAnalyProbility.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcAnalyProbility.Designer.cs">
+      <DependentUpon>UcAnalyProbility.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UcAnalysis.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +173,15 @@
     </Compile>
     <EmbeddedResource Include="UpdataPramasInfo.resx">
       <DependentUpon>UpdataPramasInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcAnalsFrequency.resx">
+      <DependentUpon>UcAnalsFrequency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcAnalyLevel.resx">
+      <DependentUpon>UcAnalyLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcAnalyProbility.resx">
+      <DependentUpon>UcAnalyProbility.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcAnalysis.resx">
       <DependentUpon>UcAnalysis.cs</DependentUpon>

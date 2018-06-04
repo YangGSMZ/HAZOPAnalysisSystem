@@ -41,15 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsequenceBLL.cs" />
     <Compile Include="IntroducerBLL.cs" />
+    <Compile Include="MeasureBLL.cs" />
     <Compile Include="NodeBLL.cs" />
     <Compile Include="ParticipantBLL.cs" />
     <Compile Include="PramasBLL.cs" />
     <Compile Include="ProjectBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReasonBLL.cs" />
     <Compile Include="SelectedPramasBLL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HAZOPCommon\HOZAPCommon.csproj">
+      <Project>{134BA21D-AADB-4E3E-816A-258674EFB02F}</Project>
+      <Name>HOZAPCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HOZAPDAL\HOZAPDAL.csproj">
       <Project>{37eddd26-7da6-4b3a-936a-23547b87f07f}</Project>
       <Name>HOZAPDAL</Name>

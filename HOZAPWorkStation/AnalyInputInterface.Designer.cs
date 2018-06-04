@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalyInputInterface));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbcAnalyInputInterface = new System.Windows.Forms.TabControl();
@@ -45,9 +45,9 @@
             this.rtbAnaInputInterface = new System.Windows.Forms.RichTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tspAnaInputInterface = new System.Windows.Forms.ToolStrip();
-            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
-            this.toolStripSplitButton3 = new System.Windows.Forms.ToolStripSplitButton();
-            this.toolStripSplitButton2 = new System.Windows.Forms.ToolStripSplitButton();
+            this.btnAnalyInputAdd = new System.Windows.Forms.ToolStripButton();
+            this.btnAnalyInputDelete = new System.Windows.Forms.ToolStripButton();
+            this.btnAnalyInputEntry = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             this.tbcAnalyInputInterface.SuspendLayout();
             this.tbcPageExpert.SuspendLayout();
@@ -102,19 +102,21 @@
             this.dgvTbcPageAnaExpert.ColumnHeadersVisible = false;
             this.dgvTbcPageAnaExpert.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Records});
-            this.dgvTbcPageAnaExpert.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTbcPageAnaExpert.Location = new System.Drawing.Point(3, 3);
+            this.dgvTbcPageAnaExpert.MultiSelect = false;
             this.dgvTbcPageAnaExpert.Name = "dgvTbcPageAnaExpert";
-            this.dgvTbcPageAnaExpert.RowHeadersVisible = false;
+            this.dgvTbcPageAnaExpert.RowHeadersWidth = 30;
+            this.dgvTbcPageAnaExpert.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTbcPageAnaExpert.RowTemplate.Height = 23;
             this.dgvTbcPageAnaExpert.Size = new System.Drawing.Size(468, 203);
             this.dgvTbcPageAnaExpert.TabIndex = 0;
+            this.dgvTbcPageAnaExpert.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTbcPageAnaExpert_CellClick);
             // 
             // Records
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Records.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Records.DefaultCellStyle = dataGridViewCellStyle4;
             this.Records.FillWeight = 1F;
             this.Records.HeaderText = "记录";
             this.Records.Name = "Records";
@@ -144,14 +146,14 @@
             this.dgvTbcPageAnaPersonal.ColumnHeadersVisible = false;
             this.dgvTbcPageAnaPersonal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RecordPersonal});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTbcPageAnaPersonal.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTbcPageAnaPersonal.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTbcPageAnaPersonal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTbcPageAnaPersonal.Location = new System.Drawing.Point(3, 3);
             this.dgvTbcPageAnaPersonal.Name = "dgvTbcPageAnaPersonal";
@@ -162,9 +164,9 @@
             // 
             // RecordPersonal
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.RecordPersonal.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.RecordPersonal.DefaultCellStyle = dataGridViewCellStyle5;
             this.RecordPersonal.FillWeight = 1F;
             this.RecordPersonal.HeaderText = "记录";
             this.RecordPersonal.Name = "RecordPersonal";
@@ -217,39 +219,39 @@
             // 
             this.tspAnaInputInterface.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tspAnaInputInterface.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripSplitButton1,
-            this.toolStripSplitButton3,
-            this.toolStripSplitButton2});
+            this.btnAnalyInputAdd,
+            this.btnAnalyInputDelete,
+            this.btnAnalyInputEntry});
             this.tspAnaInputInterface.Location = new System.Drawing.Point(0, 3);
             this.tspAnaInputInterface.Name = "tspAnaInputInterface";
             this.tspAnaInputInterface.Size = new System.Drawing.Size(478, 25);
             this.tspAnaInputInterface.TabIndex = 0;
             this.tspAnaInputInterface.Text = "toolStrip1";
             // 
-            // toolStripSplitButton1
+            // btnAnalyInputAdd
             // 
-            this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
-            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
-            this.toolStripSplitButton1.Size = new System.Drawing.Size(136, 22);
-            this.toolStripSplitButton1.Text = "添加到个人经验库";
+            this.btnAnalyInputAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAnalyInputAdd.Image")));
+            this.btnAnalyInputAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAnalyInputAdd.Name = "btnAnalyInputAdd";
+            this.btnAnalyInputAdd.Size = new System.Drawing.Size(124, 22);
+            this.btnAnalyInputAdd.Text = "添加到个人经验库";
             // 
-            // toolStripSplitButton3
+            // btnAnalyInputDelete
             // 
-            this.toolStripSplitButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton3.Image")));
-            this.toolStripSplitButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton3.Name = "toolStripSplitButton3";
-            this.toolStripSplitButton3.Size = new System.Drawing.Size(124, 22);
-            this.toolStripSplitButton3.Text = "删除个人经验库";
+            this.btnAnalyInputDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnAnalyInputDelete.Image")));
+            this.btnAnalyInputDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAnalyInputDelete.Name = "btnAnalyInputDelete";
+            this.btnAnalyInputDelete.Size = new System.Drawing.Size(112, 22);
+            this.btnAnalyInputDelete.Text = "删除个人经验库";
             // 
-            // toolStripSplitButton2
+            // btnAnalyInputEntry
             // 
-            this.toolStripSplitButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton2.Image")));
-            this.toolStripSplitButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton2.Name = "toolStripSplitButton2";
-            this.toolStripSplitButton2.Size = new System.Drawing.Size(64, 22);
-            this.toolStripSplitButton2.Text = "确定";
-            this.toolStripSplitButton2.ButtonClick += new System.EventHandler(this.toolStripSplitButton2_ButtonClick);
+            this.btnAnalyInputEntry.Image = ((System.Drawing.Image)(resources.GetObject("btnAnalyInputEntry.Image")));
+            this.btnAnalyInputEntry.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAnalyInputEntry.Name = "btnAnalyInputEntry";
+            this.btnAnalyInputEntry.Size = new System.Drawing.Size(52, 22);
+            this.btnAnalyInputEntry.Text = "确定";
+            this.btnAnalyInputEntry.Click += new System.EventHandler(this.btnAnalyInputEntry_Click);
             // 
             // AnalyInputInterface
             // 
@@ -268,6 +270,7 @@
             this.Name = "AnalyInputInterface";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AnalyInputInterface";
+            this.Load += new System.EventHandler(this.AnalyInputInterface_Load);
             this.panel1.ResumeLayout(false);
             this.tbcAnalyInputInterface.ResumeLayout(false);
             this.tbcPageExpert.ResumeLayout(false);
@@ -291,16 +294,16 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ToolStrip tspAnaInputInterface;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton2;
         private System.Windows.Forms.TabControl tbcAnalyInputInterface;
         private System.Windows.Forms.TabPage tbcPageExpert;
         private System.Windows.Forms.DataGridView dgvTbcPageAnaExpert;
         private System.Windows.Forms.TabPage tbcPagePersonal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Records;
         private System.Windows.Forms.DataGridView dgvTbcPageAnaPersonal;
         private System.Windows.Forms.RichTextBox rtbAnaInputInterface;
         private System.Windows.Forms.DataGridViewTextBoxColumn RecordPersonal;
-        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton3;
+        private System.Windows.Forms.ToolStripButton btnAnalyInputAdd;
+        private System.Windows.Forms.ToolStripButton btnAnalyInputDelete;
+        private System.Windows.Forms.ToolStripButton btnAnalyInputEntry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Records;
     }
 }

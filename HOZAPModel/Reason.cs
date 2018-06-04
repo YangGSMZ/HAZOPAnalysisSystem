@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HOZAPModel
 {
-    class Reason
+    public class Reason
     {
         /// <summary>
         /// 原因ID，自增长
@@ -28,7 +28,7 @@ namespace HOZAPModel
         /// 原因
         /// </summary>
         string _ReasonText;
-        public string IntroducerText
+        public string ReasonText
         {
             set
             {
@@ -44,7 +44,7 @@ namespace HOZAPModel
         /// 引导词ID
         /// </summary>
         int _IntroducerId;
-        public int PramasId
+        public int IntroducerId
         {
             set
             {
