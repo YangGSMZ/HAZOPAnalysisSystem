@@ -47,7 +47,7 @@ namespace HOZAPWorkStation.UserControls
                             node2.Text = sp[j].PramasText;
                             node2.Tag = sp[j].PramasId;
                             node1.Nodes.Add(node2);
-                            List<Introducer> Introducerlist = ibll.Get_IntroducerList(sp[j].PramasId);
+                            List<HOZAPModel.Introducer> Introducerlist = ibll.Get_IntroducerList(sp[j].PramasId);
                             for (int k = 0; k < Introducerlist.Count; k++)
                             {
                                 TreeNode node3 = new TreeNode();
@@ -79,60 +79,82 @@ namespace HOZAPWorkStation.UserControls
             AnalyResultBLL analyResultBLL = new AnalyResultBLL();
 
             //记录选择节点的ID，如果是参数ID，在绑定引导词的时候会用到
-            this.dgvCcAnalys1.Tag = treeView.SelectedNode.Tag;
-
-
+            if (treeView.SelectedNode.Level > 0)
+            {
+                this.trvUcAnaly.Tag = treeView.SelectedNode.Tag;
+            }
+            string selectedParam = treeView.SelectedNode.Text;
             //选中项目名称则清空数据显示，且“参数”列不可见
-            if (treeView != null && treeView.SelectedNode.Level == 0)
+            if (treeView.SelectedNode.Level == 0)
             {
                 dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
-                dgvCcAnalys1.DataSource = null;
+                //空数据源
+                List<AnalysResultTotal> resultList = new List<AnalysResultTotal>();
+                dgvCcAnalys1.DataSource = resultList;
             }
 
             //选中节点 节点，绑定节点下所有参数引导词数据，且“参数”列可见
-            if (treeView != null && treeView.SelectedNode.Level == 1)
+            //此时，“参数+引导词”列只读
+            if (treeView.SelectedNode.Level == 1)
             {
-                dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = true;
+                if (dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible == false)
+                {
+                    dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = true;
+                }
+                if (dgvCcAnalys1.Columns["dgcCcAnalyParamsAndIntro"].ReadOnly == false)
+                {
+                    dgvCcAnalys1.Columns["dgcCcAnalyParamsAndIntro"].ReadOnly = true;
+                }
                 List<AnalysResultTotal> resultList= analyResultBLL.Get_All(InitialInterface.ProName);
+                if (resultList == null)
+                {
+                    resultList = new List<AnalysResultTotal>();
+                }
                 dgvCcAnalys1.DataSource = resultList;
             }
 
             //选中参数节点，绑定参数下所有引导词数据，且“参数”列不可见
             //此时，“参数+引导词”列才能选择，绑定数据源
-            if (treeView != null && treeView.SelectedNode.Level == 2)
+            if (treeView.SelectedNode.Level == 2)
             {
-                dgvCcAnalys1.Columns["dgcCcAnalyParamsAndIntro"].ReadOnly = false;
-                dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
-                //绑定“参数+引导词”列
-                //IntroducerBLL introducerBLL = new IntroducerBLL();
-                //int id = Convert.ToInt32(this.dgvCcAnalys1.Tag);
-                //dgvComboxDataintroducersList = introducerBLL.Get_IntroducerList(id);
-                //绑定除combox之外的列
-
+                if (dgvCcAnalys1.Columns["dgcCcAnalyParamsAndIntro"].ReadOnly == true)
+                {
+                    dgvCcAnalys1.Columns["dgcCcAnalyParamsAndIntro"].ReadOnly = false;
+                }
+                if (dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible == true)
+                {
+                    dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
+                }
+                List<AnalysResultTotal> resultList = analyResultBLL.Get_Params(InitialInterface.ProName, selectedParam);
+                if (resultList == null)
+                {
+                    resultList = new List<AnalysResultTotal>();
+                }
+                dgvCcAnalys1.DataSource = resultList;
             }
-
             //选中叶子节点即引导词，绑定引导词数据，且“参数”列不可见
-            if (treeView != null && treeView.SelectedNode.Level == 3)
+            if (treeView.SelectedNode.Level == 3)
             {
+                if (dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible == true)
+                {
+                    dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
+                }
                 dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
+                dgvCcAnalys1.Columns["dgcCcAnalyParamsAndIntro"].ReadOnly = true;
+                List<AnalysResultTotal> resultList = analyResultBLL.Get_Introduces(InitialInterface.ProName, selectedParam);
+                if (resultList == null)
+                {
+                    resultList = new List<AnalysResultTotal>();
+                }
+                dgvCcAnalys1.DataSource = resultList;
             }
         }
 
         private void UcAnalyCombox_TransferToCombox(object sender, DataGridViewCellEventArgs e)
         {
             UcAnalyCombox ucAnalyCombox = (UcAnalyCombox)(sender);
+            e = ClickEventE;
             this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = ucAnalyCombox.GetBoxContext();
-        }
-
-        /// <summary>
-        /// 绑定选择叶子节点引导词的数据,但是不包括combox的绑定
-        /// </summary>
-        /// <returns></returns>
-        private List<DisplayAnalysisResult> DataBindIntroduce()
-        {
-            List<DisplayAnalysisResult> list = new List<DisplayAnalysisResult>();
-            list = null;
-            return list;
         }
 
         /// <summary>
@@ -199,8 +221,9 @@ namespace HOZAPWorkStation.UserControls
                     {
                         UcAnalyCombox ucAnalyCombox = new UcAnalyCombox();
                         //订阅事件
+                        ClickEventE = e;
                         ucAnalyCombox.TransferToCombox += new System.Action<object, DataGridViewCellEventArgs>(UcAnalyCombox_TransferToCombox);
-                        ucAnalyCombox.ReceiveSelectedTreeNode = this.trvUcAnaly.SelectedNode;
+                        ucAnalyCombox.ReceiveSelectedTreeNode = this.trvUcAnaly.Tag.ToString();
                         ucAnalyCombox.Show();
                     } 
                 }
@@ -319,9 +342,25 @@ namespace HOZAPWorkStation.UserControls
 
         }
 
+        /// <summary>
+        /// 导出Excel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tspUcAnalyOutPut_ButtonClick(object sender, EventArgs e)
         {
             ExportToExcel.DataGridViewToExcel(this.dgvCcAnalys1);
+        }
+
+        /// <summary>
+        /// 添加一个新行
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tspUcAnalyAddRow_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dataGridViewRow = new DataGridViewRow();
+            this.dgvCcAnalys1.Rows.Add(dataGridViewRow);
         }
     }
 }

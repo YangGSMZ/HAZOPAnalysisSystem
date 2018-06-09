@@ -228,7 +228,7 @@ namespace HOZAPWorkStation.UserControls
             List<DisplayPramasAndIntroducer> displaylist = null;
             if (splist != null)
             {
-                List<Introducer> introducerlist = new List<Introducer>();
+                List<HOZAPModel.Introducer> introducerlist = new List<HOZAPModel.Introducer>();
                 displaylist = new List<DisplayPramasAndIntroducer>();
                 for (int i = 0; i < splist.Count; i++)
                 {

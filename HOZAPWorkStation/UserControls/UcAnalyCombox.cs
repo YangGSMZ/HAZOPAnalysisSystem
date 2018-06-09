@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HAZOPBLL;
+using HOZAPModel;
 
 namespace HOZAPWorkStation.UserControls
 {
@@ -22,7 +24,7 @@ namespace HOZAPWorkStation.UserControls
         /// <summary>
         /// 接收选中的节点
         /// </summary>
-        public TreeNode ReceiveSelectedTreeNode
+        public string ReceiveSelectedTreeNode
         {
             set;
             get;
@@ -30,7 +32,34 @@ namespace HOZAPWorkStation.UserControls
 
         public string GetBoxContext()
         {
-            return String.Empty;
+            return this.dataGridView1.SelectedCells[0].Value.ToString();
+        }
+
+        private void UcAnalyCombox_Load(object sender, EventArgs e)
+        {
+            UcAnalyCombox_DataBind();
+        }
+
+        private void UcAnalyCombox_DataBind()
+        {
+            IntroducerBLL introducerBLL = new IntroducerBLL();
+            if (ReceiveSelectedTreeNode!=null)
+            {
+                int id = Convert.ToInt32(ReceiveSelectedTreeNode);
+                List<Introducer> introducerList = introducerBLL.Get_IntroducerList(id);
+                this.dataGridView1.Columns["Column1"].DataPropertyName = "IntroducerText";
+                this.dataGridView1.AutoGenerateColumns = false;
+                this.dataGridView1.DataSource = introducerList;
+            }
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (this.TransferToCombox != null)
+            {
+                this.TransferToCombox(this, null);
+            }
+            this.Close();
         }
     }
 }

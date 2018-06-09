@@ -16,5 +16,15 @@ namespace HAZOPBLL
         {
             return dal.Get_All(ProName);
         }
+
+        public List<AnalysResultTotal> Get_Params(string ProName, string SelectedParam)
+        {
+            return dal.Get_Params(ProName,SelectedParam);
+        }
+
+        public List<AnalysResultTotal> Get_Introduces(string ProName, string SelectedIntroduce)
+        {
+            return dal.Get_Introduces(ProName, SelectedIntroduce);
+        }
     }
 }

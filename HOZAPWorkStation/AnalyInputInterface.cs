@@ -127,7 +127,6 @@ namespace HOZAPWorkStation
         /// </summary>
         private void ReasonDataBind()
         {
-            IntroducerBLL introducerbll = new IntroducerBLL();
             ReasonBLL reasonBLL = new ReasonBLL();
             if (ReceiveSelectedTreeNode != null)
             {

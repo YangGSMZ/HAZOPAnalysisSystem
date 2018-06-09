@@ -266,6 +266,7 @@
             // 
             // dgvCcAnalys1
             // 
+            this.dgvCcAnalys1.AllowUserToAddRows = false;
             this.dgvCcAnalys1.AllowUserToDeleteRows = false;
             this.dgvCcAnalys1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvCcAnalys1.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -558,6 +559,7 @@
             this.tspUcAnalyAddRow.Name = "tspUcAnalyAddRow";
             this.tspUcAnalyAddRow.Size = new System.Drawing.Size(64, 18);
             this.tspUcAnalyAddRow.Text = "新增行";
+            this.tspUcAnalyAddRow.Click += new System.EventHandler(this.tspUcAnalyAddRow_Click);
             // 
             // tspUcAnalyRefresh
             // 
@@ -657,6 +659,7 @@
             this.dgcCcAnalyF0.Name = "dgcCcAnalyF0";
             this.dgcCcAnalyF0.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgcCcAnalyF0.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgcCcAnalyF0.Visible = false;
             this.dgcCcAnalyF0.Width = 50;
             // 
             // dgcCcAnalyConseq
@@ -724,6 +727,7 @@
             this.dgcCcAnalyFs.HeaderText = "Fs";
             this.dgcCcAnalyFs.Name = "dgcCcAnalyFs";
             this.dgcCcAnalyFs.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgcCcAnalyFs.Visible = false;
             this.dgcCcAnalyFs.Width = 50;
             // 
             // dgcCcAnalyS
