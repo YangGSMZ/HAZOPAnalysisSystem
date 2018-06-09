@@ -1,11 +1,15 @@
 ﻿using HAZOPBLL;
 using HAZOPCommon;
 using HOZAPBLL;
+using HOZAPDAL;
 using HOZAPModel;
 using HOZAPWorkStation.ExportExcel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -67,7 +71,7 @@ namespace HOZAPWorkStation.UserControls
         }
 
         /// <summary>
-        /// TreeView选中节点后发生，子节点数为0，判断为叶子节点
+        /// TreeView选中节点后发生
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -84,13 +88,15 @@ namespace HOZAPWorkStation.UserControls
                 this.trvUcAnaly.Tag = treeView.SelectedNode.Tag;
             }
             string selectedParam = treeView.SelectedNode.Text;
+
+
             //选中项目名称则清空数据显示，且“参数”列不可见
             if (treeView.SelectedNode.Level == 0)
             {
                 dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
                 //空数据源
                 List<AnalysResultTotal> resultList = new List<AnalysResultTotal>();
-                dgvCcAnalys1.DataSource = resultList;
+                dgvCcAnalys1.DataSource = new BindingList<AnalysResultTotal>(resultList);
             }
 
             //选中节点 节点，绑定节点下所有参数引导词数据，且“参数”列可见
@@ -110,7 +116,7 @@ namespace HOZAPWorkStation.UserControls
                 {
                     resultList = new List<AnalysResultTotal>();
                 }
-                dgvCcAnalys1.DataSource = resultList;
+                dgvCcAnalys1.DataSource = new BindingList<AnalysResultTotal>(resultList);
             }
 
             //选中参数节点，绑定参数下所有引导词数据，且“参数”列不可见
@@ -130,7 +136,7 @@ namespace HOZAPWorkStation.UserControls
                 {
                     resultList = new List<AnalysResultTotal>();
                 }
-                dgvCcAnalys1.DataSource = resultList;
+                dgvCcAnalys1.DataSource = new BindingList<AnalysResultTotal>(resultList);
             }
             //选中叶子节点即引导词，绑定引导词数据，且“参数”列不可见
             if (treeView.SelectedNode.Level == 3)
@@ -146,7 +152,7 @@ namespace HOZAPWorkStation.UserControls
                 {
                     resultList = new List<AnalysResultTotal>();
                 }
-                dgvCcAnalys1.DataSource = resultList;
+                dgvCcAnalys1.DataSource = new BindingList<AnalysResultTotal>(resultList);
             }
         }
 
@@ -323,11 +329,6 @@ namespace HOZAPWorkStation.UserControls
 
         }
 
-        private void tspUcAnalyRefresh_ButtonClick(object sender, EventArgs e)
-        {
-            
-        }
-
         /// <summary>
         ///  /// <summary>
         /// 解决给绑定数据源报错
@@ -352,15 +353,24 @@ namespace HOZAPWorkStation.UserControls
             ExportToExcel.DataGridViewToExcel(this.dgvCcAnalys1);
         }
 
-        /// <summary>
-        /// 添加一个新行
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void tspUcAnalyAddRow_Click(object sender, EventArgs e)
+        private void tspUcAnalyDelete_Click(object sender, EventArgs e)
         {
-            DataGridViewRow dataGridViewRow = new DataGridViewRow();
-            this.dgvCcAnalys1.Rows.Add(dataGridViewRow);
+            if (this.dgvCcAnalys1.SelectedRows.Count > 0)
+            {
+                AnalyResultBLL analyResultBLL = new AnalyResultBLL();
+                string sqlString = "delete from tb_AnalysisResult where ProName=@ProName and RecordNumver=@RecordNumver;";
+                SqlParameter[] pms =
+                {
+                new SqlParameter("@ProName",SqlDbType.VarChar),
+                new SqlParameter("@RecordNumver",SqlDbType.VarChar),
+            };
+                pms[0].Value = InitialInterface.ProName;
+                pms[1].Value = this.dgvCcAnalys1.SelectedRows[0].Cells[0].Value.ToString();
+                SqlHelper.ExecuteNonQuery(sqlString, pms);
+                List<AnalysResultTotal> analysResultTotals = new List<AnalysResultTotal>();
+                analysResultTotals = analyResultBLL.Get_All(InitialInterface.ProName);
+                this.dgvCcAnalys1.DataSource = analysResultTotals;
+            }  
         }
     }
 }

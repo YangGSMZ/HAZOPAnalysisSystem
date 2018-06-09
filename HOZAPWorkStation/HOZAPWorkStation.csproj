@@ -270,6 +270,10 @@
       <Project>{134ba21d-aadb-4e3e-816a-258674efb02f}</Project>
       <Name>HOZAPCommon</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HOZAPDAL\HOZAPDAL.csproj">
+      <Project>{37EDDD26-7DA6-4B3A-936A-23547B87F07F}</Project>
+      <Name>HOZAPDAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HOZAPModel\HOZAPModel.csproj">
       <Project>{c42210de-8b16-48eb-a359-502db0baa0e5}</Project>
       <Name>HOZAPModel</Name>
