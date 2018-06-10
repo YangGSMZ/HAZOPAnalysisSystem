@@ -26,5 +26,13 @@ namespace HAZOPBLL
         {
             return dal.Get_Introduces(ProName, SelectedIntroduce);
         }
+        public bool Del_AnalysisResult(List<int> AnalysResultID)
+        {
+            return dal.Del_AnalysisResult(AnalysResultID);
+        }
+        public bool Add_AnalysisResult(List<AnalysResultTotal> AnalysResultTotalInfo)
+        {
+            return dal.Add_AnalysisResult(AnalysResultTotalInfo);
+        }
     }
 }

@@ -81,7 +81,7 @@ namespace HOZAPWorkStation.UserControls
             TreeView treeView = sender as TreeView;
 
             AnalyResultBLL analyResultBLL = new AnalyResultBLL();
-
+            dgvCcAnalys1.AutoGenerateColumns = false;
             //记录选择节点的ID，如果是参数ID，在绑定引导词的时候会用到
             if (treeView.SelectedNode.Level > 0)
             {
@@ -375,11 +375,81 @@ namespace HOZAPWorkStation.UserControls
 
         private void tsbSave_Click(object sender, EventArgs e)
         {
-
-            foreach (DataGridViewRow row in dgvCcAnalys1.Rows)
+            List<AnalysResultTotal> analysResultTotalsInfo =new List<AnalysResultTotal>();
+            List<int> ResuletID = new List<int>(); ;
+            AnalyResultBLL analyResultBLL = new AnalyResultBLL();
+            if (dgvCcAnalys1.Rows.Count > 1)
             {
-                
+                for (int i = 0; i < dgvCcAnalys1.Rows.Count-1; i++)
+                {
+                    AnalysResultTotal AnalysResultTotal = new AnalysResultTotal();
+                    AnalysResultTotal.ProjectName = InitialInterface.ProName;
+                    AnalysResultTotal.RecordName = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value.ToString();
+                    AnalysResultTotal.Pramas = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value.ToString();
+                    AnalysResultTotal.PramasAndIntroduce = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParamsAndIntro"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParamsAndIntro"].Value.ToString();
+                    AnalysResultTotal.DeviateDescription = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyDesc"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyDesc"].Value.ToString();
+                    AnalysResultTotal.Reason = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyReason"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyReason"].Value.ToString();
+                    AnalysResultTotal.F0 = "";
+                    AnalysResultTotal.Consequence = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyConseq"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyConseq"].Value.ToString();
+                    AnalysResultTotal.Si = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySi"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySi"].Value.ToString();
+                    AnalysResultTotal.Li = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyLi"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyLi"].Value.ToString();
+                    AnalysResultTotal.Ri = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Value.ToString();
+                    AnalysResultTotal.Measure = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMessure"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMessure"].Value.ToString();
+                    AnalysResultTotal.Fs = "";
+                    AnalysResultTotal.S = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyS"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyS"].Value.ToString();
+                    AnalysResultTotal.L = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyL"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyL"].Value.ToString();
+                    AnalysResultTotal.R = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyR"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyR"].Value.ToString();
+                    AnalysResultTotal.Suggestion = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySugges"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySugges"].Value.ToString();
+                    AnalysResultTotal.Company = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyCompany"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyCompany"].Value.ToString();
+                    AnalysResultTotal.Mark = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMark"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMark"].Value.ToString();
+                    analysResultTotalsInfo.Add(AnalysResultTotal);
+                    if (dgvCcAnalys1.Rows[i].Cells["ResultID"].Value != null)
+                    {
+                        if ((int)dgvCcAnalys1.Rows[i].Cells["ResultID"].Value != 0)
+                        {
+                            ResuletID.Add((int)dgvCcAnalys1.Rows[i].Cells["ResultID"].Value);
+                        }
+
+                    }
+
+                }
             }
+            if (ResuletID.Count>0)
+            {
+                if (analyResultBLL.Del_AnalysisResult(ResuletID))
+                {
+                    if (analyResultBLL.Add_AnalysisResult(analysResultTotalsInfo))
+                    {
+                        MessageBox.Show("保存成功！");
+                    }
+                    else
+                    {
+                        MessageBox.Show("保存失败！");
+                    }
+                }
+
+            }
+            else
+            {
+                if (analysResultTotalsInfo != null)
+                {
+                    if (analyResultBLL.Add_AnalysisResult(analysResultTotalsInfo))
+                    {
+                        MessageBox.Show("保存成功！");
+                    }
+                    else
+                    {
+                        MessageBox.Show("保存失败！");
+                    }
+                }
+
+              
+            }
+
+            List<AnalysResultTotal> analysResultTotals = new List<AnalysResultTotal>();
+            analysResultTotals = analyResultBLL.Get_All(InitialInterface.ProName);
+            this.dgvCcAnalys1.DataSource = analysResultTotals;
+
         }
     }
 }

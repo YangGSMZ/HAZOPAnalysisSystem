@@ -8,12 +8,12 @@ namespace HAZOPCommon
 {
     public class AnalysResultTotal
     {
-        //string _projectName;
-        //public string ProjectName
-        //{
-        //    set;
-        //    get;
-        //}
+        string _projectName;
+        public string ProjectName
+        {
+            set;
+            get;
+        }
 
         string _recordNumber;
         public string RecordName
@@ -140,5 +140,13 @@ namespace HAZOPCommon
             set;
             get;
         }
+
+        int _ResultID;
+        public int ResultID
+        {
+            set;
+            get;
+        }
+
     }
 }
