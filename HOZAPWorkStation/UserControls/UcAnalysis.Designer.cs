@@ -98,7 +98,7 @@
             this.dgvUcAnalyReponsible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvUcAnalyRemark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tspAnalyBottom = new System.Windows.Forms.ToolStrip();
+            this.tool = new System.Windows.Forms.ToolStrip();
             this.tspUcAnalyDelete = new System.Windows.Forms.ToolStripButton();
             this.tspUcAnalyOutPut = new System.Windows.Forms.ToolStripButton();
             this.dgvCcAnalys1 = new HOZAPWorkStation.CustomControls.dgvCcAnalys();
@@ -120,6 +120,8 @@
             this.dgcCcAnalySugges = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcCcAnalyCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcCcAnalyMark = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResultID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tsbSave = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -133,7 +135,7 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUcAnalysis)).BeginInit();
             this.panel2.SuspendLayout();
-            this.tspAnalyBottom.SuspendLayout();
+            this.tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCcAnalys1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -470,24 +472,24 @@
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.tspAnalyBottom);
+            this.panel2.Controls.Add(this.tool);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 441);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1914, 25);
             this.panel2.TabIndex = 1;
             // 
-            // tspAnalyBottom
+            // tool
             // 
-            this.tspAnalyBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tspAnalyBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tool.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tool.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tspUcAnalyDelete,
-            this.tspUcAnalyOutPut});
-            this.tspAnalyBottom.Location = new System.Drawing.Point(0, 0);
-            this.tspAnalyBottom.Name = "tspAnalyBottom";
-            this.tspAnalyBottom.Size = new System.Drawing.Size(1910, 21);
-            this.tspAnalyBottom.TabIndex = 0;
-            this.tspAnalyBottom.Text = "toolStrip2";
+            this.tspUcAnalyOutPut,
+            this.tsbSave});
+            this.tool.Location = new System.Drawing.Point(0, 0);
+            this.tool.Name = "tool";
+            this.tool.Size = new System.Drawing.Size(1910, 21);
+            this.tool.TabIndex = 0;
             // 
             // tspUcAnalyDelete
             // 
@@ -539,7 +541,8 @@
             this.dgcCcAnalyR,
             this.dgcCcAnalySugges,
             this.dgcCcAnalyCompany,
-            this.dgcCcAnalyMark});
+            this.dgcCcAnalyMark,
+            this.ResultID});
             dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle78.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle78.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -760,6 +763,21 @@
             this.dgcCcAnalyMark.Name = "dgcCcAnalyMark";
             this.dgcCcAnalyMark.Width = 200;
             // 
+            // ResultID
+            // 
+            this.ResultID.DataPropertyName = "ResultID";
+            this.ResultID.HeaderText = "ResultID";
+            this.ResultID.Name = "ResultID";
+            // 
+            // tsbSave
+            // 
+            this.tsbSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbSave.Image")));
+            this.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSave.Name = "tsbSave";
+            this.tsbSave.Size = new System.Drawing.Size(52, 18);
+            this.tsbSave.Text = "保存";
+            this.tsbSave.Click += new System.EventHandler(this.tsbSave_Click);
+            // 
             // UcAnalysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -783,8 +801,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUcAnalysis)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tspAnalyBottom.ResumeLayout(false);
-            this.tspAnalyBottom.PerformLayout();
+            this.tool.ResumeLayout(false);
+            this.tool.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCcAnalys1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -802,7 +820,7 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ToolStrip tspAnalyBottom;
+        private System.Windows.Forms.ToolStrip tool;
         private System.Windows.Forms.DataGridView dgvUcAnalysis;
         private System.Windows.Forms.TreeView trvUcAnaly;
         private System.Windows.Forms.Panel panel3;
@@ -825,6 +843,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvUcAnalyRemark;
         private System.Windows.Forms.Panel panel4;
         private CustomControls.dgvCcAnalys dgvCcAnalys1;
+        private System.Windows.Forms.ToolStripButton tspUcAnalyDelete;
+        private System.Windows.Forms.ToolStripButton tspUcAnalyOutPut;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcCcAnalyNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcCcAnalyParams;
         private System.Windows.Forms.DataGridViewButtonColumn dgcCcAnalyParamsAndIntro;
@@ -843,7 +863,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcCcAnalySugges;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcCcAnalyCompany;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcCcAnalyMark;
-        private System.Windows.Forms.ToolStripButton tspUcAnalyDelete;
-        private System.Windows.Forms.ToolStripButton tspUcAnalyOutPut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ResultID;
+        private System.Windows.Forms.ToolStripButton tsbSave;
     }
 }

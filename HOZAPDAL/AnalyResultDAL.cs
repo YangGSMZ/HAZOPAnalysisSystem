@@ -42,6 +42,7 @@ namespace HOZAPDAL
                         analysResult.Suggestion= sdr.GetString(16);
                         analysResult.Company= sdr.GetString(17);
                         analysResult.Mark= sdr.GetString(18);
+                        analysResult.ResultID = sdr.GetInt32(19);
                         AnalysResultTotalList.Add(analysResult);
                     }
                 }
@@ -87,6 +88,7 @@ namespace HOZAPDAL
                         analysResult.Suggestion = sdr.GetString(16);
                         analysResult.Company = sdr.GetString(17);
                         analysResult.Mark = sdr.GetString(18);
+                        analysResult.ResultID = sdr.GetInt32(19);
                         AnalysResultTotalList.Add(analysResult);
                     }
                 }
@@ -132,11 +134,50 @@ namespace HOZAPDAL
                         analysResult.Suggestion = sdr.GetString(16);
                         analysResult.Company = sdr.GetString(17);
                         analysResult.Mark = sdr.GetString(18);
+                        analysResult.ResultID = sdr.GetInt32(19);
                         AnalysResultTotalList.Add(analysResult);
                     }
                 }
             }
             return AnalysResultTotalList;
         }
+
+        public bool Add_AnalysisResult(List<AnalysResultTotal> AnalysResultTotalInfo)
+        {
+            bool IsSuccess = false;
+            StringBuilder sb = new StringBuilder();
+            sb.Append("BEGIN ");
+            for (int i = 0; i < AnalysResultTotalInfo.Count; i++)
+            {
+                sb.Append("insert into tb_AnalysisResult values('" + AnalysResultTotalInfo[i].ProjectName+ "','" + AnalysResultTotalInfo[i].RecordName +"','"+ AnalysResultTotalInfo[i].Pramas + "','" + AnalysResultTotalInfo[i].PramasAndIntroduce+ "','" +AnalysResultTotalInfo[i].DeviateDescription+ "','" +AnalysResultTotalInfo[i].Reason+ "','" +AnalysResultTotalInfo[i].F0+ "','" +AnalysResultTotalInfo[i].Consequence+ "','" +AnalysResultTotalInfo[i].Si+ "','" +AnalysResultTotalInfo[i].Li+ "','" +AnalysResultTotalInfo[i].Ri+ "','" +AnalysResultTotalInfo[i].Measure+ "','" +AnalysResultTotalInfo[i].Fs+ "','" + AnalysResultTotalInfo[i].S+ "','" + AnalysResultTotalInfo[i].L+ "','" +AnalysResultTotalInfo[i].R+ "','" +AnalysResultTotalInfo[i].Suggestion+ "','" +AnalysResultTotalInfo[i].Company+ "','" +AnalysResultTotalInfo[i].Mark+ "')");
+            }
+            sb.Append(" END;");
+            if (SqlHelper.ExecuteNonQuery(sb.ToString()) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+                 
+        }
+
+        public bool Del_AnalysisResult(List<int> AnalysResultID)
+        {
+            bool IsSuccess = false;
+            StringBuilder sb = new StringBuilder();
+            sb.Append("BEGIN ");
+            for (int i = 0; i < AnalysResultID.Count; i++)
+            {
+                sb.Append("delete from tb_AnalysisResult where ResultID=" + AnalysResultID[i]);
+            }
+            sb.Append(" END;");
+            if (SqlHelper.ExecuteNonQuery(sb.ToString()) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
+
+
+
     }
 }
