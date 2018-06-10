@@ -372,5 +372,14 @@ namespace HOZAPWorkStation.UserControls
                 this.dgvCcAnalys1.DataSource = analysResultTotals;
             }  
         }
+
+        private void tsbSave_Click(object sender, EventArgs e)
+        {
+
+            foreach (DataGridViewRow row in dgvCcAnalys1.Rows)
+            {
+                
+            }
+        }
     }
 }
