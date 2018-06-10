@@ -49,6 +49,9 @@ namespace HOZAPWorkStation
             if (ReceiveEventE.ColumnIndex == 3)
             {
                 this.Text = "偏离描述录入界面";
+                this.panel1.Visible = false;
+                this.btnAnalyInputAdd.Visible = false;
+                this.btnAnalyInputDelete.Visible = false;
             }
             //绑定原因，列表里对应“原因”列
             if (ReceiveEventE.ColumnIndex == 4)

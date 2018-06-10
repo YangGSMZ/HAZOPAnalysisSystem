@@ -124,6 +124,7 @@
             // dgvIntroducer
             // 
             this.dgvIntroducer.AllowUserToAddRows = false;
+            this.dgvIntroducer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvIntroducer.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvIntroducer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIntroducer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -191,6 +192,7 @@
             // 
             this.DeviationDesc.HeaderText = "偏离描述";
             this.DeviationDesc.Name = "DeviationDesc";
+            this.DeviationDesc.Visible = false;
             // 
             // UpdataPramasInfo
             // 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -27,9 +28,9 @@ namespace HOZAPWorkStation.ExportExcel
             //申明保存对话框    
             SaveFileDialog dlg = new SaveFileDialog();
             //默然文件后缀    
-            dlg.DefaultExt = "xlsx ";
+            dlg.DefaultExt = "xls";
             //文件后缀列表    
-            dlg.Filter = "Excel文件(*.xlsx)|*.xlsx ";
+            dlg.Filter = "Excel文件(*.xls)|*.xls";
             //默然路径是系统当前路径    
             dlg.InitialDirectory = Directory.GetCurrentDirectory();
             //打开保存对话框    
@@ -94,17 +95,54 @@ namespace HOZAPWorkStation.ExportExcel
                 objWorkbook = objExcel.Workbooks.Add(true);
                 objsheet = (Worksheet)objWorkbook.Worksheets.Add(Type.Missing, Type.Missing, 1, Type.Missing);
 
-                //设置EXCEL不可见    
+                //设置EXCEL可见    
                 objExcel.Visible = true;
 
                 //向Excel中写入表格的表头    
+                CombineTransverse(1,1,12,"分析项目：", objExcel, objsheet);
+                CombineTransverse(1, 13, 16, "表页：", objExcel, objsheet);
+                CombineTransverse(2, 1, 3, "图纸编号：", objExcel, objsheet);
+                CombineTransverse(2, 4, 12, "版本号：", objExcel, objsheet);
+                CombineTransverse(2, 13, 16, "日期：", objExcel, objsheet);
+                CombineTransverse(3, 1, 3, "小组成员：", objExcel, objsheet);
+                CombineTransverse(3, 4, 12, "", objExcel, objsheet);
+                CombineTransverse(3, 13, 16, "会议时间：", objExcel, objsheet);
+                CombineTransverse(4, 1, 12, "节点：", objExcel, objsheet);
+                CombineTransverse(4, 13,16, "", objExcel, objsheet);
+                CombineTransverse(5, 1, 3, "设计意图：", objExcel, objsheet);
+                CombineTransverse(5, 4, 16, "", objExcel, objsheet);
+
+                Range range = objsheet.Range[objsheet.Cells[1, 1], objsheet.Cells[5, 16]];
+                //range.WrapText = true;
+                range.Font.Color=Color.Black;//字体颜色
+                range.Font.Name = "宋体";//字体
+                //range.Font.Bold = true; //设置为粗体
+                range.Font.Size = 14;//字体大小            
+                range.HorizontalAlignment = XlHAlign.xlHAlignLeft;
+                range.ColumnWidth = 12;//列宽
+                range.RowHeight = 22;//行高
+                //range.EntireRow.AutoFit();//添加到行高设置之后才有效
+                //range.Borders.ColorIndex = 2;//边框颜色
+                range.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;//边框线类型
+
+                Range TitleRange = objsheet.Range[objsheet.Cells[6, 1], objsheet.Cells[6, 16]];
+                TitleRange.Font.Color = Color.Black;//字体颜色
+                TitleRange.Font.Name = "宋体";//字体
+                TitleRange.Font.Size = 12;//字体大小            
+                TitleRange.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+                TitleRange.RowHeight = 20;//行高   
+
                 int displayColumnsCount = 1;
-                for (int i = 0; i <= dgv.ColumnCount - 1; i++)
+                for (int i = 0; i <= dgv.ColumnCount-1 ; i++)
                 {
-                    if (dgv.Columns[i].Visible == true)
+                    if (dgv.Columns[i].Visible==true)
                     {
-                        objExcel.Cells[1, displayColumnsCount] = dgv.Columns[i].HeaderText.Trim();
+                        objExcel.Cells[6, displayColumnsCount] = dgv.Columns[i].HeaderText.Trim();
                         displayColumnsCount++;
+                    }
+                    else
+                    {
+                       
                     }
                 }    
                 //向Excel中逐行逐列写入表格中的数据    
@@ -117,21 +155,26 @@ namespace HOZAPWorkStation.ExportExcel
                         {
                             try
                             {
-                                objExcel.Cells[row + 2, displayColumnsCount] = dgv.Rows[row].Cells[col].Value.ToString().Trim();
+                                objExcel.Cells[row + 7, displayColumnsCount] = "'"+dgv.Rows[row].Cells[col].Value.ToString().Trim();
                                 displayColumnsCount++;
                             }
                             catch (Exception)
                             {
 
                             }
-
                         }
+                        else
+                        {
+                            
+                        }
+                      
                     }
                 }
                 //设置自适应行高
-                Range range = objsheet.Range[objsheet.Cells[1, 1], objsheet.Cells[rowscount, colscount]];
-                range.WrapText = true;
-                range.EntireRow.AutoFit();
+                Range endrange = objsheet.Range[objsheet.Cells[1, 1], objsheet.Cells[rowscount+6, colscount-3]];
+                endrange.Borders.LineStyle = Microsoft.Office.Interop.Excel.XlLineStyle.xlContinuous;
+                endrange.WrapText = true;
+                endrange.EntireRow.AutoFit();
                 //保存文件    
                 objWorkbook.SaveAs(fileNameString, Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             }
@@ -141,6 +184,17 @@ namespace HOZAPWorkStation.ExportExcel
                 return;
             }
             MessageBox.Show("导出完毕! ", "提示 ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static void CombineTransverse(int row, int begin, int end, string text, ExcelApp.Application excel, ExcelApp.Worksheet xSt)
+        {
+            excel.Cells[row, begin] = text;
+            //设置整个报表的标题为跨列居中 
+            xSt.Range[excel.Cells[row, begin], excel.Cells[row, end]].Select();
+            xSt.Range[excel.Cells[row, begin], excel.Cells[row, end]].HorizontalAlignment = XlHAlign.xlHAlignLeft;
+            xSt.Range[excel.Cells[row, begin], excel.Cells[row, end]].MergeCells = true;
+            xSt.Range[excel.Cells[row, begin], excel.Cells[row, end]].WrapText = true;
+
         }
     }
 }

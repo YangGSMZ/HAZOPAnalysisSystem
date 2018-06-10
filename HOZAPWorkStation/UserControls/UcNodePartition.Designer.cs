@@ -260,6 +260,7 @@
             this.tsbDel.Name = "tsbDel";
             this.tsbDel.Size = new System.Drawing.Size(69, 24);
             this.tsbDel.Text = "删除(D)";
+            this.tsbDel.Click += new System.EventHandler(this.tsbDel_Click);
             // 
             // tsbCancel
             // 
@@ -538,6 +539,7 @@
             this.txtNodeId.Name = "txtNodeId";
             this.txtNodeId.Size = new System.Drawing.Size(166, 21);
             this.txtNodeId.TabIndex = 24;
+            this.txtNodeId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNodeId_KeyPress);
             this.txtNodeId.Leave += new System.EventHandler(this.txtNodeId_Leave);
             // 
             // label2

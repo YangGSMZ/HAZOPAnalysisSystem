@@ -62,6 +62,7 @@ namespace HOZAPWorkStation.UserControls
                         }
                     }
                 }
+                this.trvUcAnaly.Nodes[0].Expand();
             }
         }
 
@@ -70,13 +71,7 @@ namespace HOZAPWorkStation.UserControls
             CreateTree();
         }
 
-        /// <summary>
-        /// TreeView选中节点后发生
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //List<Introducer> dgvComboxDataintroducersList;
-        private void trvUcAnaly_AfterSelect(object sender, TreeViewEventArgs e)
+        private void AfterSaveBinding(object sender, TreeViewEventArgs e)
         {
             TreeView treeView = sender as TreeView;
 
@@ -94,6 +89,10 @@ namespace HOZAPWorkStation.UserControls
             if (treeView.SelectedNode.Level == 0)
             {
                 dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
+                if (dgvCcAnalys1.AllowUserToAddRows == true)
+                {
+                    dgvCcAnalys1.AllowUserToAddRows = false;
+                }
                 //空数据源
                 List<AnalysResultTotal> resultList = new List<AnalysResultTotal>();
                 dgvCcAnalys1.DataSource = new BindingList<AnalysResultTotal>(resultList);
@@ -111,7 +110,11 @@ namespace HOZAPWorkStation.UserControls
                 {
                     dgvCcAnalys1.Columns["dgcCcAnalyParamsAndIntro"].ReadOnly = true;
                 }
-                List<AnalysResultTotal> resultList= analyResultBLL.Get_All(InitialInterface.ProName);
+                if (dgvCcAnalys1.AllowUserToAddRows == true)
+                {
+                    dgvCcAnalys1.AllowUserToAddRows = false;
+                }
+                List<AnalysResultTotal> resultList = analyResultBLL.Get_All(InitialInterface.ProName, this.trvUcAnaly.SelectedNode.Text);
                 if (resultList == null)
                 {
                     resultList = new List<AnalysResultTotal>();
@@ -131,7 +134,11 @@ namespace HOZAPWorkStation.UserControls
                 {
                     dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
                 }
-                List<AnalysResultTotal> resultList = analyResultBLL.Get_Params(InitialInterface.ProName, selectedParam);
+                if (dgvCcAnalys1.AllowUserToAddRows == false)
+                {
+                    dgvCcAnalys1.AllowUserToAddRows = true;
+                }
+                List<AnalysResultTotal> resultList = analyResultBLL.Get_Params(InitialInterface.ProName,selectedParam,this.trvUcAnaly.SelectedNode.Parent.Text);
                 if (resultList == null)
                 {
                     resultList = new List<AnalysResultTotal>();
@@ -145,15 +152,32 @@ namespace HOZAPWorkStation.UserControls
                 {
                     dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
                 }
+                if (dgvCcAnalys1.AllowUserToAddRows == true)
+                {
+                    dgvCcAnalys1.AllowUserToAddRows = false;
+                }
                 dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
                 dgvCcAnalys1.Columns["dgcCcAnalyParamsAndIntro"].ReadOnly = true;
-                List<AnalysResultTotal> resultList = analyResultBLL.Get_Introduces(InitialInterface.ProName, selectedParam);
+                List<AnalysResultTotal> resultList = analyResultBLL.Get_Introduces(InitialInterface.ProName, selectedParam,this.trvUcAnaly.SelectedNode.Parent.Parent.Text);
                 if (resultList == null)
                 {
                     resultList = new List<AnalysResultTotal>();
                 }
                 dgvCcAnalys1.DataSource = new BindingList<AnalysResultTotal>(resultList);
             }
+        }
+
+        /// <summary>
+        /// TreeView选中节点后发生
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        //List<Introducer> dgvComboxDataintroducersList;
+        private void trvUcAnaly_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            TreeViewSelected = sender;
+            TreeViewSelectedE = e;
+            AfterSaveBinding(sender, e);
         }
 
         private void UcAnalyCombox_TransferToCombox(object sender, DataGridViewCellEventArgs e)
@@ -368,24 +392,25 @@ namespace HOZAPWorkStation.UserControls
                 pms[1].Value = this.dgvCcAnalys1.SelectedRows[0].Cells[0].Value.ToString();
                 SqlHelper.ExecuteNonQuery(sqlString, pms);
                 List<AnalysResultTotal> analysResultTotals = new List<AnalysResultTotal>();
-                analysResultTotals = analyResultBLL.Get_All(InitialInterface.ProName);
+                analysResultTotals = analyResultBLL.Get_All(InitialInterface.ProName,this.trvUcAnaly.SelectedNode.Text);
                 this.dgvCcAnalys1.DataSource = analysResultTotals;
             }  
         }
-
-        private void tsbSave_Click(object sender, EventArgs e)
+        public bool SaveContent()
         {
-            List<AnalysResultTotal> analysResultTotalsInfo =new List<AnalysResultTotal>();
+            bool flag = false;
+            List<AnalysResultTotal> analysResultTotalsInfo = new List<AnalysResultTotal>();
             List<int> ResuletID = new List<int>(); ;
             AnalyResultBLL analyResultBLL = new AnalyResultBLL();
             if (dgvCcAnalys1.Rows.Count > 1)
             {
-                for (int i = 0; i < dgvCcAnalys1.Rows.Count-1; i++)
+                for (int i = 0; i < dgvCcAnalys1.Rows.Count - 1; i++)
                 {
                     AnalysResultTotal AnalysResultTotal = new AnalysResultTotal();
                     AnalysResultTotal.ProjectName = InitialInterface.ProName;
                     AnalysResultTotal.RecordName = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value.ToString();
-                    AnalysResultTotal.Pramas = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value.ToString();
+                    AnalysResultTotal.Pramas = this.trvUcAnaly.SelectedNode.Text;
+                    //AnalysResultTotal.Pramas = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value.ToString();
                     AnalysResultTotal.PramasAndIntroduce = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParamsAndIntro"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParamsAndIntro"].Value.ToString();
                     AnalysResultTotal.DeviateDescription = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyDesc"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyDesc"].Value.ToString();
                     AnalysResultTotal.Reason = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyReason"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyReason"].Value.ToString();
@@ -402,6 +427,7 @@ namespace HOZAPWorkStation.UserControls
                     AnalysResultTotal.Suggestion = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySugges"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySugges"].Value.ToString();
                     AnalysResultTotal.Company = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyCompany"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyCompany"].Value.ToString();
                     AnalysResultTotal.Mark = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMark"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMark"].Value.ToString();
+                    AnalysResultTotal.NodeName = this.trvUcAnaly.SelectedNode.Parent.Text;
                     analysResultTotalsInfo.Add(AnalysResultTotal);
                     if (dgvCcAnalys1.Rows[i].Cells["ResultID"].Value != null)
                     {
@@ -413,14 +439,15 @@ namespace HOZAPWorkStation.UserControls
                     }
 
                 }
-            }
-            if (ResuletID.Count>0)
+           
+            if (ResuletID.Count > 0)
             {
                 if (analyResultBLL.Del_AnalysisResult(ResuletID))
                 {
                     if (analyResultBLL.Add_AnalysisResult(analysResultTotalsInfo))
                     {
-                        MessageBox.Show("保存成功！");
+                        AfterSaveBinding(TreeViewSelected,TreeViewSelectedE);
+                        flag=true;
                     }
                     else
                     {
@@ -435,21 +462,57 @@ namespace HOZAPWorkStation.UserControls
                 {
                     if (analyResultBLL.Add_AnalysisResult(analysResultTotalsInfo))
                     {
-                        MessageBox.Show("保存成功！");
+                        AfterSaveBinding(TreeViewSelected, TreeViewSelectedE);
+                            flag=true;
                     }
                     else
                     {
                         MessageBox.Show("保存失败！");
                     }
                 }
-
-              
             }
+            }
+            return flag;
+            //List<AnalysResultTotal> analysResultTotals = new List<AnalysResultTotal>();
+            //analysResultTotals = analyResultBLL.Get_All(InitialInterface.ProName,this.trvUcAnaly.SelectedNode.Text);
+            //this.dgvCcAnalys1.DataSource = analysResultTotals;
+        }
+        private void tsbSave_Click(object sender, EventArgs e)
+        {
+            if (SaveContent())
+            {
+                MessageBox.Show("保存成功");
+            }
+        }
 
-            List<AnalysResultTotal> analysResultTotals = new List<AnalysResultTotal>();
-            analysResultTotals = analyResultBLL.Get_All(InitialInterface.ProName);
-            this.dgvCcAnalys1.DataSource = analysResultTotals;
+        /// <summary>
+        /// 在更改选中节点之前发生，选中的内容还是上一个节点
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void trvUcAnaly_BeforeSelect(object sender, TreeViewCancelEventArgs e)
+        {
+            if (this.trvUcAnaly.SelectedNode!=null&&this.trvUcAnaly.SelectedNode.Level == 2)
+            {
+                SaveContent();
+            } 
+        }
 
+        public object TreeViewSelected
+        {
+            set;
+            get;
+        }
+
+        public TreeViewEventArgs TreeViewSelectedE
+        {
+            set;
+            get;
+        }
+
+        private void tspUcAnalyOutPut_Click(object sender, EventArgs e)
+        {
+            ExportToExcel.DataGridViewToExcel(this.dgvCcAnalys1);
         }
     }
 }

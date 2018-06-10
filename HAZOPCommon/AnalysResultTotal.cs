@@ -148,5 +148,11 @@ namespace HAZOPCommon
             get;
         }
 
+        string _NodeName;
+        public string NodeName
+        {
+            get;
+            set;
+        }
     }
 }

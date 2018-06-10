@@ -22,6 +22,11 @@ namespace HAZOPBLL
             return dal.Get_NodeList(ProName);
         }
 
+        public bool Delect_SelectedNode(string ProName,string NodeName)
+        {
+            return dal.Delect_SelectedNode(ProName,NodeName);
+        }
+
         /// <summary>
         /// 添加节点
         /// </summary>

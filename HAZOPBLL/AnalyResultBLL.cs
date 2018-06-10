@@ -12,19 +12,19 @@ namespace HAZOPBLL
     {
         AnalyResultDAL dal = new AnalyResultDAL();
 
-        public List<AnalysResultTotal> Get_All(string ProName)
+        public List<AnalysResultTotal> Get_All(string ProName,string NodeName)
         {
-            return dal.Get_All(ProName);
+            return dal.Get_All(ProName,NodeName);
         }
 
-        public List<AnalysResultTotal> Get_Params(string ProName, string SelectedParam)
+        public List<AnalysResultTotal> Get_Params(string ProName, string SelectedParam,string NodeName)
         {
-            return dal.Get_Params(ProName,SelectedParam);
+            return dal.Get_Params(ProName,SelectedParam,NodeName);
         }
 
-        public List<AnalysResultTotal> Get_Introduces(string ProName, string SelectedIntroduce)
+        public List<AnalysResultTotal> Get_Introduces(string ProName, string SelectedIntroduce,string NodeName)
         {
-            return dal.Get_Introduces(ProName, SelectedIntroduce);
+            return dal.Get_Introduces(ProName, SelectedIntroduce,NodeName);
         }
         public bool Del_AnalysisResult(List<int> AnalysResultID)
         {

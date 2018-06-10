@@ -11,11 +11,18 @@ namespace HOZAPDAL
 {
     public class AnalyResultDAL
     {
-        public List<AnalysResultTotal> Get_All(string ProName)
+        public List<AnalysResultTotal> Get_All(string ProName,string NodeName)
         {
-            string sql = "select * from tb_AnalysisResult where ProName=@ProName ";
+            string sql = "select * from tb_AnalysisResult where ProName=@ProName and NodeName=@NodeName order by Pramas";
             List<AnalysResultTotal> AnalysResultTotalList = null;
-            using (SqlDataReader sdr = SqlHelper.ExecuteReader(sql, new SqlParameter("@ProName", ProName)))
+            SqlParameter[] spm =
+            {
+                new SqlParameter("@ProName",SqlDbType.VarChar),
+                new SqlParameter("@NodeName",SqlDbType.VarChar)
+            };
+            spm[0].Value = ProName;
+            spm[1].Value = NodeName;
+            using (SqlDataReader sdr = SqlHelper.ExecuteReader(sql, spm))
             {
                 if (sdr.HasRows)
                 {
@@ -50,17 +57,19 @@ namespace HOZAPDAL
             return AnalysResultTotalList;
         }
 
-        public List<AnalysResultTotal> Get_Params(string ProName,string SelectedParam)
+        public List<AnalysResultTotal> Get_Params(string ProName,string SelectedParam,string NodeName)
         {
-            string sql = "select * from tb_AnalysisResult where ProName=@ProName and Pramas=@SelectedParam";
+            string sql = "select * from tb_AnalysisResult where ProName=@ProName and Pramas=@SelectedParam and NodeName=@NodeName ";
             List<AnalysResultTotal> AnalysResultTotalList = null;
             SqlParameter[] sqlParameter =
                 {
                     new SqlParameter("@ProName", SqlDbType.VarChar),
-                    new SqlParameter("@SelectedParam",SqlDbType.VarChar)
+                    new SqlParameter("@SelectedParam",SqlDbType.VarChar),
+                    new SqlParameter("@NodeName",SqlDbType.VarChar)
                  };
             sqlParameter[0].Value = ProName;
             sqlParameter[1].Value = SelectedParam;
+            sqlParameter[2].Value = NodeName;
             using (SqlDataReader sdr = SqlHelper.ExecuteReader(sql, sqlParameter))
             {
                 if (sdr.HasRows)
@@ -96,17 +105,19 @@ namespace HOZAPDAL
             return AnalysResultTotalList;
         }
 
-        public List<AnalysResultTotal> Get_Introduces(string ProName, string SelectedIntroduce)
+        public List<AnalysResultTotal> Get_Introduces(string ProName, string SelectedIntroduce,string NodeName)
         {
-            string sql = "select * from tb_AnalysisResult where ProName=@ProName and PramasAndIntroduce=@SelectedIntroduce";
+            string sql = "select * from tb_AnalysisResult where ProName=@ProName and PramasAndIntroduce=@SelectedIntroduce and NodeName=@NodeName";
             List<AnalysResultTotal> AnalysResultTotalList = null;
             SqlParameter[] sqlParameter =
                 {
                     new SqlParameter("@ProName", SqlDbType.VarChar),
-                    new SqlParameter("@SelectedIntroduce",SqlDbType.VarChar)
+                    new SqlParameter("@SelectedIntroduce",SqlDbType.VarChar),
+                    new SqlParameter("@NodeName",SqlDbType.VarChar)
                  };
             sqlParameter[0].Value = ProName;
             sqlParameter[1].Value = SelectedIntroduce;
+            sqlParameter[2].Value = NodeName;
             using (SqlDataReader sdr = SqlHelper.ExecuteReader(sql, sqlParameter))
             {
                 if (sdr.HasRows)
@@ -149,7 +160,17 @@ namespace HOZAPDAL
             sb.Append("BEGIN ");
             for (int i = 0; i < AnalysResultTotalInfo.Count; i++)
             {
-                sb.Append("insert into tb_AnalysisResult values('" + AnalysResultTotalInfo[i].ProjectName+ "','" + AnalysResultTotalInfo[i].RecordName +"','"+ AnalysResultTotalInfo[i].Pramas + "','" + AnalysResultTotalInfo[i].PramasAndIntroduce+ "','" +AnalysResultTotalInfo[i].DeviateDescription+ "','" +AnalysResultTotalInfo[i].Reason+ "','" +AnalysResultTotalInfo[i].F0+ "','" +AnalysResultTotalInfo[i].Consequence+ "','" +AnalysResultTotalInfo[i].Si+ "','" +AnalysResultTotalInfo[i].Li+ "','" +AnalysResultTotalInfo[i].Ri+ "','" +AnalysResultTotalInfo[i].Measure+ "','" +AnalysResultTotalInfo[i].Fs+ "','" + AnalysResultTotalInfo[i].S+ "','" + AnalysResultTotalInfo[i].L+ "','" +AnalysResultTotalInfo[i].R+ "','" +AnalysResultTotalInfo[i].Suggestion+ "','" +AnalysResultTotalInfo[i].Company+ "','" +AnalysResultTotalInfo[i].Mark+ "')");
+                sb.Append("insert into tb_AnalysisResult values('" 
+                    + AnalysResultTotalInfo[i].ProjectName+ "','" + AnalysResultTotalInfo[i].RecordName 
+                    +"','"+ AnalysResultTotalInfo[i].Pramas + "','" + AnalysResultTotalInfo[i].PramasAndIntroduce
+                    + "','" +AnalysResultTotalInfo[i].DeviateDescription+ "','" +AnalysResultTotalInfo[i].Reason
+                    + "','" +AnalysResultTotalInfo[i].F0+ "','" +AnalysResultTotalInfo[i].Consequence+ "','" 
+                    +AnalysResultTotalInfo[i].Si+ "','" +AnalysResultTotalInfo[i].Li+ "','" 
+                    +AnalysResultTotalInfo[i].Ri+ "','" +AnalysResultTotalInfo[i].Measure+ "','" 
+                    +AnalysResultTotalInfo[i].Fs+ "','" + AnalysResultTotalInfo[i].S+ "','" 
+                    + AnalysResultTotalInfo[i].L+ "','" +AnalysResultTotalInfo[i].R+ "','" 
+                    +AnalysResultTotalInfo[i].Suggestion+ "','" +AnalysResultTotalInfo[i].Company+ "','" 
+                    +AnalysResultTotalInfo[i].Mark + "','" + AnalysResultTotalInfo[i].NodeName+ "')");
             }
             sb.Append(" END;");
             if (SqlHelper.ExecuteNonQuery(sb.ToString()) > 0)

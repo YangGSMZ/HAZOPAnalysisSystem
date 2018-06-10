@@ -149,6 +149,26 @@ namespace HOZAPDAL
             }
         }
 
+        public bool Delect_SelectedNode(string ProName, string NodeName)
+        {
+            bool IsSuccess = false;
+            string sqlStr = "delete from tb_Node where ProName=@ProName and NodeName=@NodeName;";
+            SqlParameter[] spm =
+            {
+                new SqlParameter("@ProName",SqlDbType.VarChar),
+                new SqlParameter("@NodeName",SqlDbType.VarChar)
+            };
+            spm[0].Value = ProName;
+            spm[1].Value = NodeName;
+            if (SqlHelper.ExecuteNonQuery(sqlStr, spm) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+
+        }
+
+
         public Node Get_SelectedNode(string NodeName)
         {
             string sql = "select * from tb_Node where NodeName =@NodeName";

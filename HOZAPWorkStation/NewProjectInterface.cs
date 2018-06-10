@@ -74,6 +74,7 @@ namespace HOZAPWorkStation
                             MyLoadPreparePageEvents();
 
                         }
+                        this.Close();
                     }
                 }
                 else

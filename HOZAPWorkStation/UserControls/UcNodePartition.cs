@@ -66,6 +66,7 @@ namespace HOZAPWorkStation.UserControls
                     treenode.Text = nodelist[i].NodeName;
                     root.Nodes.Add(treenode);
                 }
+                this.trvUcNodePart.ExpandAll();
             }
         }
 
@@ -131,6 +132,7 @@ namespace HOZAPWorkStation.UserControls
             #region 设置控件可用性
             this.lblUcNodeNewNodeTip.Visible = false;
             this.txtNodeId.BackColor = Color.White;
+            this.txtNodeName.BackColor = Color.White;
             foreach (Control control in this.panel1.Controls)
             {
                 if (control.GetType() == typeof(TextBox))
@@ -185,6 +187,27 @@ namespace HOZAPWorkStation.UserControls
                 {
                     this.txtNodeId.BackColor = Color.Red;
                     MessageBox.Show("该节点编号已存在");
+                }
+            }
+        }
+
+        /// <summary>
+        /// 这里让节点名称也唯一，为了方便点击treeview节点时在右侧栏显示相应节点信息时方便
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtNodeName_Leave(object sender, EventArgs e)
+        {
+            if (this.txtNodeName.Text.Trim().Length > 0)
+            {
+                if (nodeBLL.Check_NodeNameIsAvailable(this.txtNodeName.Text.Trim()))
+                {
+                    this.txtNodeName.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    this.txtNodeName.BackColor = Color.Red;
+                    MessageBox.Show("该节点名称已存在");
                 }
             }
         }
@@ -267,26 +290,7 @@ namespace HOZAPWorkStation.UserControls
             this.SelectModelbtn.Enabled = false;
         }
 
-        /// <summary>
-        /// 这里让节点名称也唯一，为了方便点击treeview节点时在右侧栏显示相应节点信息时方便
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void txtNodeName_Leave(object sender, EventArgs e)
-        {
-            if (this.txtNodeName.Text.Trim().Length > 0)
-            {
-                if (nodeBLL.Check_NodeNameIsAvailable(this.txtNodeId.Text.Trim()))
-                {
-                    this.txtNodeId.BackColor = Color.LightGreen;
-                }
-                else
-                {
-                    this.txtNodeId.BackColor = Color.Red;
-                    MessageBox.Show("该节点名称已存在");
-                }
-            }
-        }
+       
         /// <summary>
         /// 取消添加或修改
         /// </summary>
@@ -315,6 +319,22 @@ namespace HOZAPWorkStation.UserControls
             if (MyLoadAnalysisPageEvents != null)
             {
                 MyLoadAnalysisPageEvents();
+            }
+        }
+
+        private void tsbDel_Click(object sender, EventArgs e)
+        {
+            if (nodeBLL.Delect_SelectedNode(InitialInterface.ProName, this.trvUcNodePart.SelectedNode.Text))
+            {
+                AddOrDeleteNode_TreeViewRefresh();
+            }
+        }
+
+        private void txtNodeId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsNumber(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
             }
         }
     }
