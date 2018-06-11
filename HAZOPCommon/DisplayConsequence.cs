@@ -20,5 +20,10 @@ namespace HAZOPCommon
                 return this._consquenceText;
             }
         }
+        public int RecordID
+        {
+            set;
+            get;
+        }
     }
 }

@@ -208,7 +208,11 @@ namespace HOZAPWorkStation
         {
             this.rtbAnaInputInterface.Text = this.dgvTbcPageAnaExpert.SelectedCells[0].Value.ToString();
         }
-
+        /// <summary>
+        /// 添加到个人经验库
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAnalyInputAdd_Click(object sender, EventArgs e)
         {
             if (this.Text == "后果录入界面")
@@ -251,6 +255,40 @@ namespace HOZAPWorkStation
         private void dgvTbcPageAnaPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             this.rtbAnaInputInterface.Text = this.dgvTbcPageAnaPersonal.SelectedCells[0].Value.ToString();
+        }
+        /// <summary>
+        /// 删除个人经验库
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnAnalyInputDelete_Click(object sender, EventArgs e)
+        {
+            if (this.Text == "后果录入界面")
+            {
+                ConsequenceBLL bll = new ConsequenceBLL();
+                if (this.dgvTbcPageAnaPersonal.SelectedRows.Count > 0)
+                {
+                    bll.DeletePersonalConseqence(Convert.ToInt32(this.dgvTbcPageAnaPersonal.SelectedRows[0].Cells[1].Value));
+                    this.rtbAnaInputInterface.Text = String.Empty;
+                    ConsequenceDataBind();
+                }
+            }
+
+            if (this.Text == "原因录入界面")
+            {
+                ReasonBLL bll = new ReasonBLL();
+                if (this.dgvTbcPageAnaPersonal.SelectedRows.Count > 0)
+                {
+                    bll.DeletePersonalReason(Convert.ToInt32(this.dgvTbcPageAnaPersonal.SelectedRows[0].Cells[1].Value));
+                    this.rtbAnaInputInterface.Text = String.Empty;
+                    ReasonDataBind();
+                }
+            }
+
+            if (this.Text == "措施录入界面")
+            {
+               
+            }
         }
     }
 }

@@ -10,6 +10,18 @@ namespace HOZAPDAL
 {
     public class ReasonDAL
     {
+        public bool DeletePersonalReason(int RecordID)
+        {
+            bool IsSuccess = false;
+            string sqlString = "delete from tb_Reason where ReasonID=@RecordID;";
+            if (SqlHelper.ExecuteNonQuery(sqlString, new SqlParameter("@RecordID", RecordID))>0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
+
+
         public bool Add_Reason(DisplayReasons reason)
         {
             bool IsSuccess = false;
@@ -37,7 +49,7 @@ namespace HOZAPDAL
         /// <returns></returns>
         public List<DisplayReasons> Get_Reasons(int IntroducerId)
         {
-            string sql = "select ReasonText from tb_Reason where IntroducerID=@IntroducerId and Type=1";
+            string sql = "select ReasonText,ReasonID from tb_Reason where IntroducerID=@IntroducerId and Type=1";
             List<DisplayReasons> ReasonList = null;
             using (SqlDataReader sdr = SqlHelper.ExecuteReader(sql, new SqlParameter("@IntroducerID", IntroducerId)))
             {
@@ -48,6 +60,7 @@ namespace HOZAPDAL
                     {
                         DisplayReasons reasons = new DisplayReasons();
                         reasons.ReasonText = sdr.GetString(0);
+                        reasons.RecordID = sdr.GetInt32(1);
                         ReasonList.Add(reasons);
                     }
                 }
@@ -58,7 +71,7 @@ namespace HOZAPDAL
 
         public List<DisplayReasons> Get_personalReasons(int IntroducerId)
         {
-            string sql = "select ReasonText from tb_Reason where IntroducerID=@IntroducerId and Type=2";
+            string sql = "select ReasonText,ReasonID from tb_Reason where IntroducerID=@IntroducerId and Type=2";
             List<DisplayReasons> ReasonList = null;
             using (SqlDataReader sdr = SqlHelper.ExecuteReader(sql, new SqlParameter("@IntroducerID", IntroducerId)))
             {
@@ -69,6 +82,7 @@ namespace HOZAPDAL
                     {
                         DisplayReasons reasons = new DisplayReasons();
                         reasons.ReasonText = sdr.GetString(0);
+                        reasons.RecordID = sdr.GetInt32(1);
                         ReasonList.Add(reasons);
                     }
                 }

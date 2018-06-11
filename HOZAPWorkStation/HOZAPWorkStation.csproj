@@ -45,6 +45,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>lnpu.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Excel">
       <HintPath>F:\天然气工程 备用\Pipeline\lib\Excel.dll</HintPath>
@@ -246,6 +249,7 @@
       <DependentUpon>HAZOPAnalysisDB.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="lnpu.ico" />
     <Content Include="obj\Debug\HOZAPWorkStation.csproj.FileListAbsolute.txt" />
     <Content Include="Resouces\lnpu.ico" />
   </ItemGroup>

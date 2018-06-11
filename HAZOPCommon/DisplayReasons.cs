@@ -8,6 +8,11 @@ namespace HAZOPCommon
 {
     public class DisplayReasons
     {
+        public int RecordID
+        {
+            set;
+            get;
+        }
         string _ReasonText;
         public string ReasonText
         {

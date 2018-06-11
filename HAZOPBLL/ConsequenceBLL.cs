@@ -25,5 +25,10 @@ namespace HAZOPBLL
         {
             return dal.Add_Consequence(Consequence);
         }
+
+        public bool DeletePersonalConseqence(int ReasonID)
+        {
+            return dal.DeletePersonalConsequence(ReasonID);
+        }
     }
 }

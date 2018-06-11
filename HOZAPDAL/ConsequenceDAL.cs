@@ -37,7 +37,7 @@ namespace HOZAPDAL
         }
         public List<DisplayConsequence> Get_PersonalConsequence(int IntroducerId)
         {
-            string sql = "select ConseqText from tb_Conseq where IntrodrucerID=@IntrodrucerId and Type=2";
+            string sql = "select ConseqText,ConseqID from tb_Conseq where IntrodrucerID=@IntrodrucerId and Type=2";
             List<DisplayConsequence> consequenceList = null;
             using (SqlDataReader sdr = SqlHelper.ExecuteReader(sql, new SqlParameter("@IntrodrucerID", IntroducerId)))
             {
@@ -48,6 +48,7 @@ namespace HOZAPDAL
                     {
                         DisplayConsequence consequences = new DisplayConsequence();
                         consequences.ConsquenceText = sdr.GetString(0);
+                        consequences.RecordID = sdr.GetInt32(1);
                         consequenceList.Add(consequences);
                     }
                 }
@@ -75,6 +76,16 @@ namespace HOZAPDAL
             return IsSuccess;
         }
 
+        public bool DeletePersonalConsequence(int RecordID)
+        {
+            bool IsSuccess = false;
+            string sqlString = "delete from tb_Conseq where ConseqID=@RecordID;";
+            if (SqlHelper.ExecuteNonQuery(sqlString, new SqlParameter("@RecordID", RecordID)) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
 
 
     }

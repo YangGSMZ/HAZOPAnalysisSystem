@@ -25,5 +25,10 @@ namespace HAZOPBLL
         {
             return dal.Add_Reason(reason);
         }
+
+        public bool DeletePersonalReason(int ReasonID)
+        {
+            return dal.DeletePersonalReason(ReasonID);
+        }
     }
 }
