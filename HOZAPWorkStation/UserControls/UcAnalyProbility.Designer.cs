@@ -85,6 +85,7 @@
             this.Name = "UcAnalyProbility";
             this.Opacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UcAnalyProbility_FormClosing);
             this.ResumeLayout(false);
 
         }

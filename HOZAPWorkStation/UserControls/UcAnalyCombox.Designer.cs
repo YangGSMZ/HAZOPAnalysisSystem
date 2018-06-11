@@ -88,6 +88,7 @@
             this.Name = "UcAnalyCombox";
             this.Opacity = 0.8D;
             this.Text = "参数+引导词";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UcAnalyCombox_FormClosing);
             this.Load += new System.EventHandler(this.UcAnalyCombox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -18,7 +18,14 @@ namespace HOZAPWorkStation.UserControls
         {
             InitializeComponent();
         }
-
+        private static UcAnalyCombox _instance;
+        //创建窗体对象的静态方法
+        public static UcAnalyCombox InstanceObject()
+        {
+            if (_instance == null)
+                _instance = new UcAnalyCombox();
+            return _instance;
+        }
         public event Action<object, DataGridViewCellEventArgs> TransferToCombox;
 
         /// <summary>
@@ -60,6 +67,11 @@ namespace HOZAPWorkStation.UserControls
                 this.TransferToCombox(this, null);
             }
             this.Close();
+        }
+
+        private void UcAnalyCombox_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _instance = null;
         }
     }
 }

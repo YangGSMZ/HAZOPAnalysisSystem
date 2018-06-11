@@ -293,22 +293,24 @@ namespace HOZAPWorkStation.UserControls
                 {
                     if (this.trvUcAnaly != null && this.trvUcAnaly.SelectedNode.Level == 2)
                     {
-                        UcAnalyCombox ucAnalyCombox = new UcAnalyCombox();
+                        UcAnalyCombox ucAnalyCombox = UcAnalyCombox.InstanceObject();
                         //订阅事件
                         ClickEventE = e;
                         ucAnalyCombox.TransferToCombox += new System.Action<object, DataGridViewCellEventArgs>(UcAnalyCombox_TransferToCombox);
                         ucAnalyCombox.ReceiveSelectedTreeNode = this.trvUcAnaly.Tag.ToString();
+                        ucAnalyCombox.Focus();
                         ucAnalyCombox.Show();
                     } 
                 }
                 //选中F0
                 if (e.ColumnIndex==5)
                 {
-                    UcAnalyProbility ucAnalyProbility = new UcAnalyProbility();
+                    UcAnalyProbility ucAnalyProbility = UcAnalyProbility.InstanceObject();
                     ucAnalyProbility.Text = "F0";
                     //订阅事件
                     ucAnalyProbility.TransferToFx += new System.Action<object, DataGridViewCellEventArgs>(UcAnalyProbility_TranferToFx);
                     ClickEventE = e;
+                    ucAnalyProbility.Focus();
                     ucAnalyProbility.Show();
                 }
                 //选中Fs
@@ -324,43 +326,47 @@ namespace HOZAPWorkStation.UserControls
                 //选中Si
                 if (e.ColumnIndex == 7)
                 {
-                    UcAnalyLevel ucAnalyLevel = new UcAnalyLevel();
+                    UcAnalyLevel ucAnalyLevel = UcAnalyLevel.InstanceObject();
                     ucAnalyLevel.Text = "Si";
                     //订阅事件
                     ucAnalyLevel.TransferToSx += new System.Action<object, DataGridViewCellEventArgs>(UcAnalyLevel_TranferToSx);
                     ClickEventE = e;
+                    ucAnalyLevel.Focus();
                     ucAnalyLevel.Show();
                 }
                 //选中S
                 if (e.ColumnIndex == 12)
                 {
-                    UcAnalyLevel ucAnalyLevel =new UcAnalyLevel();
+                    UcAnalyLevel ucAnalyLevel =UcAnalyLevel.InstanceObject();
                     ucAnalyLevel.Text = "S";
                     //订阅事件
                     ucAnalyLevel.TransferToSx += new System.Action<object, DataGridViewCellEventArgs>(UcAnalyLevel_TranferToSx);
                     ClickEventE = e;
+                    ucAnalyLevel.Focus();
                     ucAnalyLevel.Show();
                 }
 
                 //选中Li
                 if (e.ColumnIndex == 8)
                 {
-                    UcAnalsFrequency ucAnalsFrequency = new UcAnalsFrequency();
+                    UcAnalsFrequency ucAnalsFrequency =UcAnalsFrequency.InstanceObject();
                     ucAnalsFrequency.Text = "Li";
                     //订阅事件
                     ucAnalsFrequency.TransferToLx += new System.Action<object, DataGridViewCellEventArgs>(UcAnalsFrequency_TranferToLx);
                     ClickEventE = e;
+                    ucAnalsFrequency.Focus();
                     ucAnalsFrequency.Show();
                 }
 
                 //选中L
                 if (e.ColumnIndex == 13)
                 {
-                    UcAnalsFrequency ucAnalsFrequency = new UcAnalsFrequency();
+                    UcAnalsFrequency ucAnalsFrequency = UcAnalsFrequency.InstanceObject();
                     ucAnalsFrequency.Text = "L";
                     //订阅事件
                     ucAnalsFrequency.TransferToLx += new System.Action<object, DataGridViewCellEventArgs>(UcAnalsFrequency_TranferToLx);
                     ClickEventE = e;
+                    ucAnalsFrequency.Focus();
                     ucAnalsFrequency.Show();
                 }
             }
@@ -373,7 +379,7 @@ namespace HOZAPWorkStation.UserControls
             this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = ucAnalsFrequency.GetSelectedContext();
             if (e.ColumnIndex == 8)
             {
-                string SiText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                string SiText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[7].Value==null?"": this.dgvCcAnalys1.Rows[e.RowIndex].Cells[7].Value.ToString();
                 if (SiText.Length > 0)
                 {
                     string slStr ="Ri"+ SiText + this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
@@ -382,7 +388,7 @@ namespace HOZAPWorkStation.UserControls
             }
             if (e.ColumnIndex == 13)
             {
-                string SText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[12].Value.ToString();
+                string SText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[12].Value==null?"": this.dgvCcAnalys1.Rows[e.RowIndex].Cells[12].Value.ToString();
                 if (SText.Length > 0)
                 {
                     string slStr ="R"+ SText + this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
@@ -398,7 +404,7 @@ namespace HOZAPWorkStation.UserControls
             this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = ucAnalyLevel.GetSelectedContext();
             if (e.ColumnIndex == 7)
             {
-                string liText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[8].Value.ToString();
+                string liText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[8].Value==null?"": this.dgvCcAnalys1.Rows[e.RowIndex].Cells[8].Value.ToString();
                 if (liText.Length>0)
                 {
                     string slStr = "Ri"+this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + liText;
@@ -407,7 +413,7 @@ namespace HOZAPWorkStation.UserControls
             }
             if (e.ColumnIndex == 12)
             {
-                string lText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[13].Value.ToString();
+                string lText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[13].Value==null?"": this.dgvCcAnalys1.Rows[e.RowIndex].Cells[13].Value.ToString();
                 if (lText.Length > 0)
                 {
                     string slStr = "R"+this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + lText;
