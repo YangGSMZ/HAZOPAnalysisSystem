@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HOZAPModel
 {
-    public class Conseq
+    public class Conqeq
     {
         /// <summary>
         /// 后果ID，自增长
@@ -43,8 +43,8 @@ namespace HOZAPModel
         /// <summary>
         /// 外键引导词ID，根据引导词查询后果
         /// </summary>
-        string _introdrucerId;
-        public string Introdrucer
+        int _introdrucerId;
+        public int Introdrucer
         {
             set
             {

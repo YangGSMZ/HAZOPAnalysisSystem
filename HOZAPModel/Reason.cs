@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HOZAPModel
 {
-    public class Reason
+    public class DispalyReason
     {
         /// <summary>
         /// 原因ID，自增长

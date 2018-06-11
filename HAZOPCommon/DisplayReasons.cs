@@ -8,6 +8,11 @@ namespace HAZOPCommon
 {
     public class DisplayReasons
     {
+        public int RecordID
+        {
+            set;
+            get;
+        }
         string _ReasonText;
         public string ReasonText
         {
@@ -19,6 +24,18 @@ namespace HAZOPCommon
             {
                 return this._ReasonText;
             }
+        }
+
+        public int Type
+        {
+            set;
+            get;
+        }
+
+        public int IntroducerId
+        {
+            get;
+            set;
         }
     }
 }
