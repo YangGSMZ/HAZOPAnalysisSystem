@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using HAZOPCommon;
 using HOZAPDAL;
-using HOZAPModel;
 
 namespace HAZOPBLL
 {
@@ -16,6 +15,15 @@ namespace HAZOPBLL
         public List<DisplayReasons> Get_ReasonsList(int IntroducerId)
         {
             return dal.Get_Reasons(IntroducerId);
+        }
+
+        public List<DisplayReasons> Get_personalReasons(int IntroducerId)
+        {
+            return dal.Get_personalReasons(IntroducerId);
+        }
+        public bool Add_Reason(DisplayReasons reason)
+        {
+            return dal.Add_Reason(reason);
         }
     }
 }

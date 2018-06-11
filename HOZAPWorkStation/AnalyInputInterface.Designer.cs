@@ -157,10 +157,10 @@
             this.dgvTbcPageAnaPersonal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTbcPageAnaPersonal.Location = new System.Drawing.Point(3, 3);
             this.dgvTbcPageAnaPersonal.Name = "dgvTbcPageAnaPersonal";
-            this.dgvTbcPageAnaPersonal.RowHeadersVisible = false;
             this.dgvTbcPageAnaPersonal.RowTemplate.Height = 23;
             this.dgvTbcPageAnaPersonal.Size = new System.Drawing.Size(468, 203);
             this.dgvTbcPageAnaPersonal.TabIndex = 0;
+            this.dgvTbcPageAnaPersonal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTbcPageAnaPersonal_CellClick);
             // 
             // RecordPersonal
             // 
@@ -235,6 +235,7 @@
             this.btnAnalyInputAdd.Name = "btnAnalyInputAdd";
             this.btnAnalyInputAdd.Size = new System.Drawing.Size(124, 22);
             this.btnAnalyInputAdd.Text = "添加到个人经验库";
+            this.btnAnalyInputAdd.Click += new System.EventHandler(this.btnAnalyInputAdd_Click);
             // 
             // btnAnalyInputDelete
             // 

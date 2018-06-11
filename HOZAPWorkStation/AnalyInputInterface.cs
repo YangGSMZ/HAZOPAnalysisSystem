@@ -49,9 +49,10 @@ namespace HOZAPWorkStation
             if (ReceiveEventE.ColumnIndex == 3)
             {
                 this.Text = "偏离描述录入界面";
-                this.panel1.Visible = false;
-                this.btnAnalyInputAdd.Visible = false;
-                this.btnAnalyInputDelete.Visible = false;
+                this.tbcAnalyInputInterface.Enabled = false;
+                this.btnAnalyInputAdd.Enabled = false;
+                this.btnAnalyInputDelete.Enabled = false;
+                this.rtbAnaInputInterface.Text = "请在这里录入偏离描述";
             }
             //绑定原因，列表里对应“原因”列
             if (ReceiveEventE.ColumnIndex == 4)
@@ -75,6 +76,10 @@ namespace HOZAPWorkStation
             if (ReceiveEventE.ColumnIndex == 15)
             {
                 this.Text = "建议项录入界面";
+                this.tbcAnalyInputInterface.Enabled = false;
+                this.btnAnalyInputAdd.Enabled = false;
+                this.btnAnalyInputDelete.Enabled = false;
+                this.rtbAnaInputInterface.Text = "请在这里录入建议项";
             }
 
             if (ReceiveEventE.ColumnIndex == 16)
@@ -104,8 +109,13 @@ namespace HOZAPWorkStation
                 int id = Convert.ToInt32(ReceiveSelectedTreeNode.Tag);
                 List<DisplayMeasure> measureList = measureBLL.Get_MeasuresList(id);
                 this.dgvTbcPageAnaExpert.AutoGenerateColumns = false;
-                this.dgvTbcPageAnaExpert.Columns["Records"].DataPropertyName = "MessureText";
+                this.dgvTbcPageAnaExpert.Columns["Records"].DataPropertyName = "MeasureText";
                 this.dgvTbcPageAnaExpert.DataSource = measureList;
+
+                List<DisplayMeasure> personalMeasureList = measureBLL.Get_PersonalMeasure(id);
+                this.dgvTbcPageAnaPersonal.AutoGenerateColumns = false;
+                this.dgvTbcPageAnaPersonal.Columns["RecordPersonal"].DataPropertyName = "MeasureText";
+                this.dgvTbcPageAnaPersonal.DataSource = personalMeasureList;
             }
         }
 
@@ -120,8 +130,14 @@ namespace HOZAPWorkStation
                 int id = Convert.ToInt32(ReceiveSelectedTreeNode.Tag);
                 List<DisplayConsequence> consequenceList = consequenceBLL.Get_ConsequenceList(id);
                 this.dgvTbcPageAnaExpert.AutoGenerateColumns = false;
-                this.dgvTbcPageAnaExpert.Columns["Records"].DataPropertyName = "ConseqText";
+                this.dgvTbcPageAnaExpert.Columns["Records"].DataPropertyName = "ConsquenceText";
                 this.dgvTbcPageAnaExpert.DataSource = consequenceList;
+
+                List<DisplayConsequence> personalconsequenceList = consequenceBLL.Get_PersonalConsequence(id);
+                this.dgvTbcPageAnaPersonal.AutoGenerateColumns = false;
+                this.dgvTbcPageAnaPersonal.Columns["RecordPersonal"].DataPropertyName = "ConsquenceText";
+                this.dgvTbcPageAnaPersonal.DataSource = personalconsequenceList;
+
             }
         }
 
@@ -142,6 +158,11 @@ namespace HOZAPWorkStation
                 this.dgvTbcPageAnaExpert.AutoGenerateColumns = false;
                 this.dgvTbcPageAnaExpert.Columns["Records"].DataPropertyName = "ReasonText";
                 this.dgvTbcPageAnaExpert.DataSource = reasonsList;
+
+                List<DisplayReasons> personalreasonsList = reasonBLL.Get_personalReasons(id);
+                this.dgvTbcPageAnaPersonal.AutoGenerateColumns = false;
+                this.dgvTbcPageAnaPersonal.Columns["RecordPersonal"].DataPropertyName = "ReasonText";
+                this.dgvTbcPageAnaPersonal.DataSource = personalreasonsList;
             }
         }
 
@@ -186,6 +207,50 @@ namespace HOZAPWorkStation
         private void dgvTbcPageAnaExpert_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             this.rtbAnaInputInterface.Text = this.dgvTbcPageAnaExpert.SelectedCells[0].Value.ToString();
+        }
+
+        private void btnAnalyInputAdd_Click(object sender, EventArgs e)
+        {
+            if (this.Text == "后果录入界面")
+            {
+                ConsequenceBLL bll = new ConsequenceBLL();
+                Conqeq conseq = new Conqeq();
+                conseq.ConseqText = this.rtbAnaInputInterface.Text.Trim();
+                conseq.Type = 2;
+                conseq.Introdrucer = Convert.ToInt32(ReceiveSelectedTreeNode.Tag);
+                bll.Add_Consequence(conseq);
+                this.rtbAnaInputInterface.Text = String.Empty;
+                ConsequenceDataBind();
+            }
+
+            if (this.Text == "原因录入界面")
+            {
+                ReasonBLL bll = new ReasonBLL();
+                DisplayReasons reason = new DisplayReasons();
+                reason.ReasonText= this.rtbAnaInputInterface.Text.Trim();
+                reason.Type = 2;
+                reason.IntroducerId= Convert.ToInt32(ReceiveSelectedTreeNode.Tag);
+                bll.Add_Reason(reason);
+                this.rtbAnaInputInterface.Text = String.Empty;
+                ReasonDataBind();
+            }
+
+            if (this.Text == "措施录入界面")
+            {
+                MeasureBLL bll = new MeasureBLL();
+                Messure messure = new Messure();
+                messure.MessureText = this.rtbAnaInputInterface.Text.Trim();
+                messure.Type = 2;
+                messure.IntroducerId = Convert.ToInt32(ReceiveSelectedTreeNode.Tag);
+                bll.Add_Messure(messure);
+                this.rtbAnaInputInterface.Text = String.Empty;
+                MeasureDataBind();
+            }
+        }
+
+        private void dgvTbcPageAnaPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.rtbAnaInputInterface.Text = this.dgvTbcPageAnaPersonal.SelectedCells[0].Value.ToString();
         }
     }
 }

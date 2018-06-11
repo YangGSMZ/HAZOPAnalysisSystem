@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HAZOPCommon;
+using HOZAPModel;
 
 namespace HOZAPDAL
 {
@@ -17,7 +18,7 @@ namespace HOZAPDAL
         /// <returns></returns>
         public List<DisplayConsequence> Get_Consequence(int IntroducerId)
         {
-            string sql = "select ConseqText from tb_Conseq where IntrodrucerID=@IntrodrucerId";
+            string sql = "select ConseqText from tb_Conseq where IntrodrucerID=@IntrodrucerId and Type=1";
             List<DisplayConsequence> consequenceList = null;
             using (SqlDataReader sdr = SqlHelper.ExecuteReader(sql, new SqlParameter("@IntrodrucerID", IntroducerId)))
             {
@@ -34,5 +35,47 @@ namespace HOZAPDAL
             }
             return consequenceList;
         }
+        public List<DisplayConsequence> Get_PersonalConsequence(int IntroducerId)
+        {
+            string sql = "select ConseqText from tb_Conseq where IntrodrucerID=@IntrodrucerId and Type=2";
+            List<DisplayConsequence> consequenceList = null;
+            using (SqlDataReader sdr = SqlHelper.ExecuteReader(sql, new SqlParameter("@IntrodrucerID", IntroducerId)))
+            {
+                if (sdr.HasRows)
+                {
+                    consequenceList = new List<DisplayConsequence>();
+                    while (sdr.Read())
+                    {
+                        DisplayConsequence consequences = new DisplayConsequence();
+                        consequences.ConsquenceText = sdr.GetString(0);
+                        consequenceList.Add(consequences);
+                    }
+                }
+            }
+            return consequenceList;
+        }
+
+        public bool Add_Consequence(Conqeq Consequence)
+        {
+            bool IsSuccess = false;
+            string sql = "insert into tb_Conseq values(@ConseqText,@IntrodrucerID,@Type)";
+            SqlParameter[] spm = {
+                new SqlParameter("@ConseqText",System.Data.SqlDbType.VarChar),
+                new SqlParameter("@IntrodrucerID",System.Data.SqlDbType.Int),
+                new SqlParameter("@Type",System.Data.SqlDbType.Int),
+            };
+            spm[0].Value = Consequence.ConseqText;
+            spm[1].Value = Consequence.Introdrucer;
+            spm[2].Value = Consequence.Type;
+            if (SqlHelper.ExecuteNonQuery(sql, spm) > 0)
+            {
+                IsSuccess = true;
+            }
+
+            return IsSuccess;
+        }
+
+
+
     }
 }

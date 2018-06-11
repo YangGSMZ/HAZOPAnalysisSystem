@@ -20,5 +20,17 @@ namespace HAZOPCommon
                 return this._ReasonText;
             }
         }
+
+        public int Type
+        {
+            set;
+            get;
+        }
+
+        public int IntroducerId
+        {
+            get;
+            set;
+        }
     }
 }

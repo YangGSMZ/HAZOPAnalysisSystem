@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HOZAPModel
 {
-    class Messure
+     public class Messure
     {
 
         /// <summary>
