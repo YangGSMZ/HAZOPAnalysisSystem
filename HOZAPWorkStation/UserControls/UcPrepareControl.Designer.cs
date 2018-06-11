@@ -32,8 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -45,19 +43,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PrepareToolStrip = new System.Windows.Forms.ToolStrip();
             this.tspPreNoteSplit = new System.Windows.Forms.ToolStripButton();
             this.tspPreHelp = new System.Windows.Forms.ToolStripSplitButton();
+            this.tspPreClose = new System.Windows.Forms.ToolStripButton();
             this.RiskMatrix = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvPreUcRisk = new System.Windows.Forms.DataGridView();
-            this.gdvRiskMtxProb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvRiskMtxProbIntro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvRiskMtxLight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvRiskMtxMajor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvRiskMtxSerious = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvRiskMtxGrave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvRiskMtxDisastrous = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -195,7 +189,13 @@
             this.dgvPreUcRiskSerio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskGrave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskDisas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tspPreClose = new System.Windows.Forms.ToolStripButton();
+            this.gdvRiskMtxProb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvRiskMtxProbIntro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvRiskMtxLight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvRiskMtxMajor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvRiskMtxSerious = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvRiskMtxGrave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvRiskMtxDisastrous = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrepareToolStrip.SuspendLayout();
             this.RiskMatrix.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -258,6 +258,15 @@
             this.tspPreHelp.Name = "tspPreHelp";
             this.tspPreHelp.Size = new System.Drawing.Size(64, 22);
             this.tspPreHelp.Text = "帮助";
+            // 
+            // tspPreClose
+            // 
+            this.tspPreClose.Image = ((System.Drawing.Image)(resources.GetObject("tspPreClose.Image")));
+            this.tspPreClose.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreClose.Name = "tspPreClose";
+            this.tspPreClose.Size = new System.Drawing.Size(52, 22);
+            this.tspPreClose.Text = "关闭";
+            this.tspPreClose.Click += new System.EventHandler(this.tspPreClose_Click);
             // 
             // RiskMatrix
             // 
@@ -343,63 +352,6 @@
             this.dgvPreUcRisk.Size = new System.Drawing.Size(1348, 291);
             this.dgvPreUcRisk.TabIndex = 0;
             // 
-            // gdvRiskMtxProb
-            // 
-            this.gdvRiskMtxProb.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.gdvRiskMtxProb.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gdvRiskMtxProb.HeaderText = "概率";
-            this.gdvRiskMtxProb.Name = "gdvRiskMtxProb";
-            this.gdvRiskMtxProb.ReadOnly = true;
-            this.gdvRiskMtxProb.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.gdvRiskMtxProb.Width = 37;
-            // 
-            // gdvRiskMtxProbIntro
-            // 
-            this.gdvRiskMtxProbIntro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.gdvRiskMtxProbIntro.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gdvRiskMtxProbIntro.HeaderText = "概率说明";
-            this.gdvRiskMtxProbIntro.Name = "gdvRiskMtxProbIntro";
-            this.gdvRiskMtxProbIntro.ReadOnly = true;
-            this.gdvRiskMtxProbIntro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.gdvRiskMtxProbIntro.Width = 63;
-            // 
-            // gdvRiskMtxLight
-            // 
-            this.gdvRiskMtxLight.HeaderText = "1.轻微";
-            this.gdvRiskMtxLight.Name = "gdvRiskMtxLight";
-            this.gdvRiskMtxLight.ReadOnly = true;
-            this.gdvRiskMtxLight.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // gdvRiskMtxMajor
-            // 
-            this.gdvRiskMtxMajor.HeaderText = "2.较重";
-            this.gdvRiskMtxMajor.Name = "gdvRiskMtxMajor";
-            this.gdvRiskMtxMajor.ReadOnly = true;
-            this.gdvRiskMtxMajor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // gdvRiskMtxSerious
-            // 
-            this.gdvRiskMtxSerious.HeaderText = "3.严重";
-            this.gdvRiskMtxSerious.Name = "gdvRiskMtxSerious";
-            this.gdvRiskMtxSerious.ReadOnly = true;
-            this.gdvRiskMtxSerious.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // gdvRiskMtxGrave
-            // 
-            this.gdvRiskMtxGrave.HeaderText = "重大";
-            this.gdvRiskMtxGrave.Name = "gdvRiskMtxGrave";
-            this.gdvRiskMtxGrave.ReadOnly = true;
-            this.gdvRiskMtxGrave.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // gdvRiskMtxDisastrous
-            // 
-            this.gdvRiskMtxDisastrous.HeaderText = "5.灾难性";
-            this.gdvRiskMtxDisastrous.Name = "gdvRiskMtxDisastrous";
-            this.gdvRiskMtxDisastrous.ReadOnly = true;
-            this.gdvRiskMtxDisastrous.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // splitContainer2
             // 
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -476,7 +428,7 @@
             this.textBox2.Location = new System.Drawing.Point(253, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(409, 26);
+            this.textBox2.Size = new System.Drawing.Size(408, 26);
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "后果描述";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -502,7 +454,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(253, 35);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(409, 114);
+            this.richTextBox1.Size = new System.Drawing.Size(408, 114);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.Text = "误工伤害，不会导致残疾\n泄露至收集系统以内的地方\n设备损失<=10万元\n设备或车间停产<=1天";
             // 
@@ -515,7 +467,7 @@
             this.richTextBox3.Location = new System.Drawing.Point(253, 156);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(409, 114);
+            this.richTextBox3.Size = new System.Drawing.Size(408, 114);
             this.richTextBox3.TabIndex = 6;
             this.richTextBox3.Text = "工厂员工残疾伤害\n厂外人员需要就医\n泄露收集系统以外的地方(数量较少并不超出工厂街衢)\n设备损失1>=10万元，<=100万元\n设备或车间停产>=1天，<=1周\n" +
     "不影响销售\n";
@@ -529,7 +481,7 @@
             this.richTextBox5.Location = new System.Drawing.Point(253, 277);
             this.richTextBox5.Name = "richTextBox5";
             this.richTextBox5.ReadOnly = true;
-            this.richTextBox5.Size = new System.Drawing.Size(409, 114);
+            this.richTextBox5.Size = new System.Drawing.Size(408, 114);
             this.richTextBox5.TabIndex = 8;
             this.richTextBox5.Text = "厂内1人死亡\n厂外人员残疾伤害\n明显泄露至厂外，影响周围邻居，可能遭到投诉\n会受到当地媒体关注\n设备损失>100万元，<1000万元\n严重影响对特定客户的销售";
             // 
@@ -542,7 +494,7 @@
             this.richTextBox6.Location = new System.Drawing.Point(253, 398);
             this.richTextBox6.Name = "richTextBox6";
             this.richTextBox6.ReadOnly = true;
-            this.richTextBox6.Size = new System.Drawing.Size(409, 114);
+            this.richTextBox6.Size = new System.Drawing.Size(408, 114);
             this.richTextBox6.TabIndex = 9;
             this.richTextBox6.Text = "2-3人以内死亡\n厂外人员1人死亡\n明显影响环境，但短期内可以恢复，并会造成公众健康和就医\n会受到省级媒体关注\n设备损失>1000万元，<=5000万元\n设备或车" +
     "间停产>1个月，<=6个月\n影响市场份额";
@@ -556,7 +508,7 @@
             this.richTextBox9.Location = new System.Drawing.Point(253, 519);
             this.richTextBox9.Name = "richTextBox9";
             this.richTextBox9.ReadOnly = true;
-            this.richTextBox9.Size = new System.Drawing.Size(409, 114);
+            this.richTextBox9.Size = new System.Drawing.Size(408, 114);
             this.richTextBox9.TabIndex = 12;
             this.richTextBox9.Text = "3人以上死亡\n厂外人员多人死亡\n对周围社区造成长期的影响，导制厂外居民大面积疏散或严重健康影响\n会收到国家级媒体关注\n设备损失>5000万元\n设备或车间停产>6个" +
     "月\n可能是失去市场";
@@ -2028,14 +1980,62 @@
             this.dgvPreUcRiskDisas.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPreUcRiskDisas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // tspPreClose
+            // gdvRiskMtxProb
             // 
-            this.tspPreClose.Image = ((System.Drawing.Image)(resources.GetObject("tspPreClose.Image")));
-            this.tspPreClose.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreClose.Name = "tspPreClose";
-            this.tspPreClose.Size = new System.Drawing.Size(52, 22);
-            this.tspPreClose.Text = "关闭";
-            this.tspPreClose.Click += new System.EventHandler(this.tspPreClose_Click);
+            this.gdvRiskMtxProb.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gdvRiskMtxProb.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gdvRiskMtxProb.HeaderText = "概率";
+            this.gdvRiskMtxProb.Name = "gdvRiskMtxProb";
+            this.gdvRiskMtxProb.ReadOnly = true;
+            this.gdvRiskMtxProb.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.gdvRiskMtxProb.Width = 37;
+            // 
+            // gdvRiskMtxProbIntro
+            // 
+            this.gdvRiskMtxProbIntro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gdvRiskMtxProbIntro.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gdvRiskMtxProbIntro.HeaderText = "概率说明";
+            this.gdvRiskMtxProbIntro.Name = "gdvRiskMtxProbIntro";
+            this.gdvRiskMtxProbIntro.ReadOnly = true;
+            this.gdvRiskMtxProbIntro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.gdvRiskMtxProbIntro.Width = 63;
+            // 
+            // gdvRiskMtxLight
+            // 
+            this.gdvRiskMtxLight.HeaderText = "1.轻微";
+            this.gdvRiskMtxLight.Name = "gdvRiskMtxLight";
+            this.gdvRiskMtxLight.ReadOnly = true;
+            this.gdvRiskMtxLight.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // gdvRiskMtxMajor
+            // 
+            this.gdvRiskMtxMajor.HeaderText = "2.较重";
+            this.gdvRiskMtxMajor.Name = "gdvRiskMtxMajor";
+            this.gdvRiskMtxMajor.ReadOnly = true;
+            this.gdvRiskMtxMajor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // gdvRiskMtxSerious
+            // 
+            this.gdvRiskMtxSerious.HeaderText = "3.严重";
+            this.gdvRiskMtxSerious.Name = "gdvRiskMtxSerious";
+            this.gdvRiskMtxSerious.ReadOnly = true;
+            this.gdvRiskMtxSerious.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // gdvRiskMtxGrave
+            // 
+            this.gdvRiskMtxGrave.HeaderText = "4.重大";
+            this.gdvRiskMtxGrave.Name = "gdvRiskMtxGrave";
+            this.gdvRiskMtxGrave.ReadOnly = true;
+            this.gdvRiskMtxGrave.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // gdvRiskMtxDisastrous
+            // 
+            this.gdvRiskMtxDisastrous.HeaderText = "5.灾难性";
+            this.gdvRiskMtxDisastrous.Name = "gdvRiskMtxDisastrous";
+            this.gdvRiskMtxDisastrous.ReadOnly = true;
+            this.gdvRiskMtxDisastrous.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // UcPrepareControl
             // 
@@ -2205,13 +2205,6 @@
         private System.Windows.Forms.Button btnPreParaCancel;
         private System.Windows.Forms.Button btnPreParaSelect;
         private System.Windows.Forms.Button btnPreParaDafult;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxProb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxProbIntro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxLight;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxMajor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxSerious;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxGrave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxDisastrous;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ToolStripButton tspPreNoteSplit;
@@ -2249,5 +2242,12 @@
         private System.Windows.Forms.ToolStripButton tsbBaseInfoCancel;
         private System.Windows.Forms.ToolStripButton tsbBaseInfoSave;
         private System.Windows.Forms.ToolStripButton tspPreClose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxProb;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxProbIntro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxLight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxMajor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxSerious;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxGrave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxDisastrous;
     }
 }

@@ -134,6 +134,10 @@ namespace HOZAPWorkStation
             if (ReceiveSelectedTreeNode != null)
             {
                 int id = Convert.ToInt32(ReceiveSelectedTreeNode.Tag);
+                if (id == 2)
+                {
+                    id = 1;
+                }
                 List<DisplayReasons> reasonsList = reasonBLL.Get_ReasonsList(id);
                 this.dgvTbcPageAnaExpert.AutoGenerateColumns = false;
                 this.dgvTbcPageAnaExpert.Columns["Records"].DataPropertyName = "ReasonText";

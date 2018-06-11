@@ -683,6 +683,7 @@
             // dgcCcAnalyRi
             // 
             this.dgcCcAnalyRi.DataPropertyName = "Ri";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dgcCcAnalyRi.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgcCcAnalyRi.FillWeight = 1F;
@@ -740,6 +741,7 @@
             // dgcCcAnalyR
             // 
             this.dgcCcAnalyR.DataPropertyName = "R";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle16.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dgcCcAnalyR.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgcCcAnalyR.FillWeight = 1F;

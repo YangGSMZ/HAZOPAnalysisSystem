@@ -66,6 +66,46 @@ namespace HOZAPWorkStation.UserControls
             }
         }
 
+        private void UcAnalysis_SLRColor()
+        {
+            int count = 0;
+            if (this.trvUcAnaly.SelectedNode.Level == 2)
+            {
+                count = this.dgvCcAnalys1.RowCount - 1;
+            }
+            else
+            {
+                count = this.dgvCcAnalys1.RowCount;
+            }
+            for (int i = 0; i < count; i++)
+            {
+                if (dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Value.ToString() == "A")
+                {
+                    dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Style.BackColor = Color.Red;
+                }
+
+                if (dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Value.ToString() == "B")
+                {
+                    dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Style.BackColor = Color.Orange;
+                }
+
+                if (dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Value.ToString() == "C")
+                {
+                    dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Style.BackColor = Color.Yellow;
+                }
+
+                if (dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Value.ToString() == "D")
+                {
+                    dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Style.BackColor = Color.LightBlue;
+                }
+
+                if (dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Value.ToString() == "E")
+                {
+                    dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Style.BackColor = Color.Green;
+                }
+            }
+        }
+
         private void UcAnalysis_Load(object sender, System.EventArgs e)
         {
             CreateTree();
@@ -96,6 +136,7 @@ namespace HOZAPWorkStation.UserControls
                 //空数据源
                 List<AnalysResultTotal> resultList = new List<AnalysResultTotal>();
                 dgvCcAnalys1.DataSource = new BindingList<AnalysResultTotal>(resultList);
+                
             }
 
             //选中节点 节点，绑定节点下所有参数引导词数据，且“参数”列可见
@@ -120,6 +161,7 @@ namespace HOZAPWorkStation.UserControls
                     resultList = new List<AnalysResultTotal>();
                 }
                 dgvCcAnalys1.DataSource = new BindingList<AnalysResultTotal>(resultList);
+                UcAnalysis_SLRColor();
             }
 
             //选中参数节点，绑定参数下所有引导词数据，且“参数”列不可见
@@ -144,6 +186,7 @@ namespace HOZAPWorkStation.UserControls
                     resultList = new List<AnalysResultTotal>();
                 }
                 dgvCcAnalys1.DataSource = new BindingList<AnalysResultTotal>(resultList);
+                UcAnalysis_SLRColor();
             }
             //选中叶子节点即引导词，绑定引导词数据，且“参数”列不可见
             if (treeView.SelectedNode.Level == 3)
@@ -164,6 +207,7 @@ namespace HOZAPWorkStation.UserControls
                     resultList = new List<AnalysResultTotal>();
                 }
                 dgvCcAnalys1.DataSource = new BindingList<AnalysResultTotal>(resultList);
+                UcAnalysis_SLRColor();
             }
         }
 
@@ -327,6 +371,15 @@ namespace HOZAPWorkStation.UserControls
             UcAnalsFrequency ucAnalsFrequency = (UcAnalsFrequency)(sender);
             e = ClickEventE;
             this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = ucAnalsFrequency.GetSelectedContext();
+            if (e.ColumnIndex == 8)
+            {
+                string SiText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                if (SiText.Length > 0)
+                {
+                    string slStr = SiText + this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                    SetRiValue(slStr, e);
+                }
+            }
         }
 
         private void UcAnalyLevel_TranferToSx(object sender, DataGridViewCellEventArgs e)
@@ -334,6 +387,135 @@ namespace HOZAPWorkStation.UserControls
             UcAnalyLevel ucAnalyLevel = (UcAnalyLevel)(sender);
             e = ClickEventE;
             this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = ucAnalyLevel.GetSelectedContext();
+            if (e.ColumnIndex == 7)
+            {
+                string liText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[8].Value.ToString();
+                if (liText.Length>0)
+                {
+                    string slStr = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + liText;
+                    SetRiValue(slStr,e);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 设置Ri
+        /// </summary>
+        private void SetRiValue(string slStr, DataGridViewCellEventArgs e)
+        {
+            switch (slStr)
+            {
+                //一列一行
+                case "11":this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.LightBlue;
+                    break;
+                case "21":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "C";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Yellow;
+                    break;
+                case "31":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Orange;
+                    break;
+                case "41":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Orange;
+                    break;
+                case "51":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "A";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Red;
+                    break;
+
+                //1列2行
+                case "12":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    break;
+                case "22":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.LightBlue;
+                    break;
+                case "32":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "C";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Yellow;
+                    break;
+                case "42":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Orange;
+                    break;
+                case "52":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Orange;
+                    break;
+
+                //1列3行
+                case "13":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    break;
+                case "23":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    break;
+                case "33":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.LightBlue;
+                    break;
+                case "43":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "C";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Yellow;
+                    break;
+                case "53":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Orange;
+                    break;
+
+                //1列4行
+                case "14":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    break;
+                case "24":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    break;
+                case "34":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    break;
+                case "44":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.LightBlue;
+                    break;
+                case "54":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "C";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Orange;
+                    break;
+
+                //5列1行
+                case "15":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    break;
+                case "25":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    break;
+                case "35":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    break;
+                case "45":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    break;
+                case "55":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.LightBlue;
+                    break;
+
+                default:break;
+            }
         }
 
         private void UcAnalyProbility_TranferToFx(object sender, DataGridViewCellEventArgs e)
@@ -402,76 +584,180 @@ namespace HOZAPWorkStation.UserControls
             List<AnalysResultTotal> analysResultTotalsInfo = new List<AnalysResultTotal>();
             List<int> ResuletID = new List<int>(); ;
             AnalyResultBLL analyResultBLL = new AnalyResultBLL();
-            if (dgvCcAnalys1.Rows.Count > 1)
+            if (this.trvUcAnaly.SelectedNode.Level == 2)
             {
-                for (int i = 0; i < dgvCcAnalys1.Rows.Count - 1; i++)
+                #region 
+                if (dgvCcAnalys1.Rows.Count > 1)
                 {
-                    AnalysResultTotal AnalysResultTotal = new AnalysResultTotal();
-                    AnalysResultTotal.ProjectName = InitialInterface.ProName;
-                    AnalysResultTotal.RecordName = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value.ToString();
-                    AnalysResultTotal.Pramas = this.trvUcAnaly.SelectedNode.Text;
-                    //AnalysResultTotal.Pramas = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value.ToString();
-                    AnalysResultTotal.PramasAndIntroduce = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParamsAndIntro"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParamsAndIntro"].Value.ToString();
-                    AnalysResultTotal.DeviateDescription = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyDesc"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyDesc"].Value.ToString();
-                    AnalysResultTotal.Reason = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyReason"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyReason"].Value.ToString();
-                    AnalysResultTotal.F0 = "";
-                    AnalysResultTotal.Consequence = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyConseq"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyConseq"].Value.ToString();
-                    AnalysResultTotal.Si = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySi"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySi"].Value.ToString();
-                    AnalysResultTotal.Li = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyLi"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyLi"].Value.ToString();
-                    AnalysResultTotal.Ri = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Value.ToString();
-                    AnalysResultTotal.Measure = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMessure"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMessure"].Value.ToString();
-                    AnalysResultTotal.Fs = "";
-                    AnalysResultTotal.S = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyS"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyS"].Value.ToString();
-                    AnalysResultTotal.L = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyL"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyL"].Value.ToString();
-                    AnalysResultTotal.R = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyR"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyR"].Value.ToString();
-                    AnalysResultTotal.Suggestion = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySugges"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySugges"].Value.ToString();
-                    AnalysResultTotal.Company = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyCompany"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyCompany"].Value.ToString();
-                    AnalysResultTotal.Mark = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMark"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMark"].Value.ToString();
-                    AnalysResultTotal.NodeName = this.trvUcAnaly.SelectedNode.Parent.Text;
-                    analysResultTotalsInfo.Add(AnalysResultTotal);
-                    if (dgvCcAnalys1.Rows[i].Cells["ResultID"].Value != null)
+                    for (int i = 0; i < dgvCcAnalys1.Rows.Count - 1; i++)
                     {
-                        if ((int)dgvCcAnalys1.Rows[i].Cells["ResultID"].Value != 0)
+                        AnalysResultTotal AnalysResultTotal = new AnalysResultTotal();
+                        AnalysResultTotal.ProjectName = InitialInterface.ProName;
+                        AnalysResultTotal.RecordName = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value.ToString();
+                        //AnalysResultTotal.Pramas = this.trvUcAnaly.SelectedNode.Text;
+                        AnalysResultTotal.Pramas = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value.ToString();
+                        AnalysResultTotal.PramasAndIntroduce = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParamsAndIntro"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParamsAndIntro"].Value.ToString();
+                        AnalysResultTotal.DeviateDescription = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyDesc"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyDesc"].Value.ToString();
+                        AnalysResultTotal.Reason = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyReason"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyReason"].Value.ToString();
+                        AnalysResultTotal.F0 = "";
+                        AnalysResultTotal.Consequence = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyConseq"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyConseq"].Value.ToString();
+                        AnalysResultTotal.Si = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySi"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySi"].Value.ToString();
+                        AnalysResultTotal.Li = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyLi"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyLi"].Value.ToString();
+                        AnalysResultTotal.Ri = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Value.ToString();
+                        AnalysResultTotal.Measure = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMessure"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMessure"].Value.ToString();
+                        AnalysResultTotal.Fs = "";
+                        AnalysResultTotal.S = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyS"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyS"].Value.ToString();
+                        AnalysResultTotal.L = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyL"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyL"].Value.ToString();
+                        AnalysResultTotal.R = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyR"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyR"].Value.ToString();
+                        AnalysResultTotal.Suggestion = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySugges"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySugges"].Value.ToString();
+                        AnalysResultTotal.Company = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyCompany"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyCompany"].Value.ToString();
+                        AnalysResultTotal.Mark = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMark"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMark"].Value.ToString();
+                        //AnalysResultTotal.NodeName
+                        if (this.trvUcAnaly.SelectedNode.Level == 1)
                         {
-                            ResuletID.Add((int)dgvCcAnalys1.Rows[i].Cells["ResultID"].Value);
+                            AnalysResultTotal.NodeName = this.trvUcAnaly.SelectedNode.Text;
+                        }
+                        if (this.trvUcAnaly.SelectedNode.Level == 2)
+                        {
+                            AnalysResultTotal.NodeName = this.trvUcAnaly.SelectedNode.Parent.Text;
+                        }
+                        if (this.trvUcAnaly.SelectedNode.Level == 3)
+                        {
+                            AnalysResultTotal.NodeName = this.trvUcAnaly.SelectedNode.Parent.Parent.Text;
+                        }
+                        analysResultTotalsInfo.Add(AnalysResultTotal);
+                        if (dgvCcAnalys1.Rows[i].Cells["ResultID"].Value != null)
+                        {
+                            if ((int)dgvCcAnalys1.Rows[i].Cells["ResultID"].Value != 0)
+                            {
+                                ResuletID.Add((int)dgvCcAnalys1.Rows[i].Cells["ResultID"].Value);
+                            }
+
                         }
 
                     }
 
-                }
-           
-            if (ResuletID.Count > 0)
-            {
-                if (analyResultBLL.Del_AnalysisResult(ResuletID))
-                {
-                    if (analyResultBLL.Add_AnalysisResult(analysResultTotalsInfo))
+                    if (ResuletID.Count > 0)
                     {
-                        AfterSaveBinding(TreeViewSelected,TreeViewSelectedE);
-                        flag=true;
+                        if (analyResultBLL.Del_AnalysisResult(ResuletID))
+                        {
+                            if (analyResultBLL.Add_AnalysisResult(analysResultTotalsInfo))
+                            {
+                                AfterSaveBinding(TreeViewSelected, TreeViewSelectedE);
+                                flag = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("保存失败！");
+                            }
+                        }
+
                     }
                     else
                     {
-                        MessageBox.Show("保存失败！");
+                        if (analysResultTotalsInfo != null)
+                        {
+                            if (analyResultBLL.Add_AnalysisResult(analysResultTotalsInfo))
+                            {
+                                AfterSaveBinding(TreeViewSelected, TreeViewSelectedE);
+                                flag = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("保存失败！");
+                            }
+                        }
                     }
                 }
-
+                #endregion
             }
             else
             {
-                if (analysResultTotalsInfo != null)
+                if (dgvCcAnalys1.Rows.Count > 0)
                 {
-                    if (analyResultBLL.Add_AnalysisResult(analysResultTotalsInfo))
+                    for (int i = 0; i < dgvCcAnalys1.Rows.Count; i++)
                     {
-                        AfterSaveBinding(TreeViewSelected, TreeViewSelectedE);
-                            flag=true;
+                        AnalysResultTotal AnalysResultTotal = new AnalysResultTotal();
+                        AnalysResultTotal.ProjectName = InitialInterface.ProName;
+                        AnalysResultTotal.RecordName = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value.ToString();
+                        //AnalysResultTotal.Pramas = this.trvUcAnaly.SelectedNode.Text;
+                        AnalysResultTotal.Pramas = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value.ToString();
+                        AnalysResultTotal.PramasAndIntroduce = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParamsAndIntro"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParamsAndIntro"].Value.ToString();
+                        AnalysResultTotal.DeviateDescription = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyDesc"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyDesc"].Value.ToString();
+                        AnalysResultTotal.Reason = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyReason"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyReason"].Value.ToString();
+                        AnalysResultTotal.F0 = "";
+                        AnalysResultTotal.Consequence = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyConseq"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyConseq"].Value.ToString();
+                        AnalysResultTotal.Si = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySi"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySi"].Value.ToString();
+                        AnalysResultTotal.Li = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyLi"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyLi"].Value.ToString();
+                        AnalysResultTotal.Ri = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyRi"].Value.ToString();
+                        AnalysResultTotal.Measure = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMessure"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMessure"].Value.ToString();
+                        AnalysResultTotal.Fs = "";
+                        AnalysResultTotal.S = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyS"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyS"].Value.ToString();
+                        AnalysResultTotal.L = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyL"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyL"].Value.ToString();
+                        AnalysResultTotal.R = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyR"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyR"].Value.ToString();
+                        AnalysResultTotal.Suggestion = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySugges"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalySugges"].Value.ToString();
+                        AnalysResultTotal.Company = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyCompany"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyCompany"].Value.ToString();
+                        AnalysResultTotal.Mark = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMark"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyMark"].Value.ToString();
+                        //AnalysResultTotal.NodeName
+                        if (this.trvUcAnaly.SelectedNode.Level == 1)
+                        {
+                            AnalysResultTotal.NodeName = this.trvUcAnaly.SelectedNode.Text;
+                        }
+                        if (this.trvUcAnaly.SelectedNode.Level == 2)
+                        {
+                            AnalysResultTotal.NodeName = this.trvUcAnaly.SelectedNode.Parent.Text;
+                        }
+                        if (this.trvUcAnaly.SelectedNode.Level == 3)
+                        {
+                            AnalysResultTotal.NodeName = this.trvUcAnaly.SelectedNode.Parent.Parent.Text;
+                        }
+                        analysResultTotalsInfo.Add(AnalysResultTotal);
+                        if (dgvCcAnalys1.Rows[i].Cells["ResultID"].Value != null)
+                        {
+                            if ((int)dgvCcAnalys1.Rows[i].Cells["ResultID"].Value != 0)
+                            {
+                                ResuletID.Add((int)dgvCcAnalys1.Rows[i].Cells["ResultID"].Value);
+                            }
+
+                        }
+
+                    }
+
+                    if (ResuletID.Count > 0)
+                    {
+                        if (analyResultBLL.Del_AnalysisResult(ResuletID))
+                        {
+                            if (analyResultBLL.Add_AnalysisResult(analysResultTotalsInfo))
+                            {
+                                AfterSaveBinding(TreeViewSelected, TreeViewSelectedE);
+                                flag = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("保存失败！");
+                            }
+                        }
+
                     }
                     else
                     {
-                        MessageBox.Show("保存失败！");
+                        if (analysResultTotalsInfo != null)
+                        {
+                            if (analyResultBLL.Add_AnalysisResult(analysResultTotalsInfo))
+                            {
+                                AfterSaveBinding(TreeViewSelected, TreeViewSelectedE);
+                                flag = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("保存失败！");
+                            }
+                        }
                     }
                 }
             }
-            }
+
+       
             return flag;
             //List<AnalysResultTotal> analysResultTotals = new List<AnalysResultTotal>();
             //analysResultTotals = analyResultBLL.Get_All(InitialInterface.ProName,this.trvUcAnaly.SelectedNode.Text);
