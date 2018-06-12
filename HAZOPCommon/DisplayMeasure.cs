@@ -8,6 +8,12 @@ namespace HAZOPCommon
 {
     public class DisplayMeasure
     {
+        public int RecordID
+        {
+            set;
+            get;
+        }
+
         string _measureText;
         public string MeasureText
         {

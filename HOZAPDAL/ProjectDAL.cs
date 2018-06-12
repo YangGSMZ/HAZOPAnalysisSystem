@@ -127,5 +127,23 @@ namespace HOZAPDAL
             return IsSuccess;
            
         }
+
+        public SqlDataReader Get_ProNameList()
+        {
+            string sql = "select ProName from tb_Project;";
+            SqlDataReader sdr = SqlHelper.ExecuteReader(sql,null);
+            return sdr;
+        }
+
+        public bool Delete_ProNameList(string ProName)
+        {
+            bool IsSuccess = false;
+            string sql = "delete from tb_Project where ProName=@ProName;";
+            if (SqlHelper.ExecuteNonQuery(sql, new SqlParameter("@ProName", ProName)) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
     }
 }

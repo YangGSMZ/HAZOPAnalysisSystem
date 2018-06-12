@@ -39,7 +39,7 @@ namespace HOZAPDAL
 
         public List<DisplayMeasure> Get_PersonalMeasuresList(int IntroducerId)
         {
-            string sql = "select MessureText from tb_Messure where IntroducerID=@IntroducerId and Type=2";
+            string sql = "select MessureText,MessureID from tb_Messure where IntroducerID=@IntroducerId and Type=2";
             List<DisplayMeasure> MeasuresList = null;
             using (SqlDataReader sdr = SqlHelper.ExecuteReader(sql, new SqlParameter("@IntroducerID", IntroducerId)))
             {
@@ -50,6 +50,7 @@ namespace HOZAPDAL
                     {
                         DisplayMeasure measures = new DisplayMeasure();
                         measures.MeasureText = sdr.GetString(0);
+                        measures.RecordID = sdr.GetInt32(1);
                         MeasuresList.Add(measures);
                     }
                 }
@@ -74,6 +75,17 @@ namespace HOZAPDAL
                 IsSuccess = true;
             }
 
+            return IsSuccess;
+        }
+
+        public bool DeletePersonalMeasure(int RecordID)
+        {
+            bool IsSuccess = false;
+            string sqlString = "delete from tb_Messure where MessureID=@RecordID;";
+            if (SqlHelper.ExecuteNonQuery(sqlString, new SqlParameter("@RecordID", RecordID)) > 0)
+            {
+                IsSuccess = true;
+            }
             return IsSuccess;
         }
     }

@@ -117,6 +117,12 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProNameList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProNameList.Designer.cs">
+      <DependentUpon>ProNameList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UpdataPramasInfo.cs">
       <SubType>Form</SubType>
@@ -185,6 +191,9 @@
     <EmbeddedResource Include="NewProjectInterface.resx">
       <DependentUpon>NewProjectInterface.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProNameList.resx">
+      <DependentUpon>ProNameList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -251,6 +260,7 @@
     </Content>
     <Content Include="lnpu.ico" />
     <Content Include="obj\Debug\HOZAPWorkStation.csproj.FileListAbsolute.txt" />
+    <Content Include="Resouces\Images\Folder.JPG" />
     <Content Include="Resouces\lnpu.ico" />
   </ItemGroup>
   <ItemGroup>

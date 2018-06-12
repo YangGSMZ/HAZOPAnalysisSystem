@@ -1,4 +1,5 @@
-﻿using HOZAPWorkStation.UserControls;
+﻿using HOZAPWorkStation.ExportExcel;
+using HOZAPWorkStation.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,53 @@ namespace HOZAPWorkStation
 {
     public partial class InitialInterface : Form
     {
-        public static string ProName="111";
+        public static string ProName="";
         public InitialInterface()
         {
             InitializeComponent();
+            this.preBtn.Enabled = false;
+            this.preBtn.BackColor = Color.LightGray;
+            this.nodeBtn.Enabled = false;
+            this.nodeBtn.BackColor = Color.LightGray;
+            this.analysisBtn.Enabled = false;
+            this.analysisBtn.BackColor = Color.LightGray;
+            this.printBtn.Enabled = false;
+            this.printBtn.BackColor = Color.LightGray;
+        }
+
+        private void InitialInterface_SetBtn(object sender)
+        {
+            if (sender is ProNameList)
+            {
+                ProNameList proNameList = (ProNameList)sender;
+                if (proNameList.IsOpen)
+                {
+                    this.preBtn.Enabled = true;
+                    this.preBtn.BackColor = SystemColors.ActiveCaption;
+                    this.nodeBtn.Enabled = true;
+                    this.nodeBtn.BackColor = SystemColors.ActiveCaption;
+                    this.analysisBtn.Enabled = true;
+                    this.analysisBtn.BackColor = SystemColors.ActiveCaption;
+                    this.printBtn.Enabled = true;
+                    this.printBtn.BackColor = SystemColors.ActiveCaption;
+                }
+            }
+            if (sender is NewProjectInterface)
+            {
+                NewProjectInterface proNameList = (NewProjectInterface)sender;
+                if (proNameList.IsNew)
+                {
+                    this.preBtn.Enabled = true;
+                    this.preBtn.BackColor = SystemColors.ActiveCaption;
+                    this.nodeBtn.Enabled = true;
+                    this.nodeBtn.BackColor = SystemColors.ActiveCaption;
+                    this.analysisBtn.Enabled = true;
+                    this.analysisBtn.BackColor = SystemColors.ActiveCaption;
+                    this.printBtn.Enabled = true;
+                    this.printBtn.BackColor = SystemColors.ActiveCaption;
+                }
+            }
+            
         }
 
         /// <summary>
@@ -282,11 +326,24 @@ namespace HOZAPWorkStation
 
         private void newBtn_Click(object sender, EventArgs e)
         {
-
             NewProjectInterface NewProject = NewProjectInterface.InstanceObject();
             NewProject.Focus();
             NewProject.MyLoadPreparePageEvents += new NewProjectInterface.LoadPreparePageEvents(LoadPreparePage);
+            NewProject.SetInitBtn+= new System.Action<object>(InitialInterface_SetBtn);
             NewProject.Show();
+        }
+
+        private void openBtn_Click(object sender, EventArgs e)
+        {
+            ProNameList proNameList = ProNameList.InstanceObject();
+            proNameList.SetInitBtn += new System.Action<object>(InitialInterface_SetBtn);
+            proNameList.Focus();
+            proNameList.Show();
+        }
+
+        private void printBtn_Click(object sender, EventArgs e)
+        {
+            ExportToExcel.DataBaseToExcel();
         }
     }
 }

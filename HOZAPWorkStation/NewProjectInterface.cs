@@ -16,6 +16,8 @@ namespace HOZAPWorkStation
     {
         public delegate void LoadPreparePageEvents();
         public event LoadPreparePageEvents MyLoadPreparePageEvents;
+        public event Action<object> SetInitBtn;
+        public bool IsNew = false;
         public NewProjectInterface()
         {
             InitializeComponent();
@@ -48,7 +50,7 @@ namespace HOZAPWorkStation
             string Manager = txtManager.Text.Trim();
             Project ProjectInfo = new Project();
             ProjectBLL pbll = new ProjectBLL();
-           
+
             if (!string.IsNullOrEmpty(ProName) && !string.IsNullOrEmpty(Manager))
             {
                 if (!pbll.Check_ProjectName(ProName))
@@ -68,6 +70,11 @@ namespace HOZAPWorkStation
                     if (pbll.Add_ProjectInfo(ProjectInfo))
                     {
                         InitialInterface.ProName = ProName;
+                        IsNew = true;
+                        if (this.SetInitBtn != null)
+                        {
+                            this.SetInitBtn(this);
+                        }
                         MessageBox.Show("新建成功！");
                         if (MyLoadPreparePageEvents != null)
                         {

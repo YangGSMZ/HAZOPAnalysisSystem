@@ -61,5 +61,10 @@ namespace HAZOPBLL
         {
             return dal.Get_SelectedNode(NodeName);
         }
+
+        public bool Delete_ProName(string ProName)
+        {
+            return dal.Delete_ProName(ProName);
+        }
     }
 }

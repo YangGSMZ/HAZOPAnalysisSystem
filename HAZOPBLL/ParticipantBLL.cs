@@ -43,5 +43,10 @@ namespace HAZOPBLL
         {
             return dal.Update_ParticipantInfo(ParticipantInfoList);
         }
+
+        public bool Delete_ProName(string ProName)
+        {
+            return dal.Delete_ProName(ProName);
+        }
     }
 }

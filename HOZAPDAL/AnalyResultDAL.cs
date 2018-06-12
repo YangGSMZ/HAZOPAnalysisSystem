@@ -198,7 +198,23 @@ namespace HOZAPDAL
             return IsSuccess;
         }
 
+        public bool Delete_Result(string ProName)
+        {
+            bool IsSuccess = false;
+            string sql = "delete from tb_AnalysisResult where ProName=@ProName;";
+            if (SqlHelper.ExecuteNonQuery(sql, new SqlParameter("@ProName", ProName)) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
 
-
+        public DataTable OutAllToExcel(string ProName)
+        {
+            string sql = "select * from tb_AnalysisResult order by NodeName,Pramas;";
+            SqlParameter pms = new SqlParameter("@ProName", ProName);
+            DataTable dt = SqlHelper.ExecuteDataTable(sql, pms);
+            return dt;
+        }
     }
 }

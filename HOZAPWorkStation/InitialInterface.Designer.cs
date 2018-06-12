@@ -118,6 +118,7 @@
             this.printBtn.TabIndex = 8;
             this.printBtn.Text = "打印";
             this.printBtn.UseVisualStyleBackColor = false;
+            this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
             // 
             // analysisBtn
             // 
@@ -150,6 +151,7 @@
             this.openBtn.TabIndex = 4;
             this.openBtn.Text = "打开";
             this.openBtn.UseVisualStyleBackColor = false;
+            this.openBtn.Click += new System.EventHandler(this.openBtn_Click);
             // 
             // MainTableControl
             // 

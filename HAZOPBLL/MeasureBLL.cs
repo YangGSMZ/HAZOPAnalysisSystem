@@ -27,5 +27,10 @@ namespace HAZOPBLL
         {
             return dal.Add_Measure(messure);
         }
+
+        public bool DeletePersonalMeasure(int ReasonID)
+        {
+            return dal.DeletePersonalMeasure(ReasonID);
+        }
     }
 }

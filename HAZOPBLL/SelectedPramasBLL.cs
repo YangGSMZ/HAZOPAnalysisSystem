@@ -39,5 +39,11 @@ namespace HOZAPBLL
         {
             return dal.Del_SelectedPramasinfo(PramasID);
         }
+
+
+        public bool Delete_ProName(string ProName)
+        {
+            return dal.Delete_ProName(ProName);
+        }
     }
 }

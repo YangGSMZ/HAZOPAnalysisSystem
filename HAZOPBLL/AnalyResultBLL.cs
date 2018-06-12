@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,16 @@ namespace HAZOPBLL
         public bool Add_AnalysisResult(List<AnalysResultTotal> AnalysResultTotalInfo)
         {
             return dal.Add_AnalysisResult(AnalysResultTotalInfo);
+        }
+
+        public bool Delete_Result(string ProName)
+        {
+            return dal.Delete_Result(ProName);
+        }
+
+        public DataTable OutAllToExcel(string ProName)
+        {
+            return dal.OutAllToExcel(ProName);
         }
     }
 }

@@ -111,5 +111,16 @@ namespace HOZAPDAL
             return IsSuccess;
         }
 
+        public bool Delete_ProName(string ProName)
+        {
+            bool IsSuccess = false;
+            string sql = "delete from tb_Participant where ProName=@ProName;";
+            if (SqlHelper.ExecuteNonQuery(sql, new SqlParameter("@ProName", ProName)) > 0)
+            {
+                IsSuccess = true;
+            }
+            return IsSuccess;
+        }
+
     }
 }

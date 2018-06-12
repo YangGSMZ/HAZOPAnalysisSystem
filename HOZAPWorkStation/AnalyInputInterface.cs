@@ -287,7 +287,13 @@ namespace HOZAPWorkStation
 
             if (this.Text == "措施录入界面")
             {
-               
+                MeasureBLL bll = new MeasureBLL();
+                if (this.dgvTbcPageAnaPersonal.SelectedRows.Count > 0)
+                {
+                    bll.DeletePersonalMeasure(Convert.ToInt32(this.dgvTbcPageAnaPersonal.SelectedRows[0].Cells[1].Value));
+                    this.rtbAnaInputInterface.Text = String.Empty;
+                    MeasureDataBind();
+                }
             }
         }
     }
