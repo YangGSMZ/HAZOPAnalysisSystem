@@ -82,6 +82,7 @@
             this.Name = "UcAnalyLevel";
             this.Opacity = 0.8D;
             this.Text = "UcAnalyLevel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UcAnalyLevel_FormClosing);
             this.ResumeLayout(false);
 
         }

@@ -16,7 +16,14 @@ namespace HOZAPWorkStation.UserControls
         {
             InitializeComponent();
         }
-
+        private static UcAnalsFrequency _instance;
+        //创建窗体对象的静态方法
+        public static UcAnalsFrequency InstanceObject()
+        {
+            if (_instance == null)
+                _instance = new UcAnalsFrequency();
+            return _instance;
+        }
         public event Action<object, DataGridViewCellEventArgs> TransferToLx;
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -51,6 +58,11 @@ namespace HOZAPWorkStation.UserControls
                 return "5";
             }
             return String.Empty;
+        }
+
+        private void UcAnalsFrequency_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _instance = null;
         }
     }
 }

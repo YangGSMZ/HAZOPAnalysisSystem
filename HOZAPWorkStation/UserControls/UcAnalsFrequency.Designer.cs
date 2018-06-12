@@ -82,6 +82,7 @@
             this.Opacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UcAnalsFrequency";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UcAnalsFrequency_FormClosing);
             this.ResumeLayout(false);
 
         }

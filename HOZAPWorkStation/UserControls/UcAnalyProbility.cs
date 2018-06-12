@@ -16,7 +16,14 @@ namespace HOZAPWorkStation.UserControls
         {
             InitializeComponent();
         }
-
+        private static UcAnalyProbility _instance;
+        //创建窗体对象的静态方法
+        public static UcAnalyProbility InstanceObject()
+        {
+            if (_instance == null)
+                _instance = new UcAnalyProbility();
+            return _instance;
+        }
         /// <summary>
         /// 声明一个事件，用于把该窗体的数据传到用户控件中
         /// </summary>
@@ -58,6 +65,11 @@ namespace HOZAPWorkStation.UserControls
                 return "5";
             }
             return String.Empty;
+        }
+
+        private void UcAnalyProbility_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _instance = null;
         }
     }
 }

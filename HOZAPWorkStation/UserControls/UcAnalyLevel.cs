@@ -16,6 +16,14 @@ namespace HOZAPWorkStation.UserControls
         {
             InitializeComponent();
         }
+        private static UcAnalyLevel _instance;
+        //创建窗体对象的静态方法
+        public static UcAnalyLevel InstanceObject()
+        {
+            if (_instance == null)
+                _instance = new UcAnalyLevel();
+            return _instance;
+        }
 
         public event Action<object, DataGridViewCellEventArgs> TransferToSx;
 
@@ -51,6 +59,11 @@ namespace HOZAPWorkStation.UserControls
                 return "5";
             }
             return String.Empty;
+        }
+
+        private void UcAnalyLevel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _instance = null;
         }
     }
 }
