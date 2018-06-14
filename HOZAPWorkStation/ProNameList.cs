@@ -43,7 +43,9 @@ namespace HOZAPWorkStation
             SqlDataReader sqlDataReader = bLL.Get_ProNameList();
             ImageList SmallImageList = new ImageList();
             SmallImageList.ImageSize = new Size(30, 30);
-            SmallImageList.Images.Add(Image.FromFile(@"Images\Folder.JPG"));
+            string path= System.Windows.Forms.Application.StartupPath + "\\Images\\Folder.JPG";
+            SmallImageList.Images.Add(Image.FromFile(path));
+            //SmallImageList.Images.Add(Image.FromFile(@"Images\Folder.JPG"));
             while (sqlDataReader.Read())
             {
                 ListViewItem lv = new ListViewItem();
