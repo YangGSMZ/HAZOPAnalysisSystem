@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Security.AccessControl;
 using System.ServiceProcess;
 using System.Threading.Tasks;
@@ -75,37 +76,70 @@ namespace InstallDB
                 myConn.Close();
             }
         }
+
+     
+        
         public override void Install(System.Collections.IDictionary stateSaver)
         {
-
+            SoftReg softreg = new SoftReg();
             //string server = this.Context.Parameters["server"];//服务器名称
             //string uid = this.Context.Parameters["user"];//SQlServer用户名
             //string pwd = this.Context.Parameters["pwd"];//密码
             string path = this.Context.Parameters["targetdir"];//安装目录
-                                                               //string strSql = "server=" + server + ";uid=" + uid + ";pwd=" + pwd + ";database=master";//连接数据库字符串
-                                                               ///string strSql = "Data Source=" + server + ";Initial Catalog=master;Integrated Security=true;";//连接数据库字符串
+            string Code = softreg.getMNum(); ;
+            Form1 fm1 = new Form1();//实例化一个窗体，
+            string Code1 = fm1.MyCode;
+            fm1.ShowDialog();//让新窗体显示
+            string RNum = fm1.textBox2.Text;
+
+
+            //string strSql = "server=" + server + ";uid=" + uid + ";pwd=" + pwd + ";database=master";//连接数据库字符串
+            ///string strSql = "Data Source=" + server + ";Initial Catalog=master;Integrated Security=true;";//连接数据库字符串
             string strSql = "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=true; Connect Timeout = 30;";
             string DataName = "HAZOPAnalysisDB";//数据库名
             string strMdf = path + @"HAZOPAnalysisDB.mdf";//MDF文件路径，这里需注意文件名要与刚添加的数据库文件名一样！
             string strLdf = path + @"HAZOPAnalysisDB_log.ldf";//LDF文件路径
-            
+            if (RNum == softreg.getRNum(Code))
+            {
+                base.Install(stateSaver);
+                //给mdf文件添加"Everyone,Users"用户组的完全控制权限  
+                //FileInfo fi = new FileInfo(strMdf);
+                //System.Security.AccessControl.FileSecurity fileSecurity = fi.GetAccessControl();
+                //fileSecurity.AddAccessRule(new FileSystemAccessRule("Authenticated Users", FileSystemRights.FullControl, AccessControlType.Allow));
+                ////fileSecurity.AddAccessRule(new FileSystemAccessRule("Users", FileSystemRights.FullControl, AccessControlType.Allow));
+                //fi.SetAccessControl(fileSecurity);
 
+                //FileInfo fi1 = new FileInfo(strLdf);
+                //System.Security.AccessControl.FileSecurity fileSecurity1 = fi1.GetAccessControl();
+                //fileSecurity1.AddAccessRule(new FileSystemAccessRule("Authenticated Users", FileSystemRights.FullControl, AccessControlType.Allow));
+                ////fileSecurity.AddAccessRule(new FileSystemAccessRule("Users", FileSystemRights.FullControl, AccessControlType.Allow));
+                // fi1.SetAccessControl(fileSecurity1);
+                this.CreateDataBase(strSql, DataName, strMdf, strLdf, path);//开始创建数据库
+            }
+            else
+            {
 
-            base.Install(stateSaver);
-            //给mdf文件添加"Everyone,Users"用户组的完全控制权限  
-            //FileInfo fi = new FileInfo(strMdf);
-            //System.Security.AccessControl.FileSecurity fileSecurity = fi.GetAccessControl();
-            //fileSecurity.AddAccessRule(new FileSystemAccessRule("Authenticated Users", FileSystemRights.FullControl, AccessControlType.Allow));
-            ////fileSecurity.AddAccessRule(new FileSystemAccessRule("Users", FileSystemRights.FullControl, AccessControlType.Allow));
-            //fi.SetAccessControl(fileSecurity);
+                IDictionary savedState = stateSaver;
+                base.Rollback(savedState);
+              
+              
+            }
 
-            //FileInfo fi1 = new FileInfo(strLdf);
-            //System.Security.AccessControl.FileSecurity fileSecurity1 = fi1.GetAccessControl();
-            //fileSecurity1.AddAccessRule(new FileSystemAccessRule("Authenticated Users", FileSystemRights.FullControl, AccessControlType.Allow));
-            ////fileSecurity.AddAccessRule(new FileSystemAccessRule("Users", FileSystemRights.FullControl, AccessControlType.Allow));
-           // fi1.SetAccessControl(fileSecurity1);
-            this.CreateDataBase(strSql, DataName, strMdf, strLdf, path);//开始创建数据库
         }
+
+
+        protected override void OnBeforeInstall(IDictionary savedState)
+        {
+            Form1 fm1 = new Form1();//实例化一个窗体，
+            string Code1 = fm1.MyCode;
+            fm1.ShowDialog();//让新窗体显示
+            string RNum = fm1.textBox2.Text;
+            base.OnBeforeInstall(savedState);
+        }
+
+
+
+
 
     }
 }

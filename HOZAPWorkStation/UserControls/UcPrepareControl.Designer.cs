@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcPrepareControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,15 +44,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PrepareToolStrip = new System.Windows.Forms.ToolStrip();
-            this.tspPreNoteSplit = new System.Windows.Forms.ToolStripButton();
-            this.tspPreHelp = new System.Windows.Forms.ToolStripSplitButton();
-            this.tspPreClose = new System.Windows.Forms.ToolStripButton();
             this.RiskMatrix = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvPreUcRisk = new System.Windows.Forms.DataGridView();
+            this.gdvRiskMtxProb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvRiskMtxProbIntro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvRiskMtxLight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvRiskMtxMajor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvRiskMtxSerious = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvRiskMtxGrave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gdvRiskMtxDisastrous = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -89,12 +92,6 @@
             this.Participants = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tsrParticipant = new System.Windows.Forms.ToolStrip();
-            this.tspParcipantAdd = new System.Windows.Forms.ToolStripButton();
-            this.tspParcipantEdit = new System.Windows.Forms.ToolStripButton();
-            this.tspParcipantDelete = new System.Windows.Forms.ToolStripButton();
-            this.tspParcipantCancel = new System.Windows.Forms.ToolStripButton();
-            this.tspParcipantSave = new System.Windows.Forms.ToolStripButton();
-            this.tspParcipantNext = new System.Windows.Forms.ToolStripButton();
             this.dgvPreUcPar = new System.Windows.Forms.DataGridView();
             this.dgvPreParticipantId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreParticipantName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,10 +107,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tspPreUc = new System.Windows.Forms.ToolStrip();
-            this.tsbBaseInfoEdit = new System.Windows.Forms.ToolStripButton();
-            this.tsbBaseInfoCancel = new System.Windows.Forms.ToolStripButton();
-            this.tsbBaseInfoSave = new System.Windows.Forms.ToolStripButton();
-            this.tspBaseInfoNext = new System.Windows.Forms.ToolStripButton();
             this.rtxtDigest = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtImportDate = new System.Windows.Forms.TextBox();
@@ -151,16 +144,8 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.tspPreParamSelection = new System.Windows.Forms.ToolStrip();
-            this.tspPreParamSelAll = new System.Windows.Forms.ToolStripButton();
-            this.tspPreParamSelNoAll = new System.Windows.Forms.ToolStripButton();
-            this.tspPreParamSelAdd = new System.Windows.Forms.ToolStripButton();
-            this.tspPreParamSelEdit = new System.Windows.Forms.ToolStripButton();
-            this.tspPreParamSelDel = new System.Windows.Forms.ToolStripButton();
-            this.tspPreParamSelNext = new System.Windows.Forms.ToolStripButton();
             this.panel8 = new System.Windows.Forms.Panel();
             this.tspPreParamSelected = new System.Windows.Forms.ToolStrip();
-            this.tspPreParamSeledAll = new System.Windows.Forms.ToolStripButton();
-            this.tspPreParamSeledNoAll = new System.Windows.Forms.ToolStripButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvPreParamSled = new System.Windows.Forms.DataGridView();
             this.SelectPramas = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -189,13 +174,27 @@
             this.dgvPreUcRiskSerio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskGrave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPreUcRiskDisas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvRiskMtxProb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvRiskMtxProbIntro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvRiskMtxLight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvRiskMtxMajor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvRiskMtxSerious = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvRiskMtxGrave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gdvRiskMtxDisastrous = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tsbBaseInfoEdit = new System.Windows.Forms.ToolStripButton();
+            this.tsbBaseInfoCancel = new System.Windows.Forms.ToolStripButton();
+            this.tsbBaseInfoSave = new System.Windows.Forms.ToolStripButton();
+            this.tspBaseInfoNext = new System.Windows.Forms.ToolStripButton();
+            this.tspParcipantAdd = new System.Windows.Forms.ToolStripButton();
+            this.tspParcipantEdit = new System.Windows.Forms.ToolStripButton();
+            this.tspParcipantDelete = new System.Windows.Forms.ToolStripButton();
+            this.tspParcipantCancel = new System.Windows.Forms.ToolStripButton();
+            this.tspParcipantSave = new System.Windows.Forms.ToolStripButton();
+            this.tspParcipantNext = new System.Windows.Forms.ToolStripButton();
+            this.tspPreParamSelAll = new System.Windows.Forms.ToolStripButton();
+            this.tspPreParamSelNoAll = new System.Windows.Forms.ToolStripButton();
+            this.tspPreParamSelAdd = new System.Windows.Forms.ToolStripButton();
+            this.tspPreParamSelEdit = new System.Windows.Forms.ToolStripButton();
+            this.tspPreParamSelDel = new System.Windows.Forms.ToolStripButton();
+            this.tspPreParamSelNext = new System.Windows.Forms.ToolStripButton();
+            this.tspPreParamSeledAll = new System.Windows.Forms.ToolStripButton();
+            this.tspPreParamSeledNoAll = new System.Windows.Forms.ToolStripButton();
+            this.tspPreNoteSplit = new System.Windows.Forms.ToolStripButton();
+            this.tspPreHelp = new System.Windows.Forms.ToolStripButton();
+            this.tspPreClose = new System.Windows.Forms.ToolStripButton();
             this.PrepareToolStrip.SuspendLayout();
             this.RiskMatrix.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -241,32 +240,6 @@
             this.PrepareToolStrip.Size = new System.Drawing.Size(1366, 25);
             this.PrepareToolStrip.TabIndex = 0;
             this.PrepareToolStrip.Text = "toolStrip1";
-            // 
-            // tspPreNoteSplit
-            // 
-            this.tspPreNoteSplit.Image = ((System.Drawing.Image)(resources.GetObject("tspPreNoteSplit.Image")));
-            this.tspPreNoteSplit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreNoteSplit.Name = "tspPreNoteSplit";
-            this.tspPreNoteSplit.Size = new System.Drawing.Size(76, 22);
-            this.tspPreNoteSplit.Text = "节点划分";
-            this.tspPreNoteSplit.Click += new System.EventHandler(this.tspPreNoteSplit_Click);
-            // 
-            // tspPreHelp
-            // 
-            this.tspPreHelp.Image = ((System.Drawing.Image)(resources.GetObject("tspPreHelp.Image")));
-            this.tspPreHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreHelp.Name = "tspPreHelp";
-            this.tspPreHelp.Size = new System.Drawing.Size(64, 22);
-            this.tspPreHelp.Text = "帮助";
-            // 
-            // tspPreClose
-            // 
-            this.tspPreClose.Image = ((System.Drawing.Image)(resources.GetObject("tspPreClose.Image")));
-            this.tspPreClose.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreClose.Name = "tspPreClose";
-            this.tspPreClose.Size = new System.Drawing.Size(52, 22);
-            this.tspPreClose.Text = "关闭";
-            this.tspPreClose.Click += new System.EventHandler(this.tspPreClose_Click);
             // 
             // RiskMatrix
             // 
@@ -351,6 +324,63 @@
             this.dgvPreUcRisk.ShowEditingIcon = false;
             this.dgvPreUcRisk.Size = new System.Drawing.Size(1348, 291);
             this.dgvPreUcRisk.TabIndex = 0;
+            // 
+            // gdvRiskMtxProb
+            // 
+            this.gdvRiskMtxProb.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gdvRiskMtxProb.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gdvRiskMtxProb.HeaderText = "概率";
+            this.gdvRiskMtxProb.Name = "gdvRiskMtxProb";
+            this.gdvRiskMtxProb.ReadOnly = true;
+            this.gdvRiskMtxProb.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.gdvRiskMtxProb.Width = 37;
+            // 
+            // gdvRiskMtxProbIntro
+            // 
+            this.gdvRiskMtxProbIntro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.gdvRiskMtxProbIntro.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gdvRiskMtxProbIntro.HeaderText = "概率说明";
+            this.gdvRiskMtxProbIntro.Name = "gdvRiskMtxProbIntro";
+            this.gdvRiskMtxProbIntro.ReadOnly = true;
+            this.gdvRiskMtxProbIntro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.gdvRiskMtxProbIntro.Width = 63;
+            // 
+            // gdvRiskMtxLight
+            // 
+            this.gdvRiskMtxLight.HeaderText = "1.轻微";
+            this.gdvRiskMtxLight.Name = "gdvRiskMtxLight";
+            this.gdvRiskMtxLight.ReadOnly = true;
+            this.gdvRiskMtxLight.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // gdvRiskMtxMajor
+            // 
+            this.gdvRiskMtxMajor.HeaderText = "2.较重";
+            this.gdvRiskMtxMajor.Name = "gdvRiskMtxMajor";
+            this.gdvRiskMtxMajor.ReadOnly = true;
+            this.gdvRiskMtxMajor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // gdvRiskMtxSerious
+            // 
+            this.gdvRiskMtxSerious.HeaderText = "3.严重";
+            this.gdvRiskMtxSerious.Name = "gdvRiskMtxSerious";
+            this.gdvRiskMtxSerious.ReadOnly = true;
+            this.gdvRiskMtxSerious.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // gdvRiskMtxGrave
+            // 
+            this.gdvRiskMtxGrave.HeaderText = "4.重大";
+            this.gdvRiskMtxGrave.Name = "gdvRiskMtxGrave";
+            this.gdvRiskMtxGrave.ReadOnly = true;
+            this.gdvRiskMtxGrave.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // gdvRiskMtxDisastrous
+            // 
+            this.gdvRiskMtxDisastrous.HeaderText = "5.灾难性";
+            this.gdvRiskMtxDisastrous.Name = "gdvRiskMtxDisastrous";
+            this.gdvRiskMtxDisastrous.ReadOnly = true;
+            this.gdvRiskMtxDisastrous.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // splitContainer2
             // 
@@ -898,61 +928,6 @@
             this.tsrParticipant.TabIndex = 0;
             this.tsrParticipant.Text = "toolStrip1";
             // 
-            // tspParcipantAdd
-            // 
-            this.tspParcipantAdd.Image = ((System.Drawing.Image)(resources.GetObject("tspParcipantAdd.Image")));
-            this.tspParcipantAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspParcipantAdd.Name = "tspParcipantAdd";
-            this.tspParcipantAdd.Size = new System.Drawing.Size(52, 29);
-            this.tspParcipantAdd.Text = "增加";
-            this.tspParcipantAdd.Click += new System.EventHandler(this.tspParcipantAdd_Click);
-            // 
-            // tspParcipantEdit
-            // 
-            this.tspParcipantEdit.Image = ((System.Drawing.Image)(resources.GetObject("tspParcipantEdit.Image")));
-            this.tspParcipantEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspParcipantEdit.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.tspParcipantEdit.Name = "tspParcipantEdit";
-            this.tspParcipantEdit.Size = new System.Drawing.Size(52, 26);
-            this.tspParcipantEdit.Text = "编辑";
-            this.tspParcipantEdit.Click += new System.EventHandler(this.tspParcipantEdit_Click);
-            // 
-            // tspParcipantDelete
-            // 
-            this.tspParcipantDelete.Image = ((System.Drawing.Image)(resources.GetObject("tspParcipantDelete.Image")));
-            this.tspParcipantDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspParcipantDelete.Name = "tspParcipantDelete";
-            this.tspParcipantDelete.Size = new System.Drawing.Size(52, 29);
-            this.tspParcipantDelete.Text = "删除";
-            this.tspParcipantDelete.Click += new System.EventHandler(this.tspParcipantDelete_Click);
-            // 
-            // tspParcipantCancel
-            // 
-            this.tspParcipantCancel.Image = ((System.Drawing.Image)(resources.GetObject("tspParcipantCancel.Image")));
-            this.tspParcipantCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspParcipantCancel.Name = "tspParcipantCancel";
-            this.tspParcipantCancel.Size = new System.Drawing.Size(52, 29);
-            this.tspParcipantCancel.Text = "取消";
-            this.tspParcipantCancel.Click += new System.EventHandler(this.tspParcipantCancel_Click);
-            // 
-            // tspParcipantSave
-            // 
-            this.tspParcipantSave.Image = ((System.Drawing.Image)(resources.GetObject("tspParcipantSave.Image")));
-            this.tspParcipantSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspParcipantSave.Name = "tspParcipantSave";
-            this.tspParcipantSave.Size = new System.Drawing.Size(52, 29);
-            this.tspParcipantSave.Text = "保存";
-            this.tspParcipantSave.Click += new System.EventHandler(this.tspParcipantSave_Click);
-            // 
-            // tspParcipantNext
-            // 
-            this.tspParcipantNext.Image = ((System.Drawing.Image)(resources.GetObject("tspParcipantNext.Image")));
-            this.tspParcipantNext.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspParcipantNext.Name = "tspParcipantNext";
-            this.tspParcipantNext.Size = new System.Drawing.Size(64, 29);
-            this.tspParcipantNext.Text = "下一步";
-            this.tspParcipantNext.Click += new System.EventHandler(this.tspParcipantNext_Click);
-            // 
             // dgvPreUcPar
             // 
             this.dgvPreUcPar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1134,42 +1109,6 @@
             this.tspPreUc.Size = new System.Drawing.Size(485, 34);
             this.tspPreUc.TabIndex = 0;
             this.tspPreUc.Text = "toolStrip1";
-            // 
-            // tsbBaseInfoEdit
-            // 
-            this.tsbBaseInfoEdit.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaseInfoEdit.Image")));
-            this.tsbBaseInfoEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbBaseInfoEdit.Name = "tsbBaseInfoEdit";
-            this.tsbBaseInfoEdit.Size = new System.Drawing.Size(52, 31);
-            this.tsbBaseInfoEdit.Text = "编辑";
-            this.tsbBaseInfoEdit.Click += new System.EventHandler(this.tsbBaseInfoEdit_Click);
-            // 
-            // tsbBaseInfoCancel
-            // 
-            this.tsbBaseInfoCancel.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaseInfoCancel.Image")));
-            this.tsbBaseInfoCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbBaseInfoCancel.Name = "tsbBaseInfoCancel";
-            this.tsbBaseInfoCancel.Size = new System.Drawing.Size(52, 31);
-            this.tsbBaseInfoCancel.Text = "取消";
-            this.tsbBaseInfoCancel.Click += new System.EventHandler(this.tsbBaseInfoCancel_Click);
-            // 
-            // tsbBaseInfoSave
-            // 
-            this.tsbBaseInfoSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbBaseInfoSave.Image")));
-            this.tsbBaseInfoSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbBaseInfoSave.Name = "tsbBaseInfoSave";
-            this.tsbBaseInfoSave.Size = new System.Drawing.Size(52, 31);
-            this.tsbBaseInfoSave.Text = "保存";
-            this.tsbBaseInfoSave.Click += new System.EventHandler(this.tsbBaseInfoSave_Click);
-            // 
-            // tspBaseInfoNext
-            // 
-            this.tspBaseInfoNext.Image = ((System.Drawing.Image)(resources.GetObject("tspBaseInfoNext.Image")));
-            this.tspBaseInfoNext.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspBaseInfoNext.Name = "tspBaseInfoNext";
-            this.tspBaseInfoNext.Size = new System.Drawing.Size(64, 31);
-            this.tspBaseInfoNext.Text = "下一步";
-            this.tspBaseInfoNext.Click += new System.EventHandler(this.tspBaseInfoNext_Click);
             // 
             // rtxtDigest
             // 
@@ -1549,60 +1488,6 @@
             this.tspPreParamSelection.TabIndex = 0;
             this.tspPreParamSelection.Text = "toolStrip1";
             // 
-            // tspPreParamSelAll
-            // 
-            this.tspPreParamSelAll.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSelAll.Image")));
-            this.tspPreParamSelAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreParamSelAll.Name = "tspPreParamSelAll";
-            this.tspPreParamSelAll.Size = new System.Drawing.Size(52, 21);
-            this.tspPreParamSelAll.Text = "全选";
-            this.tspPreParamSelAll.Click += new System.EventHandler(this.tspPreParamSelAll_Click);
-            // 
-            // tspPreParamSelNoAll
-            // 
-            this.tspPreParamSelNoAll.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSelNoAll.Image")));
-            this.tspPreParamSelNoAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreParamSelNoAll.Name = "tspPreParamSelNoAll";
-            this.tspPreParamSelNoAll.Size = new System.Drawing.Size(64, 21);
-            this.tspPreParamSelNoAll.Text = "全不选";
-            this.tspPreParamSelNoAll.Click += new System.EventHandler(this.tspPreParamSelNoAll_Click);
-            // 
-            // tspPreParamSelAdd
-            // 
-            this.tspPreParamSelAdd.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSelAdd.Image")));
-            this.tspPreParamSelAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreParamSelAdd.Name = "tspPreParamSelAdd";
-            this.tspPreParamSelAdd.Size = new System.Drawing.Size(52, 21);
-            this.tspPreParamSelAdd.Text = "新增";
-            this.tspPreParamSelAdd.Click += new System.EventHandler(this.tspPreParamSelAdd_Click);
-            // 
-            // tspPreParamSelEdit
-            // 
-            this.tspPreParamSelEdit.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSelEdit.Image")));
-            this.tspPreParamSelEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreParamSelEdit.Name = "tspPreParamSelEdit";
-            this.tspPreParamSelEdit.Size = new System.Drawing.Size(52, 21);
-            this.tspPreParamSelEdit.Text = "编辑";
-            this.tspPreParamSelEdit.Click += new System.EventHandler(this.tspPreParamSelEdit_Click);
-            // 
-            // tspPreParamSelDel
-            // 
-            this.tspPreParamSelDel.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSelDel.Image")));
-            this.tspPreParamSelDel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreParamSelDel.Name = "tspPreParamSelDel";
-            this.tspPreParamSelDel.Size = new System.Drawing.Size(52, 21);
-            this.tspPreParamSelDel.Text = "删除";
-            this.tspPreParamSelDel.Click += new System.EventHandler(this.tspPreParamSelDel_Click);
-            // 
-            // tspPreParamSelNext
-            // 
-            this.tspPreParamSelNext.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSelNext.Image")));
-            this.tspPreParamSelNext.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreParamSelNext.Name = "tspPreParamSelNext";
-            this.tspPreParamSelNext.Size = new System.Drawing.Size(64, 21);
-            this.tspPreParamSelNext.Text = "下一步";
-            this.tspPreParamSelNext.Click += new System.EventHandler(this.tspPreParamSelNext_Click);
-            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.tspPreParamSelected);
@@ -1623,24 +1508,6 @@
             this.tspPreParamSelected.Size = new System.Drawing.Size(646, 24);
             this.tspPreParamSelected.TabIndex = 0;
             this.tspPreParamSelected.Text = "toolStrip1";
-            // 
-            // tspPreParamSeledAll
-            // 
-            this.tspPreParamSeledAll.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSeledAll.Image")));
-            this.tspPreParamSeledAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreParamSeledAll.Name = "tspPreParamSeledAll";
-            this.tspPreParamSeledAll.Size = new System.Drawing.Size(52, 21);
-            this.tspPreParamSeledAll.Text = "全选";
-            this.tspPreParamSeledAll.Click += new System.EventHandler(this.tspPreParamSeledAll_Click);
-            // 
-            // tspPreParamSeledNoAll
-            // 
-            this.tspPreParamSeledNoAll.Image = ((System.Drawing.Image)(resources.GetObject("tspPreParamSeledNoAll.Image")));
-            this.tspPreParamSeledNoAll.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tspPreParamSeledNoAll.Name = "tspPreParamSeledNoAll";
-            this.tspPreParamSeledNoAll.Size = new System.Drawing.Size(64, 21);
-            this.tspPreParamSeledNoAll.Text = "全不选";
-            this.tspPreParamSeledNoAll.Click += new System.EventHandler(this.tspPreParamSeledNoAll_Click);
             // 
             // panel4
             // 
@@ -1980,62 +1847,194 @@
             this.dgvPreUcRiskDisas.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPreUcRiskDisas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // gdvRiskMtxProb
+            // tsbBaseInfoEdit
             // 
-            this.gdvRiskMtxProb.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.gdvRiskMtxProb.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gdvRiskMtxProb.HeaderText = "概率";
-            this.gdvRiskMtxProb.Name = "gdvRiskMtxProb";
-            this.gdvRiskMtxProb.ReadOnly = true;
-            this.gdvRiskMtxProb.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.gdvRiskMtxProb.Width = 37;
+            this.tsbBaseInfoEdit.Image = global::HOZAPWorkStation.Properties.Resources.application_form_edit;
+            this.tsbBaseInfoEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBaseInfoEdit.Name = "tsbBaseInfoEdit";
+            this.tsbBaseInfoEdit.Size = new System.Drawing.Size(52, 31);
+            this.tsbBaseInfoEdit.Text = "编辑";
+            this.tsbBaseInfoEdit.Click += new System.EventHandler(this.tsbBaseInfoEdit_Click);
             // 
-            // gdvRiskMtxProbIntro
+            // tsbBaseInfoCancel
             // 
-            this.gdvRiskMtxProbIntro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.gdvRiskMtxProbIntro.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gdvRiskMtxProbIntro.HeaderText = "概率说明";
-            this.gdvRiskMtxProbIntro.Name = "gdvRiskMtxProbIntro";
-            this.gdvRiskMtxProbIntro.ReadOnly = true;
-            this.gdvRiskMtxProbIntro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.gdvRiskMtxProbIntro.Width = 63;
+            this.tsbBaseInfoCancel.Image = global::HOZAPWorkStation.Properties.Resources.undo;
+            this.tsbBaseInfoCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBaseInfoCancel.Name = "tsbBaseInfoCancel";
+            this.tsbBaseInfoCancel.Size = new System.Drawing.Size(52, 31);
+            this.tsbBaseInfoCancel.Text = "取消";
+            this.tsbBaseInfoCancel.Click += new System.EventHandler(this.tsbBaseInfoCancel_Click);
             // 
-            // gdvRiskMtxLight
+            // tsbBaseInfoSave
             // 
-            this.gdvRiskMtxLight.HeaderText = "1.轻微";
-            this.gdvRiskMtxLight.Name = "gdvRiskMtxLight";
-            this.gdvRiskMtxLight.ReadOnly = true;
-            this.gdvRiskMtxLight.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tsbBaseInfoSave.Image = global::HOZAPWorkStation.Properties.Resources.save;
+            this.tsbBaseInfoSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbBaseInfoSave.Name = "tsbBaseInfoSave";
+            this.tsbBaseInfoSave.Size = new System.Drawing.Size(52, 31);
+            this.tsbBaseInfoSave.Text = "保存";
+            this.tsbBaseInfoSave.Click += new System.EventHandler(this.tsbBaseInfoSave_Click);
             // 
-            // gdvRiskMtxMajor
+            // tspBaseInfoNext
             // 
-            this.gdvRiskMtxMajor.HeaderText = "2.较重";
-            this.gdvRiskMtxMajor.Name = "gdvRiskMtxMajor";
-            this.gdvRiskMtxMajor.ReadOnly = true;
-            this.gdvRiskMtxMajor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tspBaseInfoNext.Image = global::HOZAPWorkStation.Properties.Resources.foward;
+            this.tspBaseInfoNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspBaseInfoNext.Name = "tspBaseInfoNext";
+            this.tspBaseInfoNext.Size = new System.Drawing.Size(64, 31);
+            this.tspBaseInfoNext.Text = "下一步";
+            this.tspBaseInfoNext.Click += new System.EventHandler(this.tspBaseInfoNext_Click);
             // 
-            // gdvRiskMtxSerious
+            // tspParcipantAdd
             // 
-            this.gdvRiskMtxSerious.HeaderText = "3.严重";
-            this.gdvRiskMtxSerious.Name = "gdvRiskMtxSerious";
-            this.gdvRiskMtxSerious.ReadOnly = true;
-            this.gdvRiskMtxSerious.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tspParcipantAdd.Image = global::HOZAPWorkStation.Properties.Resources.action_add;
+            this.tspParcipantAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspParcipantAdd.Name = "tspParcipantAdd";
+            this.tspParcipantAdd.Size = new System.Drawing.Size(52, 29);
+            this.tspParcipantAdd.Text = "增加";
+            this.tspParcipantAdd.Click += new System.EventHandler(this.tspParcipantAdd_Click);
             // 
-            // gdvRiskMtxGrave
+            // tspParcipantEdit
             // 
-            this.gdvRiskMtxGrave.HeaderText = "4.重大";
-            this.gdvRiskMtxGrave.Name = "gdvRiskMtxGrave";
-            this.gdvRiskMtxGrave.ReadOnly = true;
-            this.gdvRiskMtxGrave.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tspParcipantEdit.Image = global::HOZAPWorkStation.Properties.Resources.application_form_edit;
+            this.tspParcipantEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspParcipantEdit.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.tspParcipantEdit.Name = "tspParcipantEdit";
+            this.tspParcipantEdit.Size = new System.Drawing.Size(52, 26);
+            this.tspParcipantEdit.Text = "编辑";
+            this.tspParcipantEdit.Click += new System.EventHandler(this.tspParcipantEdit_Click);
             // 
-            // gdvRiskMtxDisastrous
+            // tspParcipantDelete
             // 
-            this.gdvRiskMtxDisastrous.HeaderText = "5.灾难性";
-            this.gdvRiskMtxDisastrous.Name = "gdvRiskMtxDisastrous";
-            this.gdvRiskMtxDisastrous.ReadOnly = true;
-            this.gdvRiskMtxDisastrous.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tspParcipantDelete.Image = global::HOZAPWorkStation.Properties.Resources.action_delete;
+            this.tspParcipantDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspParcipantDelete.Name = "tspParcipantDelete";
+            this.tspParcipantDelete.Size = new System.Drawing.Size(52, 29);
+            this.tspParcipantDelete.Text = "删除";
+            this.tspParcipantDelete.Click += new System.EventHandler(this.tspParcipantDelete_Click);
+            // 
+            // tspParcipantCancel
+            // 
+            this.tspParcipantCancel.Image = global::HOZAPWorkStation.Properties.Resources.undo;
+            this.tspParcipantCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspParcipantCancel.Name = "tspParcipantCancel";
+            this.tspParcipantCancel.Size = new System.Drawing.Size(52, 29);
+            this.tspParcipantCancel.Text = "取消";
+            this.tspParcipantCancel.Click += new System.EventHandler(this.tspParcipantCancel_Click);
+            // 
+            // tspParcipantSave
+            // 
+            this.tspParcipantSave.Image = global::HOZAPWorkStation.Properties.Resources.save;
+            this.tspParcipantSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspParcipantSave.Name = "tspParcipantSave";
+            this.tspParcipantSave.Size = new System.Drawing.Size(52, 29);
+            this.tspParcipantSave.Text = "保存";
+            this.tspParcipantSave.Click += new System.EventHandler(this.tspParcipantSave_Click);
+            // 
+            // tspParcipantNext
+            // 
+            this.tspParcipantNext.Image = global::HOZAPWorkStation.Properties.Resources.foward;
+            this.tspParcipantNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspParcipantNext.Name = "tspParcipantNext";
+            this.tspParcipantNext.Size = new System.Drawing.Size(64, 29);
+            this.tspParcipantNext.Text = "下一步";
+            this.tspParcipantNext.Click += new System.EventHandler(this.tspParcipantNext_Click);
+            // 
+            // tspPreParamSelAll
+            // 
+            this.tspPreParamSelAll.Image = global::HOZAPWorkStation.Properties.Resources.select_all_16x16;
+            this.tspPreParamSelAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreParamSelAll.Name = "tspPreParamSelAll";
+            this.tspPreParamSelAll.Size = new System.Drawing.Size(52, 21);
+            this.tspPreParamSelAll.Text = "全选";
+            this.tspPreParamSelAll.Click += new System.EventHandler(this.tspPreParamSelAll_Click);
+            // 
+            // tspPreParamSelNoAll
+            // 
+            this.tspPreParamSelNoAll.Image = global::HOZAPWorkStation.Properties.Resources.select_no;
+            this.tspPreParamSelNoAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreParamSelNoAll.Name = "tspPreParamSelNoAll";
+            this.tspPreParamSelNoAll.Size = new System.Drawing.Size(64, 21);
+            this.tspPreParamSelNoAll.Text = "全不选";
+            this.tspPreParamSelNoAll.Click += new System.EventHandler(this.tspPreParamSelNoAll_Click);
+            // 
+            // tspPreParamSelAdd
+            // 
+            this.tspPreParamSelAdd.Image = global::HOZAPWorkStation.Properties.Resources.action_add;
+            this.tspPreParamSelAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreParamSelAdd.Name = "tspPreParamSelAdd";
+            this.tspPreParamSelAdd.Size = new System.Drawing.Size(52, 21);
+            this.tspPreParamSelAdd.Text = "新增";
+            this.tspPreParamSelAdd.Click += new System.EventHandler(this.tspPreParamSelAdd_Click);
+            // 
+            // tspPreParamSelEdit
+            // 
+            this.tspPreParamSelEdit.Image = global::HOZAPWorkStation.Properties.Resources.application_form_edit;
+            this.tspPreParamSelEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreParamSelEdit.Name = "tspPreParamSelEdit";
+            this.tspPreParamSelEdit.Size = new System.Drawing.Size(52, 21);
+            this.tspPreParamSelEdit.Text = "编辑";
+            this.tspPreParamSelEdit.Click += new System.EventHandler(this.tspPreParamSelEdit_Click);
+            // 
+            // tspPreParamSelDel
+            // 
+            this.tspPreParamSelDel.Image = global::HOZAPWorkStation.Properties.Resources.action_delete;
+            this.tspPreParamSelDel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreParamSelDel.Name = "tspPreParamSelDel";
+            this.tspPreParamSelDel.Size = new System.Drawing.Size(52, 21);
+            this.tspPreParamSelDel.Text = "删除";
+            this.tspPreParamSelDel.Click += new System.EventHandler(this.tspPreParamSelDel_Click);
+            // 
+            // tspPreParamSelNext
+            // 
+            this.tspPreParamSelNext.Image = global::HOZAPWorkStation.Properties.Resources.foward;
+            this.tspPreParamSelNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreParamSelNext.Name = "tspPreParamSelNext";
+            this.tspPreParamSelNext.Size = new System.Drawing.Size(64, 21);
+            this.tspPreParamSelNext.Text = "下一步";
+            this.tspPreParamSelNext.Click += new System.EventHandler(this.tspPreParamSelNext_Click);
+            // 
+            // tspPreParamSeledAll
+            // 
+            this.tspPreParamSeledAll.Image = global::HOZAPWorkStation.Properties.Resources.select_all_16x16;
+            this.tspPreParamSeledAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreParamSeledAll.Name = "tspPreParamSeledAll";
+            this.tspPreParamSeledAll.Size = new System.Drawing.Size(52, 21);
+            this.tspPreParamSeledAll.Text = "全选";
+            this.tspPreParamSeledAll.Click += new System.EventHandler(this.tspPreParamSeledAll_Click);
+            // 
+            // tspPreParamSeledNoAll
+            // 
+            this.tspPreParamSeledNoAll.Image = global::HOZAPWorkStation.Properties.Resources.select_no;
+            this.tspPreParamSeledNoAll.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreParamSeledNoAll.Name = "tspPreParamSeledNoAll";
+            this.tspPreParamSeledNoAll.Size = new System.Drawing.Size(64, 21);
+            this.tspPreParamSeledNoAll.Text = "全不选";
+            this.tspPreParamSeledNoAll.Click += new System.EventHandler(this.tspPreParamSeledNoAll_Click);
+            // 
+            // tspPreNoteSplit
+            // 
+            this.tspPreNoteSplit.Image = global::HOZAPWorkStation.Properties.Resources.text_list_bullets;
+            this.tspPreNoteSplit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreNoteSplit.Name = "tspPreNoteSplit";
+            this.tspPreNoteSplit.Size = new System.Drawing.Size(76, 22);
+            this.tspPreNoteSplit.Text = "节点划分";
+            this.tspPreNoteSplit.Click += new System.EventHandler(this.tspPreNoteSplit_Click);
+            // 
+            // tspPreHelp
+            // 
+            this.tspPreHelp.Image = global::HOZAPWorkStation.Properties.Resources.help;
+            this.tspPreHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreHelp.Name = "tspPreHelp";
+            this.tspPreHelp.Size = new System.Drawing.Size(52, 22);
+            this.tspPreHelp.Text = "帮助";
+            // 
+            // tspPreClose
+            // 
+            this.tspPreClose.Image = global::HOZAPWorkStation.Properties.Resources.deleteicon;
+            this.tspPreClose.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tspPreClose.Name = "tspPreClose";
+            this.tspPreClose.Size = new System.Drawing.Size(52, 22);
+            this.tspPreClose.Text = "关闭";
+            this.tspPreClose.Click += new System.EventHandler(this.tspPreClose_Click);
             // 
             // UcPrepareControl
             // 
@@ -2099,7 +2098,6 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip PrepareToolStrip;
-        private System.Windows.Forms.ToolStripSplitButton tspPreHelp;
         private System.Windows.Forms.TabPage RiskMatrix;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgvPreUcRisk;
@@ -2249,5 +2247,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxSerious;
         private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxGrave;
         private System.Windows.Forms.DataGridViewTextBoxColumn gdvRiskMtxDisastrous;
+        private System.Windows.Forms.ToolStripButton tspPreHelp;
     }
 }

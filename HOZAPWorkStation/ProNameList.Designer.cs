@@ -50,7 +50,7 @@
             // 
             // tspOpenProNameList
             // 
-            this.tspOpenProNameList.Image = ((System.Drawing.Image)(resources.GetObject("tspOpenProNameList.Image")));
+            this.tspOpenProNameList.Image = global::HOZAPWorkStation.Properties.Resources.openfile;
             this.tspOpenProNameList.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tspOpenProNameList.Name = "tspOpenProNameList";
             this.tspOpenProNameList.Size = new System.Drawing.Size(52, 22);
@@ -59,7 +59,7 @@
             // 
             // tspDeleteProNameList
             // 
-            this.tspDeleteProNameList.Image = ((System.Drawing.Image)(resources.GetObject("tspDeleteProNameList.Image")));
+            this.tspDeleteProNameList.Image = global::HOZAPWorkStation.Properties.Resources.action_delete;
             this.tspDeleteProNameList.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tspDeleteProNameList.Name = "tspDeleteProNameList";
             this.tspDeleteProNameList.Size = new System.Drawing.Size(52, 22);

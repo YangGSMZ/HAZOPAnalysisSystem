@@ -73,6 +73,10 @@ namespace HOZAPWorkStation
                     this.analysisBtn.BackColor = SystemColors.ActiveCaption;
                     this.printBtn.Enabled = true;
                     this.printBtn.BackColor = SystemColors.ActiveCaption;
+                    this.导出ToolStripMenuItem.Enabled = true;
+                    this.节点划分ToolStripMenuItem.Enabled = true;
+                    this.项目准备ToolStripMenuItem.Enabled = true;
+                    this.hAZOP分析ToolStripMenuItem.Enabled = true;
                 }
             }
             if (sender is NewProjectInterface)
@@ -88,6 +92,10 @@ namespace HOZAPWorkStation
                     this.analysisBtn.BackColor = SystemColors.ActiveCaption;
                     this.printBtn.Enabled = true;
                     this.printBtn.BackColor = SystemColors.ActiveCaption;
+                    this.导出ToolStripMenuItem.Enabled = true;
+                    this.节点划分ToolStripMenuItem.Enabled = true;
+                    this.项目准备ToolStripMenuItem.Enabled = true;
+                    this.hAZOP分析ToolStripMenuItem.Enabled = true;
                 }
             }
 
@@ -395,21 +403,6 @@ namespace HOZAPWorkStation
         private void printBtn_Click(object sender, EventArgs e)
         {
             ExportToExcel.DataBaseToExcel();
-        }
-
-        private void InitialInterface_SizeChanged(object sender, EventArgs e)
-        {
-            float newx = (this.Width) / X;
-            float newy = (this.Height) / Y;
-            setControls(newx, newy, this);
-        }
-
-        private void InitialInterface_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void InitialInterface_MaximumSizeChanged(object sender, EventArgs e)
-        {
         }
     }
 }
