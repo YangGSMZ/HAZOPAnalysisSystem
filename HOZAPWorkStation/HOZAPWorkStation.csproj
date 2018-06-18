@@ -272,6 +272,7 @@
     </Content>
     <Content Include="lnpu.ico" />
     <Content Include="obj\Debug\HOZAPWorkStation.csproj.FileListAbsolute.txt" />
+    <Content Include="Resouces\Images\background.jpg" />
     <Content Include="Resouces\Images\Folder.JPG" />
     <Content Include="Resouces\lnpu.ico" />
   </ItemGroup>
