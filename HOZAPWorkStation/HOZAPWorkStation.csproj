@@ -198,6 +198,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UpdataPramasInfo.resx">
       <DependentUpon>UpdataPramasInfo.cs</DependentUpon>
@@ -260,6 +261,24 @@
     <Content Include="obj\Debug\HOZAPWorkStation.csproj.FileListAbsolute.txt" />
     <Content Include="Resouces\Images\Folder.JPG" />
     <Content Include="Resouces\lnpu.ico" />
+    <None Include="Resources\55i58PICCH4_1024.jpg" />
+    <None Include="Resources\form_go.png" />
+    <None Include="Resources\select-no.jpg" />
+    <None Include="Resources\select_all_16x16.gif" />
+    <None Include="Resources\text_list_bullets.png" />
+    <None Include="Resources\openfile.png" />
+    <None Include="Resources\newdocument.png" />
+    <None Include="Resources\application_form_edit.png" />
+    <None Include="Resources\undo.gif" />
+    <None Include="Resources\print1.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\deleteicon.png" />
+    <None Include="Resources\save1.png" />
+    <None Include="Resources\foward.png" />
+    <None Include="Resources\backward.png" />
+    <None Include="Resources\action_delete.png" />
+    <None Include="Resources\action_add.png" />
+    <None Include="Resources\save.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

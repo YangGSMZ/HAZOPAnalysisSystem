@@ -43,6 +43,10 @@ namespace HOZAPWorkStation
                     this.analysisBtn.BackColor = SystemColors.ActiveCaption;
                     this.printBtn.Enabled = true;
                     this.printBtn.BackColor = SystemColors.ActiveCaption;
+                    this.导出ToolStripMenuItem.Enabled = true;
+                    this.节点划分ToolStripMenuItem.Enabled = true;
+                    this.项目准备ToolStripMenuItem.Enabled = true;
+                    this.hAZOP分析ToolStripMenuItem.Enabled = true;
                 }
             }
             if (sender is NewProjectInterface)
@@ -58,6 +62,10 @@ namespace HOZAPWorkStation
                     this.analysisBtn.BackColor = SystemColors.ActiveCaption;
                     this.printBtn.Enabled = true;
                     this.printBtn.BackColor = SystemColors.ActiveCaption;
+                    this.导出ToolStripMenuItem.Enabled = true;
+                    this.节点划分ToolStripMenuItem.Enabled = true;
+                    this.项目准备ToolStripMenuItem.Enabled = true;
+                    this.hAZOP分析ToolStripMenuItem.Enabled = true;
                 }
             }
             
@@ -344,6 +352,47 @@ namespace HOZAPWorkStation
         private void printBtn_Click(object sender, EventArgs e)
         {
             ExportToExcel.DataBaseToExcel();
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void 打开ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openBtn_Click( sender,  e);
+        }
+
+        private void 新建ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            newBtn_Click(sender, e);
+        }
+
+        private void 导出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         
+            printBtn_Click(sender, e);
+        }
+
+        private void 项目准备ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            preBtn_Click(sender, e);
+        }
+
+        private void 节点划分ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+           
+            nodeBtn_Click(sender, e);
+
+        }
+
+        private void hAZOP分析ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+            analysisBtn_Click(sender, e);
         }
     }
 }

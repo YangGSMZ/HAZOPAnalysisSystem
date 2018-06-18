@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcNodePartition));
             this.tsNodePartition = new System.Windows.Forms.ToolStrip();
-            this.tsbHaZop = new System.Windows.Forms.ToolStripButton();
-            this.stbHelp = new System.Windows.Forms.ToolStripSplitButton();
-            this.tsbClose = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tcNode = new System.Windows.Forms.TabControl();
             this.tpNode = new System.Windows.Forms.TabPage();
@@ -42,12 +38,6 @@
             this.tpNodeInfo = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tsNodeInfo = new System.Windows.Forms.ToolStrip();
-            this.tsbAdd = new System.Windows.Forms.ToolStripButton();
-            this.tsbEdite = new System.Windows.Forms.ToolStripButton();
-            this.tsbDel = new System.Windows.Forms.ToolStripButton();
-            this.tsbCancel = new System.Windows.Forms.ToolStripButton();
-            this.tsbSave = new System.Windows.Forms.ToolStripButton();
-            this.tsbNext = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.calCreateNodeDate = new System.Windows.Forms.MonthCalendar();
             this.lblUcNodeNewNodeTip = new System.Windows.Forms.Label();
@@ -73,6 +63,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ofdSelectModel = new System.Windows.Forms.OpenFileDialog();
+            this.tsbAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbEdite = new System.Windows.Forms.ToolStripButton();
+            this.tsbDel = new System.Windows.Forms.ToolStripButton();
+            this.tsbCancel = new System.Windows.Forms.ToolStripButton();
+            this.tsbSave = new System.Windows.Forms.ToolStripButton();
+            this.tsbNext = new System.Windows.Forms.ToolStripButton();
+            this.tsbHaZop = new System.Windows.Forms.ToolStripButton();
+            this.stbHelp = new System.Windows.Forms.ToolStripSplitButton();
+            this.tsbClose = new System.Windows.Forms.ToolStripButton();
             this.tsNodePartition.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -99,32 +98,6 @@
             this.tsNodePartition.Size = new System.Drawing.Size(884, 25);
             this.tsNodePartition.TabIndex = 0;
             this.tsNodePartition.Text = "toolStrip1";
-            // 
-            // tsbHaZop
-            // 
-            this.tsbHaZop.Image = ((System.Drawing.Image)(resources.GetObject("tsbHaZop.Image")));
-            this.tsbHaZop.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbHaZop.Name = "tsbHaZop";
-            this.tsbHaZop.Size = new System.Drawing.Size(88, 22);
-            this.tsbHaZop.Text = "hazop分析";
-            this.tsbHaZop.Click += new System.EventHandler(this.tsbHaZop_Click);
-            // 
-            // stbHelp
-            // 
-            this.stbHelp.Image = ((System.Drawing.Image)(resources.GetObject("stbHelp.Image")));
-            this.stbHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.stbHelp.Name = "stbHelp";
-            this.stbHelp.Size = new System.Drawing.Size(64, 22);
-            this.stbHelp.Text = "帮助";
-            // 
-            // tsbClose
-            // 
-            this.tsbClose.Image = ((System.Drawing.Image)(resources.GetObject("tsbClose.Image")));
-            this.tsbClose.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbClose.Name = "tsbClose";
-            this.tsbClose.Size = new System.Drawing.Size(52, 22);
-            this.tsbClose.Text = "关闭";
-            this.tsbClose.Click += new System.EventHandler(this.tsbClose_Click);
             // 
             // splitContainer1
             // 
@@ -233,61 +206,6 @@
             this.tsNodeInfo.Size = new System.Drawing.Size(651, 27);
             this.tsNodeInfo.TabIndex = 23;
             this.tsNodeInfo.Text = "x";
-            // 
-            // tsbAdd
-            // 
-            this.tsbAdd.Image = ((System.Drawing.Image)(resources.GetObject("tsbAdd.Image")));
-            this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAdd.Name = "tsbAdd";
-            this.tsbAdd.Size = new System.Drawing.Size(68, 24);
-            this.tsbAdd.Tag = "";
-            this.tsbAdd.Text = "增加(A)";
-            this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
-            // 
-            // tsbEdite
-            // 
-            this.tsbEdite.Image = ((System.Drawing.Image)(resources.GetObject("tsbEdite.Image")));
-            this.tsbEdite.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEdite.Name = "tsbEdite";
-            this.tsbEdite.Size = new System.Drawing.Size(67, 24);
-            this.tsbEdite.Text = "编辑(E)";
-            this.tsbEdite.Click += new System.EventHandler(this.tsbEdite_Click);
-            // 
-            // tsbDel
-            // 
-            this.tsbDel.Image = ((System.Drawing.Image)(resources.GetObject("tsbDel.Image")));
-            this.tsbDel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDel.Name = "tsbDel";
-            this.tsbDel.Size = new System.Drawing.Size(69, 24);
-            this.tsbDel.Text = "删除(D)";
-            this.tsbDel.Click += new System.EventHandler(this.tsbDel_Click);
-            // 
-            // tsbCancel
-            // 
-            this.tsbCancel.Image = ((System.Drawing.Image)(resources.GetObject("tsbCancel.Image")));
-            this.tsbCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbCancel.Name = "tsbCancel";
-            this.tsbCancel.Size = new System.Drawing.Size(68, 24);
-            this.tsbCancel.Text = "取消(C)";
-            this.tsbCancel.Click += new System.EventHandler(this.tsbCancel_Click);
-            // 
-            // tsbSave
-            // 
-            this.tsbSave.Image = ((System.Drawing.Image)(resources.GetObject("tsbSave.Image")));
-            this.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSave.Name = "tsbSave";
-            this.tsbSave.Size = new System.Drawing.Size(67, 24);
-            this.tsbSave.Text = "保存(S)";
-            this.tsbSave.Click += new System.EventHandler(this.tsbSave_Click);
-            // 
-            // tsbNext
-            // 
-            this.tsbNext.Image = ((System.Drawing.Image)(resources.GetObject("tsbNext.Image")));
-            this.tsbNext.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNext.Name = "tsbNext";
-            this.tsbNext.Size = new System.Drawing.Size(64, 24);
-            this.tsbNext.Text = "下一步";
-            this.tsbNext.Click += new System.EventHandler(this.tsbNext_Click);
             // 
             // panel1
             // 
@@ -566,6 +484,87 @@
             // ofdSelectModel
             // 
             this.ofdSelectModel.FileName = "openFileDialog1";
+            // 
+            // tsbAdd
+            // 
+            this.tsbAdd.Image = global::HOZAPWorkStation.Properties.Resources.action_add;
+            this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAdd.Name = "tsbAdd";
+            this.tsbAdd.Size = new System.Drawing.Size(68, 24);
+            this.tsbAdd.Tag = "";
+            this.tsbAdd.Text = "增加(A)";
+            this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
+            // 
+            // tsbEdite
+            // 
+            this.tsbEdite.Image = global::HOZAPWorkStation.Properties.Resources.application_form_edit;
+            this.tsbEdite.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEdite.Name = "tsbEdite";
+            this.tsbEdite.Size = new System.Drawing.Size(67, 24);
+            this.tsbEdite.Text = "编辑(E)";
+            this.tsbEdite.Click += new System.EventHandler(this.tsbEdite_Click);
+            // 
+            // tsbDel
+            // 
+            this.tsbDel.Image = global::HOZAPWorkStation.Properties.Resources.action_delete;
+            this.tsbDel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDel.Name = "tsbDel";
+            this.tsbDel.Size = new System.Drawing.Size(69, 24);
+            this.tsbDel.Text = "删除(D)";
+            this.tsbDel.Click += new System.EventHandler(this.tsbDel_Click);
+            // 
+            // tsbCancel
+            // 
+            this.tsbCancel.Image = global::HOZAPWorkStation.Properties.Resources.undo;
+            this.tsbCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCancel.Name = "tsbCancel";
+            this.tsbCancel.Size = new System.Drawing.Size(68, 24);
+            this.tsbCancel.Text = "取消(C)";
+            this.tsbCancel.Click += new System.EventHandler(this.tsbCancel_Click);
+            // 
+            // tsbSave
+            // 
+            this.tsbSave.Image = global::HOZAPWorkStation.Properties.Resources.save;
+            this.tsbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSave.Name = "tsbSave";
+            this.tsbSave.Size = new System.Drawing.Size(67, 24);
+            this.tsbSave.Text = "保存(S)";
+            this.tsbSave.Click += new System.EventHandler(this.tsbSave_Click);
+            // 
+            // tsbNext
+            // 
+            this.tsbNext.Image = global::HOZAPWorkStation.Properties.Resources.foward;
+            this.tsbNext.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNext.Name = "tsbNext";
+            this.tsbNext.Size = new System.Drawing.Size(64, 24);
+            this.tsbNext.Text = "下一步";
+            this.tsbNext.Click += new System.EventHandler(this.tsbNext_Click);
+            // 
+            // tsbHaZop
+            // 
+            this.tsbHaZop.Image = global::HOZAPWorkStation.Properties.Resources._55i58PICCH4_1024;
+            this.tsbHaZop.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbHaZop.Name = "tsbHaZop";
+            this.tsbHaZop.Size = new System.Drawing.Size(88, 22);
+            this.tsbHaZop.Text = "hazop分析";
+            this.tsbHaZop.Click += new System.EventHandler(this.tsbHaZop_Click);
+            // 
+            // stbHelp
+            // 
+            this.stbHelp.Image = global::HOZAPWorkStation.Properties.Resources.help;
+            this.stbHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.stbHelp.Name = "stbHelp";
+            this.stbHelp.Size = new System.Drawing.Size(64, 22);
+            this.stbHelp.Text = "帮助";
+            // 
+            // tsbClose
+            // 
+            this.tsbClose.Image = global::HOZAPWorkStation.Properties.Resources.deleteicon;
+            this.tsbClose.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbClose.Name = "tsbClose";
+            this.tsbClose.Size = new System.Drawing.Size(52, 22);
+            this.tsbClose.Text = "关闭";
+            this.tsbClose.Click += new System.EventHandler(this.tsbClose_Click);
             // 
             // UcNodePartition
             // 

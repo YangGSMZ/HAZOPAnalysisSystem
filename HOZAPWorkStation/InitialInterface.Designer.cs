@@ -31,6 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InitialInterface));
             this.initMenuStrip = new System.Windows.Forms.MenuStrip();
             this.menuSsripToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hAZOP分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.风险评估ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MainTableControl = new System.Windows.Forms.TabControl();
+            this.initPanel = new System.Windows.Forms.Panel();
             this.tpSysteamIndex = new System.Windows.Forms.TabPage();
             this.newBtn = new System.Windows.Forms.Button();
             this.preBtn = new System.Windows.Forms.Button();
@@ -38,21 +44,16 @@
             this.analysisBtn = new System.Windows.Forms.Button();
             this.nodeBtn = new System.Windows.Forms.Button();
             this.openBtn = new System.Windows.Forms.Button();
-            this.MainTableControl = new System.Windows.Forms.TabControl();
-            this.initPanel = new System.Windows.Forms.Panel();
             this.新建ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打开ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.项目准备ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.节点划分ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hAZOP分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.风险评估ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.帮助文档ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.initMenuStrip.SuspendLayout();
-            this.tpSysteamIndex.SuspendLayout();
             this.MainTableControl.SuspendLayout();
+            this.tpSysteamIndex.SuspendLayout();
             this.SuspendLayout();
             // 
             // initMenuStrip
@@ -76,6 +77,65 @@
             this.menuSsripToolStripMenuItem.Name = "menuSsripToolStripMenuItem";
             this.menuSsripToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.menuSsripToolStripMenuItem.Text = "项目";
+            // 
+            // 分析ToolStripMenuItem
+            // 
+            this.分析ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.项目准备ToolStripMenuItem,
+            this.节点划分ToolStripMenuItem,
+            this.hAZOP分析ToolStripMenuItem,
+            this.风险评估ToolStripMenuItem});
+            this.分析ToolStripMenuItem.Name = "分析ToolStripMenuItem";
+            this.分析ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.分析ToolStripMenuItem.Text = "分析";
+            // 
+            // hAZOP分析ToolStripMenuItem
+            // 
+            this.hAZOP分析ToolStripMenuItem.Enabled = false;
+            this.hAZOP分析ToolStripMenuItem.Image = global::HOZAPWorkStation.Properties.Resources._55i58PICCH4_1024;
+            this.hAZOP分析ToolStripMenuItem.Name = "hAZOP分析ToolStripMenuItem";
+            this.hAZOP分析ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.hAZOP分析ToolStripMenuItem.Text = "HAZOP分析";
+            this.hAZOP分析ToolStripMenuItem.Click += new System.EventHandler(this.hAZOP分析ToolStripMenuItem_Click);
+            // 
+            // 风险评估ToolStripMenuItem
+            // 
+            this.风险评估ToolStripMenuItem.Enabled = false;
+            this.风险评估ToolStripMenuItem.Name = "风险评估ToolStripMenuItem";
+            this.风险评估ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.风险评估ToolStripMenuItem.Text = "风险评估";
+            // 
+            // 帮助ToolStripMenuItem
+            // 
+            this.帮助ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.帮助文档ToolStripMenuItem});
+            this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.帮助ToolStripMenuItem.Text = "帮助";
+            // 
+            // MainTableControl
+            // 
+            this.MainTableControl.Controls.Add(this.tpSysteamIndex);
+            this.MainTableControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainTableControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.MainTableControl.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.MainTableControl.ItemSize = new System.Drawing.Size(70, 25);
+            this.MainTableControl.Location = new System.Drawing.Point(0, 56);
+            this.MainTableControl.Name = "MainTableControl";
+            this.MainTableControl.SelectedIndex = 0;
+            this.MainTableControl.Size = new System.Drawing.Size(800, 394);
+            this.MainTableControl.TabIndex = 13;
+            this.MainTableControl.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.MainTableControl_DrawItem);
+            this.MainTableControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainTableControl_MouseDown);
+            // 
+            // initPanel
+            // 
+            this.initPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.initPanel.Location = new System.Drawing.Point(0, 25);
+            this.initPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.initPanel.Name = "initPanel";
+            this.initPanel.Size = new System.Drawing.Size(800, 31);
+            this.initPanel.TabIndex = 2;
             // 
             // tpSysteamIndex
             // 
@@ -181,94 +241,63 @@
             this.openBtn.UseVisualStyleBackColor = false;
             this.openBtn.Click += new System.EventHandler(this.openBtn_Click);
             // 
-            // MainTableControl
-            // 
-            this.MainTableControl.Controls.Add(this.tpSysteamIndex);
-            this.MainTableControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainTableControl.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.MainTableControl.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MainTableControl.ItemSize = new System.Drawing.Size(70, 25);
-            this.MainTableControl.Location = new System.Drawing.Point(0, 56);
-            this.MainTableControl.Name = "MainTableControl";
-            this.MainTableControl.SelectedIndex = 0;
-            this.MainTableControl.Size = new System.Drawing.Size(800, 394);
-            this.MainTableControl.TabIndex = 13;
-            this.MainTableControl.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.MainTableControl_DrawItem);
-            this.MainTableControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainTableControl_MouseDown);
-            // 
-            // initPanel
-            // 
-            this.initPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.initPanel.Location = new System.Drawing.Point(0, 25);
-            this.initPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.initPanel.Name = "initPanel";
-            this.initPanel.Size = new System.Drawing.Size(800, 31);
-            this.initPanel.TabIndex = 2;
-            // 
             // 新建ToolStripMenuItem
             // 
+            this.新建ToolStripMenuItem.Image = global::HOZAPWorkStation.Properties.Resources.newdocument;
             this.新建ToolStripMenuItem.Name = "新建ToolStripMenuItem";
-            this.新建ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.新建ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.新建ToolStripMenuItem.Text = "新建";
+            this.新建ToolStripMenuItem.Click += new System.EventHandler(this.新建ToolStripMenuItem_Click);
             // 
             // 打开ToolStripMenuItem
             // 
+            this.打开ToolStripMenuItem.Image = global::HOZAPWorkStation.Properties.Resources.openfile;
             this.打开ToolStripMenuItem.Name = "打开ToolStripMenuItem";
-            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.打开ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.打开ToolStripMenuItem.Text = "打开";
+            this.打开ToolStripMenuItem.Click += new System.EventHandler(this.打开ToolStripMenuItem_Click);
             // 
             // 导出ToolStripMenuItem
             // 
+            this.导出ToolStripMenuItem.Enabled = false;
+            this.导出ToolStripMenuItem.Image = global::HOZAPWorkStation.Properties.Resources.print1;
             this.导出ToolStripMenuItem.Name = "导出ToolStripMenuItem";
-            this.导出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.导出ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.导出ToolStripMenuItem.Text = "导出";
+            this.导出ToolStripMenuItem.Click += new System.EventHandler(this.导出ToolStripMenuItem_Click);
             // 
             // 退出ToolStripMenuItem
             // 
+            this.退出ToolStripMenuItem.Image = global::HOZAPWorkStation.Properties.Resources.deleteicon;
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.退出ToolStripMenuItem.Text = "退出";
-            // 
-            // 分析ToolStripMenuItem
-            // 
-            this.分析ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.项目准备ToolStripMenuItem,
-            this.节点划分ToolStripMenuItem,
-            this.hAZOP分析ToolStripMenuItem,
-            this.风险评估ToolStripMenuItem});
-            this.分析ToolStripMenuItem.Name = "分析ToolStripMenuItem";
-            this.分析ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.分析ToolStripMenuItem.Text = "分析";
+            this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
             // 项目准备ToolStripMenuItem
             // 
+            this.项目准备ToolStripMenuItem.Enabled = false;
+            this.项目准备ToolStripMenuItem.Image = global::HOZAPWorkStation.Properties.Resources.form_go;
             this.项目准备ToolStripMenuItem.Name = "项目准备ToolStripMenuItem";
             this.项目准备ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.项目准备ToolStripMenuItem.Text = "项目准备";
+            this.项目准备ToolStripMenuItem.Click += new System.EventHandler(this.项目准备ToolStripMenuItem_Click);
             // 
             // 节点划分ToolStripMenuItem
             // 
+            this.节点划分ToolStripMenuItem.Enabled = false;
+            this.节点划分ToolStripMenuItem.Image = global::HOZAPWorkStation.Properties.Resources.text_list_bullets;
             this.节点划分ToolStripMenuItem.Name = "节点划分ToolStripMenuItem";
             this.节点划分ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.节点划分ToolStripMenuItem.Text = "节点划分";
+            this.节点划分ToolStripMenuItem.Click += new System.EventHandler(this.节点划分ToolStripMenuItem_Click);
             // 
-            // hAZOP分析ToolStripMenuItem
+            // 帮助文档ToolStripMenuItem
             // 
-            this.hAZOP分析ToolStripMenuItem.Name = "hAZOP分析ToolStripMenuItem";
-            this.hAZOP分析ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.hAZOP分析ToolStripMenuItem.Text = "HAZOP分析";
-            // 
-            // 风险评估ToolStripMenuItem
-            // 
-            this.风险评估ToolStripMenuItem.Name = "风险评估ToolStripMenuItem";
-            this.风险评估ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.风险评估ToolStripMenuItem.Text = "风险评估";
-            // 
-            // 帮助ToolStripMenuItem
-            // 
-            this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.帮助ToolStripMenuItem.Text = "帮助";
+            this.帮助文档ToolStripMenuItem.Image = global::HOZAPWorkStation.Properties.Resources.help;
+            this.帮助文档ToolStripMenuItem.Name = "帮助文档ToolStripMenuItem";
+            this.帮助文档ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.帮助文档ToolStripMenuItem.Text = "帮助文档";
             // 
             // InitialInterface
             // 
@@ -288,8 +317,8 @@
             this.Resize += new System.EventHandler(this.InitialInterface_Resize);
             this.initMenuStrip.ResumeLayout(false);
             this.initMenuStrip.PerformLayout();
-            this.tpSysteamIndex.ResumeLayout(false);
             this.MainTableControl.ResumeLayout(false);
+            this.tpSysteamIndex.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +348,6 @@
         private System.Windows.Forms.ToolStripMenuItem 风险评估ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
         private System.Windows.Forms.Panel initPanel;
+        private System.Windows.Forms.ToolStripMenuItem 帮助文档ToolStripMenuItem;
     }
 }
