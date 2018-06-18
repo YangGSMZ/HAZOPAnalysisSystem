@@ -65,38 +65,49 @@ namespace HOZAPWorkStation
         public bool IsOpen = false;
         private void tspOpenProNameList_Click(object sender, EventArgs e)
         {
-            InitialInterface.ProName = this.lvProNameList.SelectedItems[0].Text;
             if (this.lvProNameList.SelectedItems.Count > 0)
             {
+                InitialInterface.ProName = this.lvProNameList.SelectedItems[0].Text;
                 IsOpen = true;
                 if (this.SetInitBtn != null)
                 {
                     this.SetInitBtn(this);
                 }
             }
+            else
+            {
+                this.Close();
+            }
             this.Close();
         }
 
         private void tspDeleteProNameList_Click(object sender, EventArgs e)
         {
-            string ProName = this.lvProNameList.SelectedItems[0].Text;
+            if (this.lvProNameList.SelectedItems.Count > 0)
+            {
+                string ProName = this.lvProNameList.SelectedItems[0].Text;
 
-            ProjectBLL bll = new ProjectBLL();
-            bll.Delete_ProNameList(ProName);
+                ProjectBLL bll = new ProjectBLL();
+                bll.Delete_ProNameList(ProName);
 
-            AnalyResultBLL analyResultBLL = new AnalyResultBLL();
-            analyResultBLL.Delete_Result(ProName);
+                AnalyResultBLL analyResultBLL = new AnalyResultBLL();
+                analyResultBLL.Delete_Result(ProName);
 
-            NodeBLL nodeBLL = new NodeBLL();
-            nodeBLL.Delete_ProName(ProName);
+                NodeBLL nodeBLL = new NodeBLL();
+                nodeBLL.Delete_ProName(ProName);
 
-            ParticipantBLL participantBLL = new ParticipantBLL();
-            participantBLL.Delete_ProName(ProName);
+                ParticipantBLL participantBLL = new ParticipantBLL();
+                participantBLL.Delete_ProName(ProName);
 
-            SelectedPramasBLL selectedPramasBLL = new SelectedPramasBLL();
-            selectedPramasBLL.Delete_ProName(ProName);
+                SelectedPramasBLL selectedPramasBLL = new SelectedPramasBLL();
+                selectedPramasBLL.Delete_ProName(ProName);
 
-            ProNameDataBind();
+                ProNameDataBind();
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }
