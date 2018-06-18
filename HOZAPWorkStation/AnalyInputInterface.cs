@@ -19,6 +19,7 @@ namespace HOZAPWorkStation
         public AnalyInputInterface()
         {
             InitializeComponent();
+            this.rtbAnaInputInterface.Text = String.Empty;
         }
         /// <summary>
         /// 声明一个事件，用于把该窗体的数据传到用户控件中
@@ -206,7 +207,14 @@ namespace HOZAPWorkStation
         /// <param name="e"></param>
         private void dgvTbcPageAnaExpert_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.rtbAnaInputInterface.Text = this.dgvTbcPageAnaExpert.SelectedCells[0].Value.ToString();
+            if (this.rtbAnaInputInterface.Text.Length > 0)
+            {
+                this.rtbAnaInputInterface.Text = this.rtbAnaInputInterface.Text + "\n" + this.dgvTbcPageAnaExpert.SelectedCells[0].Value.ToString();
+            }
+            else
+            {
+                this.rtbAnaInputInterface.Text = this.dgvTbcPageAnaExpert.SelectedCells[0].Value.ToString();
+            }
         }
         /// <summary>
         /// 添加到个人经验库
@@ -252,9 +260,21 @@ namespace HOZAPWorkStation
             }
         }
 
+        /// <summary>
+        /// 单击选中个人经验库的内容
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvTbcPageAnaPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.rtbAnaInputInterface.Text = this.dgvTbcPageAnaPersonal.SelectedCells[0].Value.ToString();
+            if (this.rtbAnaInputInterface.Text.Length > 0)
+            {
+                this.rtbAnaInputInterface.Text = this.rtbAnaInputInterface.Text + "\n" + this.dgvTbcPageAnaPersonal.SelectedCells[0].Value.ToString();
+            }
+            else
+            {
+                this.rtbAnaInputInterface.Text = this.dgvTbcPageAnaPersonal.SelectedCells[0].Value.ToString();
+            }
         }
         /// <summary>
         /// 删除个人经验库

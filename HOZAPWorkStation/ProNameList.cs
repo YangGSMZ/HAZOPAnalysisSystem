@@ -45,7 +45,7 @@ namespace HOZAPWorkStation
             SmallImageList.ImageSize = new Size(30, 30);
             string path= System.Windows.Forms.Application.StartupPath + "\\Images\\Folder.JPG";
             SmallImageList.Images.Add(Image.FromFile(path));
-           // SmallImageList.Images.Add(Image.FromFile(@"Images\Folder.JPG"));
+            //SmallImageList.Images.Add(Image.FromFile(@"Images\Folder.JPG"));
             while (sqlDataReader.Read())
             {
                 ListViewItem lv = new ListViewItem();
@@ -65,10 +65,9 @@ namespace HOZAPWorkStation
         public bool IsOpen = false;
         private void tspOpenProNameList_Click(object sender, EventArgs e)
         {
-             if (this.lvProNameList.SelectedItems.Count > 0)
+            if (this.lvProNameList.SelectedItems.Count > 0)
             {
-               InitialInterface.ProName = this.lvProNameList.SelectedItems[0].Text;
-          
+                InitialInterface.ProName = this.lvProNameList.SelectedItems[0].Text;
                 IsOpen = true;
                 if (this.SetInitBtn != null)
                 {
@@ -77,33 +76,38 @@ namespace HOZAPWorkStation
             }
             else
             {
-                MessageBox.Show("请选择要打开的项目！");
-                return;
-
+                this.Close();
             }
             this.Close();
         }
 
         private void tspDeleteProNameList_Click(object sender, EventArgs e)
         {
-            string ProName = this.lvProNameList.SelectedItems[0].Text;
+            if (this.lvProNameList.SelectedItems.Count > 0)
+            {
+                string ProName = this.lvProNameList.SelectedItems[0].Text;
 
-            ProjectBLL bll = new ProjectBLL();
-            bll.Delete_ProNameList(ProName);
+                ProjectBLL bll = new ProjectBLL();
+                bll.Delete_ProNameList(ProName);
 
-            AnalyResultBLL analyResultBLL = new AnalyResultBLL();
-            analyResultBLL.Delete_Result(ProName);
+                AnalyResultBLL analyResultBLL = new AnalyResultBLL();
+                analyResultBLL.Delete_Result(ProName);
 
-            NodeBLL nodeBLL = new NodeBLL();
-            nodeBLL.Delete_ProName(ProName);
+                NodeBLL nodeBLL = new NodeBLL();
+                nodeBLL.Delete_ProName(ProName);
 
-            ParticipantBLL participantBLL = new ParticipantBLL();
-            participantBLL.Delete_ProName(ProName);
+                ParticipantBLL participantBLL = new ParticipantBLL();
+                participantBLL.Delete_ProName(ProName);
 
-            SelectedPramasBLL selectedPramasBLL = new SelectedPramasBLL();
-            selectedPramasBLL.Delete_ProName(ProName);
+                SelectedPramasBLL selectedPramasBLL = new SelectedPramasBLL();
+                selectedPramasBLL.Delete_ProName(ProName);
 
-            ProNameDataBind();
+                ProNameDataBind();
+            }
+            else
+            {
+                this.Close();
+            }
         }
     }
 }

@@ -14,10 +14,17 @@ namespace HOZAPWorkStation
 {
     public partial class InitialInterface : Form
     {
-        public static string ProName="";
+        public static string ProName = "";
         public InitialInterface()
         {
             InitializeComponent();
+
+            #region 网上案例，本项目效果不明显，依然闪屏
+            //SetStyle(ControlStyles.UserPaint, true);
+            //SetStyle(ControlStyles.AllPaintingInWmPaint, true); // 禁止擦除背景.
+            //SetStyle(ControlStyles.DoubleBuffer, true); // 双缓冲
+            #endregion
+
             this.preBtn.Enabled = false;
             this.preBtn.BackColor = Color.LightGray;
             this.nodeBtn.Enabled = false;
@@ -28,6 +35,29 @@ namespace HOZAPWorkStation
             this.printBtn.BackColor = Color.LightGray;
         }
 
+        /// <summary>
+        /// 解决闪屏问题
+        /// 1.当一个控件需要绘制时，Windows会向此窗体发送两条消息：
+        /// 第一条是：WM_ERASEBKGND，这条消息使得背景得以绘制；
+        /// 第二条消息是：WM_PAINT，使得前景被绘制，首先背景色是简单的，
+        /// 所以速度较快，前景色较为耗时（相对），所以就产生了这种闪烁现象，
+        /// 这是问题的根源，Winform为此提供了一个解决方案：双缓冲（OptimizedDoubleBuffer）。
+        /// 设置了这个值之后会把窗体和它的子窗体都开启双缓冲。
+        /// </summary>
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;
+                return cp;
+            }
+        }
+
+        /// <summary>
+        /// 设置按钮是否可用 ，打开文件前，部分按钮不可用
+        /// </summary>
+        /// <param name="sender"></param>
         private void InitialInterface_SetBtn(object sender)
         {
             if (sender is ProNameList)
@@ -68,7 +98,7 @@ namespace HOZAPWorkStation
                     this.hAZOP分析ToolStripMenuItem.Enabled = true;
                 }
             }
-            
+
         }
 
         /// <summary>
@@ -101,6 +131,14 @@ namespace HOZAPWorkStation
         /// <param name="controls">控件集合</param>
         private void setControls(float newx, float newy, Control controls)
         {
+           
+            this.tpSysteamIndex.BackgroundImage = null;
+            this.openBtn.BackgroundImage = null;
+            this.newBtn.BackgroundImage = null;
+            this.preBtn.BackgroundImage = null;
+            this.nodeBtn.BackgroundImage = null;
+            this.analysisBtn.BackgroundImage = null;
+            this.printBtn.BackgroundImage = null;
             //foreach遍历控件集，重新设定控件值
             foreach (Control control in this.tpSysteamIndex.Controls)
             {
@@ -120,10 +158,24 @@ namespace HOZAPWorkStation
                     setControls(newx, newy, control);
                 }
             }
+            Image image = Image.FromFile("Images/background.jpg");
+            this.tpSysteamIndex.BackgroundImage = image;
+            image = Image.FromFile("Images/OpenProject‘.png");
+            this.openBtn.BackgroundImage = image;
+            image = Image.FromFile("Images/NewProject.png");
+            this.newBtn.BackgroundImage = image;
+            image = Image.FromFile("Images/PrePro.png");
+            this.preBtn.BackgroundImage = image;
+            image = Image.FromFile("Images/Node.png");
+            this.nodeBtn.BackgroundImage = image;
+            image = Image.FromFile("Images/analysis.png");
+            this.analysisBtn.BackgroundImage = image;
+            image = Image.FromFile("Images/Print.png");
+            this.printBtn.BackgroundImage = image;
         }
         private void InitialInterface_Load(object sender, EventArgs e)
         {
-         
+
             X = this.Width;
             Y = this.Height;
             setTag(this);
@@ -131,10 +183,9 @@ namespace HOZAPWorkStation
 
         private void InitialInterface_Resize(object sender, EventArgs e)
         {
-            float newx = (this.Width) / X;
-            float newy = (this.Height) / Y;
-            setControls(newx, newy, this);
+  
         }
+
 
         private void baseUserControl1_Load(object sender, EventArgs e)
         {
@@ -144,7 +195,7 @@ namespace HOZAPWorkStation
 
         private void nodeBtn_Click(object sender, EventArgs e)
         {
-           
+
             LoadNodePartitionPage();
 
         }
@@ -185,12 +236,12 @@ namespace HOZAPWorkStation
             try
             {
                 Rectangle myTabRect = this.MainTableControl.GetTabRect(e.Index);
-              
+
                 if (e.Index == 0)//系统首页不画关闭按钮
                 {
                     //先添加TabPage属性   
                     e.Graphics.DrawString(this.MainTableControl.TabPages[e.Index].Text
-                    , this.Font, SystemBrushes.ControlText, myTabRect.X+8 , myTabRect.Y+8 );
+                    , this.Font, SystemBrushes.ControlText, myTabRect.X + 8, myTabRect.Y + 8);
                     return;
                 }
                 e.Graphics.DrawString(this.MainTableControl.TabPages[e.Index].Text
@@ -203,7 +254,7 @@ namespace HOZAPWorkStation
                     myTabRect.Height = CLOSE_SIZE;
                     e.Graphics.DrawRectangle(p, myTabRect);
                 }
-                
+
                 //填充矩形框
                 Color recColor = e.State == DrawItemState.Selected ? Color.DarkRed : Color.DarkGray;
                 using (Brush b = new SolidBrush(recColor))
@@ -228,7 +279,7 @@ namespace HOZAPWorkStation
             {
                 MessageBox.Show(ex.ToString());
             }
-           
+
         }
 
         /// <summary>
@@ -267,7 +318,7 @@ namespace HOZAPWorkStation
         {
             this.MainTableControl.TabPages.Remove(this.MainTableControl.SelectedTab);
         }
-       
+
         private void preBtn_Click(object sender, EventArgs e)
         {
             LoadPreparePage();
@@ -337,7 +388,7 @@ namespace HOZAPWorkStation
             NewProjectInterface NewProject = NewProjectInterface.InstanceObject();
             NewProject.Focus();
             NewProject.MyLoadPreparePageEvents += new NewProjectInterface.LoadPreparePageEvents(LoadPreparePage);
-            NewProject.SetInitBtn+= new System.Action<object>(InitialInterface_SetBtn);
+            NewProject.SetInitBtn += new System.Action<object>(InitialInterface_SetBtn);
             NewProject.Show();
         }
 
@@ -353,46 +404,6 @@ namespace HOZAPWorkStation
         {
             ExportToExcel.DataBaseToExcel();
         }
-
-        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void 打开ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openBtn_Click( sender,  e);
-        }
-
-        private void 新建ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            newBtn_Click(sender, e);
-        }
-
-        private void 导出ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-         
-            printBtn_Click(sender, e);
-        }
-
-        private void 项目准备ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-            preBtn_Click(sender, e);
-        }
-
-        private void 节点划分ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-          
-           
-            nodeBtn_Click(sender, e);
-
-        }
-
-        private void hAZOP分析ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-            analysisBtn_Click(sender, e);
-        }
     }
 }
+
