@@ -237,7 +237,6 @@
       <DependentUpon>UcNodePartition.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Documents\DataDictionary.docx" />
-    <None Include="HOZAPWorkStation_TemporaryKey.pfx" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\HOZAPWorkStation.csproj.CoreCompileInputs.cache" />
