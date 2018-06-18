@@ -15,7 +15,9 @@ namespace HOZAPDAL
     public static class SqlHelper
     {
         #region 获取配置文件中的连接字符串
-        private static readonly string ConnStr = ConfigurationManager.ConnectionStrings["SqlConn"].ConnectionString;
+       //private static readonly string ConnStr = ConfigurationManager.ConnectionStrings["SqlConn"].ConnectionString;
+
+       static string ConnStr = "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog = HAZOPAnalysisDB; Integrated Security = true; Connect Timeout = 30;";
         #endregion
 
         #region 用于数据的增删改

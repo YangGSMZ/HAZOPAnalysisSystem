@@ -94,6 +94,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(456, 299);
             this.Name = "ProNameList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "已创建项目";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProNameList_FormClosing);
             this.Load += new System.EventHandler(this.ProNameList_Load);
