@@ -184,7 +184,9 @@ namespace HOZAPWorkStation
 
         private void InitialInterface_Resize(object sender, EventArgs e)
         {
-  
+            float newx = (this.Width) / X; //窗体宽度缩放比例
+            float newy = (this.Height) / Y;//窗体高度缩放比例
+            setControls(newx, newy, this);//随窗体改变控件大小
         }
 
 

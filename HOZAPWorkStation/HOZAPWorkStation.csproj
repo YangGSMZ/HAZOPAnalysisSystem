@@ -258,7 +258,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
@@ -270,6 +269,21 @@
       <DependentUpon>HAZOPAnalysisDB.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="bin\Debug\App_Data\HAZOPAnalysisDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Debug\App_Data\HAZOPAnalysisDB_log.ldf">
+      <DependentUpon>HAZOPAnalysisDB.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\Debug\Images\analysis.png" />
+    <Content Include="bin\Debug\Images\background.jpg" />
+    <Content Include="bin\Debug\Images\Folder.JPG" />
+    <Content Include="bin\Debug\Images\NewProject.png" />
+    <Content Include="bin\Debug\Images\Node.png" />
+    <Content Include="bin\Debug\Images\OpenProject‘.png" />
+    <Content Include="bin\Debug\Images\PrePro.png" />
+    <Content Include="bin\Debug\Images\Print.png" />
     <Content Include="lnpu.ico" />
     <Content Include="obj\Debug\HOZAPWorkStation.csproj.FileListAbsolute.txt" />
     <Content Include="Resouces\Images\background.jpg" />
