@@ -209,7 +209,7 @@ namespace HOZAPWorkStation
         {
             if (this.rtbAnaInputInterface.Text.Length > 0)
             {
-                this.rtbAnaInputInterface.Text = this.rtbAnaInputInterface.Text + "\n" + this.dgvTbcPageAnaExpert.SelectedCells[0].Value.ToString();
+                this.rtbAnaInputInterface.Text = this.rtbAnaInputInterface.Text + "；\n" + this.dgvTbcPageAnaExpert.SelectedCells[0].Value.ToString();
             }
             else
             {
@@ -269,7 +269,7 @@ namespace HOZAPWorkStation
         {
             if (this.rtbAnaInputInterface.Text.Length > 0)
             {
-                this.rtbAnaInputInterface.Text = this.rtbAnaInputInterface.Text + "\n" + this.dgvTbcPageAnaPersonal.SelectedCells[0].Value.ToString();
+                this.rtbAnaInputInterface.Text = this.rtbAnaInputInterface.Text + "；\n" + this.dgvTbcPageAnaPersonal.SelectedCells[0].Value.ToString();
             }
             else
             {

@@ -45,5 +45,20 @@ namespace HAZOPBLL
         {
             return dal.OutAllToExcel(ProName);
         }
+
+        public DataTable OutAllToExcel(string ProName,string NodeName)
+        {
+            return dal.OutAllToExcel(ProName, NodeName);
+        }
+        public DataTable OutAllToExcel(string ProName,string NodeName,string Pramas)
+        {
+            return dal.OutAllToExcel(ProName, NodeName, Pramas);
+        }
+        public DataTable OutAllToExcel(string ProName, string PramasAndIntroduce, string NodeName, string Pramas)
+        {
+            return dal.OutAllToExcel(ProName, PramasAndIntroduce, NodeName, Pramas);
+        }
+
+
     }
 }

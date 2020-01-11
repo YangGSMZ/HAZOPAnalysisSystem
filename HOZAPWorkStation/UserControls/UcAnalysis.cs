@@ -28,13 +28,13 @@ namespace HOZAPWorkStation.UserControls
         private void CreateTree()
         {
             TreeNode root = new TreeNode();
-            root.Text = InitialInterface.ProName;
+            root.Text = HAZOP分析系统.ProName;
             trvUcAnaly.Nodes.Add(root);
             SelectedPramasBLL spbll = new SelectedPramasBLL();
             IntroducerBLL ibll = new IntroducerBLL();
             NodeBLL nbll = new NodeBLL();
-            List<Node> nodelist = nbll.Get_NodeList(InitialInterface.ProName);
-            List<SelectedPramas> sp = spbll.Get_SelectedPramasList(InitialInterface.ProName);
+            List<Node> nodelist = nbll.Get_NodeList(HAZOP分析系统.ProName);
+            List<SelectedPramas> sp = spbll.Get_SelectedPramasList(HAZOP分析系统.ProName);
             if (nodelist != null)
             {
                 for (int i = 0; i < nodelist.Count; i++)
@@ -136,7 +136,7 @@ namespace HOZAPWorkStation.UserControls
                 //空数据源
                 List<AnalysResultTotal> resultList = new List<AnalysResultTotal>();
                 dgvCcAnalys1.DataSource = new BindingList<AnalysResultTotal>(resultList);
-                
+
             }
 
             //选中节点 节点，绑定节点下所有参数引导词数据，且“参数”列可见
@@ -155,7 +155,7 @@ namespace HOZAPWorkStation.UserControls
                 {
                     dgvCcAnalys1.AllowUserToAddRows = false;
                 }
-                List<AnalysResultTotal> resultList = analyResultBLL.Get_All(InitialInterface.ProName, this.trvUcAnaly.SelectedNode.Text);
+                List<AnalysResultTotal> resultList = analyResultBLL.Get_All(HAZOP分析系统.ProName, this.trvUcAnaly.SelectedNode.Text);
                 if (resultList == null)
                 {
                     resultList = new List<AnalysResultTotal>();
@@ -180,7 +180,7 @@ namespace HOZAPWorkStation.UserControls
                 {
                     dgvCcAnalys1.AllowUserToAddRows = true;
                 }
-                List<AnalysResultTotal> resultList = analyResultBLL.Get_Params(InitialInterface.ProName,selectedParam,this.trvUcAnaly.SelectedNode.Parent.Text);
+                List<AnalysResultTotal> resultList = analyResultBLL.Get_Params(HAZOP分析系统.ProName, selectedParam, this.trvUcAnaly.SelectedNode.Parent.Text);
                 if (resultList == null)
                 {
                     resultList = new List<AnalysResultTotal>();
@@ -201,7 +201,7 @@ namespace HOZAPWorkStation.UserControls
                 }
                 dgvCcAnalys1.Columns["dgcCcAnalyParams"].Visible = false;
                 dgvCcAnalys1.Columns["dgcCcAnalyParamsAndIntro"].ReadOnly = true;
-                List<AnalysResultTotal> resultList = analyResultBLL.Get_Introduces(InitialInterface.ProName, selectedParam,this.trvUcAnaly.SelectedNode.Parent.Parent.Text);
+                List<AnalysResultTotal> resultList = analyResultBLL.Get_Introduces(HAZOP分析系统.ProName, selectedParam, this.trvUcAnaly.SelectedNode.Parent.Parent.Text);
                 if (resultList == null)
                 {
                     resultList = new List<AnalysResultTotal>();
@@ -240,7 +240,7 @@ namespace HOZAPWorkStation.UserControls
             //强制转化传递过来的输入窗体类型
             AnalyInputInterface analyInputInterface = (AnalyInputInterface)(sender);
             e = ClickEventE;
-            Refresh(analyInputInterface,e);
+            Refresh(analyInputInterface, e);
         }
         /// <summary>
         /// 实施刷新用户控件中的datagridview数据
@@ -259,7 +259,7 @@ namespace HOZAPWorkStation.UserControls
         /// <param name="e"></param>
         private void dgvCcAnalys1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex ==3|| e.ColumnIndex == 4|| e.ColumnIndex == 6|| e.ColumnIndex == 10|| e.ColumnIndex == 15|| e.ColumnIndex == 16|| e.ColumnIndex == 17)
+            if (e.ColumnIndex == 3 || e.ColumnIndex == 4 || e.ColumnIndex == 6 || e.ColumnIndex == 10 || e.ColumnIndex == 15 || e.ColumnIndex == 16 || e.ColumnIndex == 17)
             {
                 AnalyInputInterface analyInputInterface = new AnalyInputInterface();
                 //订阅事件
@@ -286,6 +286,9 @@ namespace HOZAPWorkStation.UserControls
         /// <param name="e"></param>
         private void dgvCcAnalys1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
+
+            Console.WriteLine(e.ColumnIndex);
             if (e.RowIndex >= 0)
             {
                 //选中“参数+引导词”
@@ -300,10 +303,10 @@ namespace HOZAPWorkStation.UserControls
                         ucAnalyCombox.ReceiveSelectedTreeNode = this.trvUcAnaly.Tag.ToString();
                         ucAnalyCombox.Focus();
                         ucAnalyCombox.Show();
-                    } 
+                    }
                 }
                 //选中F0
-                if (e.ColumnIndex==5)
+                if (e.ColumnIndex == 5)
                 {
                     UcAnalyProbility ucAnalyProbility = UcAnalyProbility.InstanceObject();
                     ucAnalyProbility.Text = "F0";
@@ -323,8 +326,11 @@ namespace HOZAPWorkStation.UserControls
                     ClickEventE = e;
                     ucAnalyProbility.Show();
                 }
+
+
                 //选中Si
-                if (e.ColumnIndex == 7)
+                //if (e.ColumnIndex == 7)
+                if (e.ColumnIndex == 8)
                 {
                     UcAnalyLevel ucAnalyLevel = UcAnalyLevel.InstanceObject();
                     ucAnalyLevel.Text = "Si";
@@ -335,9 +341,10 @@ namespace HOZAPWorkStation.UserControls
                     ucAnalyLevel.Show();
                 }
                 //选中S
-                if (e.ColumnIndex == 12)
+                //if (e.ColumnIndex == 12)
+                if (e.ColumnIndex == 13)
                 {
-                    UcAnalyLevel ucAnalyLevel =UcAnalyLevel.InstanceObject();
+                    UcAnalyLevel ucAnalyLevel = UcAnalyLevel.InstanceObject();
                     ucAnalyLevel.Text = "S";
                     //订阅事件
                     ucAnalyLevel.TransferToSx += new System.Action<object, DataGridViewCellEventArgs>(UcAnalyLevel_TranferToSx);
@@ -347,9 +354,10 @@ namespace HOZAPWorkStation.UserControls
                 }
 
                 //选中Li
-                if (e.ColumnIndex == 8)
+                //if (e.ColumnIndex ==8)
+                if (e.ColumnIndex == 9)
                 {
-                    UcAnalsFrequency ucAnalsFrequency =UcAnalsFrequency.InstanceObject();
+                    UcAnalsFrequency ucAnalsFrequency = UcAnalsFrequency.InstanceObject();
                     ucAnalsFrequency.Text = "Li";
                     //订阅事件
                     ucAnalsFrequency.TransferToLx += new System.Action<object, DataGridViewCellEventArgs>(UcAnalsFrequency_TranferToLx);
@@ -359,7 +367,8 @@ namespace HOZAPWorkStation.UserControls
                 }
 
                 //选中L
-                if (e.ColumnIndex == 13)
+                //if (e.ColumnIndex == 13)
+                if (e.ColumnIndex == 14)
                 {
                     UcAnalsFrequency ucAnalsFrequency = UcAnalsFrequency.InstanceObject();
                     ucAnalsFrequency.Text = "L";
@@ -377,21 +386,25 @@ namespace HOZAPWorkStation.UserControls
             UcAnalsFrequency ucAnalsFrequency = (UcAnalsFrequency)(sender);
             e = ClickEventE;
             this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = ucAnalsFrequency.GetSelectedContext();
-            if (e.ColumnIndex == 8)
+            //if (e.ColumnIndex == 8)
+            if (e.ColumnIndex == 9)
             {
-                string SiText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[7].Value==null?"": this.dgvCcAnalys1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                //  string SiText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[7].Value==null?"": this.dgvCcAnalys1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                string SiText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[8].Value == null ? "" : this.dgvCcAnalys1.Rows[e.RowIndex].Cells[8].Value.ToString();
                 if (SiText.Length > 0)
                 {
-                    string slStr ="Ri"+ SiText + this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                    string slStr = "Ri" + SiText + this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                     SetRiValue(slStr, e);
                 }
             }
-            if (e.ColumnIndex == 13)
+            // if (e.ColumnIndex == 13)
+            if (e.ColumnIndex == 14)
             {
-                string SText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[12].Value==null?"": this.dgvCcAnalys1.Rows[e.RowIndex].Cells[12].Value.ToString();
+                //  string SText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[12].Value==null?"": this.dgvCcAnalys1.Rows[e.RowIndex].Cells[12].Value.ToString();
+                string SText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[13].Value == null ? "" : this.dgvCcAnalys1.Rows[e.RowIndex].Cells[13].Value.ToString();
                 if (SText.Length > 0)
                 {
-                    string slStr ="R"+ SText + this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                    string slStr = "R" + SText + this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                     SetRiValue(slStr, e);
                 }
             }
@@ -402,21 +415,25 @@ namespace HOZAPWorkStation.UserControls
             UcAnalyLevel ucAnalyLevel = (UcAnalyLevel)(sender);
             e = ClickEventE;
             this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = ucAnalyLevel.GetSelectedContext();
-            if (e.ColumnIndex == 7)
+            // if (e.ColumnIndex == 7)
+            if (e.ColumnIndex == 8)
             {
-                string liText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[8].Value==null?"": this.dgvCcAnalys1.Rows[e.RowIndex].Cells[8].Value.ToString();
-                if (liText.Length>0)
+                //string liText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[8].Value==null?"": this.dgvCcAnalys1.Rows[e.RowIndex].Cells[8].Value.ToString();
+                string liText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value == null ? "" : this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value.ToString();
+                if (liText.Length > 0)
                 {
-                    string slStr = "Ri"+this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + liText;
-                    SetRiValue(slStr,e);
+                    string slStr = "Ri" + this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + liText;
+                    SetRiValue(slStr, e);
                 }
             }
-            if (e.ColumnIndex == 12)
+            //if (e.ColumnIndex == 12)
+            if (e.ColumnIndex == 13)
             {
-                string lText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[13].Value==null?"": this.dgvCcAnalys1.Rows[e.RowIndex].Cells[13].Value.ToString();
+                //  string lText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[13].Value == null ? "" : this.dgvCcAnalys1.Rows[e.RowIndex].Cells[13].Value.ToString();
+                string lText = this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value == null ? "" : this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value.ToString();
                 if (lText.Length > 0)
                 {
-                    string slStr = "R"+this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + lText;
+                    string slStr = "R" + this.dgvCcAnalys1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + lText;
                     SetRiValue(slStr, e);
                 }
             }
@@ -431,224 +448,225 @@ namespace HOZAPWorkStation.UserControls
             {
                 #region Ri
                 //一列一行
-                case "Ri11":this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "D";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.LightBlue;
+                case "Ri11":
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.LightBlue;
                     break;
                 case "Ri21":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "C";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Yellow;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "C";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Yellow;
                     break;
                 case "Ri31":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "B";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Orange;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Orange;
                     break;
                 case "Ri41":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "B";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Orange;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Orange;
                     break;
                 case "Ri51":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "A";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Red;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "A";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Red;
                     break;
 
                 //1列2行
                 case "Ri12":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Green;
                     break;
                 case "Ri22":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "D";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.LightBlue;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.LightBlue;
                     break;
                 case "Ri32":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "C";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Yellow;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "C";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Yellow;
                     break;
                 case "Ri42":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "B";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Orange;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Orange;
                     break;
                 case "Ri52":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "B";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Orange;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Orange;
                     break;
 
                 //1列3行
                 case "Ri13":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Green;
                     break;
                 case "Ri23":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Green;
                     break;
                 case "Ri33":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "D";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.LightBlue;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.LightBlue;
                     break;
                 case "Ri43":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "C";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Yellow;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "C";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Yellow;
                     break;
                 case "Ri53":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "B";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Orange;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Orange;
                     break;
 
                 //1列4行
                 case "Ri14":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Green;
                     break;
                 case "Ri24":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Green;
                     break;
                 case "Ri34":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Green;
                     break;
                 case "Ri44":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "D";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.LightBlue;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.LightBlue;
                     break;
                 case "Ri54":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "C";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Orange;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "C";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Orange;
                     break;
 
                 //5列1行
                 case "Ri15":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Green;
                     break;
                 case "Ri25":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Green;
                     break;
                 case "Ri35":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Green;
                     break;
                 case "Ri45":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.Green;
                     break;
                 case "Ri55":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Value = "D";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[9].Style.BackColor = Color.LightBlue;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[10].Style.BackColor = Color.LightBlue;
                     break;
                 #endregion
 
                 #region R
                 //一列一行
                 case "R11":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "D";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.LightBlue;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.LightBlue;
                     break;
                 case "R21":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "C";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Yellow;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "C";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Yellow;
                     break;
                 case "R31":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "B";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Orange;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Orange;
                     break;
                 case "R41":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "B";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Orange;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Orange;
                     break;
                 case "R51":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "A";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Red;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "A";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Red;
                     break;
 
                 //1列2行
                 case "R12":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Green;
                     break;
                 case "R22":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "D";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.LightBlue;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.LightBlue;
                     break;
                 case "R32":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "C";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Yellow;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "C";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Yellow;
                     break;
                 case "R42":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "B";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Orange;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Orange;
                     break;
                 case "R52":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "B";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Orange;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Orange;
                     break;
 
                 //1列3行
                 case "R13":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Green;
                     break;
                 case "R23":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Green;
                     break;
                 case "R33":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "D";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.LightBlue;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.LightBlue;
                     break;
                 case "R43":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "C";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Yellow;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "C";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Yellow;
                     break;
                 case "R53":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "B";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Orange;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "B";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Orange;
                     break;
 
                 //1列4行
                 case "R14":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Green;
                     break;
                 case "R24":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Green;
                     break;
                 case "R34":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Green;
                     break;
                 case "R44":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "D";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.LightBlue;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.LightBlue;
                     break;
                 case "R54":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "C";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Orange;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "C";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Orange;
                     break;
 
                 //5列1行
                 case "R15":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Green;
                     break;
                 case "R25":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Green;
                     break;
                 case "R35":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Green;
                     break;
                 case "R45":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "E";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.Green;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "E";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.Green;
                     break;
                 case "R55":
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Value = "D";
-                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[14].Style.BackColor = Color.LightBlue;
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Value = "D";
+                    this.dgvCcAnalys1.Rows[e.RowIndex].Cells[15].Style.BackColor = Color.LightBlue;
                     break;
                 #endregion
                 default: break;
@@ -707,13 +725,13 @@ namespace HOZAPWorkStation.UserControls
                 new SqlParameter("@ProName",SqlDbType.VarChar),
                 new SqlParameter("@RecordNumver",SqlDbType.VarChar),
             };
-                pms[0].Value = InitialInterface.ProName;
+                pms[0].Value = HAZOP分析系统.ProName;
                 pms[1].Value = this.dgvCcAnalys1.SelectedRows[0].Cells[0].Value.ToString();
                 SqlHelper.ExecuteNonQuery(sqlString, pms);
                 List<AnalysResultTotal> analysResultTotals = new List<AnalysResultTotal>();
-                analysResultTotals = analyResultBLL.Get_All(InitialInterface.ProName,this.trvUcAnaly.SelectedNode.Text);
+                analysResultTotals = analyResultBLL.Get_All(HAZOP分析系统.ProName, this.trvUcAnaly.SelectedNode.Text);
                 this.dgvCcAnalys1.DataSource = analysResultTotals;
-            }  
+            }
         }
         public bool SaveContent()
         {
@@ -729,7 +747,7 @@ namespace HOZAPWorkStation.UserControls
                     for (int i = 0; i < dgvCcAnalys1.Rows.Count - 1; i++)
                     {
                         AnalysResultTotal AnalysResultTotal = new AnalysResultTotal();
-                        AnalysResultTotal.ProjectName = InitialInterface.ProName;
+                        AnalysResultTotal.ProjectName = HAZOP分析系统.ProName;
                         AnalysResultTotal.RecordName = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value.ToString();
                         AnalysResultTotal.Pramas = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value.ToString();
                         if (AnalysResultTotal.Pramas.Length == 0)
@@ -821,7 +839,7 @@ namespace HOZAPWorkStation.UserControls
                     for (int i = 0; i < dgvCcAnalys1.Rows.Count; i++)
                     {
                         AnalysResultTotal AnalysResultTotal = new AnalysResultTotal();
-                        AnalysResultTotal.ProjectName = InitialInterface.ProName;
+                        AnalysResultTotal.ProjectName = HAZOP分析系统.ProName;
                         AnalysResultTotal.RecordName = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyNum"].Value.ToString();
                         //AnalysResultTotal.Pramas = this.trvUcAnaly.SelectedNode.Text;
                         AnalysResultTotal.Pramas = dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value == null ? "" : dgvCcAnalys1.Rows[i].Cells["dgcCcAnalyParams"].Value.ToString();
@@ -900,7 +918,7 @@ namespace HOZAPWorkStation.UserControls
                 }
             }
 
-       
+
             return flag;
             //List<AnalysResultTotal> analysResultTotals = new List<AnalysResultTotal>();
             //analysResultTotals = analyResultBLL.Get_All(InitialInterface.ProName,this.trvUcAnaly.SelectedNode.Text);
@@ -921,10 +939,10 @@ namespace HOZAPWorkStation.UserControls
         /// <param name="e"></param>
         private void trvUcAnaly_BeforeSelect(object sender, TreeViewCancelEventArgs e)
         {
-            if (this.trvUcAnaly.SelectedNode!=null&&this.trvUcAnaly.SelectedNode.Level == 2)
+            if (this.trvUcAnaly.SelectedNode != null && this.trvUcAnaly.SelectedNode.Level == 2)
             {
                 SaveContent();
-            } 
+            }
         }
 
         public object TreeViewSelected
@@ -939,11 +957,61 @@ namespace HOZAPWorkStation.UserControls
             get;
         }
 
+
+        /// <summary>
+        /// 打印预览页面加载事件
+        /// </summary>
+        public delegate void LoadPrintViewPage(object o,int Report);
+        public event LoadPrintViewPage MyLoadPrintViewPage;
         private void tspUcAnalyOutPut_Click(object sender, EventArgs e)
         {
-            ExportToExcel.DataGridViewToExcel(this.dgvCcAnalys1);
+            AnalyResultBLL analyResultBLL = new AnalyResultBLL();
+
+            if (this.trvUcAnaly.SelectedNode.Level == 0)
+            {
+                return;
+            }
+            if (this.trvUcAnaly.SelectedNode.Level == 1)
+            {
+                 string NodeName = this.trvUcAnaly.SelectedNode.Text;
+                 DataTable dt = analyResultBLL.OutAllToExcel(HAZOP分析系统.ProName,NodeName);
+
+                if (MyLoadPrintViewPage != null)
+                {
+
+                    MyLoadPrintViewPage(dt, 1);
+                }
+            }
+            if (this.trvUcAnaly.SelectedNode.Level == 2)
+            {
+                string NodeName = this.trvUcAnaly.SelectedNode.Parent.Text;
+                string SelectPramas= this.trvUcAnaly.SelectedNode.Text;
+                DataTable dt = analyResultBLL.OutAllToExcel(HAZOP分析系统.ProName, NodeName, SelectPramas);
+                if (MyLoadPrintViewPage != null)
+                {
+
+                    MyLoadPrintViewPage(dt, 2);
+                }
+            }
+            if (this.trvUcAnaly.SelectedNode.Level == 3)
+            {
+                string NodeName = this.trvUcAnaly.SelectedNode.Parent.Parent.Text;
+                string SelectPramas = this.trvUcAnaly.SelectedNode.Parent.Text;
+                string Introducer= this.trvUcAnaly.SelectedNode.Text;
+                DataTable dt = analyResultBLL.OutAllToExcel(HAZOP分析系统.ProName,Introducer,NodeName, SelectPramas);
+                if (MyLoadPrintViewPage != null)
+                {
+
+                    MyLoadPrintViewPage(dt, 2);
+                }
+            }
+
+            //ExportToExcel.DataGridViewToExcel(this.dgvCcAnalys1);
         }
 
-    
+        private void dgvCcAnalys1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

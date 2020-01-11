@@ -16,7 +16,7 @@ namespace HOZAPWorkStation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InitialInterface());
+            Application.Run(new HAZOP分析系统());
            
         }
     }

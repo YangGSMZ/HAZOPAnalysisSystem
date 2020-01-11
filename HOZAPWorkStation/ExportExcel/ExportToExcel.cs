@@ -109,13 +109,16 @@ namespace HOZAPWorkStation.ExportExcel
                 CombineTransverse(2, 13, 16, "日期：", objExcel, objsheet);
 
                 ParticipantBLL participantBLL = new ParticipantBLL();
-                List<Participant> list = participantBLL.Get_ParticipantInfoList(InitialInterface.ProName);
+                List<Participant> list = participantBLL.Get_ParticipantInfoList(HAZOP分析系统.ProName);
                 string participantList = String.Empty;
-                foreach (Participant p in list)
+                if (list != null)
                 {
-                    participantList = participantList + p.Name + " ";
+                    foreach (Participant p in list)
+                    {
+                        participantList = participantList + p.Name + " ";
+                    }
                 }
-
+              
                 CombineTransverse(3, 1, 3, "小组成员："+ participantList, objExcel, objsheet);
                 CombineTransverse(3, 4, 12, "", objExcel, objsheet);
                 CombineTransverse(3, 13, 16, "会议时间：", objExcel, objsheet);
@@ -214,7 +217,7 @@ namespace HOZAPWorkStation.ExportExcel
         public static void DataBaseToExcel()
         {
             AnalyResultBLL analyResultBLL = new AnalyResultBLL();
-            System.Data.DataTable dt = analyResultBLL.OutAllToExcel(InitialInterface.ProName);
+            System.Data.DataTable dt = analyResultBLL.OutAllToExcel(HAZOP分析系统.ProName);
 
             //申明保存对话框    
             SaveFileDialog dlg = new SaveFileDialog();
@@ -300,12 +303,16 @@ namespace HOZAPWorkStation.ExportExcel
                 CombineTransverse(2, 13, 16, "日期：", objExcel, objsheet);
 
                 ParticipantBLL participantBLL = new ParticipantBLL();
-                List<Participant> list = participantBLL.Get_ParticipantInfoList(InitialInterface.ProName);
+                List<Participant> list = participantBLL.Get_ParticipantInfoList(HAZOP分析系统.ProName);
                 string participantList = String.Empty;
-                foreach (Participant p in list)
+                if(list!=null)
                 {
-                    participantList = participantList + p.Name + " ";
+                    foreach (Participant p in list)
+                    {
+                        participantList = participantList + p.Name + " ";
+                    }
                 }
+               
 
                 CombineTransverse(3, 1, 3, "小组成员：" + participantList, objExcel, objsheet);
                 CombineTransverse(3, 4, 12, "", objExcel, objsheet);
@@ -384,27 +391,27 @@ namespace HOZAPWorkStation.ExportExcel
                         }
                         if (dt.Columns[i].ColumnName == "Si")
                         {
-                            colunmName = "Si";
+                            colunmName = "S";
                         }
                         if (dt.Columns[i].ColumnName == "Li")
                         {
-                            colunmName = "Li";
+                            colunmName = "L";
                         }
                         if (dt.Columns[i].ColumnName == "Ri")
                         {
-                            colunmName = "Ri";
+                            colunmName = "R";
                         }
                         if (dt.Columns[i].ColumnName == "S")
                         {
-                            colunmName = "S";
+                            colunmName = "Sr";
                         }
                         if (dt.Columns[i].ColumnName == "L")
                         {
-                            colunmName = "L";
+                            colunmName = "Lr";
                         }
                         if (dt.Columns[i].ColumnName == "R")
                         {
-                            colunmName = "R";
+                            colunmName = "Rr";
                         }
                         objExcel.Cells[6, displayColumnsCount] = colunmName;
                         displayColumnsCount++;

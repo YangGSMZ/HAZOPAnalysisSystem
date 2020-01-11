@@ -1,4 +1,5 @@
-﻿using HOZAPWorkStation.ExportExcel;
+﻿using HAZOPBLL;
+using HOZAPWorkStation.ExportExcel;
 using HOZAPWorkStation.UserControls;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,10 @@ using System.Windows.Forms;
 
 namespace HOZAPWorkStation
 {
-    public partial class InitialInterface : Form
+    public partial class HAZOP分析系统 : Form
     {
         public static string ProName = "";
-        public InitialInterface()
+        public HAZOP分析系统()
         {
             InitializeComponent();
 
@@ -65,6 +66,7 @@ namespace HOZAPWorkStation
                 ProNameList proNameList = (ProNameList)sender;
                 if (proNameList.IsOpen)
                 {
+                    MessageBox.Show("成功载入文件，选项已解锁，请继续操作");
                     this.preBtn.Enabled = true;
                     this.preBtn.BackColor = SystemColors.ActiveCaption;
                     this.nodeBtn.Enabled = true;
@@ -96,7 +98,7 @@ namespace HOZAPWorkStation
                     this.节点划分ToolStripMenuItem1.Enabled = true;
                     this.项目准备ToolStripMenuItem1.Enabled = true;
                     this.hazop分析ToolStripMenuItem1.Enabled = true;
-
+               
                 }
             }
 
@@ -159,7 +161,8 @@ namespace HOZAPWorkStation
                     setControls(newx, newy, control);
                 }
             }
-            Image image = Image.FromFile("Images/background.jpg");
+            //Image image = Image.FromFile("Images/background.jpg")
+                Image image = Image.FromFile("Images/bg.png");
             this.tpSysteamIndex.BackgroundImage = image;
             image = Image.FromFile("Images/OpenProject‘.png");
             this.openBtn.BackgroundImage = image;
@@ -355,6 +358,31 @@ namespace HOZAPWorkStation
         }
 
 
+        private void LoadPrintViewPage(object o,int Report)
+        {
+            if (!MainTableControl.Controls.ContainsKey("tpPrintView"))
+            {
+                PrintView uc = new PrintView();
+                TabPage tp = new TabPage();
+                uc.Dock = DockStyle.Fill;
+                uc.datasource = o;
+                uc.Report = Report;
+                tp.Controls.Add(uc);
+                tp.Name = "tpPrintView";
+                tp.Text = "打印预览";
+                tp.Font = new Font("宋体", 9);
+                this.MainTableControl.Controls.Add(tp);
+                this.MainTableControl.SelectTab("tpPrintView");
+
+            }
+            else
+            {
+                this.MainTableControl.SelectTab("tpPrintView");
+
+            }
+        }
+
+
         private void analysisBtn_Click(object sender, EventArgs e)
         {
             LoadAnalysisPage();
@@ -371,6 +399,7 @@ namespace HOZAPWorkStation
                 UcAnalysis uc = new UcAnalysis();
                 TabPage tp = new TabPage();
                 uc.Dock = DockStyle.Fill;
+                uc.MyLoadPrintViewPage += new UcAnalysis.LoadPrintViewPage(LoadPrintViewPage);
                 tp.Controls.Add(uc);
                 tp.Name = "tpAnalysis";
                 tp.Text = "hazop分析";
@@ -401,11 +430,17 @@ namespace HOZAPWorkStation
             proNameList.SetInitBtn += new System.Action<object>(InitialInterface_SetBtn);
             proNameList.Focus();
             proNameList.Show();
+       
         }
 
         private void printBtn_Click(object sender, EventArgs e)
         {
-            ExportToExcel.DataBaseToExcel();
+            AnalyResultBLL analyResultBLL = new AnalyResultBLL();
+            System.Data.DataTable dt = analyResultBLL.OutAllToExcel(HAZOP分析系统.ProName);
+            LoadPrintViewPage(dt,1);
+
+           // ExportToExcel.DataBaseToExcel();
+
         }
 
         private void 新建ToolStripMenuItem1_Click(object sender, EventArgs e)

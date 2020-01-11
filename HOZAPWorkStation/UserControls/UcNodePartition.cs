@@ -50,14 +50,14 @@ namespace HOZAPWorkStation.UserControls
         private void AddOrDeleteNode_TreeViewRefresh()
         {
             TreeNode root = new TreeNode();
-            root.Text = InitialInterface.ProName;
+            root.Text = HAZOP分析系统.ProName;
             //清空当前TreeView的全部节点，重新绑定
             this.trvUcNodePart.Nodes.Clear();
             //添加根节点，根节点名称为项目名称
             this.trvUcNodePart.Nodes.Add(root);
             //将节点添加到根节点下
             NodeBLL nodebll = new NodeBLL();
-            List<Node> nodelist = nodebll.Get_NodeList(InitialInterface.ProName);
+            List<Node> nodelist = nodebll.Get_NodeList(HAZOP分析系统.ProName);
             if (nodelist != null)
             {
                 for (int i = 0; i < nodelist.Count; i++)
@@ -83,7 +83,7 @@ namespace HOZAPWorkStation.UserControls
             string nodeName = this.txtNodeName.Text.Trim();
             if (!string.IsNullOrEmpty(nodeId) && !string.IsNullOrEmpty(nodeName))
             {
-                nodeInfo.ProName = InitialInterface.ProName;
+                nodeInfo.ProName = HAZOP分析系统.ProName;
                 nodeInfo.NodeId = Convert.ToInt32(this.txtNodeId.Text.Trim());
                 nodeInfo.NodeSort = this.rbContinuous.Text;
                 nodeInfo.NodeName = this.txtNodeName.Text.Trim();
@@ -324,7 +324,7 @@ namespace HOZAPWorkStation.UserControls
 
         private void tsbDel_Click(object sender, EventArgs e)
         {
-            if (nodeBLL.Delect_SelectedNode(InitialInterface.ProName, this.trvUcNodePart.SelectedNode.Text))
+            if (nodeBLL.Delect_SelectedNode(HAZOP分析系统.ProName, this.trvUcNodePart.SelectedNode.Text))
             {
                 AddOrDeleteNode_TreeViewRefresh();
             }

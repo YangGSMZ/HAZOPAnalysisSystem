@@ -177,7 +177,7 @@ namespace HOZAPWorkStation.UserControls
         {
             PramasBLL pbll = new PramasBLL();
             IntroducerBLL ibll = new IntroducerBLL();
-            string ProName = InitialInterface.ProName;
+            string ProName = HAZOP分析系统.ProName;
             List<Pramas> plist = pbll.Get_PramasList(ProName);
             List<DisplayPramasAndIntroducer> displaylist = null;
             if (plist != null)
@@ -223,7 +223,7 @@ namespace HOZAPWorkStation.UserControls
         {
           
             IntroducerBLL ibll = new IntroducerBLL(); 
-            string ProName = InitialInterface.ProName;
+            string ProName = HAZOP分析系统.ProName;
             List<SelectedPramas> splist = spbll.Get_SelectedPramasList(ProName);
             List<DisplayPramasAndIntroducer> displaylist = null;
             if (splist != null)
@@ -269,7 +269,7 @@ namespace HOZAPWorkStation.UserControls
         /// </summary>
         private void ParticipantInfoDataBind()
         {
-            List<Participant> ParticipantInfoList = pbll.Get_ParticipantInfoList(InitialInterface.ProName);
+            List<Participant> ParticipantInfoList = pbll.Get_ParticipantInfoList(HAZOP分析系统.ProName);
             dgvPreUcPar.AutoGenerateColumns = false;
             dgvPreUcPar.DataSource = ParticipantInfoList;
         }
@@ -387,7 +387,7 @@ namespace HOZAPWorkStation.UserControls
                     SelectedPramas SelectedPramasInfo = new SelectedPramas();
                     SelectedPramasInfo.PramasId =Convert.ToInt32(row.Cells["PramasID"].Value);
                     SelectedPramasInfo.PramasText = row.Cells["ParamNameSelection"].Value.ToString();
-                    SelectedPramasInfo.ProName = InitialInterface.ProName;
+                    SelectedPramasInfo.ProName = HAZOP分析系统.ProName;
                     SelectedPramasInfoList.Add(SelectedPramasInfo);
                 }
             }
@@ -669,7 +669,7 @@ namespace HOZAPWorkStation.UserControls
                 ParticipantInfo.Company = row.Cells["dgvPreParticipantCompany"].Value.ToString();
                 ParticipantInfo.Department = row.Cells["dgvPreParticipantDepartment"].Value.ToString();
                 ParticipantInfo.RolePlay = row.Cells["dgvPreParticipantRole"].Value.ToString();
-                ParticipantInfo.ProName = InitialInterface.ProName;
+                ParticipantInfo.ProName = HAZOP分析系统.ProName;
                 ParticipantInfoList.Add(ParticipantInfo);
             }
             if (pbll.Update_ParticipantInfo(ParticipantInfoList))
@@ -696,7 +696,7 @@ namespace HOZAPWorkStation.UserControls
         {
             Project ProjectInfo = new Project();
             ProjectBLL projectbll = new ProjectBLL();
-            ProjectInfo = projectbll.Get_ProjectInfo(InitialInterface.ProName);
+            ProjectInfo = projectbll.Get_ProjectInfo(HAZOP分析系统.ProName);
             txtProNumber.Text = ProjectInfo.ProNumber;
             txtProName.Text = ProjectInfo.Name;
             txtProCompany.Text = ProjectInfo.Compartment;

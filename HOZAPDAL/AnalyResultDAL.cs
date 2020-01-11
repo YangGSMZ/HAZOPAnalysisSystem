@@ -211,8 +211,43 @@ namespace HOZAPDAL
 
         public DataTable OutAllToExcel(string ProName)
         {
-            string sql = "select * from tb_AnalysisResult order by NodeName,Pramas;";
+            string sql = "select * from tb_AnalysisResult where ProName=@ProName order by NodeName,Pramas;";
             SqlParameter pms = new SqlParameter("@ProName", ProName);
+            DataTable dt = SqlHelper.ExecuteDataTable(sql, pms);
+            return dt;
+        }
+
+        public DataTable OutAllToExcel(string ProName,string NodeName)
+        {
+            string sql = "select * from tb_AnalysisResult where NodeName=@NodeName and ProName=@ProName order by Pramas,PramasAndIntroduce;";
+            SqlParameter[] pms = {
+                new SqlParameter("@ProName", ProName),
+                  new SqlParameter("@NodeName", NodeName)
+            };
+
+            DataTable dt = SqlHelper.ExecuteDataTable(sql, pms);
+            return dt;
+        }
+        public DataTable OutAllToExcel(string ProName,string NodeName, string Pramas)
+        {
+            string sql = "select * from tb_AnalysisResult where NodeName=@NodeName and Pramas=@Pramas and ProName=@ProName order by PramasAndIntroduce;;";
+            SqlParameter[] pms = {
+                new SqlParameter("@ProName", ProName),
+                  new SqlParameter("@NodeName", NodeName),
+                   new SqlParameter("@Pramas", Pramas)
+            };
+            DataTable dt = SqlHelper.ExecuteDataTable(sql, pms);
+            return dt;
+        }
+        public DataTable OutAllToExcel(string ProName, string PramasAndIntroduce, string NodeName, string Pramas)
+        {
+            string sql = "select * from tb_AnalysisResult where NodeName=@NodeName and Pramas=@Pramas and PramasAndIntroduce=@PramasAndIntroduce and ProName=@ProName;";
+            SqlParameter[] pms = {
+                new SqlParameter("@ProName", ProName),
+                  new SqlParameter("@NodeName", NodeName),
+                   new SqlParameter("@Pramas", Pramas),
+                    new SqlParameter("@PramasAndIntroduce", PramasAndIntroduce)
+            };
             DataTable dt = SqlHelper.ExecuteDataTable(sql, pms);
             return dt;
         }

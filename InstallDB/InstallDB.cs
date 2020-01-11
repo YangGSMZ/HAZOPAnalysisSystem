@@ -89,7 +89,9 @@ namespace InstallDB
             string Code = softreg.getMNum(); ;
             Form1 fm1 = new Form1();//实例化一个窗体，
             string Code1 = fm1.MyCode;
+            fm1.Focus();
             fm1.ShowDialog();//让新窗体显示
+           
             string RNum = fm1.textBox2.Text;
 
 
@@ -126,20 +128,5 @@ namespace InstallDB
             }
 
         }
-
-
-        protected override void OnBeforeInstall(IDictionary savedState)
-        {
-            Form1 fm1 = new Form1();//实例化一个窗体，
-            string Code1 = fm1.MyCode;
-            fm1.ShowDialog();//让新窗体显示
-            string RNum = fm1.textBox2.Text;
-            base.OnBeforeInstall(savedState);
-        }
-
-
-
-
-
     }
 }

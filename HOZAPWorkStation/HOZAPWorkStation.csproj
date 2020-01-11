@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>HOZAPWorkStation</RootNamespace>
     <AssemblyName>HOZAPWorkStation</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>E:\</PublishUrl>
@@ -26,6 +26,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,19 +48,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>lnpu.ico</ApplicationIcon>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>7FF2EC6DD9974D2D34C3246F8F9044ADAFD0F1E7</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>75FA41936B31A5AE1B8E0E618967B151154D7875</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>HOZAPWorkStation_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="microsoft.office.interop.excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -67,8 +73,21 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>F:\天然气工程 备用\Pipeline\lib\microsoft.office.interop.excel.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Controls.Ribbon" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -110,6 +129,11 @@
     </Compile>
     <Compile Include="CustomControls\RowMergeView.designer.cs" />
     <Compile Include="ExportExcel\ExportToExcel.cs" />
+    <Compile Include="HAZOPAnalysisDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HAZOPAnalysisDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InitialInterface.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,11 +157,23 @@
       <DependentUpon>ProNameList.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UpdataPramasInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UpdataPramasInfo.Designer.cs">
       <DependentUpon>UpdataPramasInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PrintView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PrintView.Designer.cs">
+      <DependentUpon>PrintView.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UcAnalsFrequency.cs">
       <SubType>Form</SubType>
@@ -205,16 +241,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportUI\Report1.rdlc" />
+    <EmbeddedResource Include="ReportUI\Report2.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UpdataPramasInfo.resx">
       <DependentUpon>UpdataPramasInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PrintView.resx">
+      <DependentUpon>PrintView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcAnalsFrequency.resx">
       <DependentUpon>UcAnalsFrequency.cs</DependentUpon>
@@ -238,10 +276,22 @@
       <DependentUpon>UcNodePartition.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Documents\DataDictionary.docx" />
+    <None Include="HAZOPAnalysisDBDataSet.xsc">
+      <DependentUpon>HAZOPAnalysisDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HAZOPAnalysisDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HAZOPAnalysisDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HAZOPAnalysisDBDataSet.xss">
+      <DependentUpon>HAZOPAnalysisDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\HOZAPWorkStation.csproj.CoreCompileInputs.cache" />
     <None Include="obj\Release\HOZAPWorkStation.csproj.CoreCompileInputs.cache" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -258,6 +308,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\App_Data\" />
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
@@ -269,26 +320,41 @@
       <DependentUpon>HAZOPAnalysisDB.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="bin\Debug\App_Data\HAZOPAnalysisDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\Debug\App_Data\HAZOPAnalysisDB_log.ldf">
-      <DependentUpon>HAZOPAnalysisDB.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="bin\Debug\Images\analysis.png" />
     <Content Include="bin\Debug\Images\background.jpg" />
+    <Content Include="Resouces\lnpu.ico" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="bin\Debug\Images\bg.png" />
     <Content Include="bin\Debug\Images\Folder.JPG" />
     <Content Include="bin\Debug\Images\NewProject.png" />
     <Content Include="bin\Debug\Images\Node.png" />
     <Content Include="bin\Debug\Images\OpenProject‘.png" />
     <Content Include="bin\Debug\Images\PrePro.png" />
     <Content Include="bin\Debug\Images\Print.png" />
-    <Content Include="lnpu.ico" />
+    <Content Include="favicon-20180708120319813.ico" />
+    <Content Include="logo.ico" />
     <Content Include="obj\Debug\HOZAPWorkStation.csproj.FileListAbsolute.txt" />
+    <None Include="Resouces\Images\analysis.png" />
     <Content Include="Resouces\Images\background.jpg" />
+    <None Include="Resouces\Images\background.png" />
     <Content Include="Resouces\Images\Folder.JPG" />
-    <Content Include="Resouces\lnpu.ico" />
+    <None Include="Resouces\Images\OpenProject.png" />
+    <None Include="Resouces\Images\new.png" />
+    <None Include="Resouces\Images\PrePro.png" />
+    <None Include="Resouces\Images\point.png" />
+    <None Include="Resouces\Images\print.png" />
     <None Include="Resources\55i58PICCH4_1024.jpg" />
     <None Include="Resources\form_go.png" />
     <None Include="Resources\select-no.jpg" />

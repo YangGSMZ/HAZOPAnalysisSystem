@@ -67,7 +67,7 @@ namespace HOZAPWorkStation
         {
             if (this.lvProNameList.SelectedItems.Count > 0)
             {
-                InitialInterface.ProName = this.lvProNameList.SelectedItems[0].Text;
+                HAZOP分析系统.ProName = this.lvProNameList.SelectedItems[0].Text;
                 IsOpen = true;
                 if (this.SetInitBtn != null)
                 {

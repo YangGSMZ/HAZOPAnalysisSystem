@@ -38,11 +38,11 @@
             this.btnAddRow = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvIntroducer = new System.Windows.Forms.DataGridView();
-            this.btnSub = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Introducer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeviationDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSub = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -157,6 +157,23 @@
             this.dgvIntroducer.Size = new System.Drawing.Size(433, 141);
             this.dgvIntroducer.TabIndex = 0;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "序号";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Introducer
+            // 
+            this.Introducer.HeaderText = "引导词";
+            this.Introducer.Name = "Introducer";
+            // 
+            // DeviationDesc
+            // 
+            this.DeviationDesc.HeaderText = "偏离描述";
+            this.DeviationDesc.Name = "DeviationDesc";
+            this.DeviationDesc.Visible = false;
+            // 
             // btnSub
             // 
             this.btnSub.Location = new System.Drawing.Point(286, 320);
@@ -177,23 +194,6 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "序号";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Introducer
-            // 
-            this.Introducer.HeaderText = "引导词";
-            this.Introducer.Name = "Introducer";
-            // 
-            // DeviationDesc
-            // 
-            this.DeviationDesc.HeaderText = "偏离描述";
-            this.DeviationDesc.Name = "DeviationDesc";
-            this.DeviationDesc.Visible = false;
-            // 
             // AddPramas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -210,6 +210,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "项目参数维护";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPramas_FormClosing);
+            this.Load += new System.EventHandler(this.AddPramas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

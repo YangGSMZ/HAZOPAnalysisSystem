@@ -69,7 +69,7 @@ namespace HOZAPWorkStation
                     ProjectInfo.ProDigest = rtxtDigest.Text;
                     if (pbll.Add_ProjectInfo(ProjectInfo))
                     {
-                        InitialInterface.ProName = ProName;
+                        HAZOP分析系统.ProName = ProName;
                         IsNew = true;
                         if (this.SetInitBtn != null)
                         {
